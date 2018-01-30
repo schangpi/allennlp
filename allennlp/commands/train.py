@@ -182,7 +182,7 @@ def train_model(params: Params, serialization_dir: str) -> Model:
 
     if test_data and evaluate_on_test:
         test_data.index_instances(vocab)
-        evaluate(model, test_data, iterator, cuda_device=trainer._cuda_device)  # pylint: disable=protected-access
+        evaluate(model, test_data, iterator, cuda_device=trainer._cuda_devices[0])  # pylint: disable=protected-access
 
     elif test_data:
         logger.info("To evaluate on the test set after training, pass the "
