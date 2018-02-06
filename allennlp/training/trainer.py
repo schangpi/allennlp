@@ -21,7 +21,7 @@ from torch.optim.lr_scheduler import _LRScheduler as PytorchLRScheduler  # pylin
 from torch.nn.parallel import replicate, parallel_apply
 from torch.nn.parallel.scatter_gather import scatter_kwargs, gather
 import tensorboard
-from tensorboard import SummaryWriter
+from tensorboardX import SummaryWriter
 
 from allennlp.common import Params
 from allennlp.common.checks import ConfigurationError
