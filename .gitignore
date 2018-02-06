@@ -11,3 +11,8 @@ build/
 dist/
 .mypy_cache
 
+.idea/allennlp.iml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/modules.xml
+.idea/vcs.xml
