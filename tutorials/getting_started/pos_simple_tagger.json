@@ -40,19 +40,22 @@
             }
     },
     "stacked_encoder": {
-            "type": "lstm",
+            "type": "gru",
             "input_size": 100,
             "hidden_size": 100,
             "num_layers": 2,
             "dropout": 0.5,
             "bidirectional": true
     }
+	"regularizer": [
+        ["transitions$", {"type": "l2", "alpha": 0.01}]
+    ]
   },
   "iterator": {"type": "basic", "batch_size": 32},
   "trainer": {
     "optimizer": "adam",
     "num_epochs": 40,
     "patience": 10,
-    "cuda_device": 0
+    "cuda_device": 1
   }
 }
