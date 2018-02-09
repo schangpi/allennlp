@@ -52,7 +52,7 @@
 	  }
     },
     "encoder": {
-      "type": "gru",
+      "type": "lstm",
       "input_size": 100,
       "hidden_size": 100,
       "num_layers": 2,

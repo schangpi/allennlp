@@ -6,7 +6,8 @@ from overrides import overrides
 
 import torch
 from torch.autograd import Variable
-from torch.nn.modules.rnn import GRUCell
+# from torch.nn.modules.rnn import GRUCell
+from torch.nn.modules.rnn import LSTMCell
 from torch.nn.modules.linear import Linear
 import torch.nn.functional as F
 
@@ -106,8 +107,8 @@ class SimpleSeq2Seq(Model):
         else:
             self._decoder_input_dim = target_embedding_dim
         # TODO (pradeep): Do not hardcode decoder cell type.
-        # self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
-        self._decoder_cell = GRUCell(self._decoder_input_dim, self._decoder_output_dim)
+        self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
+        # self._decoder_cell = GRUCell(self._decoder_input_dim, self._decoder_output_dim, bias=False)
         self._output_projection_layer = Linear(self._decoder_output_dim, num_classes)
         self.metrics = {
                 "accuracy": CategoricalAccuracy(),
