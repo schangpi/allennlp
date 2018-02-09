@@ -1,0 +1,16 @@
+1. Setup
+2. Run source activate allennlp
+3. 
+rm -r /tmp/nlp/pos
+rm -r /tmp/nlp/ner
+rm -r /tmp/nlp/chunk
+python -m allennlp.run train json/pos_simple_tagger.json --serialization-dir /tmp/nlp/pos
+python -m allennlp.run train json/ner_simple_tagger.json --serialization-dir /tmp/nlp/ner
+python -m allennlp.run train json/chunk_simple_tagger.json --serialization-dir /tmp/nlp/chunk
+
+rm -r /tmp/nlp/pos_test
+rm -r /tmp/nlp/ner_test
+rm -r /tmp/nlp/chunk_test
+python -m allennlp.run train json/pos_seq2seq.json --serialization-dir /tmp/nlp/pos_test
+python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_test
+python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_test
