@@ -61,7 +61,7 @@
       "type": "lstm",
       "input_size": 100,
       "hidden_size": 100,
-      "num_layers": 2,
+      "num_layers": 1,
 	  "dropout": 0.5,
       "bidirectional": true
     },
@@ -80,7 +80,7 @@
     "sorting_keys": [["source_tokens", "num_tokens"]]
   },
   "trainer": {
-    "num_epochs": 40,
+    "num_epochs": 100,
     "patience": 10,
     "cuda_device": 1,
     "optimizer": {

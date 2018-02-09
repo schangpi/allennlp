@@ -11,6 +11,6 @@ python -m allennlp.run train json/chunk_simple_tagger.json --serialization-dir /
 rm -r /tmp/nlp/pos_test
 rm -r /tmp/nlp/ner_test
 rm -r /tmp/nlp/chunk_test
-python -m allennlp.run train json/pos_seq2seq.json --serialization-dir /tmp/nlp/pos_test
-python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_test
-python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_test
+python -m allennlp.run train json/pos_seq2seq.json --serialization-dir /tmp/nlp/pos_test > pos_log
+python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_test > ner_log
+python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_test > chunk_log
