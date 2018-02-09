@@ -1,5 +1,6 @@
-from typing import Dict
+from typing import Dict, Optional
 
+from IPython import embed
 import numpy
 from overrides import overrides
 
@@ -16,7 +17,9 @@ from allennlp.modules import Attention, TextFieldEmbedder, Seq2SeqEncoder
 from allennlp.modules.similarity_functions import SimilarityFunction
 from allennlp.modules.token_embedders import Embedding
 from allennlp.models.model import Model
+from allennlp.nn import InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import get_text_field_mask, sequence_cross_entropy_with_logits, weighted_sum
+from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
 
 
 @Model.register("simple_seq2seq")
@@ -74,8 +77,10 @@ class SimpleSeq2Seq(Model):
                  target_namespace: str = "tokens",
                  target_embedding_dim: int = None,
                  attention_function: SimilarityFunction = None,
-                 scheduled_sampling_ratio: float = 0.0) -> None:
-        super(SimpleSeq2Seq, self).__init__(vocab)
+                 scheduled_sampling_ratio: float = 0.0,
+                 initializer: InitializerApplicator = InitializerApplicator(),
+                 regularizer: Optional[RegularizerApplicator] = None) -> None:
+        super(SimpleSeq2Seq, self).__init__(vocab, regularizer)
         self._source_embedder = source_embedder
         self._encoder = encoder
         self._max_decoding_steps = max_decoding_steps
@@ -103,6 +108,12 @@ class SimpleSeq2Seq(Model):
         # TODO (pradeep): Do not hardcode decoder cell type.
         self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
         self._output_projection_layer = Linear(self._decoder_output_dim, num_classes)
+        self.metrics = {
+                "accuracy": CategoricalAccuracy(),
+                "accuracy3": CategoricalAccuracy(top_k=3)
+        }
+        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=target_namespace)
+        initializer(self)
 
     @overrides
     def forward(self,  # type: ignore
@@ -126,6 +137,7 @@ class SimpleSeq2Seq(Model):
         batch_size, _, _ = embedded_input.size()
         source_mask = get_text_field_mask(source_tokens)
         encoder_outputs = self._encoder(embedded_input, source_mask)
+        # embed()
         final_encoder_output = encoder_outputs[:, -1]  # (batch_size, encoder_output_dim)
         if target_tokens:
             targets = target_tokens["tokens"]
@@ -180,6 +192,15 @@ class SimpleSeq2Seq(Model):
             loss = self._get_loss(logits, targets, target_mask)
             output_dict["loss"] = loss
             # TODO: Define metrics
+            relevant_targets = targets[:, 1:].contiguous()  # (batch_size, num_decoding_steps)
+            relevant_mask = target_mask[:, 1:].contiguous()
+            for metric in self.metrics.values():
+                metric(logits, relevant_targets, relevant_mask.float())
+            class_probabilities = logits * 0.
+            for i, instance_tags in enumerate(all_predictions.cpu().data.numpy()):
+                for j, tag_id in enumerate(instance_tags):
+                    class_probabilities[i, j, tag_id] = 1
+            self.span_metric(class_probabilities, relevant_targets, relevant_mask)
         return output_dict
 
     def _prepare_decode_step_input(self,
@@ -283,6 +304,13 @@ class SimpleSeq2Seq(Model):
         output_dict["predicted_tokens"] = all_predicted_tokens
         return output_dict
 
+    @overrides
+    def get_metrics(self, reset: bool = False) -> Dict[str, float]:
+        accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
+        metric_dict = self.span_metric.get_metric(reset=reset)
+        f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
+        return {**f1, **accs}
+
     @classmethod
     def from_params(cls, vocab, params: Params) -> 'SimpleSeq2Seq':
         source_embedder_params = params.pop("source_embedder")
@@ -298,10 +326,15 @@ class SimpleSeq2Seq(Model):
         else:
             attention_function = None
         scheduled_sampling_ratio = params.pop_float("scheduled_sampling_ratio", 0.0)
+        initializer = InitializerApplicator.from_params(params.pop('initializer', []))
+        regularizer = RegularizerApplicator.from_params(params.pop('regularizer', []))
         return cls(vocab,
                    source_embedder=source_embedder,
                    encoder=encoder,
                    max_decoding_steps=max_decoding_steps,
                    target_namespace=target_namespace,
                    attention_function=attention_function,
-                   scheduled_sampling_ratio=scheduled_sampling_ratio)
+                   scheduled_sampling_ratio=scheduled_sampling_ratio,
+                   initializer=initializer,
+                   regularizer=regularizer
+                   )
