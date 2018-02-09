@@ -56,6 +56,27 @@ class SpanBasedF1Measure(Metric):
         self._false_positives: Dict[str, int] = defaultdict(int)
         self._false_negatives: Dict[str, int] = defaultdict(int)
 
+    def iobes_iob(self, tags):
+        """
+        IOBES -> IOB
+        """
+        new_tags = []
+        for i, tag in enumerate(tags):
+            if tag.split('-')[0] == 'B':
+                new_tags.append(tag)
+            elif tag.split('-')[0] == 'I':
+                new_tags.append(tag)
+            elif tag.split('-')[0] == 'S':
+                new_tags.append(tag.replace('S-', 'B-'))
+            elif tag.split('-')[0] == 'E':
+                new_tags.append(tag.replace('E-', 'I-'))
+            elif tag.split('-')[0] == 'O':
+                new_tags.append(tag)
+            else:
+                new_tags.append(tag)
+                # raise Exception('Invalid format!')
+        return new_tags
+
     def __call__(self,
                  predictions: torch.Tensor,
                  gold_labels: torch.Tensor,
@@ -117,8 +138,8 @@ class SpanBasedF1Measure(Metric):
                                        for label_id in sequence_prediction[:length].tolist()]
             gold_string_labels = [self._label_vocabulary[label_id]
                                   for label_id in sequence_gold_label[:length].tolist()]
-            predicted_spans = bio_tags_to_spans(predicted_string_labels, self._ignore_classes)
-            gold_spans = bio_tags_to_spans(gold_string_labels, self._ignore_classes)
+            predicted_spans = bio_tags_to_spans(self.iobes_iob(predicted_string_labels), self._ignore_classes)
+            gold_spans = bio_tags_to_spans(self.iobes_iob(gold_string_labels), self._ignore_classes)
 
             predicted_spans = self._handle_continued_spans(predicted_spans)
             gold_spans = self._handle_continued_spans(gold_spans)
