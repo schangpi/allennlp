@@ -14,3 +14,6 @@ rm -r /tmp/nlp/chunk_test
 python -m allennlp.run train json/pos_seq2seq.json --serialization-dir /tmp/nlp/pos_test > pos_log
 python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_test > ner_log
 python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_test > chunk_log
+
+rm -r /tmp/nlp/all_test
+python -m allennlp.run train json/all_seq2seq.json --serialization-dir /tmp/nlp/all_test > all_log
