@@ -27,7 +27,8 @@
       "tokens": {
         "namespace": "target_tokens"
       }
-    }
+    },
+	"source_add_start_token": false
   },
   "train_data_path": "/home/schangpi/dataset/seq2seq/ner_conll03_train.txt",
   "validation_data_path": "/home/schangpi/dataset/seq2seq/ner_conll03_dev.txt",
@@ -58,10 +59,10 @@
 	  }
     },
     "encoder": {
-      "type": "lstm",
+      "type": "gru",
       "input_size": 100,
       "hidden_size": 100,
-      "num_layers": 1,
+      "num_layers": 2,
 	  "dropout": 0.5,
       "bidirectional": true
     },
@@ -71,7 +72,7 @@
     "max_decoding_steps": 100,
     "target_namespace": "target_tokens",
 	"attention_function": {"type": "dot_product"},
-	"scheduled_sampling_ratio": 0.0
+	"scheduled_sampling_ratio": 0.2
   },
   "iterator": {
     "type": "bucket",
@@ -85,6 +86,7 @@
     "cuda_device": 1,
     "optimizer": {
       "type": "adam"
-    }
+    },
+	"grad_clipping": 5
   }
 }
