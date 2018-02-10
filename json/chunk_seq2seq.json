@@ -71,6 +71,7 @@
     ],
     "max_decoding_steps": 100,
     "target_namespace": "target_tokens",
+	"target_embedding_dim": 50,
 	"attention_function": {"type": "dot_product"},
 	"scheduled_sampling_ratio": 0.2
   },
