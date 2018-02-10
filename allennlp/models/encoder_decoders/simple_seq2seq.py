@@ -122,12 +122,7 @@ class SimpleSeq2Seq(Model):
             preindices = preindices.data.cpu().numpy()
         all_predicted_tokens = []
         for indices in preindices:
-            indices = list(indices)
-            # Collect indices till the first end_symbol
-            if self._end_index in indices:
-                indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="source_tokens")
-                                for x in indices]
+            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="source_tokens") for x in list(indices)]
             all_predicted_tokens.append(predicted_tokens)
         return all_predicted_tokens
 
@@ -138,12 +133,25 @@ class SimpleSeq2Seq(Model):
         for indices in preindices:
             indices = list(indices)
             # Collect indices till the first end_symbol
-            if self._end_index in indices:
-                indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens")
-                                for x in indices]
+            # if self._end_index in indices:
+            #     indices = indices[:indices.index(self._end_index)]
+            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens") for x in indices]
             all_predicted_tokens.append(predicted_tokens)
         return all_predicted_tokens
+
+    def _print_source_target_triplets(self, src, tgt, true_tgt):
+        src = self._examine_source_indices(src)
+        true_tgt = self._examine_target_indices(true_tgt)
+        tgt = self._examine_target_indices(tgt)
+        num_shows = 0
+        for s, t, tt in zip(src, tgt, true_tgt):
+            print('Source:      ', ' '.join(s))
+            print('Target:      ', ' '.join(t))
+            print('True target: ', ' '.join(tt))
+            num_shows += 1
+            if num_shows == 4:
+                break
+        print('')
 
     @overrides
     def forward(self,  # type: ignore
@@ -217,18 +225,6 @@ class SimpleSeq2Seq(Model):
         output_dict = {"logits": logits,
                        "class_probabilities": class_probabilities,
                        "predictions": all_predictions}
-        src = self._examine_source_indices(source_tokens['tokens'])
-        gttgt = self._examine_target_indices(target_tokens['tokens'])
-        tgt = self._examine_target_indices(all_predictions)
-        num_shows = 0
-        for s, g, t in zip(src, gttgt, tgt):
-            print('Sent:  ', ' '.join(s))
-            print('GT:    ', ' '.join(g))
-            print('Pred:  ', ' '.join(t))
-            num_shows += 1
-            if num_shows == 4:
-                break
-        print('')
         if target_tokens:
             target_mask = get_text_field_mask(target_tokens)
             loss = self._get_loss(logits, targets, target_mask)
@@ -243,6 +239,7 @@ class SimpleSeq2Seq(Model):
                 for j, tag_id in enumerate(instance_tags):
                     class_probabilities[i, j, tag_id] = 1
             self.span_metric(class_probabilities, relevant_targets, relevant_mask)
+            self._print_source_target_triplets(source_tokens['tokens'], all_predictions, target_tokens['tokens'])
         return output_dict
 
     def _prepare_decode_step_input(self,

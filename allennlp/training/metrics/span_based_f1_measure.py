@@ -56,7 +56,7 @@ class SpanBasedF1Measure(Metric):
         self._false_positives: Dict[str, int] = defaultdict(int)
         self._false_negatives: Dict[str, int] = defaultdict(int)
 
-    def iobes_iob(self, tags):
+    def _iobes_iob(self, tags):
         """
         IOBES -> IOB
         """
@@ -138,8 +138,18 @@ class SpanBasedF1Measure(Metric):
                                        for label_id in sequence_prediction[:length].tolist()]
             gold_string_labels = [self._label_vocabulary[label_id]
                                   for label_id in sequence_gold_label[:length].tolist()]
-            predicted_spans = bio_tags_to_spans(self.iobes_iob(predicted_string_labels), self._ignore_classes)
-            gold_spans = bio_tags_to_spans(self.iobes_iob(gold_string_labels), self._ignore_classes)
+            predicted_spans = bio_tags_to_spans(self._iobes_iob(predicted_string_labels), self._ignore_classes)
+            gold_spans = bio_tags_to_spans(self._iobes_iob(gold_string_labels), self._ignore_classes)
+
+            if i == 0:
+                print('Targets')
+                print('Before: ', ' '.join(predicted_string_labels))
+                print('After:  ', ' '.join(self._iobes_iob(predicted_string_labels)))
+                print(predicted_spans)
+                print('True Targets')
+                print('Before: ', ' '.join(gold_string_labels))
+                print('After:  ', ' '.join(self._iobes_iob(gold_string_labels)))
+                print(gold_spans)
 
             predicted_spans = self._handle_continued_spans(predicted_spans)
             gold_spans = self._handle_continued_spans(gold_spans)
