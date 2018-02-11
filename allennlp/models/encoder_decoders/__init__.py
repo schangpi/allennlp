@@ -1,2 +1,3 @@
 from allennlp.models.encoder_decoders.simple_seq2seq import SimpleSeq2Seq
 from allennlp.models.encoder_decoders.simple_seq2multiseq import SimpleSeq2MultiSeq
+from allennlp.models.encoder_decoders.simple_seqtask2seq import SimpleSeqTask2Seq
