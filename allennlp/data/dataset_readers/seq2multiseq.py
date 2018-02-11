@@ -93,8 +93,8 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
     @overrides
     def text_to_instance(self, task_name: str, domain_name: str,
                          source_string: str, target_string: str = None) -> Instance:  # type: ignore
-        task_field = LabelField(task_name)
-        domain_field = LabelField(domain_name)
+        task_field = LabelField(task_name, label_namespace="task_labels")
+        domain_field = LabelField(domain_name, label_namespace="domain_labels")
         # pylint: disable=arguments-differ
         tokenized_source = self._source_tokenizer.tokenize(source_string)
         if self._source_add_start_token:

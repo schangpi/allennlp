@@ -175,7 +175,6 @@ class SimpleSeq2Seq(Model):
         batch_size, _, _ = embedded_input.size()
         source_mask = get_text_field_mask(source_tokens)
         encoder_outputs = self._encoder(embedded_input, source_mask)
-        # embed()
         final_encoder_output = encoder_outputs[:, -1]  # (batch_size, encoder_output_dim)
         if target_tokens:
             targets = target_tokens["tokens"]
@@ -356,7 +355,7 @@ class SimpleSeq2Seq(Model):
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        target_namespace = params.pop("target_namespace", "tokens")
+        # target_namespace = params.pop("target_namespace", "tokens")
         # If no attention function is specified, we should not use attention, not attention with
         # default similarity function.
         attention_function_type = params.pop("attention_function", None)

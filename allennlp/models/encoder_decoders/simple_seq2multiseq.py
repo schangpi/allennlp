@@ -100,16 +100,24 @@ class SimpleSeq2MultiSeq(Model):
         self._attention_function = attention_function
         self._scheduled_sampling_ratio = scheduled_sampling_ratio
 
-        self._pos_seq2seq = SimpleSeq2Seq(vocab, source_embedder, encoder, max_decoding_steps, pos_namespace,
-                                          target_embedding_dim, attention_function, scheduled_sampling_ratio,
-                                          initializer, regularizer)
-        self._ner_seq2seq = SimpleSeq2Seq(vocab, source_embedder, encoder, max_decoding_steps, ner_namespace,
-                                          target_embedding_dim, attention_function, scheduled_sampling_ratio,
-                                          initializer, regularizer)
-        self._chunk_seq2seq = SimpleSeq2Seq(vocab, source_embedder, encoder, max_decoding_steps, chunk_namespace,
-                                            target_embedding_dim, attention_function, scheduled_sampling_ratio,
-                                            initializer, regularizer)
-        initializer(self)
+        self._pos_seq2seq = SimpleSeq2Seq(vocab=vocab, source_embedder=source_embedder, encoder=encoder,
+                                          max_decoding_steps=max_decoding_steps, target_namespace=pos_namespace,
+                                          target_embedding_dim=target_embedding_dim,
+                                          attention_function=attention_function,
+                                          scheduled_sampling_ratio=scheduled_sampling_ratio,
+                                          initializer=initializer, regularizer=regularizer)
+        self._ner_seq2seq = SimpleSeq2Seq(vocab=vocab, source_embedder=source_embedder, encoder=encoder,
+                                          max_decoding_steps=max_decoding_steps, target_namespace=ner_namespace,
+                                          target_embedding_dim=target_embedding_dim,
+                                          attention_function=attention_function,
+                                          scheduled_sampling_ratio=scheduled_sampling_ratio,
+                                          initializer=initializer, regularizer=regularizer)
+        self._chunk_seq2seq = SimpleSeq2Seq(vocab=vocab, source_embedder=source_embedder, encoder=encoder,
+                                            max_decoding_steps=max_decoding_steps, target_namespace=chunk_namespace,
+                                            target_embedding_dim=target_embedding_dim,
+                                            attention_function=attention_function,
+                                            scheduled_sampling_ratio=scheduled_sampling_ratio,
+                                            initializer=initializer, regularizer=regularizer)
 
     @overrides
     def forward(self,  # type: ignore
@@ -148,7 +156,7 @@ class SimpleSeq2MultiSeq(Model):
         label_namespaces = []
         task_token_ids = task_token.data.cpu().numpy()
         for b in range(batch_size):
-            task = self.vocab.get_token_from_index(task_token_ids[b][0])
+            task = self.vocab.get_token_from_index(task_token_ids[b][0], namespace="task_labels")
             if task == 'pos':
                 loss += pos_output_dict['loss']
                 predictions.append(pos_output_dict['predictions'])
@@ -159,7 +167,10 @@ class SimpleSeq2MultiSeq(Model):
                 loss += chunk_output_dict['loss']
                 predictions.append(chunk_output_dict['predictions'])
             label_namespaces.append(task)
-        output_dict = {'loss': loss, 'predictions': predictions, 'label_namespaces': label_namespaces}
+        output_dict = {'loss': loss,
+                       'predictions': predictions,
+                       'label_namespaces': label_namespaces}
+        # embed()
         return output_dict
 
     @overrides
@@ -202,19 +213,18 @@ class SimpleSeq2MultiSeq(Model):
 
     @classmethod
     def from_params(cls, vocab, params: Params) -> 'SimpleSeq2MultiSeq':
-        # task_embedder_params = params.pop("task_embedder")
-        # task_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
-        # domain_embedder_params = params.pop("domain_embedder")
-        # domain_embedder = TextFieldEmbedder.from_params(vocab, domain_embedder_params)
         tasks = params.pop("tasks")
         domains = params.pop("domains")
         source_embedder_params = params.pop("source_embedder")
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        pos_namespace = params.pop("pos_namespace", "tokens")
-        ner_namespace = params.pop("ner_namespace", "tokens")
-        chunk_namespace = params.pop("chunk_namespace", "tokens")
+        pos_namespace = params.pop("pos_namespace", "pos_tokens")
+        ner_namespace = params.pop("ner_namespace", "ner_tokens")
+        chunk_namespace = params.pop("chunk_namespace", "chunk_tokens")
+        # pos_namespace = params.pop("pos_namespace")
+        # ner_namespace = params.pop("ner_namespace")
+        # chunk_namespace = params.pop("chunk_namespace")
         # If no attention function is specified, we should not use attention, not attention with
         # default similarity function.
         attention_function_type = params.pop("attention_function", None)
