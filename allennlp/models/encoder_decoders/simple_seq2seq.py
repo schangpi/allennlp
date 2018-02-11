@@ -75,7 +75,7 @@ class SimpleSeq2Seq(Model):
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
-                 target_namespace: str = "tokens",
+                 target_namespace: str = "target_tokens",
                  target_embedding_dim: int = None,
                  attention_function: SimilarityFunction = None,
                  scheduled_sampling_ratio: float = 0.0,
@@ -135,7 +135,7 @@ class SimpleSeq2Seq(Model):
             # Collect indices till the first end_symbol
             # if self._end_index in indices:
             #     indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens") for x in indices]
+            predicted_tokens = [self.vocab.get_token_from_index(x, namespace=self._target_namespace) for x in indices]
             all_predicted_tokens.append(predicted_tokens)
         return all_predicted_tokens
 
@@ -337,7 +337,7 @@ class SimpleSeq2Seq(Model):
             # Collect indices till the first end_symbol
             if self._end_index in indices:
                 indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens")
+            predicted_tokens = [self.vocab.get_token_from_index(x, namespace=self._target_namespace)
                                 for x in indices]
             all_predicted_tokens.append(predicted_tokens)
         output_dict["predicted_tokens"] = all_predicted_tokens

@@ -27,8 +27,6 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
     Expected format for each input line: <source_sequence_string>\t<target_sequence_string>
 
     The output of ``read`` is a list of ``Instance`` s with the fields:
-        task_token: ``LabelField``
-        domain_token: ``LabelField``
         source_tokens: ``TextField``
         target_tokens: ``TextField``
 
@@ -55,14 +53,21 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
                  source_tokenizer: Tokenizer = None,
                  target_tokenizer: Tokenizer = None,
                  source_token_indexers: Dict[str, TokenIndexer] = None,
-                 target_token_indexers: Dict[str, TokenIndexer] = None,
+                 pos_token_indexers: Dict[str, TokenIndexer] = None,
+                 ner_token_indexers: Dict[str, TokenIndexer] = None,
+                 chunk_token_indexers: Dict[str, TokenIndexer] = None,
                  source_add_start_token: bool = True,
                  lazy: bool = False) -> None:
         super().__init__(lazy)
         self._source_tokenizer = source_tokenizer or WordTokenizer()
         self._target_tokenizer = target_tokenizer or self._source_tokenizer
         self._source_token_indexers = source_token_indexers or {"tokens": SingleIdTokenIndexer()}
-        self._target_token_indexers = target_token_indexers or self._source_token_indexers
+        self._pos_token_indexers = pos_token_indexers or self._source_token_indexers
+        self._ner_token_indexers = ner_token_indexers or self._source_token_indexers
+        self._chunk_token_indexers = chunk_token_indexers or self._source_token_indexers
+        self._task_to_indexers = {'pos': self._pos_token_indexers,
+                                  'ner': self._ner_token_indexers,
+                                  'chunk': self._chunk_token_indexers}
         self._source_add_start_token = source_add_start_token
 
     @overrides
@@ -88,23 +93,47 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
     @overrides
     def text_to_instance(self, task_name: str, domain_name: str,
                          source_string: str, target_string: str = None) -> Instance:  # type: ignore
-        task_field = LabelField(task_name, label_namespace=task_name)
-        domain_field = LabelField(domain_name, label_namespace=task_name)
+        task_field = LabelField(task_name)
+        domain_field = LabelField(domain_name)
         # pylint: disable=arguments-differ
         tokenized_source = self._source_tokenizer.tokenize(source_string)
         if self._source_add_start_token:
             tokenized_source.insert(0, Token(START_SYMBOL))
         tokenized_source.append(Token(END_SYMBOL))
         source_field = TextField(tokenized_source, self._source_token_indexers)
+        inst = Instance({'source_tokens': source_field, "task_token": task_field, "domain_token": domain_field,
+                         'pos_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)], self._pos_token_indexers),
+                         'ner_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)], self._ner_token_indexers),
+                         'chunk_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                   self._chunk_token_indexers)})
         if target_string is not None:
             tokenized_target = self._target_tokenizer.tokenize(target_string)
             tokenized_target.insert(0, Token(START_SYMBOL))
             tokenized_target.append(Token(END_SYMBOL))
-            target_field = TextField(tokenized_target, self._target_token_indexers)
-            return Instance({"source_tokens": source_field, "target_tokens": target_field,
-                             "task_token": task_field, "domain_token": domain_field})
-        else:
-            return Instance({'source_tokens': source_field, "task_token": task_field, "domain_token": domain_field})
+            target_field = TextField(tokenized_target, self._task_to_indexers[task_name])
+            if task_name == 'pos':
+                inst = Instance({'source_tokens': source_field, "task_token": task_field, "domain_token": domain_field,
+                                 'pos_tokens': target_field,
+                                 'ner_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                         self._ner_token_indexers),
+                                 'chunk_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                           self._chunk_token_indexers)})
+            if task_name == 'ner':
+                inst = Instance({'source_tokens': source_field, "task_token": task_field, "domain_token": domain_field,
+                                 'pos_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                         self._pos_token_indexers),
+                                 'ner_tokens': target_field,
+                                 'chunk_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                           self._chunk_token_indexers)})
+            if task_name == 'chunk':
+                inst = Instance({'source_tokens': source_field, "task_token": task_field, "domain_token": domain_field,
+                                 'pos_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                         self._pos_token_indexers),
+                                 'ner_tokens': TextField([Token(START_SYMBOL), Token(END_SYMBOL)],
+                                                         self._ner_token_indexers),
+                                 'chunk_tokens': target_field})
+        return inst
+
 
     @classmethod
     def from_params(cls, params: Params) -> 'Seq2MultiSeqDatasetReader':
@@ -118,13 +147,24 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
             source_token_indexers = None
         else:
             source_token_indexers = TokenIndexer.dict_from_params(source_indexers_type)
-        target_indexers_type = params.pop('target_token_indexers', None)
-        if target_indexers_type is None:
-            target_token_indexers = None
+        pos_indexers_type = params.pop('pos_token_indexers', None)
+        if pos_indexers_type is None:
+            pos_token_indexers = None
         else:
-            target_token_indexers = TokenIndexer.dict_from_params(target_indexers_type)
+            pos_token_indexers = TokenIndexer.dict_from_params(pos_indexers_type)
+        ner_indexers_type = params.pop('ner_token_indexers', None)
+        if ner_indexers_type is None:
+            ner_token_indexers = None
+        else:
+            ner_token_indexers = TokenIndexer.dict_from_params(ner_indexers_type)
+        chunk_indexers_type = params.pop('chunk_token_indexers', None)
+        if chunk_indexers_type is None:
+            chunk_token_indexers = None
+        else:
+            chunk_token_indexers = TokenIndexer.dict_from_params(chunk_indexers_type)
         lazy = params.pop('lazy', False)
         params.assert_empty(cls.__name__)
         return Seq2MultiSeqDatasetReader(source_tokenizer, target_tokenizer,
-                                         source_token_indexers, target_token_indexers,
+                                         source_token_indexers,
+                                         pos_token_indexers, ner_token_indexers, chunk_token_indexers,
                                          source_add_start_token, lazy)

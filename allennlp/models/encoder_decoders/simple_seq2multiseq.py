@@ -18,6 +18,7 @@ from allennlp.modules import Attention, TextFieldEmbedder, Seq2SeqEncoder
 from allennlp.modules.similarity_functions import SimilarityFunction
 from allennlp.modules.token_embedders import Embedding
 from allennlp.models.model import Model
+from allennlp.models.encoder_decoders.simple_seq2seq import SimpleSeq2Seq
 from allennlp.nn import InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import get_text_field_mask, sequence_cross_entropy_with_logits, weighted_sum
 from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
@@ -77,7 +78,9 @@ class SimpleSeq2MultiSeq(Model):
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
-                 target_namespace: str = "tokens",
+                 pos_namespace: str = "pos_tokens",
+                 ner_namespace: str = "ner_tokens",
+                 chunk_namespace: str = "chunk_tokens",
                  target_embedding_dim: int = None,
                  attention_function: SimilarityFunction = None,
                  scheduled_sampling_ratio: float = 0.0,
@@ -91,95 +94,31 @@ class SimpleSeq2MultiSeq(Model):
         self._source_embedder = source_embedder
         self._encoder = encoder
         self._max_decoding_steps = max_decoding_steps
-        self._target_namespace = target_namespace
+        self._pos_namespace = pos_namespace
+        self._ner_namespace = ner_namespace
+        self._chunk_namespace = chunk_namespace
         self._attention_function = attention_function
         self._scheduled_sampling_ratio = scheduled_sampling_ratio
-        # We need the start symbol to provide as the input at the first timestep of decoding, and
-        # end symbol as a way to indicate the end of the decoded sequence.
-        self._start_index = self.vocab.get_token_index(START_SYMBOL, self._target_namespace)
-        self._end_index = self.vocab.get_token_index(END_SYMBOL, self._target_namespace)
-        # num_classes = self.vocab.get_vocab_size(self._target_namespace)
-        num_classes = []
-        for task in tasks:
-            num_classes.append(self.vocab.get_vocab_size(task))
-        # Decoder output dim needs to be the same as the encoder output dim since we initialize the
-        # hidden state of the decoder with that of the final hidden states of the encoder. Also, if
-        # we're using attention with ``DotProductSimilarity``, this is needed.
-        self._decoder_output_dim = self._encoder.get_output_dim()
-        target_embedding_dim = target_embedding_dim or self._source_embedder.get_output_dim()
-        # self._target_embedder = Embedding(num_classes, target_embedding_dim)
-        self._target_embedder = []
-        for nc in num_classes:
-            self._target_embedder.append(Embedding(nc, target_embedding_dim))
-        if self._attention_function:
-            # self._decoder_attention = Attention(self._attention_function)
-            self._decoder_attention = []
-            for _ in range(self._num_tasks):
-                self._decoder_attention.append(Attention(self._attention_function))
-            # The output of attention, a weighted average over encoder outputs, will be
-            # concatenated to the input vector of the decoder at each time step.
-            self._decoder_input_dim = self._encoder.get_output_dim() + target_embedding_dim
-        else:
-            self._decoder_input_dim = target_embedding_dim
-        for _ in range(self._num_tasks):
-            # TODO (pradeep): Do not hardcode decoder cell type.
-            # self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
-            # self._output_projection_layer = Linear(self._decoder_output_dim, num_classes)
-            self._decoder_cell = []
-            self._output_projection_layer = []
-            for nc in num_classes:
-                self._decoder_cell.append(LSTMCell(self._decoder_input_dim, self._decoder_output_dim))
-                self._output_projection_layer.append(Linear(self._decoder_output_dim, nc))
 
-        self.metrics = {
-                "accuracy": CategoricalAccuracy(),
-                "accuracy3": CategoricalAccuracy(top_k=3)
-        }
-        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=target_namespace)
+        self._pos_seq2seq = SimpleSeq2Seq(vocab, source_embedder, encoder, max_decoding_steps, pos_namespace,
+                                          target_embedding_dim, attention_function, scheduled_sampling_ratio,
+                                          initializer, regularizer)
+        self._ner_seq2seq = SimpleSeq2Seq(vocab, source_embedder, encoder, max_decoding_steps, ner_namespace,
+                                          target_embedding_dim, attention_function, scheduled_sampling_ratio,
+                                          initializer, regularizer)
+        self._chunk_seq2seq = SimpleSeq2Seq(vocab, source_embedder, encoder, max_decoding_steps, chunk_namespace,
+                                            target_embedding_dim, attention_function, scheduled_sampling_ratio,
+                                            initializer, regularizer)
         initializer(self)
-
-    def _examine_source_indices(self, preindices):
-        if not isinstance(preindices, numpy.ndarray):
-            preindices = preindices.data.cpu().numpy()
-        all_predicted_tokens = []
-        for indices in preindices:
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="source_tokens") for x in list(indices)]
-            all_predicted_tokens.append(predicted_tokens)
-        return all_predicted_tokens
-
-    def _examine_target_indices(self, preindices):
-        if not isinstance(preindices, numpy.ndarray):
-            preindices = preindices.data.cpu().numpy()
-        all_predicted_tokens = []
-        for indices in preindices:
-            indices = list(indices)
-            # Collect indices till the first end_symbol
-            # if self._end_index in indices:
-            #     indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens") for x in indices]
-            all_predicted_tokens.append(predicted_tokens)
-        return all_predicted_tokens
-
-    def _print_source_target_triplets(self, src, tgt, true_tgt):
-        src = self._examine_source_indices(src)
-        true_tgt = self._examine_target_indices(true_tgt)
-        tgt = self._examine_target_indices(tgt)
-        num_shows = 0
-        for s, t, tt in zip(src, tgt, true_tgt):
-            print('Source:      ', ' '.join(s))
-            print('Target:      ', ' '.join(t))
-            print('True target: ', ' '.join(tt))
-            num_shows += 1
-            if num_shows == 4:
-                break
-        print('')
 
     @overrides
     def forward(self,  # type: ignore
                 task_token: torch.LongTensor,
                 domain_token: torch.LongTensor,
                 source_tokens: Dict[str, torch.LongTensor],
-                target_tokens: Dict[str, torch.LongTensor] = None) -> Dict[str, torch.Tensor]:
+                pos_tokens: Dict[str, torch.LongTensor] = None,
+                ner_tokens: Dict[str, torch.LongTensor] = None,
+                chunk_tokens: Dict[str, torch.LongTensor] = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         """
         Decoder logic for producing the entire target sequence.
@@ -193,162 +132,35 @@ class SimpleSeq2MultiSeq(Model):
            Output of ``Textfield.as_array()`` applied on target ``TextField``. We assume that the
            target tokens are also represented as a ``TextField``.
         """
-        # embeded_task = self._task_embedder(task_token)
-        # embeded_domain = self._domain_embedder(domain_token)
         # (batch_size, input_sequence_length, encoder_output_dim)
-        embedded_input = self._source_embedder(source_tokens)
-        batch_size, _, _ = embedded_input.size()
-        source_mask = get_text_field_mask(source_tokens)
-        encoder_outputs = self._encoder(embedded_input, source_mask)
-        final_encoder_output = encoder_outputs[:, -1]  # (batch_size, encoder_output_dim)
-        if target_tokens:
-            targets = target_tokens["tokens"]
-            target_sequence_length = targets.size()[1]
-            # The last input from the target is either padding or the end symbol. Either way, we
-            # don't have to process it.
-            num_decoding_steps = target_sequence_length - 1
-        else:
-            num_decoding_steps = self._max_decoding_steps
-        decoder_hidden = final_encoder_output
-        decoder_context = Variable(encoder_outputs.data.new()
-                                   .resize_(batch_size, self._decoder_output_dim).fill_(0))
-        decoder_input = Variable(encoder_outputs.data.new()
-                                   .resize_(batch_size, self._decoder_output_dim).fill_(0))
-        task_ids = task_token.data.cpu().numpy()
-        step_logits = []
-        step_probabilities = []
-        step_predictions = []
+        # pos_start = self.vocab.get_token_index(START_SYMBOL, self._pos_namespace)
+        # pos_end = self.vocab.get_token_index(END_SYMBOL, self._pos_namespace)
+        # ner_start = self.vocab.get_token_index(START_SYMBOL, self._ner_namespace)
+        # ner_end = self.vocab.get_token_index(END_SYMBOL, self._ner_namespace)
+        # chunk_start = self.vocab.get_token_index(START_SYMBOL, self._chunk_namespace)
+        # chunk_end = self.vocab.get_token_index(END_SYMBOL, self._chunk_namespace)
+        batch_size = len(source_tokens)
+        pos_output_dict = self._pos_seq2seq.forward(source_tokens, pos_tokens)
+        ner_output_dict = self._ner_seq2seq.forward(source_tokens, ner_tokens)
+        chunk_output_dict = self._chunk_seq2seq.forward(source_tokens, chunk_tokens)
+        loss = 0.0
+        predictions = []
+        label_namespaces = []
+        task_token_ids = task_token.data.cpu().numpy()
         for b in range(batch_size):
-            last_predictions = None
-            for timestep in range(num_decoding_steps):
-                if self.training and all(torch.rand(1) >= self._scheduled_sampling_ratio):
-                    # input_choices = targets[:, timestep]
-                    input_choices = targets[b, timestep]
-                else:
-                    if timestep == 0:
-                        # For the first timestep, when we do not have targets, we input start symbols.
-                        # (batch_size,)
-                        input_choices = Variable(source_mask.data.new()
-                                                 .resize_(1).fill_(self._start_index))
-                    else:
-                        input_choices = last_predictions
-                decoder_input[b, :] = self._prepare_decode_step_input(
-                    task_ids[b][0], input_choices, decoder_hidden[b, :], encoder_outputs[b, :], source_mask[b, :])
-                decoder_hidden, decoder_context = self._decoder_cell[task_ids[b][0]](
-                    decoder_input[b, :], (decoder_hidden[b, :], decoder_context[b, :]))
-                # (batch_size, num_classes)
-                # embed()
-                output_projections = self._output_projection_layer[task_ids[b][0]](decoder_hidden[b, :])
-                # list of (batch_size, 1, num_classes)
-                step_logits.append(output_projections.unsqueeze(1))
-                class_probabilities = F.softmax(output_projections, dim=-1)
-                _, predicted_classes = torch.max(class_probabilities, 1)
-                step_probabilities.append(class_probabilities.unsqueeze(1))
-                last_predictions = predicted_classes
-                # (batch_size, 1)
-                step_predictions.append(last_predictions.unsqueeze(1))
-        # step_logits is a list containing tensors of shape (batch_size, 1, num_classes)
-        # This is (batch_size, num_decoding_steps, num_classes)
-        # logits = torch.cat(step_logits, 1)
-        # class_probabilities = torch.cat(step_probabilities, 1)
-        # all_predictions = torch.cat(step_predictions, 1)
-        output_dict = {"logits": logits,
-                       "class_probabilities": class_probabilities,
-                       "predictions": all_predictions}
-        if target_tokens:
-            target_mask = get_text_field_mask(target_tokens)
-            loss = self._get_loss(logits, targets, target_mask)
-            output_dict["loss"] = loss
-            # TODO: Define metrics
-            relevant_targets = targets[:, 1:].contiguous()  # (batch_size, num_decoding_steps)
-            relevant_mask = target_mask[:, 1:].contiguous()
-            for metric in self.metrics.values():
-                metric(logits, relevant_targets, relevant_mask.float())
-            class_probabilities = logits * 0.
-            for i, instance_tags in enumerate(all_predictions.cpu().data.numpy()):
-                for j, tag_id in enumerate(instance_tags):
-                    class_probabilities[i, j, tag_id] = 1
-            self.span_metric(class_probabilities, relevant_targets, relevant_mask)
-            self._print_source_target_triplets(source_tokens['tokens'], all_predictions, target_tokens['tokens'])
+            task = self.vocab.get_token_from_index(task_token_ids[b][0])
+            if task == 'pos':
+                loss += pos_output_dict['loss']
+                predictions.append(pos_output_dict['predictions'])
+            elif task == 'ner':
+                loss += ner_output_dict['loss']
+                predictions.append(ner_output_dict['predictions'])
+            elif task == 'chunk':
+                loss += chunk_output_dict['loss']
+                predictions.append(chunk_output_dict['predictions'])
+            label_namespaces.append(task)
+        output_dict = {'loss': loss, 'predictions': predictions, 'label_namespaces': label_namespaces}
         return output_dict
-
-    def _prepare_decode_step_input(self,
-                                   task_id: int,
-                                   input_indices: torch.LongTensor,
-                                   decoder_hidden_state: torch.LongTensor = None,
-                                   encoder_outputs: torch.LongTensor = None,
-                                   encoder_outputs_mask: torch.LongTensor = None) -> torch.LongTensor:
-        """
-        Given the input indices for the current timestep of the decoder, and all the encoder
-        outputs, compute the input at the current timestep.  Note: This method is agnostic to
-        whether the indices are gold indices or the predictions made by the decoder at the last
-        timestep. So, this can be used even if we're doing some kind of scheduled sampling.
-
-        If we're not using attention, the output of this method is just an embedding of the input
-        indices.  If we are, the output will be a concatentation of the embedding and an attended
-        average of the encoder inputs.
-
-        Parameters
-        ----------
-        input_indices : torch.LongTensor
-            Indices of either the gold inputs to the decoder or the predicted labels from the
-            previous timestep.
-        decoder_hidden_state : torch.LongTensor, optional (not needed if no attention)
-            Output of from the decoder at the last time step. Needed only if using attention.
-        encoder_outputs : torch.LongTensor, optional (not needed if no attention)
-            Encoder outputs from all time steps. Needed only if using attention.
-        encoder_outputs_mask : torch.LongTensor, optional (not needed if no attention)
-            Masks on encoder outputs. Needed only if using attention.
-        """
-        # input_indices : (batch_size,)  since we are processing these one timestep at a time.
-        # (batch_size, target_embedding_dim)
-        embedded_input = self._target_embedder[task_id](input_indices)
-        if self._attention_function:
-            # encoder_outputs : (batch_size, input_sequence_length, encoder_output_dim)
-            # Ensuring mask is also a FloatTensor. Or else the multiplication within attention will
-            # complain.
-            encoder_outputs_mask = encoder_outputs_mask.float()
-            # (batch_size, input_sequence_length)
-            input_weights = self._decoder_attention[task_id](
-                decoder_hidden_state, encoder_outputs, encoder_outputs_mask)
-            # (batch_size, encoder_output_dim)
-            attended_input = weighted_sum(encoder_outputs, input_weights)
-            # (batch_size, encoder_output_dim + target_embedding_dim)
-            return torch.cat((attended_input, embedded_input), -1)
-        else:
-            return embedded_input
-
-    @staticmethod
-    def _get_loss(logits: torch.LongTensor,
-                  targets: torch.LongTensor,
-                  target_mask: torch.LongTensor) -> torch.LongTensor:
-        """
-        Takes logits (unnormalized outputs from the decoder) of size (batch_size,
-        num_decoding_steps, num_classes), target indices of size (batch_size, num_decoding_steps+1)
-        and corresponding masks of size (batch_size, num_decoding_steps+1) steps and computes cross
-        entropy loss while taking the mask into account.
-
-        The length of ``targets`` is expected to be greater than that of ``logits`` because the
-        decoder does not need to compute the output corresponding to the last timestep of
-        ``targets``. This method aligns the inputs appropriately to compute the loss.
-
-        During training, we want the logit corresponding to timestep i to be similar to the target
-        token from timestep i + 1. That is, the targets should be shifted by one timestep for
-        appropriate comparison.  Consider a single example where the target has 3 words, and
-        padding is to 7 tokens.
-           The complete sequence would correspond to <S> w1  w2  w3  <E> <P> <P>
-           and the mask would be                     1   1   1   1   1   0   0
-           and let the logits be                     l1  l2  l3  l4  l5  l6
-        We actually need to compare:
-           the sequence           w1  w2  w3  <E> <P> <P>
-           with masks             1   1   1   1   0   0
-           against                l1  l2  l3  l4  l5  l6
-           (where the input was)  <S> w1  w2  w3  <E> <P>
-        """
-        relevant_targets = targets[:, 1:].contiguous()  # (batch_size, num_decoding_steps)
-        relevant_mask = target_mask[:, 1:].contiguous()  # (batch_size, num_decoding_steps)
-        loss = sequence_cross_entropy_with_logits(logits, relevant_targets, relevant_mask)
-        return loss
 
     @overrides
     def decode(self, output_dict: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
@@ -360,27 +172,33 @@ class SimpleSeq2MultiSeq(Model):
         This method trims the output predictions to the first end symbol, replaces indices with
         corresponding tokens, and adds a field called ``predicted_tokens`` to the ``output_dict``.
         """
-        predicted_indices = output_dict["predictions"]
-        if not isinstance(predicted_indices, numpy.ndarray):
-            predicted_indices = predicted_indices.data.cpu().numpy()
+        pos_output_dict = self._pos_seq2seq.decode(output_dict)
+        ner_output_dict = self._ner_seq2seq.forward(output_dict)
+        chunk_output_dict = self._chunk_seq2seq.forward(output_dict)
         all_predicted_tokens = []
-        for indices in predicted_indices:
-            indices = list(indices)
-            # Collect indices till the first end_symbol
-            if self._end_index in indices:
-                indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens")
-                                for x in indices]
-            all_predicted_tokens.append(predicted_tokens)
+        for b, task in enumerate(output_dict['label_namespaces']):
+            if task == 'pos':
+                all_predicted_tokens.append(pos_output_dict['predictions'][b])
+            elif task == 'ner':
+                all_predicted_tokens.append(ner_output_dict['predictions'][b])
+            elif task == 'chunk':
+                all_predicted_tokens.append(chunk_output_dict['predictions'][b])
         output_dict["predicted_tokens"] = all_predicted_tokens
         return output_dict
 
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
-        metric_dict = self.span_metric.get_metric(reset=reset)
-        f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
-        return {**f1, **accs}
+        pos_accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self._pos_seq2seq.metrics.items()}
+        ner_accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self._ner_seq2seq.metrics.items()}
+        chunk_accs = {metric_name: metric.get_metric(reset)
+                      for metric_name, metric in self._chunk_seq2seq.metrics.items()}
+        pos_metric_dict = self._pos_seq2seq.span_metric.get_metric(reset=reset)
+        pos_f1 = {x: y for x, y in pos_metric_dict.items() if "overall" in x}
+        ner_metric_dict = self._ner_seq2seq.span_metric.get_metric(reset=reset)
+        ner_f1 = {x: y for x, y in ner_metric_dict.items() if "overall" in x}
+        chunk_metric_dict = self._chunk_seq2seq.span_metric.get_metric(reset=reset)
+        chunk_f1 = {x: y for x, y in chunk_metric_dict.items() if "overall" in x}
+        return {**pos_f1, **ner_f1, **chunk_f1, **pos_accs, **ner_accs, **chunk_accs}
 
     @classmethod
     def from_params(cls, vocab, params: Params) -> 'SimpleSeq2MultiSeq':
@@ -394,7 +212,9 @@ class SimpleSeq2MultiSeq(Model):
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        target_namespace = params.pop("target_namespace", "tokens")
+        pos_namespace = params.pop("pos_namespace", "tokens")
+        ner_namespace = params.pop("ner_namespace", "tokens")
+        chunk_namespace = params.pop("chunk_namespace", "tokens")
         # If no attention function is specified, we should not use attention, not attention with
         # default similarity function.
         attention_function_type = params.pop("attention_function", None)
@@ -411,7 +231,9 @@ class SimpleSeq2MultiSeq(Model):
                    source_embedder=source_embedder,
                    encoder=encoder,
                    max_decoding_steps=max_decoding_steps,
-                   target_namespace=target_namespace,
+                   pos_namespace=pos_namespace,
+                   ner_namespace=ner_namespace,
+                   chunk_namespace=chunk_namespace,
                    attention_function=attention_function,
                    scheduled_sampling_ratio=scheduled_sampling_ratio,
                    initializer=initializer,

@@ -23,9 +23,19 @@
         "type": "characters"
       }
     },
-    "target_token_indexers": {
+    "pos_token_indexers": {
       "tokens": {
-        "namespace": "target_tokens"
+        "namespace": "pos_tokens"
+      }
+    },
+    "ner_token_indexers": {
+      "tokens": {
+        "namespace": "ner_tokens"
+      }
+    },
+    "chunk_token_indexers": {
+      "tokens": {
+        "namespace": "chunk_tokens"
       }
     },
 	"source_add_start_token": false
