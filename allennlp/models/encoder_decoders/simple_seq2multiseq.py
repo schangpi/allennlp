@@ -13,7 +13,7 @@ import torch.nn.functional as F
 
 from allennlp.common import Params
 from allennlp.data.vocabulary import Vocabulary
-from allennlp.data.dataset_readers.seq2seq import START_SYMBOL, END_SYMBOL
+from allennlp.data.dataset_readers.seq2multiseq import START_SYMBOL, END_SYMBOL
 from allennlp.modules import Attention, TextFieldEmbedder, Seq2SeqEncoder
 from allennlp.modules.similarity_functions import SimilarityFunction
 from allennlp.modules.token_embedders import Embedding
@@ -363,7 +363,7 @@ class SimpleSeq2MultiSeq(Model):
         return {**f1, **accs}
 
     @classmethod
-    def from_params(cls, vocab, params: Params) -> 'SimpleSeq2Seq':
+    def from_params(cls, vocab, params: Params) -> 'SimpleSeq2MultiSeq':
         task_embedder_params = params.pop("task_embedder")
         task_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
         domain_embedder_params = params.pop("domain_embedder")
