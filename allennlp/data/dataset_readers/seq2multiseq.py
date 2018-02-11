@@ -8,7 +8,7 @@ from allennlp.common import Params
 from allennlp.common.checks import ConfigurationError
 from allennlp.common.tqdm import Tqdm
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
-from allennlp.data.fields import TextField
+from allennlp.data.fields import TextField, LabelField
 from allennlp.data.instance import Instance
 from allennlp.data.tokenizers import Token, Tokenizer, WordTokenizer
 from allennlp.data.token_indexers import TokenIndexer, SingleIdTokenIndexer
@@ -27,8 +27,8 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
     Expected format for each input line: <source_sequence_string>\t<target_sequence_string>
 
     The output of ``read`` is a list of ``Instance`` s with the fields:
-        task_token: ``TextField``
-        domain_token: ``TextField``
+        task_token: ``LabelField``
+        domain_token: ``LabelField``
         source_tokens: ``TextField``
         target_tokens: ``TextField``
 
@@ -54,8 +54,6 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
     def __init__(self,
                  source_tokenizer: Tokenizer = None,
                  target_tokenizer: Tokenizer = None,
-                 task_token_indexers: Dict[str, TokenIndexer] = None,
-                 domain_token_indexers: Dict[str, TokenIndexer] = None,
                  source_token_indexers: Dict[str, TokenIndexer] = None,
                  target_token_indexers: Dict[str, TokenIndexer] = None,
                  source_add_start_token: bool = True,
@@ -63,8 +61,6 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
         super().__init__(lazy)
         self._source_tokenizer = source_tokenizer or WordTokenizer()
         self._target_tokenizer = target_tokenizer or self._source_tokenizer
-        self._task_token_indexers = task_token_indexers or {"task_token": SingleIdTokenIndexer()}
-        self._domain_token_indexers = domain_token_indexers or {"domain_token": SingleIdTokenIndexer()}
         self._source_token_indexers = source_token_indexers or {"tokens": SingleIdTokenIndexer()}
         self._target_token_indexers = target_token_indexers or self._source_token_indexers
         self._source_add_start_token = source_add_start_token
@@ -92,8 +88,8 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
     @overrides
     def text_to_instance(self, task_name: str, domain_name: str,
                          source_string: str, target_string: str = None) -> Instance:  # type: ignore
-        task_field = TextField(self._source_tokenizer.tokenize(task_name), self._task_token_indexers)
-        domain_field = TextField(self._source_tokenizer.tokenize(domain_name), self._domain_token_indexers)
+        task_field = LabelField(task_name, label_namespace=task_name)
+        domain_field = LabelField(domain_name, label_namespace=task_name)
         # pylint: disable=arguments-differ
         tokenized_source = self._source_tokenizer.tokenize(source_string)
         if self._source_add_start_token:
@@ -116,18 +112,8 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
         source_tokenizer = None if source_tokenizer_type is None else Tokenizer.from_params(source_tokenizer_type)
         target_tokenizer_type = params.pop('target_tokenizer', None)
         target_tokenizer = None if target_tokenizer_type is None else Tokenizer.from_params(target_tokenizer_type)
-        task_indexers_type = params.pop('task_token_indexers', None)
-        domain_indexers_type = params.pop('domain_token_indexers', None)
         source_indexers_type = params.pop('source_token_indexers', None)
         source_add_start_token = params.pop_bool('source_add_start_token', True)
-        if task_indexers_type is None:
-            task_token_indexers = None
-        else:
-            task_token_indexers = TokenIndexer.dict_from_params(task_indexers_type)
-        if domain_indexers_type is None:
-            domain_token_indexers = None
-        else:
-            domain_token_indexers = TokenIndexer.dict_from_params(domain_indexers_type)
         if source_indexers_type is None:
             source_token_indexers = None
         else:
@@ -140,6 +126,5 @@ class Seq2MultiSeqDatasetReader(DatasetReader):
         lazy = params.pop('lazy', False)
         params.assert_empty(cls.__name__)
         return Seq2MultiSeqDatasetReader(source_tokenizer, target_tokenizer,
-                                         task_token_indexers, domain_token_indexers,
                                          source_token_indexers, target_token_indexers,
                                          source_add_start_token, lazy)

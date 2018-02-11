@@ -13,18 +13,6 @@
 		"type": "just_spaces"
 	  }
     },
-    "task_token_indexers": {
-      "tokens": {
-        "type": "single_id",
-        "namespace": "task_token"
-      }
-	},
-	"domain_token_indexers": {
-      "tokens": {
-        "type": "single_id",
-        "namespace": "domain_token"
-      }
-	},
     "source_token_indexers": {
       "tokens": {
         "type": "single_id",
@@ -46,22 +34,8 @@
   "validation_data_path": "/home/schangpi/dataset/seq2seq/dev",
   "model": {
     "type": "simple_seq2multiseq",
-	"task_embedder": {
-      "tokens": {
-        "type": "embedding",
-        "vocab_namespace": "task_token",
-        "embedding_dim": 25,
-        "trainable": true
-      }
-    },
-	"domain_embedder": {
-      "tokens": {
-        "type": "embedding",
-        "vocab_namespace": "domain_token",
-        "embedding_dim": 25,
-        "trainable": true
-      }
-    },
+	"tasks": ["pos", "ner", "chunk"],
+	"domains": ["uni", "conll03", "conll02"],
     "source_embedder": {
       "tokens": {
         "type": "embedding",
@@ -110,7 +84,7 @@
   "trainer": {
     "num_epochs": 100,
     "patience": 10,
-    "cuda_device": 0,
+    "cuda_device": -1,
     "optimizer": {
       "type": "adam"
     },

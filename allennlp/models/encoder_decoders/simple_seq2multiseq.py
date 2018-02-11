@@ -72,8 +72,8 @@ class SimpleSeq2MultiSeq(Model):
     """
     def __init__(self,
                  vocab: Vocabulary,
-                 task_embedder: TextFieldEmbedder,
-                 domain_embedder: TextFieldEmbedder,
+                 tasks: str,
+                 domains: str,
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
@@ -84,11 +84,11 @@ class SimpleSeq2MultiSeq(Model):
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super(SimpleSeq2MultiSeq, self).__init__(vocab, regularizer)
+        # print(len(tasks), len(domains))
+        self._num_tasks = len(tasks)
+        self._tasks = tasks
+        self._domain = domains
         self._source_embedder = source_embedder
-        self._task_embedder = task_embedder
-        self._task_embedder_dim = self._task_embedder.get_output_dim()
-        self._domain_embedder = domain_embedder
-        self._domain_embedder_dim = self._domain_embedder.get_output_dim()
         self._encoder = encoder
         self._max_decoding_steps = max_decoding_steps
         self._target_namespace = target_namespace
@@ -98,25 +98,39 @@ class SimpleSeq2MultiSeq(Model):
         # end symbol as a way to indicate the end of the decoded sequence.
         self._start_index = self.vocab.get_token_index(START_SYMBOL, self._target_namespace)
         self._end_index = self.vocab.get_token_index(END_SYMBOL, self._target_namespace)
-        num_classes = self.vocab.get_vocab_size(self._target_namespace)
+        # num_classes = self.vocab.get_vocab_size(self._target_namespace)
+        num_classes = []
+        for task in tasks:
+            num_classes.append(self.vocab.get_vocab_size(task))
         # Decoder output dim needs to be the same as the encoder output dim since we initialize the
         # hidden state of the decoder with that of the final hidden states of the encoder. Also, if
         # we're using attention with ``DotProductSimilarity``, this is needed.
         self._decoder_output_dim = self._encoder.get_output_dim()
         target_embedding_dim = target_embedding_dim or self._source_embedder.get_output_dim()
-        self._target_embedder = Embedding(num_classes, target_embedding_dim)
+        # self._target_embedder = Embedding(num_classes, target_embedding_dim)
+        self._target_embedder = []
+        for nc in num_classes:
+            self._target_embedder.append(Embedding(nc, target_embedding_dim))
         if self._attention_function:
-            self._decoder_attention = Attention(self._attention_function)
+            # self._decoder_attention = Attention(self._attention_function)
+            self._decoder_attention = []
+            for _ in range(self._num_tasks):
+                self._decoder_attention.append(Attention(self._attention_function))
             # The output of attention, a weighted average over encoder outputs, will be
             # concatenated to the input vector of the decoder at each time step.
             self._decoder_input_dim = self._encoder.get_output_dim() + target_embedding_dim
         else:
             self._decoder_input_dim = target_embedding_dim
-        # TODO (pradeep): Do not hardcode decoder cell type.
-        self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
-        # self._decoder_cell = GRUCell(self._decoder_input_dim, self._decoder_output_dim, bias=False)
-        self._output_projection_layer = Linear(
-            self._decoder_output_dim + self._task_embedder_dim + self._domain_embedder_dim, num_classes)
+        for _ in range(self._num_tasks):
+            # TODO (pradeep): Do not hardcode decoder cell type.
+            # self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
+            # self._output_projection_layer = Linear(self._decoder_output_dim, num_classes)
+            self._decoder_cell = []
+            self._output_projection_layer = []
+            for nc in num_classes:
+                self._decoder_cell.append(LSTMCell(self._decoder_input_dim, self._decoder_output_dim))
+                self._output_projection_layer.append(Linear(self._decoder_output_dim, nc))
+
         self.metrics = {
                 "accuracy": CategoricalAccuracy(),
                 "accuracy3": CategoricalAccuracy(top_k=3)
@@ -162,8 +176,8 @@ class SimpleSeq2MultiSeq(Model):
 
     @overrides
     def forward(self,  # type: ignore
-                task_token: Dict[str, torch.LongTensor],
-                domain_token: Dict[str, torch.LongTensor],
+                task_token: torch.LongTensor,
+                domain_token: torch.LongTensor,
                 source_tokens: Dict[str, torch.LongTensor],
                 target_tokens: Dict[str, torch.LongTensor] = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
@@ -179,8 +193,8 @@ class SimpleSeq2MultiSeq(Model):
            Output of ``Textfield.as_array()`` applied on target ``TextField``. We assume that the
            target tokens are also represented as a ``TextField``.
         """
-        embeded_task = self._task_embedder(task_token)
-        embeded_domain = self._domain_embedder(domain_token)
+        # embeded_task = self._task_embedder(task_token)
+        # embeded_domain = self._domain_embedder(domain_token)
         # (batch_size, input_sequence_length, encoder_output_dim)
         embedded_input = self._source_embedder(source_tokens)
         batch_size, _, _ = embedded_input.size()
@@ -198,42 +212,46 @@ class SimpleSeq2MultiSeq(Model):
         decoder_hidden = final_encoder_output
         decoder_context = Variable(encoder_outputs.data.new()
                                    .resize_(batch_size, self._decoder_output_dim).fill_(0))
-        last_predictions = None
+        decoder_input = Variable(encoder_outputs.data.new()
+                                   .resize_(batch_size, self._decoder_output_dim).fill_(0))
+        task_ids = task_token.data.cpu().numpy()
         step_logits = []
         step_probabilities = []
         step_predictions = []
-        for timestep in range(num_decoding_steps):
-            if self.training and all(torch.rand(1) >= self._scheduled_sampling_ratio):
-                input_choices = targets[:, timestep]
-            else:
-                if timestep == 0:
-                    # For the first timestep, when we do not have targets, we input start symbols.
-                    # (batch_size,)
-                    input_choices = Variable(source_mask.data.new()
-                                             .resize_(batch_size).fill_(self._start_index))
+        for b in range(batch_size):
+            last_predictions = None
+            for timestep in range(num_decoding_steps):
+                if self.training and all(torch.rand(1) >= self._scheduled_sampling_ratio):
+                    # input_choices = targets[:, timestep]
+                    input_choices = targets[b, timestep]
                 else:
-                    input_choices = last_predictions
-            decoder_input = self._prepare_decode_step_input(input_choices, decoder_hidden,
-                                                            encoder_outputs, source_mask)
-            decoder_hidden, decoder_context = self._decoder_cell(decoder_input,
-                                                                 (decoder_hidden, decoder_context))
-            # (batch_size, num_classes)
-            # embed()
-            output_projections = self._output_projection_layer(
-                torch.cat([decoder_hidden, torch.squeeze(embeded_task), torch.squeeze(embeded_domain)], 1))
-            # list of (batch_size, 1, num_classes)
-            step_logits.append(output_projections.unsqueeze(1))
-            class_probabilities = F.softmax(output_projections, dim=-1)
-            _, predicted_classes = torch.max(class_probabilities, 1)
-            step_probabilities.append(class_probabilities.unsqueeze(1))
-            last_predictions = predicted_classes
-            # (batch_size, 1)
-            step_predictions.append(last_predictions.unsqueeze(1))
+                    if timestep == 0:
+                        # For the first timestep, when we do not have targets, we input start symbols.
+                        # (batch_size,)
+                        input_choices = Variable(source_mask.data.new()
+                                                 .resize_(1).fill_(self._start_index))
+                    else:
+                        input_choices = last_predictions
+                decoder_input[b, :] = self._prepare_decode_step_input(
+                    task_ids[b][0], input_choices, decoder_hidden[b, :], encoder_outputs[b, :], source_mask[b, :])
+                decoder_hidden, decoder_context = self._decoder_cell[task_ids[b][0]](
+                    decoder_input[b, :], (decoder_hidden[b, :], decoder_context[b, :]))
+                # (batch_size, num_classes)
+                # embed()
+                output_projections = self._output_projection_layer[task_ids[b][0]](decoder_hidden[b, :])
+                # list of (batch_size, 1, num_classes)
+                step_logits.append(output_projections.unsqueeze(1))
+                class_probabilities = F.softmax(output_projections, dim=-1)
+                _, predicted_classes = torch.max(class_probabilities, 1)
+                step_probabilities.append(class_probabilities.unsqueeze(1))
+                last_predictions = predicted_classes
+                # (batch_size, 1)
+                step_predictions.append(last_predictions.unsqueeze(1))
         # step_logits is a list containing tensors of shape (batch_size, 1, num_classes)
         # This is (batch_size, num_decoding_steps, num_classes)
-        logits = torch.cat(step_logits, 1)
-        class_probabilities = torch.cat(step_probabilities, 1)
-        all_predictions = torch.cat(step_predictions, 1)
+        # logits = torch.cat(step_logits, 1)
+        # class_probabilities = torch.cat(step_probabilities, 1)
+        # all_predictions = torch.cat(step_predictions, 1)
         output_dict = {"logits": logits,
                        "class_probabilities": class_probabilities,
                        "predictions": all_predictions}
@@ -255,6 +273,7 @@ class SimpleSeq2MultiSeq(Model):
         return output_dict
 
     def _prepare_decode_step_input(self,
+                                   task_id: int,
                                    input_indices: torch.LongTensor,
                                    decoder_hidden_state: torch.LongTensor = None,
                                    encoder_outputs: torch.LongTensor = None,
@@ -283,14 +302,15 @@ class SimpleSeq2MultiSeq(Model):
         """
         # input_indices : (batch_size,)  since we are processing these one timestep at a time.
         # (batch_size, target_embedding_dim)
-        embedded_input = self._target_embedder(input_indices)
+        embedded_input = self._target_embedder[task_id](input_indices)
         if self._attention_function:
             # encoder_outputs : (batch_size, input_sequence_length, encoder_output_dim)
             # Ensuring mask is also a FloatTensor. Or else the multiplication within attention will
             # complain.
             encoder_outputs_mask = encoder_outputs_mask.float()
             # (batch_size, input_sequence_length)
-            input_weights = self._decoder_attention(decoder_hidden_state, encoder_outputs, encoder_outputs_mask)
+            input_weights = self._decoder_attention[task_id](
+                decoder_hidden_state, encoder_outputs, encoder_outputs_mask)
             # (batch_size, encoder_output_dim)
             attended_input = weighted_sum(encoder_outputs, input_weights)
             # (batch_size, encoder_output_dim + target_embedding_dim)
@@ -364,10 +384,12 @@ class SimpleSeq2MultiSeq(Model):
 
     @classmethod
     def from_params(cls, vocab, params: Params) -> 'SimpleSeq2MultiSeq':
-        task_embedder_params = params.pop("task_embedder")
-        task_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
-        domain_embedder_params = params.pop("domain_embedder")
-        domain_embedder = TextFieldEmbedder.from_params(vocab, domain_embedder_params)
+        # task_embedder_params = params.pop("task_embedder")
+        # task_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
+        # domain_embedder_params = params.pop("domain_embedder")
+        # domain_embedder = TextFieldEmbedder.from_params(vocab, domain_embedder_params)
+        tasks = params.pop("tasks")
+        domains = params.pop("domains")
         source_embedder_params = params.pop("source_embedder")
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
@@ -384,8 +406,8 @@ class SimpleSeq2MultiSeq(Model):
         initializer = InitializerApplicator.from_params(params.pop('initializer', []))
         regularizer = RegularizerApplicator.from_params(params.pop('regularizer', []))
         return cls(vocab,
-                   task_embedder=task_embedder,
-                   domain_embedder=domain_embedder,
+                   tasks=tasks,
+                   domains=domains,
                    source_embedder=source_embedder,
                    encoder=encoder,
                    max_decoding_steps=max_decoding_steps,

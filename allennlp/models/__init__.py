@@ -7,6 +7,8 @@ from allennlp.models.archival import archive_model, load_archive
 from allennlp.models.crf_tagger import CrfTagger
 from allennlp.models.decomposable_attention import DecomposableAttention
 from allennlp.models.encoder_decoders.simple_seq2seq import SimpleSeq2Seq
+from allennlp.models.encoder_decoders.simple_seq2multiseq import SimpleSeq2MultiSeq
+from allennlp.models.encoder_decoders.simple_seqtask2seq import SimpleSeqTask2Seq
 from allennlp.models.model import Model
 from allennlp.models.reading_comprehension.bidaf import BidirectionalAttentionFlow
 from allennlp.models.semantic_role_labeler import SemanticRoleLabeler
