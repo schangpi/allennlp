@@ -31,7 +31,7 @@ rm -r /tmp/nlp/ner_seq
 python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_seq > /tmp/log/ner_seq_log
 
 rm -r /tmp/nlp/chunk_seq
-python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_seq > /tmp/log/chunk_log
+python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_seq > /tmp/log/chunk_seq_log
 
 ######
 seqtask2seq

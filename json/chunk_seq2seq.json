@@ -1,94 +1,109 @@
 {
-  "dataset_reader": {
-    "type": "seq2seq",
-    "source_tokenizer": {
-      "type": "word",
-	  "word_splitter": {
-		"type": "just_spaces"
-	  }
+  "dataset_reader":{
+    "type":"seq2seq",
+    "source_tokenizer":{
+      "type":"word",
+      "word_splitter":{
+        "type":"just_spaces"
+      }
     },
-    "target_tokenizer": {
-	  "type": "word",
-	  "word_splitter": {
-		"type": "just_spaces"
-	  }
+    "target_tokenizer":{
+      "type":"word",
+      "word_splitter":{
+        "type":"just_spaces"
+      }
     },
-    "source_token_indexers": {
-      "tokens": {
-        "type": "single_id",
-		"lowercase_tokens": true,
-        "namespace": "source_tokens"
+    "source_token_indexers":{
+      "tokens":{
+        "type":"single_id",
+        "lowercase_tokens":true,
+        "namespace":"source_tokens"
       },
-	  "token_characters": {
-        "type": "characters"
+      "token_characters":{
+        "type":"characters"
       }
     },
-    "target_token_indexers": {
-      "tokens": {
-        "namespace": "target_tokens"
+    "target_token_indexers":{
+      "tokens":{
+        "namespace":"target_tokens"
       }
     },
-	"source_add_start_token": false
+    "source_add_start_token":false
   },
-  "train_data_path": "./dataset/seq2seq/train/chunk_conll02_train.txt",
-  "validation_data_path": "./dataset/seq2seq/dev/chunk_conll02_dev.txt",
-  "test_data_path": "./dataset/seq2seq/test/chunk_conll02_test.txt",
-  "evaluate_on_test": true,
-  "model": {
-    "type": "simple_seq2seq",
-    "source_embedder": {
-      "tokens": {
-        "type": "embedding",
-        "vocab_namespace": "source_tokens",
-        "embedding_dim": 50,
-		"pretrained_file": "https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.50d.txt.gz",
-        "trainable": true
+  "train_data_path":"./dataset/seq2seq/train/chunk_conll02_train.txt",
+  "validation_data_path":"./dataset/seq2seq/dev/chunk_conll02_dev.txt",
+  "test_data_path":"./dataset/seq2seq/test/chunk_conll02_test.txt",
+  "evaluate_on_test":true,
+  "model":{
+    "type":"simple_seq2seq",
+    "source_embedder":{
+      "tokens":{
+        "type":"embedding",
+        "vocab_namespace":"source_tokens",
+        "embedding_dim":50,
+        "pretrained_file":"https://s3-us-west-2.amazonaws.com/allennlp/datasets/glove/glove.6B.50d.txt.gz",
+        "trainable":true
       },
-	  "token_characters": {
-	    "type": "character_encoding",
-	    "embedding": {
-		  "embedding_dim": 8
-	    },
-	    "encoder": {
-		  "type": "cnn",
-		  "embedding_dim": 8,
-		  "num_filters": 50,
-		  "ngram_filter_sizes": [5]
-	    },
-	    "dropout": 0.2
-	  }
+      "token_characters":{
+        "type":"character_encoding",
+        "embedding":{
+          "embedding_dim":8
+        },
+        "encoder":{
+          "type":"cnn",
+          "embedding_dim":8,
+          "num_filters":50,
+          "ngram_filter_sizes":[
+            5
+          ]
+        },
+        "dropout":0.2
+      }
     },
-    "encoder": {
-      "type": "lstm",
-      "input_size": 100,
-      "hidden_size": 100,
-      "num_layers": 2,
-	  "dropout": 0.5,
-      "bidirectional": true
+    "encoder":{
+      "type":"lstm",
+      "input_size":100,
+      "hidden_size":100,
+      "num_layers":2,
+      "dropout":0.5,
+      "bidirectional":true
     },
-	"regularizer": [
-        ["transitions$", {"type": "l2", "alpha": 0.01}]
+    "regularizer":[
+      [
+        "transitions$",
+        {
+          "type":"l2",
+          "alpha":0.01
+        }
+      ]
     ],
-    "max_decoding_steps": 100,
-    "target_namespace": "target_tokens",
-	"target_embedding_dim": 50,
-	"attention_function": {"type": "dot_product"},
-	"scheduled_sampling_ratio": 0.2
-  },
-  "iterator": {
-    "type": "bucket",
-    "padding_noise": 0.0,
-    "batch_size" : 32,
-    "sorting_keys": [["source_tokens", "num_tokens"]]
-  },
-  "trainer": {
-    "num_epochs": 100,
-    "patience": 10,
-    "cuda_device": 2,
-    "optimizer": {
-      "type": "adam"
+    "max_decoding_steps":100,
+    "target_namespace":"target_tokens",
+    "target_embedding_dim":50,
+    "attention_function":{
+      "type":"dot_product"
     },
-	"grad_clipping": 5,
-	"validation_metric": "+f1-measure-overall"
+    "scheduled_sampling_ratio":0.2
+  },
+  "iterator":{
+    "type":"bucket",
+    "padding_noise":0.0,
+    "batch_size":32,
+    "sorting_keys":[
+      [
+        "source_tokens",
+        "num_tokens"
+      ]
+    ]
+  },
+  "trainer":{
+    "num_epochs":100,
+    "patience":10,
+    "cuda_device":2,
+    "optimizer":{
+      "type":"adam"
+    },
+    "grad_clipping":5,
+    "validation_metric":"+f1-measure-overall"
   }
 }
