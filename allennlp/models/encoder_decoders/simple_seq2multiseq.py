@@ -78,7 +78,7 @@ class SimpleSeq2MultiSeq(Model):
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
-                 pos_namespace: str = "pos_tokens",
+                 upos_namespace: str = "upos_tokens",
                  ner_namespace: str = "ner_tokens",
                  chunk_namespace: str = "chunk_tokens",
                  target_embedding_dim: int = None,
@@ -90,22 +90,21 @@ class SimpleSeq2MultiSeq(Model):
         # print(len(tasks), len(domains))
         self._num_tasks = len(tasks)
         self._tasks = tasks
-        self._domain = domains
+        self._domains = domains
         self._source_embedder = source_embedder
         self._encoder = encoder
         self._max_decoding_steps = max_decoding_steps
-        self._pos_namespace = pos_namespace
+        self._upos_namespace = upos_namespace
         self._ner_namespace = ner_namespace
         self._chunk_namespace = chunk_namespace
         self._attention_function = attention_function
         self._scheduled_sampling_ratio = scheduled_sampling_ratio
-
-        self._pos_seq2seq = SimpleSeq2Seq(vocab=vocab, source_embedder=source_embedder, encoder=encoder,
-                                          max_decoding_steps=max_decoding_steps, target_namespace=pos_namespace,
-                                          target_embedding_dim=target_embedding_dim,
-                                          attention_function=attention_function,
-                                          scheduled_sampling_ratio=scheduled_sampling_ratio,
-                                          initializer=initializer, regularizer=regularizer)
+        self._upos_seq2seq = SimpleSeq2Seq(vocab=vocab, source_embedder=source_embedder, encoder=encoder,
+                                           max_decoding_steps=max_decoding_steps, target_namespace=upos_namespace,
+                                           target_embedding_dim=target_embedding_dim,
+                                           attention_function=attention_function,
+                                           scheduled_sampling_ratio=scheduled_sampling_ratio,
+                                           initializer=initializer, regularizer=regularizer)
         self._ner_seq2seq = SimpleSeq2Seq(vocab=vocab, source_embedder=source_embedder, encoder=encoder,
                                           max_decoding_steps=max_decoding_steps, target_namespace=ner_namespace,
                                           target_embedding_dim=target_embedding_dim,
@@ -118,13 +117,14 @@ class SimpleSeq2MultiSeq(Model):
                                             attention_function=attention_function,
                                             scheduled_sampling_ratio=scheduled_sampling_ratio,
                                             initializer=initializer, regularizer=regularizer)
+        initializer(self)
 
     @overrides
     def forward(self,  # type: ignore
                 task_token: torch.LongTensor,
                 domain_token: torch.LongTensor,
                 source_tokens: Dict[str, torch.LongTensor],
-                pos_tokens: Dict[str, torch.LongTensor] = None,
+                upos_tokens: Dict[str, torch.LongTensor] = None,
                 ner_tokens: Dict[str, torch.LongTensor] = None,
                 chunk_tokens: Dict[str, torch.LongTensor] = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
@@ -141,14 +141,8 @@ class SimpleSeq2MultiSeq(Model):
            target tokens are also represented as a ``TextField``.
         """
         # (batch_size, input_sequence_length, encoder_output_dim)
-        # pos_start = self.vocab.get_token_index(START_SYMBOL, self._pos_namespace)
-        # pos_end = self.vocab.get_token_index(END_SYMBOL, self._pos_namespace)
-        # ner_start = self.vocab.get_token_index(START_SYMBOL, self._ner_namespace)
-        # ner_end = self.vocab.get_token_index(END_SYMBOL, self._ner_namespace)
-        # chunk_start = self.vocab.get_token_index(START_SYMBOL, self._chunk_namespace)
-        # chunk_end = self.vocab.get_token_index(END_SYMBOL, self._chunk_namespace)
         batch_size = len(source_tokens)
-        pos_output_dict = self._pos_seq2seq.forward(source_tokens, pos_tokens)
+        upos_output_dict = self._upos_seq2seq.forward(source_tokens, upos_tokens)
         ner_output_dict = self._ner_seq2seq.forward(source_tokens, ner_tokens)
         chunk_output_dict = self._chunk_seq2seq.forward(source_tokens, chunk_tokens)
         loss = 0.0
@@ -157,9 +151,9 @@ class SimpleSeq2MultiSeq(Model):
         task_token_ids = task_token.data.cpu().numpy()
         for b in range(batch_size):
             task = self.vocab.get_token_from_index(task_token_ids[b][0], namespace="task_labels")
-            if task == 'pos':
-                loss += pos_output_dict['loss']
-                predictions.append(pos_output_dict['predictions'])
+            if task == 'upos':
+                loss += upos_output_dict['loss']
+                predictions.append(upos_output_dict['predictions'])
             elif task == 'ner':
                 loss += ner_output_dict['loss']
                 predictions.append(ner_output_dict['predictions'])
@@ -183,13 +177,13 @@ class SimpleSeq2MultiSeq(Model):
         This method trims the output predictions to the first end symbol, replaces indices with
         corresponding tokens, and adds a field called ``predicted_tokens`` to the ``output_dict``.
         """
-        pos_output_dict = self._pos_seq2seq.decode(output_dict)
+        upos_output_dict = self._upos_seq2seq.decode(output_dict)
         ner_output_dict = self._ner_seq2seq.forward(output_dict)
         chunk_output_dict = self._chunk_seq2seq.forward(output_dict)
         all_predicted_tokens = []
         for b, task in enumerate(output_dict['label_namespaces']):
-            if task == 'pos':
-                all_predicted_tokens.append(pos_output_dict['predictions'][b])
+            if task == 'upos':
+                all_predicted_tokens.append(upos_output_dict['predictions'][b])
             elif task == 'ner':
                 all_predicted_tokens.append(ner_output_dict['predictions'][b])
             elif task == 'chunk':
@@ -199,17 +193,24 @@ class SimpleSeq2MultiSeq(Model):
 
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        pos_accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self._pos_seq2seq.metrics.items()}
-        ner_accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self._ner_seq2seq.metrics.items()}
-        chunk_accs = {metric_name: metric.get_metric(reset)
+        upos_accs = {'upos-' + metric_name: metric.get_metric(reset)
+                    for metric_name, metric in self._upos_seq2seq.metrics.items()}
+        ner_accs = {'ner-' + metric_name: metric.get_metric(reset)
+                    for metric_name, metric in self._ner_seq2seq.metrics.items()}
+        chunk_accs = {'chunk-' + metric_name: metric.get_metric(reset)
                       for metric_name, metric in self._chunk_seq2seq.metrics.items()}
-        pos_metric_dict = self._pos_seq2seq.span_metric.get_metric(reset=reset)
-        pos_f1 = {x: y for x, y in pos_metric_dict.items() if "overall" in x}
+        upos_metric_dict = self._upos_seq2seq.span_metric.get_metric(reset=reset)
+        upos_f1 = {'upos-' + x: y for x, y in upos_metric_dict.items() if "overall" in x}
         ner_metric_dict = self._ner_seq2seq.span_metric.get_metric(reset=reset)
-        ner_f1 = {x: y for x, y in ner_metric_dict.items() if "overall" in x}
+        ner_f1 = {'ner-' + x: y for x, y in ner_metric_dict.items() if "overall" in x}
         chunk_metric_dict = self._chunk_seq2seq.span_metric.get_metric(reset=reset)
-        chunk_f1 = {x: y for x, y in chunk_metric_dict.items() if "overall" in x}
-        return {**pos_f1, **ner_f1, **chunk_f1, **pos_accs, **ner_accs, **chunk_accs}
+        chunk_f1 = {'chunk-' + x: y for x, y in chunk_metric_dict.items() if "overall" in x}
+        accs = {metric_name:
+                  (upos_accs['upos-' + metric_name] + ner_accs['ner-' + metric_name] +
+                   chunk_accs['chunk-' + metric_name])/3 for metric_name, _ in self._upos_seq2seq.metrics.items()}
+        f1 = {x: (upos_f1['upos-' + x] + ner_f1['ner-' + x] + chunk_f1['chunk-' + x])/3
+              for x, _ in upos_metric_dict.items() if "overall" in x}
+        return {**f1, **accs, **upos_f1, **ner_f1, **chunk_f1, **upos_accs, **ner_accs, **chunk_accs}
 
     @classmethod
     def from_params(cls, vocab, params: Params) -> 'SimpleSeq2MultiSeq':
@@ -219,10 +220,10 @@ class SimpleSeq2MultiSeq(Model):
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        pos_namespace = params.pop("pos_namespace", "pos_tokens")
+        upos_namespace = params.pop("upos_namespace", "upos_tokens")
         ner_namespace = params.pop("ner_namespace", "ner_tokens")
         chunk_namespace = params.pop("chunk_namespace", "chunk_tokens")
-        # pos_namespace = params.pop("pos_namespace")
+        # upos_namespace = params.pop("upos_namespace")
         # ner_namespace = params.pop("ner_namespace")
         # chunk_namespace = params.pop("chunk_namespace")
         # If no attention function is specified, we should not use attention, not attention with
@@ -241,7 +242,7 @@ class SimpleSeq2MultiSeq(Model):
                    source_embedder=source_embedder,
                    encoder=encoder,
                    max_decoding_steps=max_decoding_steps,
-                   pos_namespace=pos_namespace,
+                   upos_namespace=upos_namespace,
                    ner_namespace=ner_namespace,
                    chunk_namespace=chunk_namespace,
                    attention_function=attention_function,
