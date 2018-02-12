@@ -355,7 +355,7 @@ class SimpleSeq2Seq(Model):
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        # target_namespace = params.pop("target_namespace", "tokens")
+        target_namespace = params.pop("target_namespace", "tokens")
         # If no attention function is specified, we should not use attention, not attention with
         # default similarity function.
         attention_function_type = params.pop("attention_function", None)
