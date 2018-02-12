@@ -1,22 +1,46 @@
 1. Setup
 2. Run source activate allennlp
-3. 
-rm -r /tmp/nlp/pos
-rm -r /tmp/nlp/ner
-rm -r /tmp/nlp/chunk
-python -m allennlp.run train json/pos_simple_tagger.json --serialization-dir /tmp/nlp/pos
-python -m allennlp.run train json/ner_simple_tagger.json --serialization-dir /tmp/nlp/ner
-python -m allennlp.run train json/chunk_simple_tagger.json --serialization-dir /tmp/nlp/chunk
+3.
 
-rm -r /tmp/nlp/pos_test
-rm -r /tmp/nlp/ner_test
-rm -r /tmp/nlp/chunk_test
-python -m allennlp.run train json/pos_seq2seq.json --serialization-dir /tmp/nlp/pos_test > pos_log
-python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_test > ner_log
-python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_test > chunk_log
+######
+simple_tagger
+######
 
+rm -r /tmp/nlp/xpos_tag
+python -m allennlp.run train json/xpos_simple_tagger.json --serialization-dir /tmp/nlp/xpos_tag > /tmp/log/xpos_tag_log
+
+rm -r /tmp/nlp/upos_tag
+python -m allennlp.run train json/upos_simple_tagger.json --serialization-dir /tmp/nlp/upos_tag > /tmp/log/upos_tag_log
+
+rm -r /tmp/nlp/ner_tag
+python -m allennlp.run train json/ner_simple_tagger.json --serialization-dir /tmp/nlp/ner_tag > /tmp/log/ner_tag_log
+
+rm -r /tmp/nlp/chunk_tag
+python -m allennlp.run train json/chunk_simple_tagger.json --serialization-dir /tmp/nlp/chunk_tag > /tmp/log/chunk_tag_log
+
+######
+seq2seq
+######
+rm -r /tmp/nlp/xpos_seq
+python -m allennlp.run train json/xpos_seq2seq.json --serialization-dir /tmp/nlp/xpos_seq > /tmp/log/xpos_seq_log
+
+rm -r /tmp/nlp/upos_seq
+python -m allennlp.run train json/upos_seq2seq.json --serialization-dir /tmp/nlp/upos_seq > /tmp/log/upos_seq_log
+
+rm -r /tmp/nlp/ner_seq
+python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_seq > /tmp/log/ner_seq_log
+
+rm -r /tmp/nlp/chunk_seq
+python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_seq > /tmp/log/chunk_log
+
+######
+seqtask2seq
+######
 rm -r /tmp/nlp/seqtask2seq
-python -m allennlp.run train json/seqtask2seq.json --serialization-dir /tmp/nlp/seqtask2seq > seqtask2seq_log
+python -m allennlp.run train json/seqtask2seq.json --serialization-dir /tmp/nlp/seqtask2seq > /tmp/log/seqtask2seq_log
 
+######
+seq2multiseq
+######
 rm -r /tmp/nlp/seq2multiseq
-python -m allennlp.run train json/seq2multiseq.json --serialization-dir /tmp/nlp/seq2multiseq > seq2multiseq_log
+python -m allennlp.run train json/seq2multiseq.json --serialization-dir /tmp/nlp/seq2multiseq > /tmp/log/seq2multiseq_log

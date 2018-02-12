@@ -30,9 +30,9 @@
     },
 	"source_add_start_token": false
   },
-  "train_data_path": "./dataset/seq2seq/train/ner_conll03_train.txt",
-  "validation_data_path": "./dataset/seq2seq/dev/ner_conll03_dev.txt",
-  "test_data_path": "./dataset/seq2seq/test/ner_conll03_test.txt",
+  "train_data_path": "./dataset/seq2seq/train/xpos_uni_train.txt",
+  "validation_data_path": "./dataset/seq2seq/dev/xpos_uni_dev.txt",
+  "test_data_path": "./dataset/seq2seq/test/xpos_uni_test.txt",
   "evaluate_on_test": true,
   "model": {
     "type": "simple_seq2seq",
@@ -84,7 +84,7 @@
   "trainer": {
     "num_epochs": 100,
     "patience": 10,
-    "cuda_device": 1,
+    "cuda_device": 0,
     "optimizer": {
       "type": "adam"
     },

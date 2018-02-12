@@ -30,9 +30,9 @@
     },
 	"source_add_start_token": false
   },
-  "train_data_path": "/home/schangpi/dataset/seq2seq/chunk_conll02_train.txt",
-  "validation_data_path": "/home/schangpi/dataset/seq2seq/chunk_conll02_dev.txt",
-  "test_data_path": "/home/schangpi/dataset/seq2seq/chunk_conll02_test.txt",
+  "train_data_path": "./dataset/seq2seq/train/chunk_conll02_train.txt",
+  "validation_data_path": "./dataset/seq2seq/dev/chunk_conll02_dev.txt",
+  "test_data_path": "./dataset/seq2seq/test/chunk_conll02_test.txt",
   "evaluate_on_test": true,
   "model": {
     "type": "simple_seq2seq",
@@ -59,7 +59,7 @@
 	  }
     },
     "encoder": {
-      "type": "gru",
+      "type": "lstm",
       "input_size": 100,
       "hidden_size": 100,
       "num_layers": 2,
@@ -88,6 +88,7 @@
     "optimizer": {
       "type": "adam"
     },
-	"grad_clipping": 5
+	"grad_clipping": 5,
+	"validation_metric": "+f1-measure-overall"
   }
 }
