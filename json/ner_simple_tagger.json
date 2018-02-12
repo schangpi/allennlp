@@ -12,9 +12,9 @@
       }
     }
   },
-  "train_data_path": "/home/schangpi/dataset/tagging/ner_conll03_train.txt",
-  "validation_data_path": "/home/schangpi/dataset/tagging/ner_conll03_dev.txt",
-  "test_data_path": "/home/schangpi/dataset/tagging/ner_conll03_test.txt",
+  "train_data_path": "./dataset/tagger/train/ner_conll03_train.txt",
+  "validation_data_path": "./dataset/tagger/dev/ner_conll03_dev.txt",
+  "test_data_path": "./dataset/tagger/test/ner_conll03_test.txt",
   "evaluate_on_test": true,
   "model": {
     "type": "simple_tagger",
@@ -40,7 +40,7 @@
             }
     },
     "stacked_encoder": {
-            "type": "gru",
+            "type": "lstm",
             "input_size": 100,
             "hidden_size": 100,
             "num_layers": 2,
@@ -54,8 +54,10 @@
   "iterator": {"type": "basic", "batch_size": 32},
   "trainer": {
     "optimizer": "adam",
-    "num_epochs": 40,
+    "num_epochs": 100,
     "patience": 10,
-    "cuda_device": 0
+    "cuda_device": 0,
+	"grad_clipping": 5,
+	"validation_metric": "+f1-measure-overall"
   }
 }

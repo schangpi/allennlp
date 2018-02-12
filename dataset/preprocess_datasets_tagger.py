@@ -1,17 +1,17 @@
 import os
 import optparse
 import dataset_utils
-from dataset_utils import update_tag_scheme, word_mapping, tag_mapping
+from dataset_utils import update_tag_scheme
 """
-python dataset/preprocess_datasets.py --domain uni --tasks xpos_upos --tag_schemes none_none
-python dataset/preprocess_datasets.py --domain conll03 --tasks xpos_chunk_ner --tag_schemes none_iobes_iobes
-python dataset/preprocess_datasets.py --domain conll02 --tasks chunk --tag_schemes iobes
+python dataset/preprocess_datasets_tagger.py --domain uni --tasks xpos_upos --tag_schemes none_none
+python dataset/preprocess_datasets_tagger.py --domain conll03 --tasks xpos_chunk_ner --tag_schemes none_iobes_iobes
+python dataset/preprocess_datasets_tagger.py --domain conll02 --tasks chunk --tag_schemes iobes
 """
 
 # Read parameters from command line
 optparser = optparse.OptionParser()
 optparser.add_option("--src_dir", default="./dataset", help="Directory for raw data")
-optparser.add_option("--tgt_dir", default="./dataset/seq2seq", help="Directory for preprocessed data")
+optparser.add_option("--tgt_dir", default="./dataset/tagger", help="Directory for preprocessed data")
 optparser.add_option("--domain", default="", help="Domain name")
 optparser.add_option("--tasks", default="", help="Task names in order")
 optparser.add_option("--tag_schemes", default=None, help="Tagging scheme (IOB or IOBES) in order")
@@ -49,7 +49,6 @@ tag_scheme_list = opts.tag_schemes.split("_")
 
 assert(len(task_list) == len(tag_scheme_list))
 
-# Write sequence to sequence
 for idx, task in enumerate(task_list):
     print(idx, task)
     tag_scheme = tag_scheme_list[idx]
@@ -64,23 +63,5 @@ for idx, task in enumerate(task_list):
                                task + "_" + opts.domain + "_" + data_subset + '.txt'), 'w') as f:
             for s in sentences[data_subset]:
                 for w in s:
-                    # print w
-                    f.write(str(w[0]) + " ")
-                f.write("\t")
-                for w in s:
-                    f.write(str(w[idx+1]) + " ")
+                    f.write(str(w[0]) + "/" + str(w[idx+1]) + " ")
                 f.write("\n")
-
-# Create a dictionary and a mapping for words and tags
-_, _, id_to_word_train = word_mapping(sentences['train'], idx=0)
-_, _, id_to_word = word_mapping(sentences['train'] + sentences['dev'] + sentences['test'], idx=0)
-_, _, id_to_tag = tag_mapping(sentences['train'] + sentences['dev'] + sentences['test'], idx=-1)
-with open(os.path.join(processed_dataset_dir, opts.domain + '_vocab.source.train'), 'w') as f:
-    for k, v in id_to_word_train.items():
-        f.write(v + "\n")
-with open(os.path.join(processed_dataset_dir, 'vocab_stats', opts.domain + '_vocab.source'), 'w') as f:
-    for k, v in id_to_word.items():
-        f.write(v + "\n")
-with open(os.path.join(processed_dataset_dir, 'vocab_stats', opts.domain + '_vocab.target'), 'w') as f:
-    for k, v in id_to_tag.items():
-        f.write(v + "\n")
