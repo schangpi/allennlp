@@ -47,7 +47,6 @@ class SimpleTagger(Model):
 
         self.label_namespace = label_namespace
         self.text_field_embedder = text_field_embedder
-        # self.num_classes = self.vocab.get_vocab_size("labels")
         self.num_classes = self.vocab.get_vocab_size(label_namespace)
         self.stacked_encoder = stacked_encoder
         self.tag_projection_layer = TimeDistributed(Linear(self.stacked_encoder.get_output_dim(),
@@ -60,7 +59,6 @@ class SimpleTagger(Model):
                 "accuracy3": CategoricalAccuracy(top_k=3)
         }
         self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
-
         initializer(self)
 
     @overrides
