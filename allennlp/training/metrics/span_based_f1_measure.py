@@ -141,6 +141,7 @@ class SpanBasedF1Measure(Metric):
             predicted_spans = bio_tags_to_spans(self._iobes_iob(predicted_string_labels), self._ignore_classes)
             gold_spans = bio_tags_to_spans(self._iobes_iob(gold_string_labels), self._ignore_classes)
 
+            """
             if i == 0:
                 print('Targets')
                 print('Before: ', ' '.join(predicted_string_labels))
@@ -150,6 +151,7 @@ class SpanBasedF1Measure(Metric):
                 print('Before: ', ' '.join(gold_string_labels))
                 print('After:  ', ' '.join(self._iobes_iob(gold_string_labels)))
                 print(gold_spans)
+            """
 
             predicted_spans = self._handle_continued_spans(predicted_spans)
             gold_spans = self._handle_continued_spans(gold_spans)
