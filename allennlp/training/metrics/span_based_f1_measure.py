@@ -3,6 +3,7 @@ from collections import defaultdict
 
 import torch
 
+from IPython import embed
 from allennlp.common.checks import ConfigurationError
 from allennlp.nn.util import get_lengths_from_binary_sequence_mask, ones_like
 from allennlp.data.vocabulary import Vocabulary
@@ -238,6 +239,9 @@ class SpanBasedF1Measure(Metric):
         all_metrics["recall-overall"] = recall
         all_metrics["f1-measure-overall"] = f1_measure
         if reset:
+            for k, v in all_metrics.items():
+                print(k, v)
+            print('')
             self.reset()
         return all_metrics
 

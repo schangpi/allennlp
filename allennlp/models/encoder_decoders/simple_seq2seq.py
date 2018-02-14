@@ -75,7 +75,7 @@ class SimpleSeq2Seq(Model):
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
-                 target_namespace: str = "target_tokens",
+                 target_namespace: str = "target_tags",
                  target_embedding_dim: int = None,
                  attention_function: SimilarityFunction = None,
                  scheduled_sampling_ratio: float = 0.0,
@@ -114,9 +114,28 @@ class SimpleSeq2Seq(Model):
                 "accuracy": CategoricalAccuracy(),
                 "accuracy3": CategoricalAccuracy(top_k=3)
         }
-        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=target_namespace)
+        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=target_namespace,
+                                              ignore_classes=[START_SYMBOL[2:], END_SYMBOL[2:]])
         initializer(self)
-        # embed()
+
+        # Initialize forget gate
+        """
+        encoder_parameters = self._encoder.state_dict()
+        for pname in encoder_parameters:
+            if 'bias_' in pname:
+                print(pname)
+                b = encoder_parameters[pname]
+                l = len(b)
+                b[l // 4:l // 2] = 1.0
+        decoder_parameters = self._decoder_cell.state_dict()
+        for pname in decoder_parameters:
+            if 'bias_' in pname:
+                print(pname)
+                b = decoder_parameters[pname]
+                l = len(b)
+                b[l // 4:l // 2] = 1.0
+        """
+
 
     def _examine_source_indices(self, preindices):
         if not isinstance(preindices, numpy.ndarray):
@@ -144,14 +163,10 @@ class SimpleSeq2Seq(Model):
         src = self._examine_source_indices(src)
         true_tgt = self._examine_target_indices(true_tgt)
         tgt = self._examine_target_indices(tgt)
-        num_shows = 0
-        for s, t, tt in zip(src, tgt, true_tgt):
-            print('Source:      ', ' '.join(s))
-            print('Target:      ', ' '.join(t))
-            print('True target: ', ' '.join(tt))
-            num_shows += 1
-            if num_shows == 4:
-                break
+        for i in [0, int(len(src)/2), -1]:
+            print('Source:      ', ' '.join(src[i]))
+            print('Target:      ', ' '.join(tgt[i]))
+            print('True target: ', ' '.join(true_tgt[i][1:]))
         print('')
 
     @overrides
@@ -203,10 +218,8 @@ class SimpleSeq2Seq(Model):
                                              .resize_(batch_size).fill_(self._start_index))
                 else:
                     input_choices = last_predictions
-            decoder_input = self._prepare_decode_step_input(input_choices, decoder_hidden,
-                                                            encoder_outputs, source_mask)
-            decoder_hidden, decoder_context = self._decoder_cell(decoder_input,
-                                                                 (decoder_hidden, decoder_context))
+            decoder_input = self._prepare_decode_step_input(input_choices, decoder_hidden, encoder_outputs, source_mask)
+            decoder_hidden, decoder_context = self._decoder_cell(decoder_input, (decoder_hidden, decoder_context))
             # (batch_size, num_classes)
             output_projections = self._output_projection_layer(decoder_hidden)
             # list of (batch_size, 1, num_classes)
@@ -238,6 +251,7 @@ class SimpleSeq2Seq(Model):
             for i, instance_tags in enumerate(all_predictions.cpu().data.numpy()):
                 for j, tag_id in enumerate(instance_tags):
                     class_probabilities[i, j, tag_id] = 1
+            # embed()
             self.span_metric(class_probabilities, relevant_targets, relevant_mask)
             self._print_source_target_triplets(source_tokens['tokens'], all_predictions, target_tokens['tokens'])
         return output_dict
@@ -356,7 +370,7 @@ class SimpleSeq2Seq(Model):
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        target_namespace = params.pop("target_namespace", "target_tokens")
+        target_namespace = params.pop("target_namespace", "target_tags")
         # If no attention function is specified, we should not use attention, not attention with
         # default similarity function.
         attention_function_type = params.pop("attention_function", None)
