@@ -82,14 +82,14 @@ class _TokenToIndexDefaultDict(_NamespaceDependentDefaultDict):
     def __init__(self, non_padded_namespaces: Sequence[str], padding_token: str, oov_token: str) -> None:
         super(_TokenToIndexDefaultDict, self).__init__(non_padded_namespaces,
                                                        lambda: {padding_token: 0, oov_token: 1},
-                                                       lambda: {})
+                                                       lambda: {padding_token: 0})
 
 
 class _IndexToTokenDefaultDict(_NamespaceDependentDefaultDict):
     def __init__(self, non_padded_namespaces: Sequence[str], padding_token: str, oov_token: str) -> None:
         super(_IndexToTokenDefaultDict, self).__init__(non_padded_namespaces,
                                                        lambda: {0: padding_token, 1: oov_token},
-                                                       lambda: {})
+                                                       lambda: {0: padding_token})
 
 def _read_pretrained_words(embeddings_filename: str)-> Set[str]:
     words = set()

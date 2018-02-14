@@ -119,7 +119,6 @@ class SimpleSeq2Seq(Model):
         initializer(self)
 
         # Initialize forget gate
-        """
         encoder_parameters = self._encoder.state_dict()
         for pname in encoder_parameters:
             if 'bias_' in pname:
@@ -134,8 +133,6 @@ class SimpleSeq2Seq(Model):
                 b = decoder_parameters[pname]
                 l = len(b)
                 b[l // 4:l // 2] = 1.0
-        """
-
 
     def _examine_source_indices(self, preindices):
         if not isinstance(preindices, numpy.ndarray):
@@ -186,6 +183,7 @@ class SimpleSeq2Seq(Model):
            Output of ``Textfield.as_array()`` applied on target ``TextField``. We assume that the
            target tokens are also represented as a ``TextField``.
         """
+        # embed()
         # (batch_size, input_sequence_length, encoder_output_dim)
         embedded_input = self._source_embedder(source_tokens)
         batch_size, _, _ = embedded_input.size()
