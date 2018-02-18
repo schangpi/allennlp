@@ -1,5 +1,6 @@
 import re
 import io
+import json
 
 def iob2(tags):
     """
@@ -200,4 +201,85 @@ def load_sentences_conll02(path, zeros, lower):
             sentence.append(word)
     if len(sentence) > 0:
         sentences.append(sentence)
+    return sentences
+
+def load_sentences_general(path, zeros, lower):
+    # Load sentences. A line must contain at least a word and its tag.
+    # Sentences are separated by empty lines.
+    sentences = []
+    sentence = []
+    for line in io.open(path, 'r', encoding='utf8'):
+        line = line.rstrip()
+        if not line:
+            if len(sentence) > 0:
+                sentences.append(sentence)
+                sentence = []
+        else:
+            l = line.split()
+            assert len(l) >= 2
+            word = [f_process(l[0], zeros, lower)] + l[1:]
+            sentence.append(word)
+    if len(sentence) > 0:
+        sentences.append(sentence)
+    return sentences
+
+def load_sentences_general_no_O(path, zeros, lower):
+    # Load sentences. A line must contain at least a word and its tag.
+    # Sentences are separated by empty lines.
+    sentences = []
+    sentence = []
+    for line in io.open(path, 'r', encoding='utf8'):
+        line = line.rstrip()
+        if not line:
+            if len(sentence) > 0:
+                sentences.append(sentence)
+                sentence = []
+        else:
+            l = line.split()
+            assert len(l) >= 2
+            word = [f_process(l[0], zeros, lower)] + [t if t != 'O' else 'X' for t in l[1:]]
+            sentence.append(word)
+    if len(sentence) > 0:
+        sentences.append(sentence)
+    return sentences
+
+def load_sentences_streusle(path, zeros, lower):
+    sentences = []
+    with open(path, 'r') as f:
+        data = json.load(f)
+        for sent in data:
+            sentence = []
+            tokens = sent['toks']
+            for tok in tokens:
+                splitted_laxtag = tok['lextag'].split('-')
+                mwe = splitted_laxtag[0]
+                # if mwe == 'o':
+                #     mwe = 'O'
+                # if mwe != 'O':
+                #     mwe = '@@' + mwe
+                mwe = mwe.upper()
+                smwe = 'O'
+                wmwe = 'O'
+                if tok['smwe'] is not None:
+                    assert (mwe != 'O')
+                    smwe = mwe[0]
+                    mwe = mwe[0]
+                if tok['wmwe'] is not None:
+                    wmwe = mwe[0]
+                    mwe = mwe[0]
+                    if mwe == 'O':
+                        print('Warning: weak MWE with O')
+                supersense = 'O'
+                if len(splitted_laxtag) == 3:
+                    supersense = splitted_laxtag[2]
+                word = [f_process(tok['word'], zeros, lower),
+                        tok['xpos'],
+                        tok['upos'],
+                        mwe,
+                        smwe,
+                        wmwe,
+                        supersense]
+                sentence.append(word)
+            if len(sentence) > 0:
+                sentences.append(sentence)
     return sentences
