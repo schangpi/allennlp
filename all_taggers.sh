@@ -1,0 +1,26 @@
+mn=$1
+gpu=$2
+
+echo "$mn"
+echo "$gpu"
+
+./tagger.sh ner-iobes_conll03 "$mn" "$gpu"
+./tagger.sh chunk-iobes_conll02 "$mn" "$gpu"
+./tagger.sh com_broadcast1 "$mn" "$gpu"
+./tagger.sh com_broadcast2 "$mn" "$gpu"
+./tagger.sh com_broadcast3 "$mn" "$gpu"
+./tagger.sh upos_uni "$mn" "$gpu"
+./tagger.sh sem_semcor "$mn" "$gpu"
+./tagger.sh semtr_semtraits "$mn" "$gpu"
+./tagger.sh mwe_streusle "$mn" "$gpu"
+./tagger.sh smwe_streusle "$mn" "$gpu"
+./tagger.sh supsense_streusle "$mn" "$gpu"
+./tagger.sh ccg_ccg "$mn" "$gpu"
+./tagger.sh ner_conll03 "$mn" "$gpu"
+./tagger.sh chunk_conll02 "$mn" "$gpu"
+./tagger.sh chunk_conll03 "$mn" "$gpu"
+./tagger.sh chunk-iobes_conll03 "$mn" "$gpu"
+./tagger.sh upos_streusle "$mn" "$gpu"
+./tagger.sh xpos_streusle "$mn" "$gpu"
+./tagger.sh xpos_uni "$mn" "$gpu"
+./tagger.sh xpos_conll03 "$mn" "$gpu"
