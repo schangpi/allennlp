@@ -78,9 +78,9 @@ class SimpleSeq2MultiSeq(Model):
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
-                 upos_namespace: str = "upos_tokens",
-                 ner_namespace: str = "ner_tokens",
-                 chunk_namespace: str = "chunk_tokens",
+                 upos_namespace: str = "upos_tags",
+                 ner_namespace: str = "ner_tags",
+                 chunk_namespace: str = "chunk_tags",
                  target_embedding_dim: int = None,
                  attention_function: SimilarityFunction = None,
                  scheduled_sampling_ratio: float = 0.0,
@@ -220,9 +220,9 @@ class SimpleSeq2MultiSeq(Model):
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
         max_decoding_steps = params.pop("max_decoding_steps")
-        upos_namespace = params.pop("upos_namespace", "upos_tokens")
-        ner_namespace = params.pop("ner_namespace", "ner_tokens")
-        chunk_namespace = params.pop("chunk_namespace", "chunk_tokens")
+        upos_namespace = params.pop("upos_namespace", "upos_tags")
+        ner_namespace = params.pop("ner_namespace", "ner_tags")
+        chunk_namespace = params.pop("chunk_namespace", "chunk_tags")
         # upos_namespace = params.pop("upos_namespace")
         # ner_namespace = params.pop("ner_namespace")
         # chunk_namespace = params.pop("chunk_namespace")

@@ -6,15 +6,14 @@ from overrides import overrides
 
 import torch
 from torch.autograd import Variable
-# from torch.nn.modules.rnn import GRUCell
 from torch.nn.modules.rnn import LSTMCell
 from torch.nn.modules.linear import Linear
 import torch.nn.functional as F
 
 from allennlp.common import Params
 from allennlp.data.vocabulary import Vocabulary
-from allennlp.data.dataset_readers.seqtask2seq import START_SYMBOL, END_SYMBOL
-from allennlp.modules import Attention, TextFieldEmbedder, Seq2SeqEncoder
+from allennlp.data.dataset_readers.seq2seq import START_SYMBOL, END_SYMBOL
+from allennlp.modules import Attention, TextFieldEmbedder, Seq2SeqEncoder, ConditionalRandomField
 from allennlp.modules.similarity_functions import SimilarityFunction
 from allennlp.modules.token_embedders import Embedding
 from allennlp.models.model import Model
@@ -23,16 +22,16 @@ from allennlp.nn.util import get_text_field_mask, sequence_cross_entropy_with_lo
 from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
 
 
-@Model.register("simple_seqtask2seq")
-class SimpleSeqTask2Seq(Model):
+@Model.register("simple_seq2seq_crf")
+class SimpleSeq2SeqCrf(Model):
     """
-    This ``SimpleSeqTask2Seq`` class is a :class:`Model` which takes a sequence, encodes it, and then
+    This ``SimpleSeq2Seq`` class is a :class:`Model` which takes a sequence, encodes it, and then
     uses the encoded representations to decode another sequence.  You can use this as the basis for
     a neural machine translation system, an abstractive summarization system, or any other common
     seq2seq problem.  The model here is simple, but should be a decent starting place for
     implementing recent models for these tasks.
 
-    This ``SimpleSeqTask2Seq`` model takes an encoder (:class:`Seq2SeqEncoder`) as an input, and
+    This ``SimpleSeq2Seq`` model takes an encoder (:class:`Seq2SeqEncoder`) as an input, and
     implements the functionality of the decoder.  In this implementation, the decoder uses the
     encoder's outputs in two ways. The hidden state of the decoder is initialized with the output
     from the final time-step of the encoder, and when using attention, a weighted average of the
@@ -72,8 +71,6 @@ class SimpleSeqTask2Seq(Model):
     """
     def __init__(self,
                  vocab: Vocabulary,
-                 task_embedder: TextFieldEmbedder,
-                 domain_embedder: TextFieldEmbedder,
                  source_embedder: TextFieldEmbedder,
                  encoder: Seq2SeqEncoder,
                  max_decoding_steps: int,
@@ -83,12 +80,8 @@ class SimpleSeqTask2Seq(Model):
                  scheduled_sampling_ratio: float = 0.0,
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
-        super(SimpleSeqTask2Seq, self).__init__(vocab, regularizer)
+        super(SimpleSeq2SeqCrf, self).__init__(vocab, regularizer)
         self._source_embedder = source_embedder
-        self._task_embedder = task_embedder
-        self._task_embedder_dim = self._task_embedder.get_output_dim()
-        self._domain_embedder = domain_embedder
-        self._domain_embedder_dim = self._domain_embedder.get_output_dim()
         self._encoder = encoder
         self._max_decoding_steps = max_decoding_steps
         self._target_namespace = target_namespace
@@ -99,6 +92,7 @@ class SimpleSeqTask2Seq(Model):
         self._start_index = self.vocab.get_token_index(START_SYMBOL, self._target_namespace)
         self._end_index = self.vocab.get_token_index(END_SYMBOL, self._target_namespace)
         num_classes = self.vocab.get_vocab_size(self._target_namespace)
+        self._crf = ConditionalRandomField(num_classes)
         # Decoder output dim needs to be the same as the encoder output dim since we initialize the
         # hidden state of the decoder with that of the final hidden states of the encoder. Also, if
         # we're using attention with ``DotProductSimilarity``, this is needed.
@@ -115,14 +109,33 @@ class SimpleSeqTask2Seq(Model):
         # TODO (pradeep): Do not hardcode decoder cell type.
         self._decoder_cell = LSTMCell(self._decoder_input_dim, self._decoder_output_dim)
         # self._decoder_cell = GRUCell(self._decoder_input_dim, self._decoder_output_dim, bias=False)
-        self._output_projection_layer = Linear(
-            self._decoder_output_dim + self._task_embedder_dim + self._domain_embedder_dim, num_classes)
+        self._output_projection_layer = Linear(self._decoder_output_dim, num_classes)
         self.metrics = {
                 "accuracy": CategoricalAccuracy(),
                 "accuracy3": CategoricalAccuracy(top_k=3)
         }
-        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=target_namespace)
+        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=target_namespace,
+                                              ignore_classes=[START_SYMBOL[2:], END_SYMBOL[2:]])
         initializer(self)
+
+        # Initialize forget gate
+        """
+        encoder_parameters = self._encoder.state_dict()
+        for pname in encoder_parameters:
+            if 'bias_' in pname:
+                print(pname)
+                b = encoder_parameters[pname]
+                l = len(b)
+                b[l // 4:l // 2] = 1.0
+        decoder_parameters = self._decoder_cell.state_dict()
+        for pname in decoder_parameters:
+            if 'bias_' in pname:
+                print(pname)
+                b = decoder_parameters[pname]
+                l = len(b)
+                b[l // 4:l // 2] = 1.0
+        """
+
 
     def _examine_source_indices(self, preindices):
         if not isinstance(preindices, numpy.ndarray):
@@ -150,20 +163,21 @@ class SimpleSeqTask2Seq(Model):
         src = self._examine_source_indices(src)
         true_tgt = self._examine_target_indices(true_tgt)
         tgt = self._examine_target_indices(tgt)
-        num_shows = 0
-        for s, t, tt in zip(src, tgt, true_tgt):
-            print('Source:      ', ' '.join(s))
-            print('Target:      ', ' '.join(t))
-            print('True target: ', ' '.join(tt))
-            num_shows += 1
-            if num_shows == 4:
-                break
+        for i in [0, int(len(src)/2), -1]:
+            print('Source:      ', ' '.join(src[i]))
+            print('Target:      ', ' '.join(tgt[i]))
+            print('True target: ', ' '.join(true_tgt[i][1:]))
         print('')
+
+    def _boolean_indexing(self, v, fillval=0):
+        lens = numpy.array([len(item) for item in v])
+        mask = lens[:, None] > numpy.arange(lens.max())
+        out = numpy.full(mask.shape, fillval)
+        out[mask] = numpy.concatenate(v)
+        return out
 
     @overrides
     def forward(self,  # type: ignore
-                task_token: Dict[str, torch.LongTensor],
-                domain_token: Dict[str, torch.LongTensor],
                 source_tokens: Dict[str, torch.LongTensor],
                 target_tokens: Dict[str, torch.LongTensor] = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
@@ -179,8 +193,6 @@ class SimpleSeqTask2Seq(Model):
            Output of ``Textfield.as_array()`` applied on target ``TextField``. We assume that the
            target tokens are also represented as a ``TextField``.
         """
-        embeded_task = self._task_embedder(task_token)
-        embeded_domain = self._domain_embedder(domain_token)
         # (batch_size, input_sequence_length, encoder_output_dim)
         embedded_input = self._source_embedder(source_tokens)
         batch_size, _, _ = embedded_input.size()
@@ -213,14 +225,10 @@ class SimpleSeqTask2Seq(Model):
                                              .resize_(batch_size).fill_(self._start_index))
                 else:
                     input_choices = last_predictions
-            decoder_input = self._prepare_decode_step_input(input_choices, decoder_hidden,
-                                                            encoder_outputs, source_mask)
-            decoder_hidden, decoder_context = self._decoder_cell(decoder_input,
-                                                                 (decoder_hidden, decoder_context))
+            decoder_input = self._prepare_decode_step_input(input_choices, decoder_hidden, encoder_outputs, source_mask)
+            decoder_hidden, decoder_context = self._decoder_cell(decoder_input, (decoder_hidden, decoder_context))
             # (batch_size, num_classes)
-            # embed()
-            output_projections = self._output_projection_layer(
-                torch.cat([decoder_hidden, torch.squeeze(embeded_task), torch.squeeze(embeded_domain)], 1))
+            output_projections = self._output_projection_layer(decoder_hidden)
             # list of (batch_size, 1, num_classes)
             step_logits.append(output_projections.unsqueeze(1))
             class_probabilities = F.softmax(output_projections, dim=-1)
@@ -233,25 +241,31 @@ class SimpleSeqTask2Seq(Model):
         # This is (batch_size, num_decoding_steps, num_classes)
         logits = torch.cat(step_logits, 1)
         class_probabilities = torch.cat(step_probabilities, 1)
-        all_predictions = torch.cat(step_predictions, 1)
+        # all_predictions = torch.cat(step_predictions, 1)
+        all_predictions = self._crf.viterbi_tags(logits, source_mask)
+        all_predictions = self._boolean_indexing(all_predictions)
+        all_predictions = Variable(torch.LongTensor(all_predictions))
         output_dict = {"logits": logits,
                        "class_probabilities": class_probabilities,
                        "predictions": all_predictions}
         if target_tokens:
             target_mask = get_text_field_mask(target_tokens)
-            loss = self._get_loss(logits, targets, target_mask)
-            output_dict["loss"] = loss
+            # loss = self._get_loss(logits, targets, target_mask)
+            # output_dict["loss"] = loss
+            log_likelihood = self._crf(logits, targets, target_mask)
+            output_dict["loss"] = -log_likelihood
             # TODO: Define metrics
             relevant_targets = targets[:, 1:].contiguous()  # (batch_size, num_decoding_steps)
             relevant_mask = target_mask[:, 1:].contiguous()
+            relevant_predictions = all_predictions[:, 1:].contiguous()
             for metric in self.metrics.values():
                 metric(logits, relevant_targets, relevant_mask.float())
             class_probabilities = logits * 0.
-            for i, instance_tags in enumerate(all_predictions.cpu().data.numpy()):
+            for i, instance_tags in enumerate(relevant_predictions.cpu().data.numpy()):
                 for j, tag_id in enumerate(instance_tags):
                     class_probabilities[i, j, tag_id] = 1
             self.span_metric(class_probabilities, relevant_targets, relevant_mask)
-            self._print_source_target_triplets(source_tokens['tokens'], all_predictions, target_tokens['tokens'])
+            self._print_source_target_triplets(source_tokens['tokens'], relevant_predictions, target_tokens['tokens'])
         return output_dict
 
     def _prepare_decode_step_input(self,
@@ -349,7 +363,7 @@ class SimpleSeqTask2Seq(Model):
             # Collect indices till the first end_symbol
             if self._end_index in indices:
                 indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="target_tokens")
+            predicted_tokens = [self.vocab.get_token_from_index(x, namespace=self._target_namespace)
                                 for x in indices]
             all_predicted_tokens.append(predicted_tokens)
         output_dict["predicted_tokens"] = all_predicted_tokens
@@ -363,11 +377,7 @@ class SimpleSeqTask2Seq(Model):
         return {**f1, **accs}
 
     @classmethod
-    def from_params(cls, vocab, params: Params) -> 'SimpleSeqTask2Seq':
-        task_embedder_params = params.pop("task_embedder")
-        task_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
-        domain_embedder_params = params.pop("domain_embedder")
-        domain_embedder = TextFieldEmbedder.from_params(vocab, domain_embedder_params)
+    def from_params(cls, vocab, params: Params) -> 'SimpleSeq2SeqCrf':
         source_embedder_params = params.pop("source_embedder")
         source_embedder = TextFieldEmbedder.from_params(vocab, source_embedder_params)
         encoder = Seq2SeqEncoder.from_params(params.pop("encoder"))
@@ -384,8 +394,6 @@ class SimpleSeqTask2Seq(Model):
         initializer = InitializerApplicator.from_params(params.pop('initializer', []))
         regularizer = RegularizerApplicator.from_params(params.pop('regularizer', []))
         return cls(vocab,
-                   task_embedder=task_embedder,
-                   domain_embedder=domain_embedder,
                    source_embedder=source_embedder,
                    encoder=encoder,
                    max_decoding_steps=max_decoding_steps,
