@@ -9,17 +9,17 @@ import torch.nn.functional as F
 from allennlp.common import Params
 from allennlp.common.checks import check_dimensions_match
 from allennlp.data import Vocabulary
-from allennlp.modules import Seq2SeqEncoder, TimeDistributed, TextFieldEmbedder
+from allennlp.modules import Seq2SeqEncoder, TimeDistributed, TextFieldEmbedder, ConditionalRandomField
 from allennlp.models.model import Model
 from allennlp.nn import InitializerApplicator, RegularizerApplicator
 from allennlp.nn.util import get_text_field_mask, sequence_cross_entropy_with_logits
 from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
 
 
-@Model.register("simple_tagger")
-class SimpleTagger(Model):
+@Model.register("tagger")
+class Tagger(Model):
     """
-    This ``SimpleTagger`` simply encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
+    This ``Tagger`` simply encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
     predicts a tag for each token in the sequence.
 
     Parameters
@@ -40,17 +40,24 @@ class SimpleTagger(Model):
     def __init__(self, vocab: Vocabulary,
                  text_field_embedder: TextFieldEmbedder,
                  stacked_encoder: Seq2SeqEncoder,
+                 source_namespace: str = "tokens",
                  label_namespace: str = "labels",
+                 is_crf: bool = False,
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
-        super(SimpleTagger, self).__init__(vocab, regularizer)
+        super(Tagger, self).__init__(vocab, regularizer)
 
+        self.source_namespace = source_namespace
         self.label_namespace = label_namespace
         self.text_field_embedder = text_field_embedder
         self.num_classes = self.vocab.get_vocab_size(label_namespace)
         self.stacked_encoder = stacked_encoder
         self.tag_projection_layer = TimeDistributed(Linear(self.stacked_encoder.get_output_dim(),
                                                            self.num_classes))
+        # self.tag_projection_layer = Linear(self.stacked_encoder.get_output_dim(), self.num_classes)
+        self.is_crf = is_crf
+        if is_crf:
+            self.crf = ConditionalRandomField(self.num_classes)
 
         check_dimensions_match(text_field_embedder.get_output_dim(), stacked_encoder.get_input_dim(),
                                "text field embedding dim", "encoder input dim")
@@ -61,6 +68,7 @@ class SimpleTagger(Model):
         self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
         initializer(self)
         """
+        # Initialize forget gate bias to 1 (applicable to LSTMCell only).
         encoder_parameters = self.stacked_encoder.state_dict()
         for pname in encoder_parameters:
             if 'bias_' in pname:
@@ -70,13 +78,13 @@ class SimpleTagger(Model):
                 b[l // 4:l // 2] = 1.0
         """
 
-
     def _examine_source_indices(self, preindices):
         if not isinstance(preindices, numpy.ndarray):
             preindices = preindices.data.cpu().numpy()
         all_predicted_tokens = []
         for indices in preindices:
-            predicted_tokens = [self.vocab.get_token_from_index(x, namespace="tokens") for x in list(indices)]
+            predicted_tokens = [self.vocab.get_token_from_index(
+                x, namespace=self.source_namespace) for x in list(indices)]
             all_predicted_tokens.append(predicted_tokens)
         return all_predicted_tokens
 
@@ -89,7 +97,8 @@ class SimpleTagger(Model):
             # Collect indices till the first end_symbol
             # if self._end_index in indices:
             #     indices = indices[:indices.index(self._end_index)]
-            predicted_tokens = [self.vocab.get_token_from_index(x, 'labels') for x in indices]
+            predicted_tokens = [self.vocab.get_token_from_index(
+                x, namespace=self.label_namespace) for x in indices]
             all_predicted_tokens.append(predicted_tokens)
         return all_predicted_tokens
 
@@ -100,7 +109,7 @@ class SimpleTagger(Model):
         for i in [0, int(len(src)/2), -1]:
             print('Source:      ', ' '.join(src[i]))
             print('Target:      ', ' '.join(tgt[i]))
-            print('True target: ', ' '.join(true_tgt[i][1:]))
+            print('True target: ', ' '.join(true_tgt[i]))
         print('')
 
     @overrides
@@ -138,34 +147,36 @@ class SimpleTagger(Model):
 
         """
         embedded_text_input = self.text_field_embedder(tokens)
-        batch_size, sequence_length, _ = embedded_text_input.size()
         mask = get_text_field_mask(tokens)
         encoded_text = self.stacked_encoder(embedded_text_input, mask)
 
-        logits = self.tag_projection_layer(encoded_text)
-        reshaped_log_probs = logits.view(-1, self.num_classes)
-        class_probabilities = F.softmax(reshaped_log_probs, dim=-1).view([batch_size,
-                                                                          sequence_length,
-                                                                          self.num_classes])
-
-        all_predictions = class_probabilities.cpu().data.numpy()
-        if all_predictions.ndim == 3:
-            predictions_list = [all_predictions[i] for i in range(all_predictions.shape[0])]
+        logits = self.tag_projection_layer(encoded_text) # (batch_size, sequence_length, num_classes)
+        if self.is_crf:
+            predicted_tags = self.crf.viterbi_tags(logits, mask)
         else:
-            predictions_list = [all_predictions]
-        predicted_tags = []
-        for predictions in predictions_list:
-            argmax_indices = numpy.argmax(predictions, axis=-1)
-            # cur_tags = [self.vocab.get_token_from_index(x, namespace=self.label_namespace)
-            #         for x in argmax_indices]
-            predicted_tags.append(argmax_indices)
-
-        output_dict = {"logits": logits, "tags": predicted_tags,
-                       "class_probabilities": class_probabilities, "mask": mask}
-        # output_dict = {"logits": logits, "tags": predicted_tags, "mask": mask}
-
+            reshaped_log_probs = logits.view(-1, self.num_classes)
+            batch_size, sequence_length, _ = embedded_text_input.size()
+            class_probabilities = F.softmax(reshaped_log_probs, dim=-1).view(
+                [batch_size, sequence_length, self.num_classes])
+            all_predictions = class_probabilities.cpu().data.numpy()
+            if all_predictions.ndim == 3:
+                predictions_list = [all_predictions[i] for i in range(all_predictions.shape[0])]
+            else:
+                predictions_list = [all_predictions]
+            predicted_tags = []
+            for predictions in predictions_list:
+                argmax_indices = numpy.argmax(predictions, axis=-1)
+                predicted_tags.append(argmax_indices)
+        output_dict = {"logits": logits,
+                       "tags": predicted_tags,
+                       "mask": mask}
         if tags is not None:
-            loss = sequence_cross_entropy_with_logits(logits, tags, mask)
+            loss = 0.0
+            if self.is_crf:
+                log_likelihood = self.crf(logits, tags, mask)
+                loss = -log_likelihood
+            else:
+                loss = sequence_cross_entropy_with_logits(logits, tags, mask)
             for metric in self.metrics.values():
                 metric(logits, tags, mask.float())
             output_dict["loss"] = loss
@@ -183,32 +194,14 @@ class SimpleTagger(Model):
     @overrides
     def decode(self, output_dict: Dict[str, torch.Tensor]) -> Dict[str, torch.Tensor]:
         """
-        Does a simple position-wise argmax over each token, converts indices to string labels, and
-        adds a ``"tags"`` key to the dictionary with the result.
+        Converts the tag ids to the actual tags.
+        ``output_dict["tags"]`` is a list of lists of tag_ids,
+        so we use an ugly nested list comprehension.
         """
-        """
-        all_predictions = output_dict['class_probabilities']
-        all_predictions = all_predictions.cpu().data.numpy()
-        if all_predictions.ndim == 3:
-            predictions_list = [all_predictions[i] for i in range(all_predictions.shape[0])]
-        else:
-            predictions_list = [all_predictions]
-        all_tags = []
-        for predictions in predictions_list:
-            argmax_indices = numpy.argmax(predictions, axis=-1)
-            tags = [self.vocab.get_token_from_index(x, namespace="labels")
-                    for x in argmax_indices]
-            all_tags.append(tags)
-        output_dict['tags'] = all_tags
-        return output_dict
-        """
-
         output_dict["tags"] = [
             [self.vocab.get_token_from_index(tag, namespace=self.label_namespace)
              for tag in instance_tags]
-            for instance_tags in output_dict["tags"]
-            ]
-
+            for instance_tags in output_dict["tags"]]
         return output_dict
 
     @overrides
@@ -219,17 +212,21 @@ class SimpleTagger(Model):
         return {**f1, **accs}
 
     @classmethod
-    def from_params(cls, vocab: Vocabulary, params: Params) -> 'SimpleTagger':
+    def from_params(cls, vocab: Vocabulary, params: Params) -> 'Tagger':
         embedder_params = params.pop("text_field_embedder")
         text_field_embedder = TextFieldEmbedder.from_params(vocab, embedder_params)
         stacked_encoder = Seq2SeqEncoder.from_params(params.pop("stacked_encoder"))
+        source_namespace = params.pop("source_namespace", "tokens")
         label_namespace = params.pop("label_namespace", "labels")
+        is_crf = params.pop("is_crf", False)
         initializer = InitializerApplicator.from_params(params.pop('initializer', []))
         regularizer = RegularizerApplicator.from_params(params.pop('regularizer', []))
 
         return cls(vocab=vocab,
                    text_field_embedder=text_field_embedder,
                    stacked_encoder=stacked_encoder,
+                   source_namespace=source_namespace,
                    label_namespace=label_namespace,
+                   is_crf=is_crf,
                    initializer=initializer,
                    regularizer=regularizer)
