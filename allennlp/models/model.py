@@ -178,6 +178,9 @@ class Model(torch.nn.Module, Registrable):
         # pylint: disable=unused-argument,no-self-use
         return {}
 
+    def set_device(self, device):
+        return
+
     @classmethod
     def from_params(cls, vocab: Vocabulary, params: Params) -> 'Model':
         choice = params.pop_choice("type", cls.list_available())
