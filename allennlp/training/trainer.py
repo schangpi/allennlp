@@ -14,6 +14,7 @@ import time
 import re
 import datetime
 from typing import Dict, Optional, List, Tuple, Union, Iterable, Any
+from IPython import embed
 
 import torch
 import torch.optim.lr_scheduler
@@ -266,6 +267,7 @@ class Trainer:
 
         if self._cuda_devices[0] != -1:
             self._model = self._model.cuda(self._cuda_devices[0])
+        # print(self._cuda_devices)
 
         self._log_interval = 10  # seconds
         self._summary_interval = 100  # num batches between logging to tensorboard
@@ -629,6 +631,9 @@ class Trainer:
         self._enable_gradient_clipping()
         self._enable_activation_logging()
 
+        if self._cuda_devices[0] >= 0:
+            self._model.set_device(self._cuda_devices[0])
+
         logger.info("Beginning training.")
 
         train_metrics: Dict[str, float] = {}
@@ -837,6 +842,7 @@ class Trainer:
                     model: Model,
                     serialization_dir: str,
                     iterator: DataIterator,
+                    cuda_device: int,
                     train_data: Iterable[Instance],
                     validation_data: Optional[Iterable[Instance]],
                     params: Params) -> 'Trainer':
@@ -844,7 +850,7 @@ class Trainer:
         patience = params.pop_int("patience", 2)
         validation_metric = params.pop("validation_metric", "-loss")
         num_epochs = params.pop_int("num_epochs", 20)
-        cuda_device = params.pop_int("cuda_device", -1)
+        # cuda_device = params.pop_int("cuda_device", -1)
         grad_norm = params.pop_float("grad_norm", None)
         grad_clipping = params.pop_float("grad_clipping", None)
         lr_scheduler_params = params.pop("learning_rate_scheduler", None)

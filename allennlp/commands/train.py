@@ -63,6 +63,30 @@ class Train(Subcommand):
                                    type=str,
                                    help=argparse.SUPPRESS)
 
+        cuda_device = subparser.add_mutually_exclusive_group(required=False)
+        cuda_device.add_argument('--cuda-device',
+                                 type=int,
+                                 default=-1,
+                                 help='id of GPU to use (if any)')
+
+        train_data_path = subparser.add_mutually_exclusive_group(required=False)
+        train_data_path.add_argument('--train',
+                                     type=str,
+                                     default="",
+                                     help='training data')
+
+        validation_data_path = subparser.add_mutually_exclusive_group(required=False)
+        validation_data_path.add_argument('--dev',
+                                          type=str,
+                                          default="",
+                                          help='dev data')
+
+        test_data_path = subparser.add_mutually_exclusive_group(required=False)
+        test_data_path.add_argument('--test',
+                                    type=str,
+                                    default="",
+                                    help='test data')
+
         subparser.add_argument('-o', '--overrides',
                                type=str,
                                default="",
@@ -90,10 +114,23 @@ def train_model_from_args(args: argparse.Namespace):
     # Import any additional modules needed (to register custom classes)
     for package_name in args.include_package:
         import_submodules(package_name)
-    train_model_from_file(args.param_path, args.serialization_dir, args.overrides, args.file_friendly_logging)
+    train_model_from_file(args.param_path,
+                          args.serialization_dir,
+                          args.cuda_device,
+                          args.train,
+                          args.dev,
+                          args.test,
+                          args.overrides,
+                          args.file_friendly_logging)
 
 
-def train_model_from_file(parameter_filename: str, serialization_dir: str, overrides: str = "",
+def train_model_from_file(parameter_filename: str,
+                          serialization_dir: str,
+                          cuda_device: int,
+                          train_data_path: str = "",
+                          validation_data_path: str = "",
+                          test_data_path: str = "",
+                          overrides: str = "",
                           file_friendly_logging: bool = False) -> Model:
     """
     A wrapper around :func:`train_model` which loads the params from a file.
@@ -109,7 +146,13 @@ def train_model_from_file(parameter_filename: str, serialization_dir: str, overr
         Tqdm.set_default_mininterval(10.0)
     # Load the experiment config from a file and pass it to ``train_model``.
     params = Params.from_file(parameter_filename, overrides)
-    return train_model(params, serialization_dir, file_friendly_logging)
+    return train_model(params,
+                       serialization_dir,
+                       cuda_device,
+                       train_data_path,
+                       validation_data_path,
+                       test_data_path,
+                       file_friendly_logging)
 
 
 def datasets_from_params(params: Params) -> Dict[str, Iterable[Instance]]:
@@ -138,7 +181,34 @@ def datasets_from_params(params: Params) -> Dict[str, Iterable[Instance]]:
 
     return datasets
 
-def train_model(params: Params, serialization_dir: str, file_friendly_logging: bool = False) -> Model:
+def datasets_from_args(params: Params,
+                       train_data_path,
+                       validation_data_path = None,
+                       test_data_path = None) -> Dict[str, Iterable[Instance]]:
+    """
+    Load all the datasets specified by the args.
+    """
+    dataset_reader = DatasetReader.from_params(params.pop('dataset_reader'))
+    logger.info("Reading training data from %s", train_data_path)
+    train_data = dataset_reader.read(train_data_path)
+    datasets: Dict[str, Iterable[Instance]] = {"train": train_data}
+    if validation_data_path is not None:
+        logger.info("Reading validation data from %s", validation_data_path)
+        validation_data = dataset_reader.read(validation_data_path)
+        datasets["validation"] = validation_data
+    if test_data_path is not None:
+        logger.info("Reading test data from %s", test_data_path)
+        test_data = dataset_reader.read(test_data_path)
+        datasets["test"] = test_data
+    return datasets
+
+def train_model(params: Params,
+                serialization_dir: str,
+                cuda_device: int,
+                train_data_path: str,
+                validation_data_path: str,
+                test_data_path: str,
+                file_friendly_logging: bool = False) -> Model:
     """
     This function can be used as an entry point to running models in AllenNLP
     directly from a JSON specification using a :class:`Driver`. Note that if
@@ -171,7 +241,8 @@ def train_model(params: Params, serialization_dir: str, file_friendly_logging: b
     with open(os.path.join(serialization_dir, "model_params.json"), "w") as param_file:
         json.dump(serialization_params, param_file, indent=4)
 
-    all_datasets = datasets_from_params(params)
+    # all_datasets = datasets_from_params(params)
+    all_datasets = datasets_from_args(params, train_data_path, validation_data_path, test_data_path)
     datasets_for_vocab_creation = set(params.pop("datasets_for_vocab_creation", all_datasets))
 
     for dataset in datasets_for_vocab_creation:
@@ -186,6 +257,8 @@ def train_model(params: Params, serialization_dir: str, file_friendly_logging: b
     vocab.save_to_files(os.path.join(serialization_dir, "vocabulary"))
 
     model = Model.from_params(vocab, params.pop('model'))
+    if cuda_device >= 0:
+        model = model.cuda(cuda_device)
     iterator = DataIterator.from_params(params.pop("iterator"))
     iterator.index_with(vocab)
 
@@ -197,12 +270,13 @@ def train_model(params: Params, serialization_dir: str, file_friendly_logging: b
     trainer = Trainer.from_params(model,
                                   serialization_dir,
                                   iterator,
+                                  cuda_device,
                                   train_data,
                                   validation_data,
                                   trainer_params)
 
     evaluate_on_test = params.pop_bool("evaluate_on_test", False)
-    params.assert_empty('base train command')
+    # params.assert_empty('base train command')
     metrics = trainer.train()
 
     # Now tar up results
