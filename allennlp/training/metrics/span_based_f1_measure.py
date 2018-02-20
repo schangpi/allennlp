@@ -63,18 +63,20 @@ class SpanBasedF1Measure(Metric):
         """
         new_tags = []
         for i, tag in enumerate(tags):
-            if tag.split('-')[0] == 'B':
-                new_tags.append(tag)
-            elif tag.split('-')[0] == 'I':
-                new_tags.append(tag)
-            elif tag.split('-')[0] == 'S':
-                new_tags.append(tag.replace('S-', 'B-'))
-            elif tag.split('-')[0] == 'E':
-                new_tags.append(tag.replace('E-', 'I-'))
-            elif tag.split('-')[0] == 'O':
+            splitted_tag = tag.split('-')
+            if len(splitted_tag) > 1 and len(splitted_tag[0]) == 1:
+                if splitted_tag[0] == 'B':
+                    new_tags.append(tag)
+                elif splitted_tag[0] == 'I':
+                    new_tags.append(tag)
+                elif splitted_tag[0] == 'S':
+                    new_tags.append(tag.replace('S-', 'B-'))
+                elif splitted_tag[0] == 'E':
+                    new_tags.append(tag.replace('E-', 'I-'))
+            elif splitted_tag[0] == 'O':
                 new_tags.append(tag)
             else:
-                new_tags.append(tag)
+                new_tags.append('@@' + tag)
                 # raise Exception('Invalid format!')
         return new_tags
 
@@ -154,8 +156,8 @@ class SpanBasedF1Measure(Metric):
                 print(gold_spans)
             """
 
-            predicted_spans = self._handle_continued_spans(predicted_spans)
-            gold_spans = self._handle_continued_spans(gold_spans)
+            # predicted_spans = self._handle_continued_spans(predicted_spans)
+            # gold_spans = self._handle_continued_spans(gold_spans)
 
             for span in predicted_spans:
                 if span in gold_spans:
