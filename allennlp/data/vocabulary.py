@@ -16,6 +16,7 @@ from allennlp.common.checks import ConfigurationError
 from allennlp.common.file_utils import cached_path
 from allennlp.common.tqdm import Tqdm
 from allennlp.data import instance as adi  # pylint: disable=unused-import
+from IPython import embed
 
 logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
@@ -80,16 +81,22 @@ class _NamespaceDependentDefaultDict(defaultdict):
 
 class _TokenToIndexDefaultDict(_NamespaceDependentDefaultDict):
     def __init__(self, non_padded_namespaces: Sequence[str], padding_token: str, oov_token: str) -> None:
+        # super(_TokenToIndexDefaultDict, self).__init__(non_padded_namespaces,
+        #                                                lambda: {padding_token: 0, oov_token: 1},
+        #                                                lambda: {padding_token: 0})
         super(_TokenToIndexDefaultDict, self).__init__(non_padded_namespaces,
                                                        lambda: {padding_token: 0, oov_token: 1},
-                                                       lambda: {padding_token: 0})
+                                                       lambda: {})
 
 
 class _IndexToTokenDefaultDict(_NamespaceDependentDefaultDict):
     def __init__(self, non_padded_namespaces: Sequence[str], padding_token: str, oov_token: str) -> None:
+        # super(_IndexToTokenDefaultDict, self).__init__(non_padded_namespaces,
+        #                                                lambda: {0: padding_token, 1: oov_token},
+        #                                                lambda: {0: padding_token})
         super(_IndexToTokenDefaultDict, self).__init__(non_padded_namespaces,
                                                        lambda: {0: padding_token, 1: oov_token},
-                                                       lambda: {0: padding_token})
+                                                       lambda: {})
 
 def _read_pretrained_words(embeddings_filename: str)-> Set[str]:
     words = set()
@@ -366,6 +373,7 @@ class Vocabulary:
             params.assert_empty("Vocabulary - from files")
             return Vocabulary.from_files(vocabulary_directory)
 
+        # embed()
         min_count = params.pop_int("min_count", 1)
         max_vocab_size = params.pop_int("max_vocab_size", None)
         non_padded_namespaces = params.pop("non_padded_namespaces", DEFAULT_NON_PADDED_NAMESPACES)
