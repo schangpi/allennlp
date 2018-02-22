@@ -1,5 +1,6 @@
 from typing import Dict, Optional
 
+# from IPython import embed
 import numpy
 from overrides import overrides
 import torch
@@ -19,7 +20,7 @@ from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
 @Model.register("tagger")
 class Tagger(Model):
     """
-    This ``Tagger`` simply encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
+    This ``Tagger`` encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
     predicts a tag for each token in the sequence.
 
     Parameters
@@ -31,6 +32,12 @@ class Tagger(Model):
     stacked_encoder : ``Seq2SeqEncoder``
         The encoder (with its own internal stacking) that we will use in between embedding tokens
         and predicting output tags.
+    source_namespace : ``str``, optional (default=``tokens``)
+        namespace for vocab of source sentences
+    label_namespace : ``str``, optional (default=``labels``)
+        namespace for vocab of tags
+    is_crf : bool, optional (default=``False``)
+        Use conditional random field loss instead of the standard softmax
     initializer : ``InitializerApplicator``, optional (default=``InitializerApplicator()``)
         Used to initialize the model parameters.
     regularizer : ``RegularizerApplicator``, optional (default=``None``)
@@ -46,19 +53,15 @@ class Tagger(Model):
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super(Tagger, self).__init__(vocab, regularizer)
-
         self.source_namespace = source_namespace
         self.label_namespace = label_namespace
         self.text_field_embedder = text_field_embedder
         self.num_classes = self.vocab.get_vocab_size(label_namespace)
         self.stacked_encoder = stacked_encoder
-        self.tag_projection_layer = TimeDistributed(Linear(self.stacked_encoder.get_output_dim(),
-                                                           self.num_classes))
-        # self.tag_projection_layer = Linear(self.stacked_encoder.get_output_dim(), self.num_classes)
+        self.tag_projection_layer = TimeDistributed(Linear(self.stacked_encoder.get_output_dim(), self.num_classes))
         self.is_crf = is_crf
         if is_crf:
             self.crf = ConditionalRandomField(self.num_classes)
-
         check_dimensions_match(text_field_embedder.get_output_dim(), stacked_encoder.get_input_dim(),
                                "text field embedding dim", "encoder input dim")
         self.metrics = {
@@ -206,10 +209,11 @@ class Tagger(Model):
 
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
+        # accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
         metric_dict = self.span_metric.get_metric(reset=reset)
         f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
-        return {**f1, **accs}
+        # return {**f1, **accs}
+        return {**f1}
 
     @classmethod
     def from_params(cls, vocab: Vocabulary, params: Params) -> 'Tagger':

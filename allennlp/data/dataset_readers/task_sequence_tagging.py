@@ -16,7 +16,7 @@ from allennlp.data.tokenizers import Token
 logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
 DEFAULT_WORD_TAG_DELIMITER = "###"
-ALL_TASKS = ['upos', 'xpos', 'chunk', 'ner', 'mwe', 'sem', 'semtr', 'supsense', 'ccg', 'com']
+# ALL_TASKS = ['upos', 'xpos', 'chunk', 'ner', 'mwe', 'sem', 'semtr', 'supsense', 'ccg', 'com']
 
 @DatasetReader.register("task_sequence_tagging")
 class TaskSequenceTaggingDatasetReader(DatasetReader):
@@ -46,6 +46,8 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
                  token_indexers: Dict[str, TokenIndexer] = None,
                  task_token_indexers: Dict[str, TokenIndexer] = None,
                  domain_token_indexers: Dict[str, TokenIndexer] = None,
+                 tasks: str = None,
+                 domains: str = None,
                  lazy: bool = False) -> None:
         super().__init__(lazy)
         self._token_indexers = token_indexers or {'tokens': SingleIdTokenIndexer()}
@@ -53,17 +55,21 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
         self._token_delimiter = token_delimiter
         self._task_token_indexers = task_token_indexers or {"task_token": SingleIdTokenIndexer()}
         self._domain_token_indexers = domain_token_indexers or {"domain_token": SingleIdTokenIndexer()}
+        self._tasks = tasks
+        self._domains = domains
 
     @overrides
     def _read(self, file_path):
         # if `file_path` is a URL, redirect to the cache
         # file_path = cached_path(file_path)
         for filename in os.listdir(file_path):
+            filename_splitted = filename.split('_')
+            task_name = filename_splitted[-3]
+            domain_name = filename_splitted[-2]
+            if task_name not in self._tasks or domain_name not in self._domains:
+                continue
             with open(os.path.join(file_path, filename), "r") as data_file:
                 logger.info("Reading instances from lines in file at: %s", filename)
-                filename_splitted = filename.split('_')
-                task_name = filename_splitted[-3]
-                domain_name = filename_splitted[-2]
                 for line in Tqdm.tqdm(data_file):
                     line = line.strip("\n")
                     # skip blank lines
@@ -73,20 +79,17 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
                                        for pair in line.split(self._token_delimiter)]
                     tokens = [Token(token) for token, tag in tokens_and_tags]
                     tags = [tag for token, tag in tokens_and_tags]
-                    empty_tags = ["@@EMPTY@@" for _ in tags]
                     sequence = TextField(tokens, self._token_indexers)
-                    task_field = TextField(self._tokenizer.tokenize(task_name), self._task_token_indexers)
-                    domain_field = TextField(self._tokenizer.tokenize(domain_name), self._domain_token_indexers)
-                    sequence_tags = SequenceLabelField(tags, sequence, label_namespace=task_name + '_labels')
+                    # sequence_tags = SequenceLabelField(tags, sequence, label_namespace=task_name + '_labels')
+                    sequence_tags = SequenceLabelField(tags, sequence, label_namespace='labels')
 
-                    input_dict = {"task_token": task_field,
-                                  "domain_token": domain_field,
-                                  'tokens': sequence}
-                    for tsk in ALL_TASKS:
-                        empty_sequence_tags = SequenceLabelField(empty_tags, sequence, label_namespace=tsk + '_labels')
-                        input_dict[tsk + '_tags'] = empty_sequence_tags
-                    input_dict[task_name + '_tags'] = sequence_tags
-                    yield Instance(input_dict)
+                    # TODO: Apply tokenizer for a longer descriptions of tasks and domains
+                    task_field = TextField([Token(task_name)], self._task_token_indexers)
+                    domain_field = TextField([Token(domain_name)], self._domain_token_indexers)
+                    yield Instance({'task_token': task_field,
+                                    'domain_token': domain_field,
+                                    'tokens': sequence,
+                                    'tags': sequence_tags})
 
     def text_to_instance(self, tokens: List[Token]) -> Instance:  # type: ignore
         """
@@ -98,10 +101,12 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
     @classmethod
     def from_params(cls, params: Params) -> 'TaskSequenceTaggingDatasetReader':
         token_indexers = TokenIndexer.dict_from_params(params.pop('token_indexers', {}))
-        task_token_indexers= TokenIndexer.dict_from_params(params.pop('task_token_indexers', {}))
-        domain_token_indexers = TokenIndexer.dict_from_params(params.pop('domain_token_indexers', {}))
         word_tag_delimiter = params.pop("word_tag_delimiter", DEFAULT_WORD_TAG_DELIMITER)
         token_delimiter = params.pop("token_delimiter", None)
+        task_token_indexers= TokenIndexer.dict_from_params(params.pop('task_token_indexers', {}))
+        domain_token_indexers = TokenIndexer.dict_from_params(params.pop('domain_token_indexers', {}))
+        tasks = params.pop('tasks', None)
+        domains = params.pop('domains', None)
         lazy = params.pop('lazy', False)
         params.assert_empty(cls.__name__)
         return TaskSequenceTaggingDatasetReader(token_indexers=token_indexers,
@@ -109,4 +114,6 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
                                                 token_delimiter=token_delimiter,
                                                 task_token_indexers=task_token_indexers,
                                                 domain_token_indexers=domain_token_indexers,
+                                                tasks=tasks,
+                                                domains=domains,
                                                 lazy=lazy)

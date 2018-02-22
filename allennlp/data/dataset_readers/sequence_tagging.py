@@ -52,22 +52,17 @@ class SequenceTaggingDatasetReader(DatasetReader):
     def _read(self, file_path):
         # if `file_path` is a URL, redirect to the cache
         file_path = cached_path(file_path)
-
         with open(file_path, "r") as data_file:
-
             logger.info("Reading instances from lines in file at: %s", file_path)
             for line in Tqdm.tqdm(data_file):
                 line = line.strip("\n")
-
                 # skip blank lines
                 if not line:
                     continue
-
                 tokens_and_tags = [pair.rsplit(self._word_tag_delimiter, 1)
                                    for pair in line.split(self._token_delimiter)]
                 tokens = [Token(token) for token, tag in tokens_and_tags]
                 tags = [tag for token, tag in tokens_and_tags]
-
                 sequence = TextField(tokens, self._token_indexers)
                 sequence_tags = SequenceLabelField(tags, sequence)
                 yield Instance({'tokens': sequence,

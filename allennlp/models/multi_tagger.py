@@ -1,35 +1,43 @@
 from typing import Dict, Optional
 
-from IPython import embed
+# from IPython import embed
 import numpy
 from overrides import overrides
 import torch
 
 from allennlp.common import Params
 from allennlp.data import Vocabulary
-from allennlp.modules import Seq2SeqEncoder, TimeDistributed, TextFieldEmbedder, ConditionalRandomField
+from allennlp.modules import Seq2SeqEncoder, TextFieldEmbedder
 from allennlp.models.model import Model
 from allennlp.models.tagger import Tagger
 from allennlp.nn import InitializerApplicator, RegularizerApplicator
-# from allennlp.nn.util import get_text_field_mask, sequence_cross_entropy_with_logits
-# from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
 
 
 @Model.register("multi_tagger")
 class MultiTagger(Model):
     """
-    This ``MultiTagger`` simply encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
-    predicts a tag for each token in the sequence.
+    This ``MultiTagger`` encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
+    predicts multiple tags for each token in the sequence.
 
     Parameters
     ----------
     vocab : ``Vocabulary``, required
         A Vocabulary, required in order to compute sizes for input/output projections.
+    tasks : ``str``, required
+        A list of task names
+    domains : ``str``, required
+        A list of domain names
     text_field_embedder : ``TextFieldEmbedder``, required
         Used to embed the ``tokens`` ``TextField`` we get as input to the model.
     stacked_encoder : ``Seq2SeqEncoder``
         The encoder (with its own internal stacking) that we will use in between embedding tokens
         and predicting output tags.
+    source_namespace : ``str``, optional (default=``tokens``)
+        namespace for vocab of source sentences
+    label_suffix_namespace : ``str``, optional (default=``labels``)
+        task_name + '_' + label_suffix_namespace is the namespace for vocab of tags for each task
+    is_crf : bool, optional (default=``False``)
+        Use conditional random field loss instead of the standard softmax
     initializer : ``InitializerApplicator``, optional (default=``InitializerApplicator()``)
         Used to initialize the model parameters.
     regularizer : ``RegularizerApplicator``, optional (default=``None``)
@@ -49,6 +57,7 @@ class MultiTagger(Model):
         super(MultiTagger, self).__init__(vocab, regularizer)
         self.tasks = tasks
         self.domains = domains
+        # Create task-to-ID and domain-to-ID mappings
         self.task_to_id = {}
         for i, tsk in enumerate(tasks):
             self.task_to_id[tsk] = i
@@ -115,14 +124,14 @@ class MultiTagger(Model):
 
         """
         # num_tasks = all_tags.size(1)
-        # map task token to strings
-        # map strings to ind
         batch_size = task_token.shape[0]
         predictions = [[]] * batch_size
         label_namespaces = [''] * batch_size
         loss = 0.0
         task_ids = []
         for tt in task_token.squeeze().data.cpu().numpy():
+            # map task token to strings
+            # map strings to ind
             task_ids.append(self.task_to_id[self.vocab.get_token_from_index(tt, 'task_labels')])
         task_ids = numpy.array(task_ids)
         for i, tsk in enumerate(self.tasks):

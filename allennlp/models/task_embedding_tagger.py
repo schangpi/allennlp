@@ -20,8 +20,8 @@ from allennlp.training.metrics import CategoricalAccuracy, SpanBasedF1Measure
 @Model.register("task_embedding_tagger")
 class TaskEmbeddingTagger(Model):
     """
-    This ``MultiTagger`` simply encodes a sequence of text with a stacked ``Seq2SeqEncoder``, then
-    predicts a tag for each token in the sequence.
+    This ``TaskEmbeddingTagger`` encodes task token, domain token, and a sequence of text with
+    a stacked ``Seq2SeqEncoder``, then predicts a tag (with respect to the task) for each token in the sequence.
 
     Parameters
     ----------
@@ -32,6 +32,10 @@ class TaskEmbeddingTagger(Model):
     stacked_encoder : ``Seq2SeqEncoder``
         The encoder (with its own internal stacking) that we will use in between embedding tokens
         and predicting output tags.
+    task_field_embedder : ``TextFieldEmbedder``, optional
+        Used to embed the ``task_token`` ``TextField`` we get as input to the model.
+    domain_field_embedder : ``TextFieldEmbedder``, optional
+        Used to embed the ``domain_token`` ``TextField`` we get as input to the model.
     initializer : ``InitializerApplicator``, optional (default=``InitializerApplicator()``)
         Used to initialize the model parameters.
     regularizer : ``RegularizerApplicator``, optional (default=``None``)
@@ -39,33 +43,28 @@ class TaskEmbeddingTagger(Model):
     """
 
     def __init__(self, vocab: Vocabulary,
-                 tasks: str,
-                 domains: str,
                  text_field_embedder: TextFieldEmbedder,
-                 task_field_embedder: TextFieldEmbedder,
-                 domain_field_embedder: TextFieldEmbedder,
                  stacked_encoder: Seq2SeqEncoder,
+                 task_field_embedder: TextFieldEmbedder = None,
+                 domain_field_embedder: TextFieldEmbedder = None,
                  source_namespace: str = "tokens",
                  label_namespace: str = "labels",
                  is_crf: bool = False,
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super(TaskEmbeddingTagger, self).__init__(vocab, regularizer)
-
-        self.num_tasks = len(tasks)
-        self.tasks = tasks
-        self.domains = domains
         self.source_namespace = source_namespace
+        self.label_namespace = label_namespace
         self.text_field_embedder = text_field_embedder
-        self.task_field_embedder = task_field_embedder
-        self.domain_field_embedder = domain_field_embedder
+        self.num_classes = self.vocab.get_vocab_size(label_namespace)
+        self.task_field_embedder = task_field_embedder or text_field_embedder
+        self.domain_field_embedder = domain_field_embedder or text_field_embedder
         self.stacked_encoder = stacked_encoder
         self.tag_projection_layer = TimeDistributed(
             Linear(self.stacked_encoder.get_output_dim() +
                    self.task_field_embedder.get_output_dim() +
                    self.domain_field_embedder.get_output_dim(),
                    self.num_classes))
-        # self.tag_projection_layer = Linear(self.stacked_encoder.get_output_dim(), self.num_classes)
         self.is_crf = is_crf
         if is_crf:
             self.crf = ConditionalRandomField(self.num_classes)
@@ -76,7 +75,6 @@ class TaskEmbeddingTagger(Model):
                 "accuracy3": CategoricalAccuracy(top_k=3)
         }
         self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
-        initializer(self)
         initializer(self)
 
     def _examine_source_indices(self, preindices):
@@ -154,10 +152,11 @@ class TaskEmbeddingTagger(Model):
         encoded_text = self.stacked_encoder(embedded_text_input, mask)
         embedded_task = self.task_field_embedder(task_token)
         embedded_domain = self.domain_field_embedder(domain_token)
-
-        concat_text = torch.cat([encoded_text, torch.squeeze(embedded_task), torch.squeeze(embedded_domain)], 1)
+        num_encoded_vectors = encoded_text.shape[1]
+        concat_text = torch.cat([encoded_text,
+                                 embedded_task.expand(-1, num_encoded_vectors, -1),
+                                 embedded_domain.expand(-1, num_encoded_vectors, -1)], 2)
         logits = self.tag_projection_layer(concat_text)  # (batch_size, sequence_length, num_classes)
-        # logits = self.tag_projection_layer(encoded_text) # (batch_size, sequence_length, num_classes)
         if self.is_crf:
             predicted_tags = self.crf.viterbi_tags(logits, mask)
         else:
@@ -213,30 +212,31 @@ class TaskEmbeddingTagger(Model):
 
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
-        accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
+        # accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
         metric_dict = self.span_metric.get_metric(reset=reset)
         f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
-        return {**f1, **accs}
+        # return {**f1, **accs}
+        return {**f1}
 
     @classmethod
     def from_params(cls, vocab: Vocabulary, params: Params) -> 'TaskEmbeddingTagger':
+        embedder_params = params.pop("text_field_embedder")
+        text_field_embedder = TextFieldEmbedder.from_params(vocab, embedder_params)
+        stacked_encoder = Seq2SeqEncoder.from_params(params.pop("stacked_encoder"))
         task_embedder_params = params.pop("task_field_embedder")
         task_field_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
         domain_embedder_params = params.pop("domain_field_embedder")
         domain_field_embedder = TextFieldEmbedder.from_params(vocab, domain_embedder_params)
-        embedder_params = params.pop("text_field_embedder")
-        text_field_embedder = TextFieldEmbedder.from_params(vocab, embedder_params)
-        stacked_encoder = Seq2SeqEncoder.from_params(params.pop("stacked_encoder"))
         source_namespace = params.pop("source_namespace", "tokens")
         label_namespace = params.pop("label_namespace", "labels")
         is_crf = params.pop("is_crf", False)
         initializer = InitializerApplicator.from_params(params.pop('initializer', []))
         regularizer = RegularizerApplicator.from_params(params.pop('regularizer', []))
         return cls(vocab=vocab,
-                   task_field_embedder=task_field_embedder,
-                   domain_field_embedder=domain_field_embedder,
                    text_field_embedder=text_field_embedder,
                    stacked_encoder=stacked_encoder,
+                   task_field_embedder=task_field_embedder,
+                   domain_field_embedder=domain_field_embedder,
                    source_namespace=source_namespace,
                    label_namespace=label_namespace,
                    is_crf=is_crf,

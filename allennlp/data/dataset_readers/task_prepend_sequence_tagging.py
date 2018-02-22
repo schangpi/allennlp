@@ -8,7 +8,7 @@ from allennlp.common import Params
 from allennlp.common.file_utils import cached_path
 from allennlp.common.tqdm import Tqdm
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
-from allennlp.data.fields import TextField, SequenceLabelField, LabelField, ListField
+from allennlp.data.fields import TextField, SequenceLabelField
 from allennlp.data.instance import Instance
 from allennlp.data.token_indexers import TokenIndexer, SingleIdTokenIndexer
 from allennlp.data.tokenizers import Token
@@ -18,8 +18,8 @@ logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 DEFAULT_WORD_TAG_DELIMITER = "###"
 # ALL_TASKS = ['upos', 'xpos', 'chunk', 'ner', 'mwe', 'sem', 'semtr', 'supsense', 'ccg', 'com']
 
-@DatasetReader.register("sequence_multi_tagging")
-class SequenceMultiTaggingDatasetReader(DatasetReader):
+@DatasetReader.register("task_prepend_sequence_tagging")
+class TaskPrependSequenceTaggingDatasetReader(DatasetReader):
     """
     Reads instances from a pretokenised file where each line is in the following format:
 
@@ -73,26 +73,14 @@ class SequenceMultiTaggingDatasetReader(DatasetReader):
                         continue
                     tokens_and_tags = [pair.rsplit(self._word_tag_delimiter, 1)
                                        for pair in line.split(self._token_delimiter)]
+                    tokens_and_tags = ([['<<' + task_name + '>>', 'O'], ['<<' + domain_name + '>>', 'O']] +
+                                       tokens_and_tags)
                     tokens = [Token(token) for token, tag in tokens_and_tags]
                     tags = [tag for token, tag in tokens_and_tags]
                     sequence = TextField(tokens, self._token_indexers)
-                    sequence_tags = SequenceLabelField(tags, sequence, label_namespace=task_name + '_labels')
-                    task_field = LabelField(task_name, label_namespace="task_labels")
-                    domain_field = LabelField(domain_name, label_namespace="domain_labels")
-                    input_dict = {'task_token': task_field,
-                                  'domain_token': domain_field,
-                                  'tokens': sequence}
-                    all_tags = []
-                    empty_tags = ['O'] * len(tags)
-                    for tsk in self._tasks:
-                        if tsk != task_name:
-                            empty_sequence_tags = SequenceLabelField(empty_tags, sequence,
-                                                                     label_namespace=tsk + '_labels')
-                            all_tags.append(empty_sequence_tags)
-                        else:
-                            all_tags.append(sequence_tags)
-                    input_dict['all_tags'] = ListField(all_tags)
-                    yield Instance(input_dict)
+                    sequence_tags = SequenceLabelField(tags, sequence, label_namespace='labels')
+                    yield Instance({'tokens': sequence,
+                                    'tags': sequence_tags})
 
     def text_to_instance(self, tokens: List[Token]) -> Instance:  # type: ignore
         """
@@ -102,7 +90,7 @@ class SequenceMultiTaggingDatasetReader(DatasetReader):
         return Instance({'tokens': TextField(tokens, token_indexers=self._token_indexers)})
 
     @classmethod
-    def from_params(cls, params: Params) -> 'SequenceMultiTaggingDatasetReader':
+    def from_params(cls, params: Params) -> 'TaskPrependSequenceTaggingDatasetReader':
         token_indexers = TokenIndexer.dict_from_params(params.pop('token_indexers', {}))
         word_tag_delimiter = params.pop("word_tag_delimiter", DEFAULT_WORD_TAG_DELIMITER)
         token_delimiter = params.pop("token_delimiter", None)
@@ -110,9 +98,9 @@ class SequenceMultiTaggingDatasetReader(DatasetReader):
         domains = params.pop('domains', None)
         lazy = params.pop('lazy', False)
         params.assert_empty(cls.__name__)
-        return SequenceMultiTaggingDatasetReader(token_indexers=token_indexers,
-                                                 word_tag_delimiter=word_tag_delimiter,
-                                                 token_delimiter=token_delimiter,
-                                                 tasks=tasks,
-                                                 domains=domains,
-                                                 lazy=lazy)
+        return TaskPrependSequenceTaggingDatasetReader(token_indexers=token_indexers,
+                                                       word_tag_delimiter=word_tag_delimiter,
+                                                       token_delimiter=token_delimiter,
+                                                       tasks=tasks,
+                                                       domains=domains,
+                                                       lazy=lazy)
