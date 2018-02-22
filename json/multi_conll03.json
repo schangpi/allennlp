@@ -15,11 +15,11 @@
       }
     },
 	"tasks":[
-      "upos",
-	  "xpos"
+	  "xpos",
+	  "chunk"
     ],
 	"domains":[
-      "uni"
+      "conll03"
     ]
   },
   "train_data_path":"./dataset/multi_tagger/train",
@@ -29,11 +29,11 @@
   "model":{
     "type":"multi_tagger",
 	"tasks":[
-      "upos",
-	  "xpos"
+	  "xpos",
+	  "chunk"
     ],
 	"domains":[
-      "uni"
+      "conll03"
     ],
     "text_field_embedder":{
       "tokens":{
@@ -51,7 +51,7 @@
         "encoder":{
           "type":"gru",
           "input_size":25,
-          "hidden_size":80,
+          "hidden_size":25,
           "num_layers":2,
           "dropout":0.25,
           "bidirectional":true
@@ -60,7 +60,7 @@
     },
     "stacked_encoder":{
       "type":"gru",
-      "input_size":260,
+      "input_size":100,
       "hidden_size":300,
       "num_layers":2,
       "dropout":0.5,

@@ -6,41 +6,97 @@
 simple_tagger
 ######
 
-rm -r /tmp/nlp/xpos_tag
-python -m allennlp.run train json/xpos_simple_tagger.json --serialization-dir /tmp/nlp/xpos_tag > /tmp/log/xpos_tag_log
+mn=tagger_crf_template
+gpu=1
+./all_taggers.sh $mn $gpu
 
-rm -r /tmp/nlp/upos_tag
-python -m allennlp.run train json/upos_simple_tagger.json --serialization-dir /tmp/nlp/upos_tag > /tmp/log/upos_tag_log
+./tagger.sh sem_semcor "$mn" "$gpu"
+./tagger.sh semtr_semtraits "$mn" "$gpu"
+./tagger.sh mwe_streusle "$mn" "$gpu"
+./tagger.sh smwe_streusle "$mn" "$gpu"
+./tagger.sh supsense_streusle "$mn" "$gpu"
+./tagger.sh chunk-iobes_conll03 "$mn" "$gpu"
+./tagger.sh ner_conll03 "$mn" "$gpu"
+./tagger.sh com_broadcast1 "$mn" "$gpu"
+./tagger.sh com_broadcast2 "$mn" "$gpu"
+./tagger.sh com_broadcast3 "$mn" "$gpu"
+./tagger.sh ccg_ccg "$mn" "$gpu"
 
-rm -r /tmp/nlp/ner_tag
-python -m allennlp.run train json/ner_simple_tagger.json --serialization-dir /tmp/nlp/ner_tag > /tmp/log/ner_tag_log
+68
+mn=tagger_crf_template
+gpu=0
+./tagger.sh upos_uni "$mn" "$gpu"
+./tagger.sh upos_streusle "$mn" "$gpu"
+./tagger.sh xpos_streusle "$mn" "$gpu"
+./tagger.sh xpos_uni "$mn" "$gpu"
+./tagger.sh xpos_conll03 "$mn" "$gpu"
+./tagger.sh chunk_conll02 "$mn" "$gpu"
+./tagger.sh chunk_conll03 "$mn" "$gpu"
 
-rm -r /tmp/nlp/chunk_tag
-python -m allennlp.run train json/chunk_simple_tagger.json --serialization-dir /tmp/nlp/chunk_tag > /tmp/log/chunk_tag_log
+61
+DATADIR=./dataset/multi_tagger_testing
+TMPDIR=/tmp/tagger
+TASK_NAME=taskembtagger
+CUDA=0
+for ext in "upos" "xpos" "uni" "conll03" "uposchunk"
+do
+MODEL=task_prepend_embedding_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+ 
+62
+DATADIR=./dataset/multi_tagger_testing
+TMPDIR=/tmp/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "upos" "xpos" "uni" "conll03" "uposchunk"
+do
+MODEL=task_embedding_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
 
-######
-seq2seq
-######
-rm -r /tmp/nlp/xpos_seq
-python -m allennlp.run train json/xpos_seq2seq.json --serialization-dir /tmp/nlp/xpos_seq > /tmp/log/xpos_seq_log
+64
+DATADIR=./dataset/multi_tagger_testing
+TMPDIR=/tmp/tagger
+TASK_NAME=multitagger
+CUDA=2
+for ext in "upos" "xpos" "uni" "conll03" "uposchunk"
+do
+MODEL=multi_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+ 
+# Evluation 
+python -m allennlp.run evaluate /tmp/tutorials/getting_started/model.tar.gz --evaluation-data-file 
 
-rm -r /tmp/nlp/upos_seq
-python -m allennlp.run train json/upos_seq2seq.json --serialization-dir /tmp/nlp/upos_seq > /tmp/log/upos_seq_log
+# Utils
+grep 'word' filename
+grep 'word' file1 file2 file3
+grep 'string1 string2'  filename
+cat otherfile | grep 'something'
+command | grep 'something'
+command option1 | grep 'data'
+grep --color 'data' fileName
 
-rm -r /tmp/nlp/ner_seq
-python -m allennlp.run train json/ner_seq2seq.json --serialization-dir /tmp/nlp/ner_seq > /tmp/log/ner_seq_log
 
-rm -r /tmp/nlp/chunk_seq
-python -m allennlp.run train json/chunk_seq2seq.json --serialization-dir /tmp/nlp/chunk_seq > /tmp/log/chunk_seq_log
-
-######
-seqtask2seq
-######
-rm -r /tmp/nlp/seqtask2seq
-python -m allennlp.run train json/seqtask2seq.json --serialization-dir /tmp/nlp/seqtask2seq > /tmp/log/seqtask2seq_log
-
-######
-seq2multiseq
-######
-rm -r /tmp/nlp/seq2multiseq
-python -m allennlp.run train json/seq2multiseq.json --serialization-dir /tmp/nlp/seq2multiseq > /tmp/log/seq2multiseq_log

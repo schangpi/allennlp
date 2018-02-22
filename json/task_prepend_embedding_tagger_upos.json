@@ -3,7 +3,7 @@
 	"min_count":1
   },
   "dataset_reader":{
-    "type":"sequence_tagging",
+    "type":"task_prepend_sequence_tagging",
     "word_tag_delimiter":"<Deli>",
     "token_indexers":{
       "tokens":{
@@ -13,7 +13,14 @@
       "token_characters":{
         "type":"characters"
       }
-    }
+    },
+	"tasks":[
+      "upos"
+    ],
+	"domains":[
+      "uni",
+	  "streusle"
+    ]
   },
   "evaluate_on_test":true,
   "model":{

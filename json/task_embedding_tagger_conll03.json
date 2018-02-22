@@ -3,7 +3,7 @@
 	"min_count":1
   },
   "dataset_reader":{
-    "type":"sequence_tagging",
+    "type":"task_sequence_tagging",
     "word_tag_delimiter":"<Deli>",
     "token_indexers":{
       "tokens":{
@@ -13,11 +13,30 @@
       "token_characters":{
         "type":"characters"
       }
-    }
+    },
+    "task_token_indexers":{
+      "tokens":{
+        "type":"single_id",
+        "lowercase_tokens":true
+      }
+    },
+    "domain_token_indexers":{
+      "tokens":{
+        "type":"single_id",
+        "lowercase_tokens":true
+      }
+    },
+	"tasks":[
+	  "xpos",
+	  "chunk"
+    ],
+	"domains":[
+      "conll03"
+    ]
   },
   "evaluate_on_test":true,
   "model":{
-    "type":"tagger",
+    "type":"task_embedding_tagger",
     "text_field_embedder":{
       "tokens":{
         "type":"embedding",
@@ -39,6 +58,22 @@
           "dropout":0.25,
           "bidirectional":true
         }
+      }
+    },
+    "task_field_embedder":{
+      "tokens":{
+        "type":"embedding",
+        "embedding_dim":25,
+        "trainable":true,
+		"scale_grad_by_freq":false
+      }
+    },
+    "domain_field_embedder":{
+      "tokens":{
+        "type":"embedding",
+        "embedding_dim":25,
+        "trainable":true,
+		"scale_grad_by_freq":false
       }
     },
     "stacked_encoder":{
