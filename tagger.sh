@@ -1,5 +1,5 @@
 DATADIR=./dataset/tagger
-TMPDIR=/tmp/tagger
+TMPDIR=/data/tagger
 TASK_NAME=$1
 MODEL=$2
 CUDA=$3
