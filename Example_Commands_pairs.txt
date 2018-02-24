@@ -1,0 +1,176 @@
+"nerupos" "nerxpos" "chunkner" "nersemtr" "nersem" "nersupsense" "comner"
+"commwe" "chunkmwe" "mwexpos" "mweupos" "mwesupsense" "mwesemtr" "mwesem" "mwener"
+"semxpos" "semupos" "chunksem" "semsemtr" "comsem" "semsupsense"
+"semtrxpos" "semtrupos" "chunksemtr" "comsemtr" "semtrsupsense" "supsensexpos" "supsenseupos" "chunksupsense" "comsupsense" "comxpos" "comupos" "chunkcom"
+
+
+JSONDIR=multi
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=multitagger
+CUDA=2
+for ext in 
+do
+MODEL="$JSONDIR"_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+
+
+61
+JSONDIR=task_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "commwe" "chunkmwe" "mwexpos" "mweupos" "mwesupsense" "mwesemtr" "mwesem" "mwener"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+JSONDIR=task_prepend_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "commwe" "chunkmwe" "mwexpos" "mweupos" "mwesupsense" "mwesemtr" "mwesem" "mwener"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+62
+JSONDIR=task_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "nerupos" "nerxpos" "chunkner" "nersemtr" "nersem" "nersupsense" "comner"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+JSONDIR=task_prepend_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "nerupos" "nerxpos" "chunkner" "nersemtr" "nersem" "nersupsense" "comner"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+64
+JSONDIR=task_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "semxpos" "semupos" "chunksem" "semsemtr" "comsem" "semsupsense"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+JSONDIR=task_prepend_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "semxpos" "semupos" "chunksem" "semsemtr" "comsem" "semsupsense"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+
+20
+JSONDIR=task_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "semtrxpos" "semtrupos" "chunksemtr" "comsemtr" "semtrsupsense" "supsensexpos" "supsenseupos" "chunksupsense" "comsupsense" "comxpos" "comupos" "chunkcom"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+JSONDIR=task_prepend_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "semtrxpos" "semtrupos" "chunksemtr" "comsemtr" "semtrsupsense" "supsensexpos" "supsenseupos" "chunksupsense" "comsupsense" "comxpos" "comupos" "chunkcom"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+

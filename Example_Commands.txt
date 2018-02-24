@@ -6,20 +6,27 @@
 simple_tagger
 ######
 
-mn=tagger_crf_template
-gpu=1
+5
+mn=tagger_template
+gpu=0
 ./all_taggers.sh $mn $gpu
 
+3
+mn=tagger_crf_template
+gpu=0
 ./tagger.sh sem_semcor "$mn" "$gpu"
 ./tagger.sh semtr_semtraits "$mn" "$gpu"
 ./tagger.sh mwe_streusle "$mn" "$gpu"
 ./tagger.sh smwe_streusle "$mn" "$gpu"
 ./tagger.sh supsense_streusle "$mn" "$gpu"
-./tagger.sh chunk-iobes_conll03 "$mn" "$gpu"
 ./tagger.sh ner_conll03 "$mn" "$gpu"
 ./tagger.sh com_broadcast1 "$mn" "$gpu"
 ./tagger.sh com_broadcast2 "$mn" "$gpu"
 ./tagger.sh com_broadcast3 "$mn" "$gpu"
+./tagger.sh ner-iobes_conll03 "$mn" "$gpu"
+# TODO
+mn=tagger_crf_template
+gpu=-1
 ./tagger.sh ccg_ccg "$mn" "$gpu"
 
 68
@@ -32,13 +39,17 @@ gpu=0
 ./tagger.sh xpos_conll03 "$mn" "$gpu"
 ./tagger.sh chunk_conll02 "$mn" "$gpu"
 ./tagger.sh chunk_conll03 "$mn" "$gpu"
+./tagger.sh chunk-iobes_conll02 "$mn" "$gpu"
+./tagger.sh chunk-iobes_conll03 "$mn" "$gpu"
 
 61
+ "uni" "conll03" "uposchunk" "upos" 
+
 DATADIR=./dataset/multi_tagger_testing
-TMPDIR=/tmp/tagger
+TMPDIR=/data/tagger
 TASK_NAME=taskembtagger
 CUDA=0
-for ext in "upos" "xpos" "uni" "conll03" "uposchunk"
+for ext in "xpos"
 do
 MODEL=task_prepend_embedding_tagger_"$ext"
 rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
@@ -53,7 +64,7 @@ done
  
 62
 DATADIR=./dataset/multi_tagger_testing
-TMPDIR=/tmp/tagger
+TMPDIR=/data/tagger
 TASK_NAME=taskembtagger
 CUDA=2
 for ext in "upos" "xpos" "uni" "conll03" "uposchunk"
@@ -70,11 +81,13 @@ python -m allennlp.run train json/"$MODEL".json \
 done
 
 64
+"upos" "xpos" "uni" "conll03" 
+
 DATADIR=./dataset/multi_tagger_testing
-TMPDIR=/tmp/tagger
+TMPDIR=/data/tagger
 TASK_NAME=multitagger
-CUDA=2
-for ext in "upos" "xpos" "uni" "conll03" "uposchunk"
+CUDA=-1
+for ext in "uposchunk"
 do
 MODEL=multi_"$ext"
 rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
@@ -86,9 +99,119 @@ python -m allennlp.run train json/"$MODEL".json \
 --test "$DATADIR"/test \
  > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
 done
- 
-# Evluation 
-python -m allennlp.run evaluate /tmp/tutorials/getting_started/model.tar.gz --evaluation-data-file 
+
+
+
+
+
+
+3
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=multitagger
+CUDA=1
+for ext in "all"
+do
+MODEL=multi_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+7
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "all"
+do
+MODEL=task_embedding_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=2
+for ext in "all"
+do
+MODEL=task_prepend_embedding_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Evaluation
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+
+TASK_DOMAIN=upos_uni
+TASK_DOMAIN=upos_streusle
+
+TASK_DOMAIN=xpos_uni
+TASK_DOMAIN=xpos_streusle
+TASK_DOMAIN=xpos_conll03
+TASK_DOMAIN=chunk_conll03
+
+ext=xpos
+ext=upos
+ext=uni
+ext=conll03
+ext=uposchunk
+
+
+EVAL_SET=test
+TASK_NAME=taskembtagger
+ext=uposchunk
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=upos_uni
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
+
+
+EVAL_SET=test
+TASK_NAME=multitagger
+ext=upos
+MODEL=multi_"$ext"
+TASK_DOMAIN=upos_uni
+TASK_DOMAIN=upos
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
+
+
 
 # Utils
 grep 'word' filename
