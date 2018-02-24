@@ -237,7 +237,7 @@ def load_sentences_general_no_O(path, zeros, lower):
         else:
             l = line.split()
             assert len(l) >= 2
-            word = [f_process(l[0], zeros, lower)] + [t if t != 'O' else 'X' for t in l[1:]]
+            word = [f_process(l[0], zeros, lower)] + [t if t != 'O' else 'KEEP' for t in l[1:]]
             sentence.append(word)
     if len(sentence) > 0:
         sentences.append(sentence)
