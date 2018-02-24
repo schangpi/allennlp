@@ -15,12 +15,26 @@
       }
     },
 	"tasks":[
-      "xpos"
+      "upos",
+	  "xpos",
+	  "chunk",
+	  "mwe",
+	  "ner",
+	  "sem",
+	  "semtr",
+	  "supsense",
+	  "com"
     ],
 	"domains":[
       "uni",
+      "conll03",
+      "conll02",
 	  "streusle",
-	  "conll03"
+	  "semcor",
+	  "semtraits",
+	  "broadcast1",
+	  "broadcast2",
+	  "broadcast3"
     ]
   },
   "evaluate_on_test":true,
