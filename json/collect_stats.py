@@ -44,7 +44,7 @@ for filepath in filepaths:
                 cnt += 1
             else:
                 print(i, l)
-        print("vocab size: ", cnt)
+        print("num tags: ", cnt)
 
 
 
