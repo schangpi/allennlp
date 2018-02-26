@@ -1,7 +1,8 @@
 import json
 import os
 
-task_suffix = '_tagger_crf_template'
+task_suffix = '_tagger_template'
+task_crf_suffix = '_tagger_crf_template'
 task_domains = [
     'upos_uni',
     'upos_streusle',
@@ -28,8 +29,17 @@ multi_path = '/data/tagger/multitagger_multi_'
 task_emb_path = '/data/tagger/taskembtagger_task_embedding_tagger_'
 task_emb_prepend_path = '/data/tagger/taskembtagger_task_prepend_embedding_tagger_'
 exts = ['xpos', 'upos', 'uni', 'conll03', 'uposchunk']
+exts += ["nerupos", "nerxpos", "chunkner", "nersemtr", "nersem", "nersupsense", "comner",
+         "commwe", "chunkmwe", "mwexpos", "mweupos", "mwesupsense", "mwesemtr", "mwesem", "mwener",
+         "semxpos", "semupos", "chunksem", "semsemtr", "comsem", "semsupsense",
+         "semtrxpos", "semtrupos", "chunksemtr", "comsemtr", "semtrsupsense",
+         "supsensexpos", "supsenseupos", "chunksupsense", "comsupsense",
+         "comxpos", "comupos", "chunkcom"
+         ]
 
-filepaths = ['/data/tagger/' + td + task_suffix for td in task_domains]
+filepaths = []
+filepaths += ['/data/tagger/' + td + task_suffix for td in task_domains]
+filepaths += ['/data/tagger/' + td + task_crf_suffix for td in task_domains]
 filepaths += ([multi_path + ext for ext in exts] +
               [task_emb_path + ext for ext in exts] +
               [task_emb_prepend_path + ext for ext in exts])
@@ -45,6 +55,8 @@ for filepath in filepaths:
             print('')
             # print(results['test_f1-measure-overall'],
             #       results['validation_f1-measure-overall'])
+    else:
+        print(filepath, ' does not exist')
 
 
 

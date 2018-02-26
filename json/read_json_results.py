@@ -98,7 +98,7 @@ with open('tagger_crf_template.json', 'r') as f:
                                     cnt += 1
                                     file_ext = '_'.join([str(c) for c in [c0, c1, c2, c3, c4, c5, c6, c7]])
                                     # print(file_ext)
-                                    res_filepath = '/tmp/tagger/ner-iobes_conll03_tagcrf_' + file_ext + '/metrics.json'
+                                    res_filepath = '/data/tagger/ner-iobes_conll03_tagcrf_' + file_ext + '/metrics.json'
                                     if os.path.exists(res_filepath):
                                         with open(res_filepath, 'r') as fr:
                                             results = json.load(fr)
