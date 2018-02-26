@@ -81,13 +81,13 @@ python -m allennlp.run train json/"$MODEL".json \
 done
 
 64
-"upos" "xpos" "uni" "conll03" 
+"upos"
 
 DATADIR=./dataset/multi_tagger_testing
 TMPDIR=/data/tagger
 TASK_NAME=multitagger
-CUDA=-1
-for ext in "uposchunk"
+CUDA=2
+for ext in "xpos" "uni" "conll03" "uposchunk"
 do
 MODEL=multi_"$ext"
 rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
@@ -175,41 +175,6 @@ done
 
 
 
-
-# Evaluation
-MODEL=task_embedding_tagger_"$ext"
-MODEL=task_prepend_embedding_tagger_"$ext"
-
-TASK_DOMAIN=upos_uni
-TASK_DOMAIN=upos_streusle
-
-TASK_DOMAIN=xpos_uni
-TASK_DOMAIN=xpos_streusle
-TASK_DOMAIN=xpos_conll03
-TASK_DOMAIN=chunk_conll03
-
-ext=xpos
-ext=upos
-ext=uni
-ext=conll03
-ext=uposchunk
-
-
-EVAL_SET=test
-TASK_NAME=taskembtagger
-ext=uposchunk
-MODEL=task_prepend_embedding_tagger_"$ext"
-TASK_DOMAIN=upos_uni
-python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
-
-
-EVAL_SET=test
-TASK_NAME=multitagger
-ext=upos
-MODEL=multi_"$ext"
-TASK_DOMAIN=upos_uni
-TASK_DOMAIN=upos
-python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
 
 
 
