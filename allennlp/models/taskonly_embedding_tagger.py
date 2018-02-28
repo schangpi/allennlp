@@ -67,8 +67,7 @@ class TaskOnlyEmbeddingTagger(Model):
         self.stacked_encoder = stacked_encoder
         self.tag_projection_layer = TimeDistributed(
             Linear(self.stacked_encoder.get_output_dim() +
-                   self.task_field_embedder.get_output_dim() +
-                   self.domain_field_embedder.get_output_dim(),
+                   self.task_field_embedder.get_output_dim(),
                    self.num_classes))
         self.is_crf = is_crf
         if is_crf:
