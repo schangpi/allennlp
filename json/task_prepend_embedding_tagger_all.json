@@ -32,9 +32,7 @@
 	  "streusle",
 	  "semcor",
 	  "semtraits",
-	  "broadcast1",
-	  "broadcast2",
-	  "broadcast3"
+	  "broadcast1"
     ]
   },
   "evaluate_on_test":true,
@@ -109,7 +107,22 @@
       ]
     ]
   },
-  "iterator":{
+  "train_iterator":{
+    "type":"multi",
+    "batch_size":32,
+	"tasks":[
+      "upos",
+	  "xpos",
+	  "chunk",
+	  "mwe",
+	  "ner",
+	  "sem",
+	  "semtr",
+	  "supsense",
+	  "com"
+    ]
+  },
+  "val_iterator":{
     "type":"basic",
     "batch_size":32
   },

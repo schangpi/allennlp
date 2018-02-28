@@ -8,7 +8,7 @@ from allennlp.common import Params
 from allennlp.common.file_utils import cached_path
 from allennlp.common.tqdm import Tqdm
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
-from allennlp.data.fields import TextField, SequenceLabelField
+from allennlp.data.fields import TextField, SequenceLabelField, LabelField
 from allennlp.data.instance import Instance
 from allennlp.data.token_indexers import TokenIndexer, SingleIdTokenIndexer
 from allennlp.data.tokenizers import Token
@@ -77,9 +77,11 @@ class TaskPrependSequenceTaggingDatasetReader(DatasetReader):
                                        tokens_and_tags)
                     tokens = [Token(token) for token, tag in tokens_and_tags]
                     tags = [tag for token, tag in tokens_and_tags]
+                    task_field = LabelField(task_name)
                     sequence = TextField(tokens, self._token_indexers)
                     sequence_tags = SequenceLabelField(tags, sequence, label_namespace='labels')
-                    yield Instance({'tokens': sequence,
+                    yield Instance({'task_token': task_field,
+                                    'tokens': sequence,
                                     'tags': sequence_tags})
 
     def text_to_instance(self, tokens: List[Token]) -> Instance:  # type: ignore

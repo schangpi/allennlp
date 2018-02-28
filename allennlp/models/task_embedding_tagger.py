@@ -113,9 +113,10 @@ class TaskEmbeddingTagger(Model):
 
     @overrides
     def forward(self,  # type: ignore
-                task_token: Dict[str, torch.LongTensor],
-                domain_token: Dict[str, torch.LongTensor],
+                task_tokens: Dict[str, torch.LongTensor],
+                domain_tokens: Dict[str, torch.LongTensor],
                 tokens: Dict[str, torch.LongTensor],
+                task_token: torch.LongTensor = None,
                 tags: torch.LongTensor = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         """
@@ -150,8 +151,8 @@ class TaskEmbeddingTagger(Model):
         embedded_text_input = self.text_field_embedder(tokens)
         mask = get_text_field_mask(tokens)
         encoded_text = self.stacked_encoder(embedded_text_input, mask)
-        embedded_task = self.task_field_embedder(task_token)
-        embedded_domain = self.domain_field_embedder(domain_token)
+        embedded_task = self.task_field_embedder(task_tokens)
+        embedded_domain = self.domain_field_embedder(domain_tokens)
         num_encoded_vectors = encoded_text.shape[1]
         concat_text = torch.cat([encoded_text,
                                  embedded_task.expand(-1, num_encoded_vectors, -1),

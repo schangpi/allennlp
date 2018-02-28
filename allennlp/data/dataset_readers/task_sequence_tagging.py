@@ -8,7 +8,7 @@ from allennlp.common import Params
 from allennlp.common.file_utils import cached_path
 from allennlp.common.tqdm import Tqdm
 from allennlp.data.dataset_readers.dataset_reader import DatasetReader
-from allennlp.data.fields import TextField, SequenceLabelField
+from allennlp.data.fields import TextField, SequenceLabelField, LabelField
 from allennlp.data.instance import Instance
 from allennlp.data.token_indexers import TokenIndexer, SingleIdTokenIndexer
 from allennlp.data.tokenizers import Token
@@ -84,10 +84,12 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
                     sequence_tags = SequenceLabelField(tags, sequence, label_namespace='labels')
 
                     # TODO: Apply tokenizer for a longer descriptions of tasks and domains
-                    task_field = TextField([Token(task_name)], self._task_token_indexers)
-                    domain_field = TextField([Token(domain_name)], self._domain_token_indexers)
+                    task_field = LabelField(task_name)
+                    tasks_field = TextField([Token(task_name)], self._task_token_indexers)
+                    domains_field = TextField([Token(domain_name)], self._domain_token_indexers)
                     yield Instance({'task_token': task_field,
-                                    'domain_token': domain_field,
+                                    'task_tokens': tasks_field,
+                                    'domain_tokens': domains_field,
                                     'tokens': sequence,
                                     'tags': sequence_tags})
 
