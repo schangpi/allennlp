@@ -38,6 +38,17 @@
   "evaluate_on_test":true,
   "model":{
     "type":"tagger",
+	"tasks":[
+      "upos",
+	  "xpos",
+	  "chunk",
+	  "mwe",
+	  "ner",
+	  "sem",
+	  "semtr",
+	  "supsense",
+	  "com"
+    ],
     "text_field_embedder":{
       "tokens":{
         "type":"embedding",

@@ -84,7 +84,7 @@ class TaskSequenceTaggingDatasetReader(DatasetReader):
                     sequence_tags = SequenceLabelField(tags, sequence, label_namespace='labels')
 
                     # TODO: Apply tokenizer for a longer descriptions of tasks and domains
-                    task_field = LabelField(task_name)
+                    task_field = LabelField(task_name, label_namespace="task_labels")
                     tasks_field = TextField([Token(task_name)], self._task_token_indexers)
                     domains_field = TextField([Token(domain_name)], self._domain_token_indexers)
                     yield Instance({'task_token': task_field,

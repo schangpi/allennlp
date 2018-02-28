@@ -45,6 +45,7 @@ class TaskEmbeddingTagger(Model):
     def __init__(self, vocab: Vocabulary,
                  text_field_embedder: TextFieldEmbedder,
                  stacked_encoder: Seq2SeqEncoder,
+                 tasks: str = None,
                  task_field_embedder: TextFieldEmbedder = None,
                  domain_field_embedder: TextFieldEmbedder = None,
                  source_namespace: str = "tokens",
@@ -53,6 +54,10 @@ class TaskEmbeddingTagger(Model):
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super(TaskEmbeddingTagger, self).__init__(vocab, regularizer)
+        self.tasks = tasks
+        self.task_to_id = {}
+        for i, tsk in enumerate(tasks):
+            self.task_to_id[tsk] = i
         self.source_namespace = source_namespace
         self.label_namespace = label_namespace
         self.text_field_embedder = text_field_embedder
@@ -70,11 +75,14 @@ class TaskEmbeddingTagger(Model):
             self.crf = ConditionalRandomField(self.num_classes)
         check_dimensions_match(text_field_embedder.get_output_dim(), stacked_encoder.get_input_dim(),
                                "text field embedding dim", "encoder input dim")
-        self.metrics = {
-                "accuracy": CategoricalAccuracy(),
-                "accuracy3": CategoricalAccuracy(top_k=3)
-        }
-        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
+        self.metrics = {}
+        self.span_metric = {}
+        for tsk in self.tasks:
+            self.metrics[tsk] = {
+                    "accuracy": CategoricalAccuracy(),
+                    "accuracy3": CategoricalAccuracy(top_k=3)
+            }
+            self.span_metric[tsk] = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
         initializer(self)
 
     def _examine_source_indices(self, preindices):
@@ -184,18 +192,34 @@ class TaskEmbeddingTagger(Model):
                 loss = -log_likelihood
             else:
                 loss = sequence_cross_entropy_with_logits(logits, tags, mask)
-            for metric in self.metrics.values():
-                metric(logits, tags, mask.float())
+            # for metric in self.metrics.values():
+            #     metric(logits, tags, mask.float())
             output_dict["loss"] = loss
 
             # Represent viterbi tags as "class probabilities" that we can
             # feed into the `span_metric`
-            class_probabilities = logits * 0.
-            for i, instance_tags in enumerate(predicted_tags):
-                for j, tag_id in enumerate(instance_tags):
-                    class_probabilities[i, j, tag_id] = 1
-            self.span_metric(class_probabilities, tags, mask)
-            self._print_source_target_triplets(tokens['tokens'], numpy.array(predicted_tags), tags)
+            # class_probabilities = logits * 0.
+            # for i, instance_tags in enumerate(predicted_tags):
+            #     for j, tag_id in enumerate(instance_tags):
+            #         class_probabilities[i, j, tag_id] = 1
+            # self.span_metric(class_probabilities, tags, mask)
+            class_probabilities = {}
+            task_ids = []
+            for tt in task_token.squeeze().data.cpu().numpy():
+                # map task token to strings
+                # map strings to ind
+                task_ids.append(self.task_to_id[self.vocab.get_token_from_index(tt, 'task_labels')])
+            task_ids = numpy.array(task_ids)
+            predicted_tags = numpy.array(predicted_tags)
+            for i, tsk in enumerate(self.tasks):
+                print(i, tsk, task_ids)
+                task_indices = (task_ids == i).nonzero()[0]
+                class_probabilities[tsk] = logits[task_indices, :, :] * 0.
+                for i, instance_tags in enumerate(predicted_tags[task_indices]):
+                    for j, tag_id in enumerate(instance_tags):
+                        class_probabilities[tsk][i, j, tag_id] = 1
+                self.span_metric[tsk](class_probabilities[tsk], tags[task_indices, :], mask[task_indices, :])
+            self._print_source_target_triplets(tokens['tokens'], predicted_tags, tags)
         return output_dict
 
     @overrides
@@ -214,16 +238,31 @@ class TaskEmbeddingTagger(Model):
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
         # accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
-        metric_dict = self.span_metric.get_metric(reset=reset)
-        f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
+        # metric_dict = self.span_metric.get_metric(reset=reset)
+        # f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
         # return {**f1, **accs}
-        return {**f1}
+        # return {**f1}
+        task_f1s = {}
+        for tsk in self.tasks:
+            metric_dict = self.span_metric[tsk].get_metric(reset=reset)
+            for x, y in metric_dict.items():
+                if "f1-measure-overall" in x:
+                    task_f1s[tsk + '-' + x] = y
+        avg_f1s = {}
+        for x, _ in self.span_metric[self.tasks[0]].get_metric(reset=reset).items():
+            if "f1-measure-overall" in x:
+                total_f1 = []
+                for tsk in self.tasks:
+                    total_f1.append(task_f1s[tsk + '-' + x])
+                avg_f1s[x] = sum(total_f1) / len(total_f1)
+        return {**avg_f1s, **task_f1s}
 
     @classmethod
     def from_params(cls, vocab: Vocabulary, params: Params) -> 'TaskEmbeddingTagger':
         embedder_params = params.pop("text_field_embedder")
         text_field_embedder = TextFieldEmbedder.from_params(vocab, embedder_params)
         stacked_encoder = Seq2SeqEncoder.from_params(params.pop("stacked_encoder"))
+        tasks = params.pop("tasks")
         task_embedder_params = params.pop("task_field_embedder")
         task_field_embedder = TextFieldEmbedder.from_params(vocab, task_embedder_params)
         domain_embedder_params = params.pop("domain_field_embedder")
@@ -236,6 +275,7 @@ class TaskEmbeddingTagger(Model):
         return cls(vocab=vocab,
                    text_field_embedder=text_field_embedder,
                    stacked_encoder=stacked_encoder,
+                   tasks=tasks,
                    task_field_embedder=task_field_embedder,
                    domain_field_embedder=domain_field_embedder,
                    source_namespace=source_namespace,

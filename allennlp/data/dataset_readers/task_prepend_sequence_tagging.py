@@ -77,7 +77,7 @@ class TaskPrependSequenceTaggingDatasetReader(DatasetReader):
                                        tokens_and_tags)
                     tokens = [Token(token) for token, tag in tokens_and_tags]
                     tags = [tag for token, tag in tokens_and_tags]
-                    task_field = LabelField(task_name)
+                    task_field = LabelField(task_name, label_namespace="task_labels")
                     sequence = TextField(tokens, self._token_indexers)
                     sequence_tags = SequenceLabelField(tags, sequence, label_namespace='labels')
                     yield Instance({'task_token': task_field,

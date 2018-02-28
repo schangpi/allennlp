@@ -118,7 +118,6 @@ python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
 --test "$DATADIR"/test \
  > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
 done
-
 JSONDIR=task_prepend_embedding
 DATADIR=./dataset/multi_tagger
 TMPDIR=/data/tagger

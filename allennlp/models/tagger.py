@@ -47,12 +47,17 @@ class Tagger(Model):
     def __init__(self, vocab: Vocabulary,
                  text_field_embedder: TextFieldEmbedder,
                  stacked_encoder: Seq2SeqEncoder,
+                 tasks: str = None,
                  source_namespace: str = "tokens",
                  label_namespace: str = "labels",
                  is_crf: bool = False,
                  initializer: InitializerApplicator = InitializerApplicator(),
                  regularizer: Optional[RegularizerApplicator] = None) -> None:
         super(Tagger, self).__init__(vocab, regularizer)
+        self.tasks = tasks
+        self.task_to_id = {}
+        for i, tsk in enumerate(tasks):
+            self.task_to_id[tsk] = i
         self.source_namespace = source_namespace
         self.label_namespace = label_namespace
         self.text_field_embedder = text_field_embedder
@@ -64,11 +69,14 @@ class Tagger(Model):
             self.crf = ConditionalRandomField(self.num_classes)
         check_dimensions_match(text_field_embedder.get_output_dim(), stacked_encoder.get_input_dim(),
                                "text field embedding dim", "encoder input dim")
-        self.metrics = {
+        self.metrics = {}
+        self.span_metric = {}
+        for tsk in self.tasks:
+            self.metrics[tsk] = {
                 "accuracy": CategoricalAccuracy(),
                 "accuracy3": CategoricalAccuracy(top_k=3)
-        }
-        self.span_metric = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
+            }
+            self.span_metric[tsk] = SpanBasedF1Measure(vocab, tag_namespace=label_namespace)
         initializer(self)
         """
         # Initialize forget gate bias to 1 (applicable to LSTMCell only).
@@ -181,18 +189,29 @@ class Tagger(Model):
                 loss = -log_likelihood
             else:
                 loss = sequence_cross_entropy_with_logits(logits, tags, mask)
-            for metric in self.metrics.values():
-                metric(logits, tags, mask.float())
+            # for metric in self.metrics.values():
+            #     metric(logits, tags, mask.float())
             output_dict["loss"] = loss
 
             # Represent viterbi tags as "class probabilities" that we can
             # feed into the `span_metric`
-            class_probabilities = logits * 0.
-            for i, instance_tags in enumerate(predicted_tags):
-                for j, tag_id in enumerate(instance_tags):
-                    class_probabilities[i, j, tag_id] = 1
-            self.span_metric(class_probabilities, tags, mask)
-            self._print_source_target_triplets(tokens['tokens'], numpy.array(predicted_tags), tags)
+            class_probabilities = {}
+            task_ids = []
+            for tt in task_token.squeeze().data.cpu().numpy():
+                # map task token to strings
+                # map strings to ind
+                task_ids.append(self.task_to_id[self.vocab.get_token_from_index(tt, 'task_labels')])
+            task_ids = numpy.array(task_ids)
+            predicted_tags = numpy.array(predicted_tags)
+            for i, tsk in enumerate(self.tasks):
+                print(i, tsk, task_ids)
+                task_indices = (task_ids == i).nonzero()[0]
+                class_probabilities[tsk] = logits[task_indices, :, :] * 0.
+                for i, instance_tags in enumerate(predicted_tags[task_indices]):
+                    for j, tag_id in enumerate(instance_tags):
+                        class_probabilities[tsk][i, j, tag_id] = 1
+                self.span_metric[tsk](class_probabilities[tsk], tags[task_indices, :], mask[task_indices, :])
+            self._print_source_target_triplets(tokens['tokens'], predicted_tags, tags)
         return output_dict
 
     @overrides
@@ -211,16 +230,31 @@ class Tagger(Model):
     @overrides
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
         # accs = {metric_name: metric.get_metric(reset) for metric_name, metric in self.metrics.items()}
-        metric_dict = self.span_metric.get_metric(reset=reset)
-        f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
+        # metric_dict = self.span_metric.get_metric(reset=reset)
+        # f1 = {x: y for x, y in metric_dict.items() if "overall" in x}
         # return {**f1, **accs}
-        return {**f1}
+        # return {**f1}
+        task_f1s = {}
+        for tsk in self.tasks:
+            metric_dict = self.span_metric[tsk].get_metric(reset=reset)
+            for x, y in metric_dict.items():
+                if "f1-measure-overall" in x:
+                    task_f1s[tsk + '-' + x] = y
+        avg_f1s = {}
+        for x, _ in self.span_metric[self.tasks[0]].get_metric(reset=reset).items():
+            if "f1-measure-overall" in x:
+                total_f1 = []
+                for tsk in self.tasks:
+                    total_f1.append(task_f1s[tsk + '-' + x])
+                avg_f1s[x] = sum(total_f1) / len(total_f1)
+        return {**avg_f1s, **task_f1s}
 
     @classmethod
     def from_params(cls, vocab: Vocabulary, params: Params) -> 'Tagger':
         embedder_params = params.pop("text_field_embedder")
         text_field_embedder = TextFieldEmbedder.from_params(vocab, embedder_params)
         stacked_encoder = Seq2SeqEncoder.from_params(params.pop("stacked_encoder"))
+        tasks = params.pop("tasks")
         source_namespace = params.pop("source_namespace", "tokens")
         label_namespace = params.pop("label_namespace", "labels")
         is_crf = params.pop("is_crf", False)
@@ -230,6 +264,7 @@ class Tagger(Model):
         return cls(vocab=vocab,
                    text_field_embedder=text_field_embedder,
                    stacked_encoder=stacked_encoder,
+                   tasks=tasks,
                    source_namespace=source_namespace,
                    label_namespace=label_namespace,
                    is_crf=is_crf,
