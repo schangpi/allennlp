@@ -1,0 +1,535 @@
+Highly<Deli>O recommended<Deli>v.communication 
+My<Deli>p.SocialRel|p.Gestalt 8<Deli>O year<Deli>n.PERSON old<Deli>O daughter<Deli>n.PERSON loves<Deli>v.emotion this<Deli>O place<Deli>n.LOCATION .<Deli>O 
+The<Deli>O best<Deli>O climbing<Deli>n.ACT club<Deli>n.GROUP around<Deli>p.Locus .<Deli>O 
+Hooray<Deli>O for<Deli>p.Beneficiary Craggy<Deli>n.PERSON .<Deli>O 
+It<Deli>O 's<Deli>v.stative well<Deli>O cool<Deli>O .<Deli>O :)<Deli>O 
+telephone<Deli>n.COMMUNICATION number<Deli>O 
+the<Deli>O telephone<Deli>n.COMMUNICATION number<Deli>O is<Deli>v.stative incorrect<Deli>O -<Deli>O our<Deli>p.Possessor new<Deli>O mobile<Deli>n.COMMUNICATION number<Deli>O is<Deli>v.stative 07551310002<Deli>O or<Deli>O landline<Deli>n.COMMUNICATION 01634<Deli>O 710033<Deli>O .<Deli>O 
+thank<Deli>O you<Deli>O 
+good<Deli>O 
+it<Deli>O is<Deli>v.stative a<Deli>O cute<Deli>O little<Deli>O nice<Deli>O and<Deli>O quiet<Deli>O library<Deli>n.GROUP 
+OK<Deli>O Food<Deli>n.FOOD ,<Deli>O Slow<Deli>O service<Deli>n.ACT 
+The<Deli>O food<Deli>n.FOOD was<Deli>v.stative incredibly<Deli>O bland<Deli>O .<Deli>O 
+Their<Deli>p.Originator|p.Possessor Thali<Deli>n.FOOD was<Deli>O not<Deli>O brought<Deli>v.motion out<Deli>p.Direction as<Deli>p.ComparisonRef described<Deli>v.communication (<Deli>O no<Deli>O saag<Deli>n.FOOD )<Deli>O .<Deli>O 
+Expensive<Deli>O for<Deli>p.ComparisonRef the<Deli>O level<Deli>n.COGNITION of<Deli>p.Gestalt food<Deli>n.FOOD and<Deli>O the<Deli>O quality<Deli>n.ATTRIBUTE of<Deli>p.Gestalt service<Deli>n.ACT .<Deli>O 
+absolutely<Deli>O fantastic<Deli>O experience<Deli>n.EVENT getting<Deli>O my<Deli>p.Possessor iphone<Deli>n.ARTIFACT upgraded<Deli>v.change at<Deli>p.Locus Zion<Deli>n.GROUP ...<Deli>O 
+Sheer<Deli>O contrast<Deli>n.RELATION to<Deli>p.ComparisonRef|p.Goal getting<Deli>v.social it<Deli>O done<Deli>v.change at<Deli>p.Locus karol<Deli>n.GROUP bagh<Deli>O which<Deli>O is<Deli>O done<Deli>v.stative under<Deli>p.Locus the<Deli>O wooden<Deli>O plank<Deli>n.ARTIFACT 
+Very<Deli>O knowledgeable<Deli>O and<Deli>O friendly<Deli>O design<Deli>n.ACT build<Deli>n.ACT firm<Deli>n.GROUP .<Deli>O 
+They<Deli>O specialize<Deli>v.cognition in<Deli>p.Topic financial<Deli>O institutions<Deli>n.GROUP ,<Deli>O medical<Deli>O ,<Deli>O and<Deli>O retail<Deli>n.POSSESSION projects<Deli>n.ACT .<Deli>O 
+These<Deli>O guys<Deli>n.PERSON know<Deli>v.cognition what<Deli>O they<Deli>O 're<Deli>O doing<Deli>O and<Deli>O helped<Deli>v.social me<Deli>O in<Deli>p.Time all<Deli>O phases<Deli>n.STATE of<Deli>p.Whole our<Deli>p.Agent|p.Gestalt project<Deli>n.ACT .<Deli>O 
+Daniel<Deli>n.PERSON and<Deli>O his<Deli>p.SocialRel|p.Gestalt assistant<Deli>n.PERSON both<Deli>O did<Deli>v.social a<Deli>O great<Deli>O job<Deli>O .<Deli>O 
+Very<Deli>O professional<Deli>O and<Deli>O great<Deli>O results<Deli>n.PHENOMENON .<Deli>O 
+Many<Deli>O thanks<Deli>n.COMMUNICATION from<Deli>p.Originator|p.Source myself<Deli>O and<Deli>O all<Deli>O of<Deli>p.Quantity|p.Whole our<Deli>p.SocialRel|p.Gestalt wedding<Deli>n.EVENT guests<Deli>n.PERSON !<Deli>O 
+Good<Deli>O food<Deli>n.FOOD ,<Deli>O good<Deli>O location<Deli>n.LOCATION ,<Deli>O and<Deli>O good<Deli>O prices<Deli>n.POSSESSION .<Deli>O 
+But<Deli>O the<Deli>O servers<Deli>n.PERSON do<Deli>O n't<Deli>O pay<Deli>v.perception attention<Deli>O to<Deli>p.Stimulus|p.Goal you<Deli>O whether<Deli>O it<Deli>O 's<Deli>v.stative busy<Deli>O or<Deli>O not<Deli>O .<Deli>O 
+Worst<Deli>O Tasting<Deli>v.perception Pizza<Deli>n.FOOD 
+This<Deli>O place<Deli>n.GROUP had<Deli>v.stative the<Deli>O worst<Deli>O tasting<Deli>v.perception pizza<Deli>n.FOOD I<Deli>O have<Deli>O ever<Deli>O tasted<Deli>v.perception it<Deli>O was<Deli>v.stative possible<Deli>O the<Deli>O worst<Deli>O food<Deli>n.FOOD I<Deli>O 've<Deli>O ever<Deli>O eaten<Deli>v.consumption .<Deli>O 
+I<Deli>O do<Deli>O n't<Deli>O recommend<Deli>v.communication this<Deli>O place<Deli>n.GROUP to<Deli>p.Recipient|p.Goal anyone<Deli>O or<Deli>O even<Deli>O anything<Deli>O to<Deli>p.Characteristic|p.Purpose eat<Deli>v.consumption .<Deli>O 
+Very<Deli>O friendly<Deli>O people<Deli>n.GROUP offering<Deli>v.social a<Deli>O brilliant<Deli>O service<Deli>n.GROUP .<Deli>O 
+Sent<Deli>v.motion scented<Deli>n.ARTIFACT flowers<Deli>O home<Deli>O instead<Deli>p.InsteadOf of<Deli>O postcards<Deli>n.ARTIFACT .<Deli>O 
+Recommend<Deli>v.communication you<Deli>O call<Deli>v.communication in<Deli>O for<Deli>p.Purpose a<Deli>O look<Deli>n.EVENT .<Deli>O 
+Average<Deli>O food<Deli>n.FOOD and<Deli>O deathly<Deli>O slow<Deli>O service<Deli>n.ACT 
+I<Deli>O have<Deli>O eaten<Deli>v.consumption here<Deli>O several<Deli>O times<Deli>n.EVENT and<Deli>O every<Deli>O time<Deli>n.EVENT the<Deli>O service<Deli>n.ACT is<Deli>v.stative slower<Deli>O than<Deli>p.ComparisonRef slow<Deli>O .<Deli>O 
+One<Deli>O time<Deli>n.EVENT we<Deli>O even<Deli>O left<Deli>v.stative after<Deli>p.Time sitting<Deli>v.stative at<Deli>p.Locus the<Deli>O table<Deli>n.LOCATION for<Deli>p.Duration 20<Deli>O minutes<Deli>n.TIME and<Deli>O not<Deli>O being<Deli>O greeted<Deli>v.social with<Deli>p.Means a<Deli>O drink<Deli>n.FOOD order<Deli>n.COMMUNICATION .<Deli>O 
+Ridiculous<Deli>O .<Deli>O 
+There<Deli>O must<Deli>O be<Deli>v.stative a<Deli>O better<Deli>O mexican<Deli>O place<Deli>n.GROUP in<Deli>p.Locus Rockland<Deli>n.LOCATION .<Deli>O 
+Farrell<Deli>n.GROUP Electric<Deli>O is<Deli>v.stative a<Deli>O very<Deli>O good<Deli>O electrical<Deli>O contractor<Deli>n.PERSON .<Deli>O 
+I<Deli>O 'm<Deli>v.stative pleased<Deli>O that<Deli>O someone<Deli>O referred<Deli>v.communication me<Deli>O to<Deli>p.Goal them<Deli>O for<Deli>p.Purpose my<Deli>p.OrgRole|p.Possessor commercial<Deli>O business<Deli>n.GROUP .<Deli>O 
+I<Deli>O own<Deli>v.possession a<Deli>O property<Deli>n.COGNITION management<Deli>O firm<Deli>n.GROUP and<Deli>O need<Deli>v.cognition a<Deli>O contractor<Deli>n.PERSON with<Deli>p.Characteristic the<Deli>O credentials<Deli>n.COGNITION that<Deli>O Farrell<Deli>n.GROUP Electric<Deli>O has<Deli>v.stative .<Deli>O 
+Sanctuary<Deli>n.GROUP is<Deli>v.stative amazing<Deli>O !<Deli>O 
+Sanctuary<Deli>n.GROUP serves<Deli>v.social delicious<Deli>O ,<Deli>O somewhat<Deli>O healthy<Deli>O food<Deli>n.FOOD in<Deli>p.Locus a<Deli>O great<Deli>O restaurant<Deli>n.GROUP /<Deli>O fast<Deli>n.COGNITION food<Deli>O style<Deli>n.COGNITION .<Deli>O 
+The<Deli>O employees<Deli>n.PERSON are<Deli>v.stative really<Deli>O friendly<Deli>O .<Deli>O 
+And<Deli>O they<Deli>O deliver<Deli>v.motion !<Deli>O 
+Amazing<Deli>O customer<Deli>n.ACT service<Deli>O 
+I<Deli>O think<Deli>v.cognition the<Deli>O women<Deli>n.PERSON at<Deli>p.OrgRole|p.Locus this<Deli>O salon<Deli>n.GROUP know<Deli>v.cognition that<Deli>O their<Deli>p.SocialRel|p.Gestalt business<Deli>n.POSSESSION is<Deli>O based<Deli>v.stative primarily<Deli>O from<Deli>?? referrals<Deli>n.COMMUNICATION .<Deli>O :)<Deli>O 
+They<Deli>O were<Deli>v.stative amazingly<Deli>O hospitable<Deli>O .<Deli>O 
+Edit<Deli>n.PERSON was<Deli>v.stative the<Deli>O best<Deli>O massage<Deli>n.ACT therapist<Deli>n.PERSON I<Deli>O 've<Deli>O ever<Deli>O had<Deli>v.stative and<Deli>O I<Deli>O would<Deli>O HIGHLY<Deli>O recommend<Deli>v.communication her<Deli>O !<Deli>O 
+Fresh<Deli>O and<Deli>O unic<Deli>O !<Deli>O 
+Very<Deli>O professional<Deli>O ,<Deli>O talented<Deli>O ,<Deli>O unic<Deli>O and<Deli>O fresh<Deli>O work<Deli>n.ACT .<Deli>O 
+Paula<Deli>n.PERSON has<Deli>v.stative an<Deli>O amazing<Deli>O gift<Deli>O for<Deli>p.Topic creativity<Deli>n.COGNITION ,<Deli>O vision<Deli>n.COGNITION and<Deli>O the<Deli>O ability<Deli>n.COGNITION to<Deli>O combine<Deli>v.stative art<Deli>n.COGNITION to<Deli>?? /<Deli>O with<Deli>O commercial<Deli>O purpose<Deli>n.MOTIVE .<Deli>O 
+Bravo<Deli>O !<Deli>O 
+Thank<Deli>O you<Deli>O for<Deli>p.Explanation fixing<Deli>v.change the<Deli>O leak<Deli>n.PHENOMENON on<Deli>p.Locus my<Deli>p.Possessor bathroom<Deli>n.LOCATION !<Deli>O 
+Thanks<Deli>O !<Deli>O 
+Food<Deli>n.FOOD is<Deli>v.stative often<Deli>O expired<Deli>O so<Deli>O check<Deli>v.cognition the<Deli>O dates<Deli>n.EVENT every<Deli>O time<Deli>n.TIME !<Deli>O 
+Also<Deli>O more<Deli>O often<Deli>O than<Deli>O not<Deli>O you<Deli>O end<Deli>v.stative up<Deli>O with<Deli>p.Circumstance a<Deli>O healthy<Deli>n.COGNITION dose<Deli>O of<Deli>p.Quantity nasty<Deli>O rude<Deli>O attitude<Deli>n.ATTRIBUTE from<Deli>p.Originator|p.Source the<Deli>O employees<Deli>n.PERSON !<Deli>O 
+They<Deli>O have<Deli>v.stative fresh<Deli>O flowers<Deli>n.NATURALOBJECT ,<Deli>O lasted<Deli>v.stative a<Deli>O long<Deli>O while<Deli>O in<Deli>p.Locus the<Deli>O vase<Deli>n.ARTIFACT ,<Deli>O and<Deli>O the<Deli>O two<Deli>O ladies<Deli>n.PERSON at<Deli>p.OrgRole|p.Locus the<Deli>O shop<Deli>n.GROUP know<Deli>v.cognition the<Deli>O business<Deli>n.GROUP well<Deli>O .<Deli>O 
+I<Deli>O had<Deli>v.cognition no<Deli>O problem<Deli>O with<Deli>p.Topic my<Deli>p.Recipient|p.Gestalt delivery<Deli>n.ACT .<Deli>O 
+I<Deli>O will<Deli>O go<Deli>v.motion there<Deli>O again<Deli>O .<Deli>O 
+spot<Deli>O on<Deli>O 
+this<Deli>O kebab<Deli>n.FOOD shop<Deli>n.GROUP is<Deli>v.stative one<Deli>O of<Deli>p.Whole the<Deli>O best<Deli>O around<Deli>p.Locus the<Deli>O meat<Deli>n.FOOD is<Deli>v.stative good<Deli>O and<Deli>O fresh<Deli>O and<Deli>O the<Deli>O chilly<Deli>n.FOOD sauce<Deli>n.FOOD is<Deli>v.stative the<Deli>O best<Deli>O ,<Deli>O keep<Deli>v.stative them<Deli>O lovely<Deli>O kebabs<Deli>n.FOOD coming<Deli>O and<Deli>O a<Deli>O happy<Deli>O new<Deli>O year<Deli>O to<Deli>p.Recipient|p.Goal all<Deli>O the<Deli>O staff<Deli>n.GROUP 
+Friendly<Deli>O service<Deli>n.ACT .<Deli>O 
+Attentive<Deli>O to<Deli>p.Stimulus|p.Goal the<Deli>O needs<Deli>n.MOTIVE of<Deli>p.Gestalt customer<Deli>n.PERSON .<Deli>O 
+Thanks<Deli>O again<Deli>O !<Deli>O 
+The<Deli>O waiting<Deli>n.GROUP staff<Deli>O is<Deli>v.stative really<Deli>O friendly<Deli>O ,<Deli>O it<Deli>O s<Deli>v.stative like<Deli>p.ComparisonRef every<Deli>O one<Deli>O knows<Deli>v.social each<Deli>O other<Deli>O ,<Deli>O the<Deli>O manager<Deli>n.PERSON is<Deli>v.stative really<Deli>O sweet<Deli>O and<Deli>O the<Deli>O food<Deli>n.FOOD ..<Deli>O well<Deli>O no<Deli>O complaints<Deli>n.COMMUNICATION from<Deli>p.Originator|p.Source me<Deli>O .<Deli>O 
+Yes<Deli>O ,<Deli>O it<Deli>O s<Deli>v.stative that<Deli>O good<Deli>O .<Deli>O 
+Rubbish<Deli>n.COGNITION 
+Took<Deli>v.stative 1<Deli>O +<Deli>O hour<Deli>n.TIME to<Deli>p.Purpose deliver<Deli>v.motion to<Deli>p.Goal Chatham<Deli>n.LOCATION ,<Deli>O hair<Deli>n.BODY in<Deli>p.Locus food<Deli>n.FOOD ,<Deli>O driver<Deli>n.PERSON did<Deli>O n't<Deli>O know<Deli>v.cognition area<Deli>n.LOCATION .<Deli>O 
+Noticed<Deli>v.cognition a<Deli>O few<Deli>O of<Deli>p.Quantity these<Deli>O Cookie<Deli>n.COGNITION cutter<Deli>O places<Deli>n.GROUP opening<Deli>v.social in<Deli>p.Locus Summit<Deli>n.LOCATION and<Deli>O New<Deli>n.LOCATION Providence<Deli>O .<Deli>O 
+Stick<Deli>v.social to<Deli>O Hop<Deli>n.GROUP Hing<Deli>O ,<Deli>O 20<Deli>O year<Deli>n.TIME +<Deli>O resident<Deli>n.PERSON .<Deli>O 
+a<Deli>O staple<Deli>n.COMMUNICATION !<Deli>O 
+I<Deli>O live<Deli>v.social in<Deli>p.Locus the<Deli>O neighborhood<Deli>n.GROUP and<Deli>O this<Deli>O place<Deli>n.GROUP is<Deli>v.stative one<Deli>O of<Deli>p.Whole my<Deli>p.Experiencer|p.Gestalt favorites<Deli>n.COGNITION for<Deli>p.Purpose a<Deli>O tasty<Deli>O ,<Deli>O quick<Deli>O and<Deli>O inexpensive<Deli>O meal<Deli>n.FOOD .<Deli>O 
+Branch<Deli>v.social out<Deli>O and<Deli>O try<Deli>v.social something<Deli>O other<Deli>p.Part/Portion than<Deli>O the<Deli>O Pad<Deli>n.FOOD Thai<Deli>O ,<Deli>O the<Deli>O curries<Deli>n.FOOD are<Deli>v.stative fantastic<Deli>O .<Deli>O 
+Fast<Deli>O and<Deli>O friendly<Deli>O service<Deli>n.ACT ,<Deli>O they<Deli>O know<Deli>v.cognition my<Deli>p.Originator|p.Possessor order<Deli>n.FOOD when<Deli>O I<Deli>O walk<Deli>v.motion in<Deli>p.Path|p.Direction the<Deli>O door<Deli>n.ARTIFACT !<Deli>O 
+Feel<Deli>v.emotion good<Deli>O 
+I<Deli>O just<Deli>O wanted<Deli>v.cognition to<Deli>O try<Deli>v.possession your<Deli>p.OrgRole|p.Possessor clinic<Deli>n.GROUP because<Deli>O I<Deli>O was<Deli>v.stative not<Deli>O totally<Deli>O happy<Deli>O with<Deli>p.Stimulus|p.Topic my<Deli>p.SocialRel|p.Gestalt current<Deli>O therapist<Deli>n.PERSON I<Deli>O regularly<Deli>O see<Deli>v.social .<Deli>O 
+Now<Deli>O I<Deli>O 've<Deli>O found<Deli>v.social someone<Deli>O who<Deli>O can<Deli>O manage<Deli>v.cognition to<Deli>O do<Deli>v.stative what<Deli>O I<Deli>O really<Deli>O want<Deli>v.cognition .<Deli>O 
+Men<Deli>n.GROUP s<Deli>O and<Deli>O Boys<Deli>O Barbers<Deli>O ,<Deli>O on<Deli>p.Locus the<Deli>O number<Deli>n.COMMUNICATION 9<Deli>O Bus<Deli>n.ARTIFACT route<Deli>n.LOCATION .<Deli>O 
+Ladies<Deli>n.GROUP room<Deli>O ,<Deli>O Open<Deli>O Sundays<Deli>n.TIME 
+Great<Deli>O job<Deli>n.ACT on<Deli>p.Topic my<Deli>p.Possessor roof<Deli>n.ARTIFACT and<Deli>O the<Deli>O pricing<Deli>n.POSSESSION was<Deli>v.stative fair<Deli>O .<Deli>O 
+Will<Deli>O use<Deli>v.possession again<Deli>O in<Deli>p.Time the<Deli>O future<Deli>n.TIME .<Deli>O 
+Very<Deli>O Mediocre<Deli>O donuts<Deli>n.FOOD !<Deli>O 
+The<Deli>O Donuts<Deli>n.FOOD were<Deli>v.stative very<Deli>O over<Deli>O proofed<Deli>O ,<Deli>O making<Deli>v.stative them<Deli>O stale<Deli>O and<Deli>O bready<Deli>O .<Deli>O 
+The<Deli>O service<Deli>n.ACT was<Deli>v.stative friendly<Deli>O and<Deli>O fast<Deli>O ,<Deli>O but<Deli>O this<Deli>O just<Deli>O does<Deli>O nt<Deli>O make<Deli>v.social up<Deli>O for<Deli>O the<Deli>O lack<Deli>O -<Deli>O luster<Deli>O product<Deli>n.ARTIFACT .<Deli>O 
+We<Deli>O tried<Deli>v.consumption 4<Deli>O different<Deli>O style<Deli>n.COGNITION of<Deli>p.Species donuts<Deli>n.FOOD ,<Deli>O they<Deli>O were<Deli>v.stative all<Deli>O the<Deli>O same<Deli>O when<Deli>O it<Deli>O came<Deli>O to<Deli>O quality<Deli>n.COGNITION .<Deli>O 
+Do<Deli>O n't<Deli>O judge<Deli>v.cognition a<Deli>O book<Deli>n.ARTIFACT by<Deli>p.Instrument its<Deli>p.Whole|p.Gestalt cover<Deli>n.ARTIFACT 
+From<Deli>p.Locus|p.Source the<Deli>O outside<Deli>n.LOCATION Ichiban<Deli>n.GROUP looks<Deli>v.perception like<Deli>p.Theme|p.ComparisonRef it<Deli>O will<Deli>O be<Deli>v.stative terrible<Deli>O .<Deli>O 
+This<Deli>O could<Deli>O n't<Deli>O be<Deli>v.stative farther<Deli>O from<Deli>p.Locus|p.Source the<Deli>O truth<Deli>n.COGNITION .<Deli>O 
+The<Deli>O food<Deli>n.FOOD is<Deli>v.stative amazing<Deli>O ,<Deli>O and<Deli>O the<Deli>O prices<Deli>n.POSSESSION can<Deli>O not<Deli>O be<Deli>O beat<Deli>v.stative .<Deli>O 
+The<Deli>O sushi<Deli>n.FOOD is<Deli>v.stative great<Deli>O ,<Deli>O and<Deli>O they<Deli>O have<Deli>v.stative a<Deli>O great<Deli>O selection<Deli>n.COGNITION .<Deli>O 
+Excellent<Deli>O energy<Deli>n.ATTRIBUTE efficiency<Deli>n.ATTRIBUTE 
+Compact<Deli>n.GROUP 's<Deli>O Corona<Deli>n.ARTIFACT dryers<Deli>O remove<Deli>v.change at<Deli>p.Approximator least<Deli>O twice<Deli>O as<Deli>p.Approximator|p.Identity much<Deli>O water<Deli>n.NATURALOBJECT as<Deli>p.ComparisonRef the<Deli>O previous<Deli>O dryers<Deli>n.ARTIFACT ,<Deli>O allowing<Deli>v.stative a<Deli>O production<Deli>n.ACT increase<Deli>n.RELATION of<Deli>p.Extent|p.Identity over<Deli>p.Approximator 10<Deli>O %<Deli>O and<Deli>O a<Deli>O significant<Deli>O energy<Deli>n.ARTIFACT saving<Deli>n.POSSESSION .<Deli>O 
+Dessert<Deli>n.FOOD was<Deli>v.stative good<Deli>O .<Deli>O 
+Rest<Deli>n.FOOD was<Deli>v.stative too<Deli>O oily<Deli>O .<Deli>O 
+It<Deli>O taste<Deli>v.perception better<Deli>O than<Deli>p.ComparisonRef In<Deli>n.GROUP and<Deli>O Out<Deli>O ....<Deli>O 
+Nice<Deli>O little<Deli>O locally<Deli>O owned<Deli>O greek<Deli>O bar<Deli>n.GROUP and<Deli>O grill<Deli>O .<Deli>O 
+Good<Deli>O food<Deli>n.FOOD .<Deli>O 
+Great<Deli>O wings<Deli>n.FOOD !<Deli>O 
+the<Deli>O team<Deli>n.GROUP at<Deli>p.OrgRole|p.Locus barton<Deli>n.GROUP car<Deli>O wash<Deli>O was<Deli>v.stative very<Deli>O friendly<Deli>O .<Deli>O 
+and<Deli>O did<Deli>v.stative great<Deli>O job<Deli>n.ACT .<Deli>O 
+i<Deli>O was<Deli>v.stative very<Deli>O pleased<Deli>O with<Deli>p.Stimulus|p.Topic the<Deli>O service<Deli>n.ACT .<Deli>O 
+Fast<Deli>O and<Deli>O great<Deli>O service<Deli>n.ACT on<Deli>p.Theme pool<Deli>n.ARTIFACT covers<Deli>O 
+The<Deli>O best<Deli>O Thai<Deli>O food<Deli>n.FOOD I<Deli>O 've<Deli>O ever<Deli>O had<Deli>v.stative in<Deli>p.Locus Australia<Deli>n.LOCATION ,<Deli>O very<Deli>O fresh<Deli>O and<Deli>O so<Deli>O much<Deli>O favor<Deli>n.COGNITION of<Deli>p.Gestalt authentic<Deli>O Thai<Deli>O .<Deli>O 
+The<Deli>O restaurant<Deli>n.GROUP is<Deli>v.stative the<Deli>O most<Deli>O beautiful<Deli>O thai<Deli>O restaurant<Deli>n.GROUP in<Deli>p.Locus Geelong<Deli>n.LOCATION ...<Deli>O just<Deli>O love<Deli>v.emotion it<Deli>O 
+Friendliest<Deli>O place<Deli>n.GROUP I<Deli>O have<Deli>O ever<Deli>O stayed<Deli>v.social !<Deli>O 
+What<Deli>O a<Deli>O Dump<Deli>n.ARTIFACT !<Deli>O 
+The<Deli>O food<Deli>n.FOOD is<Deli>v.stative terrible<Deli>O .<Deli>O 
+The<Deli>O place<Deli>n.GROUP smells<Deli>v.perception and<Deli>O the<Deli>O owner<Deli>n.PERSON is<Deli>v.stative very<Deli>O very<Deli>O rude<Deli>O !<Deli>O 
+I<Deli>O could<Deli>O go<Deli>v.communication on<Deli>O and<Deli>O on<Deli>O !<Deli>O 
+Just<Deli>O do<Deli>O n't<Deli>O go<Deli>v.motion there<Deli>O .<Deli>O 
+Fantastic<Deli>O professional<Deli>O service<Deli>n.ACT -<Deli>O 
+These<Deli>O guys<Deli>n.GROUP really<Deli>O know<Deli>v.cognition their<Deli>`$ stuff<Deli>O ..<Deli>O they<Deli>O have<Deli>v.stative almost<Deli>O anything<Deli>O you<Deli>O could<Deli>O want<Deli>v.cognition in<Deli>p.Topic terms<Deli>O of<Deli>O spy<Deli>n.ACT and<Deli>O surviellance<Deli>n.ACT equipment<Deli>n.ARTIFACT .<Deli>O 
+Truly<Deli>O james<Deli>n.PERSON bond<Deli>O style<Deli>n.ATTRIBUTE stuff<Deli>n.ARTIFACT ...<Deli>O would<Deli>O recommend<Deli>v.communication 
+Best<Deli>O fried<Deli>O shrimp<Deli>n.FOOD in<Deli>p.Locus the<Deli>O state<Deli>n.LOCATION !<Deli>O 
+We<Deli>O would<Deli>v.cognition like<Deli>O to<Deli>O thank<Deli>v.communication our<Deli>p.SocialRel|p.Gestalt emergency<Deli>n.EVENT plumbers<Deli>n.PERSON who<Deli>O visted<Deli>v.motion our<Deli>p.OrgRole|p.Possessor shop<Deli>n.GROUP in<Deli>p.Locus Morningside<Deli>n.LOCATION Road<Deli>O today<Deli>n.TIME .<Deli>O 
+A<Deli>O fast<Deli>O service<Deli>n.ACT ,<Deli>O saved<Deli>v.stative a<Deli>O bad<Deli>O situation<Deli>n.EVENT getting<Deli>v.change a<Deli>O lot<Deli>O worse<Deli>O .<Deli>O 
+many<Deli>n.COMMUNICATION thanks<Deli>O 2scompany<Deli>n.GROUP ...<Deli>O 
+Awesome<Deli>O Landscaping<Deli>n.ACT Job<Deli>n.ACT 
+MFJ<Deli>n.GROUP Inc<Deli>O transformed<Deli>v.change our<Deli>p.Possessor run<Deli>O down<Deli>O back<Deli>n.LOCATION yard<Deli>O into<Deli>p.Goal a<Deli>O place<Deli>n.LOCATION of<Deli>p.Characteristic beauty<Deli>n.ATTRIBUTE .<Deli>O 
+The<Deli>O work<Deli>n.ACT was<Deli>O completed<Deli>v.change within<Deli>p.Duration one<Deli>O week<Deli>n.TIME ,<Deli>O and<Deli>O everything<Deli>O was<Deli>O cleaned<Deli>v.change up<Deli>O on<Deli>p.Time completion<Deli>n.ACT .<Deli>O 
+Highly<Deli>O recommended<Deli>v.communication landscaper<Deli>n.PERSON !!!<Deli>O 
+Wonderful<Deli>O Wonderful<Deli>O People<Deli>n.GROUP !<Deli>O 
+I<Deli>O refer<Deli>v.communication to<Deli>p.Recipient|p.Goal VNHH<Deli>n.GROUP often<Deli>O and<Deli>O love<Deli>v.emotion you<Deli>O guys<Deli>n.GROUP .<Deli>O 
+Walgreens<Deli>n.GROUP on<Deli>p.Locus University<Deli>n.LOCATION 
+My<Deli>p.Originator|p.Possessor pharmacy<Deli>n.GROUP order<Deli>n.COMMUNICATION is<Deli>v.stative always<Deli>O correct<Deli>O and<Deli>O promptly<Deli>O delivered<Deli>v.motion but<Deli>O the<Deli>O pharmacy<Deli>n.GROUP staff<Deli>n.GROUP are<Deli>v.stative always<Deli>O very<Deli>O short<Deli>O with<Deli>p.Beneficiary|p.Theme me<Deli>O and<Deli>O do<Deli>O n't<Deli>O seem<Deli>v.cognition to<Deli>O like<Deli>v.emotion answering<Deli>v.communication questions<Deli>n.COMMUNICATION .<Deli>O 
+Clean<Deli>O store<Deli>n.ARTIFACT ,<Deli>O friendly<Deli>O check<Deli>O -<Deli>O out<Deli>O staff<Deli>n.GROUP up<Deli>p.Locus front<Deli>O .<Deli>O 
+Good<Deli>O selection<Deli>n.COGNITION .<Deli>O 
+A<Deli>O thoroughly<Deli>O comprehensive<Deli>O service<Deli>n.ACT ;<Deli>O excellent<Deli>O communication<Deli>n.COMMUNICATION and<Deli>O best<Deli>O of<Deli>?? they<Deli>O are<Deli>v.stative transparent<Deli>O with<Deli>p.Topic their<Deli>p.Possessor fee<Deli>n.POSSESSION (<Deli>O ie<Deli>O nothing<Deli>O is<Deli>O simply<Deli>O implied<Deli>v.communication or<Deli>O assumed<Deli>v.communication )<Deli>O .<Deli>O 
+AWESOME<Deli>O food<Deli>n.FOOD !<Deli>O 
+Make<Deli>v.cognition sure<Deli>O to<Deli>O put<Deli>v.contact OILY<Deli>O sauces<Deli>n.FOOD on<Deli>p.Goal|p.Locus your<Deli>p.Possessor food<Deli>n.FOOD to<Deli>p.Purpose make<Deli>v.stative it<Deli>O moist<Deli>O !<Deli>O 
+YUM<Deli>O 
+The<Deli>O company<Deli>n.GROUP gets<Deli>v.stative busy<Deli>O but<Deli>O you<Deli>O never<Deli>O have<Deli>O to<Deli>O wait<Deli>v.stative long<Deli>O because<Deli>O they<Deli>O ARE<Deli>v.stative orginizied<Deli>O ,<Deli>O so<Deli>O you<Deli>O are<Deli>v.stative in<Deli>p.Locus ,<Deli>O out<Deli>p.Locus ,<Deli>O and<Deli>O paid<Deli>v.possession well<Deli>O for<Deli>p.Theme your<Deli>p.Possessor scrap<Deli>n.ARTIFACT 
+No<Deli>O complaints<Deli>n.COMMUNICATION 
+I<Deli>O have<Deli>v.communication no<Deli>O complaints<Deli>O about<Deli>p.Topic the<Deli>O service<Deli>n.ACT I<Deli>O received<Deli>v.social .<Deli>O 
+This<Deli>O man<Deli>n.PERSON was<Deli>v.stative polite<Deli>O ,<Deli>O professional<Deli>O ,<Deli>O clean<Deli>O and<Deli>O quick<Deli>O .<Deli>O 
+I<Deli>O never<Deli>O felt<Deli>v.emotion worried<Deli>O and<Deli>O walked<Deli>v.social away<Deli>O satisfied<Deli>O .<Deli>O 
+umm<Deli>O ...<Deli>O 
+okay<Deli>O ,<Deli>O I<Deli>O do<Deli>O nt<Deli>O have<Deli>v.stative a<Deli>O review<Deli>n.COMMUNICATION ,<Deli>O but<Deli>O why<Deli>O in<Deli>O the<Deli>O hell<Deli>O would<Deli>O you<Deli>O name<Deli>v.communication your<Deli>p.OrgRole|p.Possessor business<Deli>n.GROUP something<Deli>O that<Deli>O has<Deli>v.stative the<Deli>O initials<Deli>n.COMMUNICATION KKK<Deli>n.COMMUNICATION ....<Deli>O is<Deli>v.stative there<Deli>O something<Deli>O behind<Deli>O the<Deli>O scenes<Deli>O at<Deli>p.Locus this<Deli>O place<Deli>n.GROUP ?<Deli>O 
+Like<Deli>O I<Deli>O 'm<Deli>v.stative legitimately<Deli>O concerned<Deli>O at<Deli>p.Time this<Deli>O point<Deli>O ...<Deli>O lol<Deli>O 
+You<Deli>O guys<Deli>O do<Deli>v.stative everything<Deli>O wonderful<Deli>O !<Deli>O 
+We<Deli>O honestly<Deli>O can<Deli>O not<Deli>O think<Deli>v.cognition of<Deli>O even<Deli>O 1<Deli>O thing<Deli>O we<Deli>O did<Deli>O n't<Deli>O like<Deli>v.emotion !<Deli>O 
+best<Deli>O 
+Best<Deli>O pedi<Deli>n.ACT mani<Deli>n.ACT I<Deli>O ve<Deli>O ever<Deli>O had<Deli>v.stative .<Deli>O 
+Darla<Deli>n.PERSON is<Deli>v.stative amazing<Deli>O ,<Deli>O I<Deli>O would<Deli>O recoment<Deli>v.communication her<Deli>O to<Deli>p.Recipient|p.Goal anyone<Deli>O .<Deli>O 
+excellence<Deli>n.ATTRIBUTE in<Deli>p.Locus glasgow<Deli>n.LOCATION 
+I<Deli>O v<Deli>O just<Deli>O had<Deli>v.stative my<Deli>p.Possessor bmw<Deli>n.ARTIFACT z3<Deli>O rear<Deli>n.ARTIFACT window<Deli>O replaced<Deli>v.change by<Deli>p.Agent the<Deli>O guys<Deli>n.PERSON at<Deli>p.OrgRole|p.Locus kelvin<Deli>n.GROUP trimmers<Deli>O .<Deli>O 
+The<Deli>O team<Deli>n.GROUP who<Deli>O work<Deli>v.social there<Deli>O are<Deli>v.stative helpfull<Deli>O ,<Deli>O friendly<Deli>O and<Deli>O extremely<Deli>O knowledgeable<Deli>O and<Deli>O will<Deli>O help<Deli>v.social you<Deli>O as<Deli>p.Extent|p.Identity much<Deli>O as<Deli>p.ComparisonRef they<Deli>O can<Deli>O with<Deli>p.Circumstance thier<Deli>p.Gestalt years<Deli>n.TIME of<Deli>p.Quantity hands<Deli>O on<Deli>O practice<Deli>n.ACT .<Deli>O 
+Highly<Deli>O recomended<Deli>v.communication .<Deli>O 
+Hidden<Deli>O Treasure<Deli>n.COGNITION .<Deli>O 
+Strip<Deli>n.GROUP mall<Deli>O asian<Deli>O it<Deli>O is<Deli>v.stative not<Deli>O !<Deli>O 
+Go<Deli>v.motion in<Deli>p.Direction and<Deli>O you<Deli>O will<Deli>O not<Deli>O think<Deli>v.cognition you<Deli>O are<Deli>v.stative in<Deli>p.Locus Chesapeake<Deli>n.LOCATION .<Deli>O 
+The<Deli>O setting<Deli>n.ATTRIBUTE feels<Deli>v.cognition like<Deli>p.ComparisonRef a<Deli>O Sushi<Deli>n.GROUP bar<Deli>O in<Deli>p.Locus NYC<Deli>n.LOCATION ;<Deli>O small<Deli>O ,<Deli>O cozy<Deli>O ,<Deli>O but<Deli>O with<Deli>p.Characteristic flair<Deli>n.COGNITION .<Deli>O 
+Get<Deli>v.social great<Deli>O service<Deli>n.ACT ,<Deli>O fantastic<Deli>O menu<Deli>n.COMMUNICATION ,<Deli>O and<Deli>O relax<Deli>v.emotion .<Deli>O 
+Best<Deli>O in<Deli>p.Whole|p.Locus HR<Deli>n.LOCATION so<Deli>O far<Deli>O !<Deli>O 
+I<Deli>O really<Deli>O want<Deli>v.cognition to<Deli>O like<Deli>v.emotion this<Deli>O place<Deli>n.GROUP since<Deli>p.Explanation I<Deli>O work<Deli>v.social right<Deli>O around<Deli>p.Locus the<Deli>O corner<Deli>O .<Deli>O 
+Unfortunately<Deli>O ,<Deli>O I<Deli>O 've<Deli>O given<Deli>v.social it<Deli>O a<Deli>O couple<Deli>O of<Deli>p.Quantity tries<Deli>n.EVENT at<Deli>p.Time different<Deli>O times<Deli>n.EVENT and<Deli>O decided<Deli>v.cognition to<Deli>O stop<Deli>v.change going<Deli>v.social .<Deli>O 
+The<Deli>O employees<Deli>n.PERSON do<Deli>O n't<Deli>O really<Deli>O seem<Deli>v.perception to<Deli>O enjoy<Deli>v.emotion what<Deli>O they<Deli>O are<Deli>O doing<Deli>v.social and<Deli>O it<Deli>O shows<Deli>v.perception .<Deli>O 
+it<Deli>O was<Deli>v.stative a<Deli>O little<Deli>O to<Deli>O high<Deli>O dollar<Deli>O for<Deli>p.ComparisonRef|p.Beneficiary me<Deli>O 
+Decent<Deli>O place<Deli>n.GROUP to<Deli>p.Characteristic|p.Purpose stay<Deli>v.social ,<Deli>O I<Deli>O would<Deli>O stay<Deli>v.social there<Deli>O again<Deli>O .<Deli>O 
+Rooms<Deli>n.ARTIFACT were<Deli>v.stative clean<Deli>O ,<Deli>O plenty<Deli>O of<Deli>p.Quantity things<Deli>O to<Deli>O do<Deli>v.social near<Deli>p.Locus hotel<Deli>n.GROUP ,<Deli>O and<Deli>O safe<Deli>O part<Deli>n.LOCATION of<Deli>p.Whole town<Deli>n.LOCATION .<Deli>O 
+good<Deli>O outside<Deli>p.Locus ,<Deli>O bad<Deli>O inside<Deli>p.Locus 
+the<Deli>O apartment<Deli>n.ARTIFACT only<Deli>O looks<Deli>v.perception good<Deli>O outsize<Deli>O ,<Deli>O inside<Deli>n.LOCATION is<Deli>v.stative too<Deli>O bad<Deli>O .<Deli>O 
+too<Deli>O many<Deli>O bugs<Deli>n.ANIMAL some<Deli>O you<Deli>O even<Deli>O never<Deli>O seen<Deli>v.perception before<Deli>p.Time .<Deli>O 
+the<Deli>O attitude<Deli>n.ATTRIBUTE of<Deli>p.Gestalt some<Deli>O staff<Deli>n.GROUP is<Deli>v.stative terrible<Deli>O ,<Deli>O did<Deli>O not<Deli>O solve<Deli>v.cognition anything<Deli>O only<Deli>O say<Deli>v.communication i<Deli>O can<Deli>O do<Deli>v.change nothing<Deli>O .<Deli>O 
+Great<Deli>O product<Deli>n.ARTIFACT ,<Deli>O great<Deli>O service<Deli>n.ACT !!!<Deli>O 
+Installed<Deli>v.change Biometrics<Deli>n.ARTIFACT and<Deli>O Got<Deli>v.social Excellent<Deli>O Service<Deli>n.ACT .<Deli>O 
+I<Deli>O like<Deli>v.emotion I<Deli>n.GROUP Move<Deli>O CA<Deli>O -<Deli>O Los<Deli>O Angeles<Deli>O Movers<Deli>O ,<Deli>O they<Deli>O moved<Deli>v.motion me<Deli>O before<Deli>p.Time ,<Deli>O but<Deli>O this<Deli>O time<Deli>n.EVENT they<Deli>O were<Deli>v.stative awesome<Deli>O :)<Deli>O 
+Usually<Deli>O very<Deli>O quick<Deli>O and<Deli>O timely<Deli>O .<Deli>O 
+Doctor<Deli>n.PERSON Bogomilsky<Deli>O knows<Deli>v.cognition her<Deli>`$ stuff<Deli>O too<Deli>O .<Deli>O 
+Relish<Deli>n.FOOD 
+A<Deli>O Top<Deli>O Quality<Deli>n.COGNITION Sandwich<Deli>n.FOOD made<Deli>v.creation to<Deli>p.Goal artistic<Deli>O standards<Deli>n.COGNITION .<Deli>O 
+The<Deli>O best<Deli>O darlington<Deli>n.LOCATION has<Deli>v.social to<Deli>O offer<Deli>O in<Deli>p.Topic contemporary<Deli>O sandwicheering<Deli>n.ACT .<Deli>O 
+Drum<Deli>n.ARTIFACT and<Deli>O bass<Deli>n.ARTIFACT as<Deli>p.ComparisonRef standard<Deli>n.COGNITION .<Deli>O 
+Fast<Deli>O Service<Deli>n.ACT Called<Deli>v.communication them<Deli>O one<Deli>O hour<Deli>n.TIME ago<Deli>p.Time|p.Interval and<Deli>O they<Deli>O just<Deli>O left<Deli>v.motion my<Deli>p.Possessor house<Deli>n.LOCATION five<Deli>O minutes<Deli>n.TIME ago<Deli>p.Time|p.Interval .<Deli>O 
+My<Deli>p.Possessor house<Deli>n.ARTIFACT already<Deli>O feels<Deli>v.cognition fresh<Deli>O and<Deli>O good<Deli>O thanks<Deli>p.Explanation to<Deli>O the<Deli>O Battery<Deli>n.GROUP Park<Deli>O Pest<Deli>O I<Deli>O 'm<Deli>O enjoying<Deli>v.emotion my<Deli>p.Possessor time<Deli>n.TIME indoors<Deli>p.Locus much<Deli>O better<Deli>O .<Deli>O 
+Will<Deli>O never<Deli>O use<Deli>v.social again<Deli>O .<Deli>O 
+Very<Deli>O rude<Deli>O and<Deli>O unprofessional<Deli>O .<Deli>O 
+The<Deli>O workers<Deli>n.PERSON sped<Deli>v.change up<Deli>p.Path and<Deli>O down<Deli>p.Path the<Deli>O street<Deli>n.LOCATION with<Deli>p.Manner no<Deli>O mind<Deli>n.COGNITION to<Deli>p.Topic|p.Goal the<Deli>O small<Deli>O children<Deli>n.PERSON playing<Deli>v.social .<Deli>O 
+Great<Deli>O service<Deli>n.ACT 
+We<Deli>O at<Deli>p.OrgRole|p.Locus R&L<Deli>n.GROUP Plumbing<Deli>O Services<Deli>O are<Deli>v.stative pleased<Deli>O with<Deli>p.Stimulus|p.Topic your<Deli>p.Gestalt professionalism<Deli>n.ATTRIBUTE and<Deli>O the<Deli>v.social extra<Deli>O mile<Deli>O you<Deli>O went<Deli>O to<Deli>p.Purpose get<Deli>v.change out<Deli>p.Possessor computers<Deli>n.ARTIFACT working<Deli>O correctly<Deli>O ,<Deli>O you<Deli>O will<Deli>O be<Deli>v.stative our<Deli>p.Recipient|p.Gestalt first<Deli>O call<Deli>O if<Deli>O anything<Deli>O happens<Deli>v.change again<Deli>O and<Deli>O we<Deli>O will<Deli>O refer<Deli>v.communication you<Deli>O to<Deli>p.Recipient|p.Goal other<Deli>O people<Deli>n.PERSON with<Deli>p.Characteristic computer<Deli>O issues<Deli>n.COGNITION .<Deli>O 
+This<Deli>O is<Deli>v.stative a<Deli>O great<Deli>O place<Deli>n.GROUP to<Deli>p.Characteristic|p.Purpose get<Deli>v.stative a<Deli>O permit<Deli>n.ARTIFACT 
+I<Deli>O had<Deli>O to<Deli>O get<Deli>v.stative a<Deli>O permit<Deli>n.ARTIFACT here<Deli>O ,<Deli>O it<Deli>O was<Deli>v.stative cool<Deli>O 
+These<Deli>O guys<Deli>O do<Deli>v.social great<Deli>O work<Deli>O at<Deli>p.Cost|p.Locus VERY<Deli>O reasonable<Deli>O prices<Deli>n.POSSESSION .<Deli>O 
+I<Deli>O have<Deli>O use<Deli>v.social them<Deli>O four<Deli>O times<Deli>n.EVENT for<Deli>p.Purpose fixing<Deli>v.change items<Deli>n.ARTIFACT from<Deli>p.Part/Portion|p.Source pushing<Deli>v.contact out<Deli>p.Direction a<Deli>O dent<Deli>n.ARTIFACT in<Deli>p.Locus a<Deli>O bumper<Deli>n.ARTIFACT to<Deli>p.Part/Portion|p.Goal fixing<Deli>v.change the<Deli>O fender<Deli>n.ARTIFACT on<Deli>p.Whole|p.Locus my<Deli>p.Possessor beloved<Deli>O Miata<Deli>n.ARTIFACT .<Deli>O 
+I<Deli>O have<Deli>O never<Deli>O been<Deli>O disappointed<Deli>v.emotion .<Deli>O 
+Hospitality<Deli>n.ATTRIBUTE .!<Deli>O 
+Very<Deli>O good<Deli>O hospitality<Deli>n.ATTRIBUTE offered<Deli>v.social .!<Deli>O 
+Keep<Deli>O it<Deli>O up<Deli>O .<Deli>O 
+-<Deli>O Shree<Deli>n.GROUP Ghatkopar<Deli>O Bhatia<Deli>O Mitra<Deli>O Mandal<Deli>O 
+spoken<Deli>v.communication english<Deli>n.COMMUNICATION rushi<Deli>n.PERSON 
+can<Deli>O ever<Deli>O &<Deli>O never<Deli>O forget<Deli>v.cognition the<Deli>O training<Deli>n.ACT undergone<Deli>v.social here<Deli>O which<Deli>O made<Deli>v.stative my<Deli>p.Possessor life<Deli>n.PROCESS step<Deli>v.stative onto<Deli>p.Goal the<Deli>O successful<Deli>O job<Deli>n.ACT without<Deli>p.Manner any<Deli>O hurdles<Deli>n.COGNITION .<Deli>O 
+The<Deli>O staff<Deli>n.GROUP ,<Deli>O material<Deli>n.COMMUNICATION provided<Deli>v.social ,<Deli>O infra<Deli>n.COGNITION structure<Deli>O ,<Deli>O environment<Deli>n.COGNITION &<Deli>O low<Deli>O fees<Deli>n.POSSESSION totally<Deli>O above<Deli>p.Locus the<Deli>O satisfactory<Deli>O mark<Deli>n.COGNITION 
+Amazing<Deli>O service<Deli>n.ACT !<Deli>O 
+I<Deli>O just<Deli>O had<Deli>v.stative the<Deli>O best<Deli>O experience<Deli>n.EVENT at<Deli>p.Locus this<Deli>O Kal<Deli>n.GROUP Tire<Deli>O location<Deli>n.LOCATION .<Deli>O 
+Courteous<Deli>O ,<Deli>O fast<Deli>O and<Deli>O friendly<Deli>O .<Deli>O 
+Great<Deli>O Service<Deli>n.ACT ,<Deli>O Thanks<Deli>O Don<Deli>n.PERSON .<Deli>O 
+Nice<Deli>O Top<Deli>n.LOCATION Lights<Deli>n.ARTIFACT .<Deli>O 
+Fresh<Deli>O and<Deli>O Excellent<Deli>O Quality<Deli>n.ATTRIBUTE 
+We<Deli>O order<Deli>v.communication take<Deli>n.FOOD out<Deli>O from<Deli>p.Originator|p.Source here<Deli>O all<Deli>n.COGNITION the<Deli>O time<Deli>O and<Deli>O we<Deli>O are<Deli>v.stative never<Deli>O disappointed<Deli>O .<Deli>O 
+The<Deli>O food<Deli>n.FOOD is<Deli>v.stative always<Deli>O fresh<Deli>O and<Deli>O delicious<Deli>O .<Deli>O 
+It<Deli>O can<Deli>O be<Deli>v.stative a<Deli>O little<Deli>O on<Deli>p.Manner|p.Locus the<Deli>O spicy<Deli>O side<Deli>O but<Deli>O just<Deli>O ask<Deli>v.communication them<Deli>O exactly<Deli>O what<Deli>O you<Deli>O want<Deli>v.cognition and<Deli>O they<Deli>O are<Deli>v.stative very<Deli>O helpful<Deli>O .<Deli>O 
+amazing<Deli>O ,<Deli>O fun<Deli>O ,<Deli>O great<Deli>O beers<Deli>n.FOOD .<Deli>O 
+service<Deli>n.ACT could<Deli>O be<Deli>v.stative a<Deli>O little<Deli>O better<Deli>O but<Deli>O it<Deli>O s<Deli>v.stative an<Deli>O all<Deli>O round<Deli>O good<Deli>O place<Deli>n.GROUP 
+Restaurant<Deli>n.GROUP on<Deli>p.Locus top<Deli>n.LOCATION was<Deli>O renovated<Deli>v.change ,<Deli>O food<Deli>n.FOOD was<Deli>v.stative decent<Deli>O ,<Deli>O price<Deli>n.POSSESSION was<Deli>v.stative way<Deli>O to<Deli>O high<Deli>O for<Deli>p.ComparisonRef Duluth<Deli>n.LOCATION for<Deli>p.ComparisonRef quality<Deli>n.ATTRIBUTE ,<Deli>O new<Deli>O decor<Deli>n.ATTRIBUTE seems<Deli>v.perception tacky<Deli>O 
+Great<Deli>O service<Deli>n.ACT 
+These<Deli>O people<Deli>n.PERSON were<Deli>v.stative so<Deli>O helpful<Deli>O this<Deli>O week<Deli>n.EVENT and<Deli>O did<Deli>v.stative everything<Deli>O to<Deli>p.Purpose sort<Deli>v.cognition out<Deli>O my<Deli>p.Possessor windscreen<Deli>n.ARTIFACT and<Deli>O insurance<Deli>n.POSSESSION .<Deli>O 
+It<Deli>O was<Deli>O all<Deli>O sorted<Deli>v.cognition with<Deli>p.Manner no<Deli>O hassle<Deli>n.COGNITION at<Deli>p.Extent all<Deli>O and<Deli>O I<Deli>O 'm<Deli>v.stative really<Deli>O grateful<Deli>O -<Deli>O they<Deli>O were<Deli>v.stative fab<Deli>O .<Deli>O 
+The<Deli>O best<Deli>O customer<Deli>n.ACT service<Deli>O I<Deli>O 've<Deli>O come<Deli>v.cognition across<Deli>O for<Deli>?? long<Deli>O time<Deli>n.TIME .<Deli>O 
+Michael<Deli>n.PERSON helped<Deli>v.social shoot<Deli>v.social the<Deli>O majority<Deli>n.QUANTITY of<Deli>p.Quantity|p.Whole my<Deli>p.OrgRole|p.Possessor firm<Deli>n.GROUP 's<Deli>p.Possessor website<Deli>n.COMMUNICATION and<Deli>O we<Deli>O could<Deli>O not<Deli>O have<Deli>O been<Deli>v.stative happier<Deli>O .<Deli>O 
+We<Deli>O went<Deli>v.social through<Deli>O six<Deli>O photographers<Deli>n.PERSON to<Deli>p.Purpose find<Deli>v.cognition the<Deli>O right<Deli>O photographers<Deli>n.PERSON that<Deli>O would<Deli>O represent<Deli>v.social our<Deli>p.OrgRole|p.Possessor firm<Deli>n.GROUP in<Deli>p.Manner the<Deli>O light<Deli>O we<Deli>O wished<Deli>v.cognition to<Deli>O and<Deli>O Michael<Deli>n.PERSON and<Deli>O his<Deli>p.SocialRel|p.Gestalt team<Deli>n.GROUP made<Deli>v.stative that<Deli>O happen<Deli>v.stative .<Deli>O 
+He<Deli>O 's<Deli>v.stative worth<Deli>O every<Deli>O penny<Deli>O .<Deli>O 
+The<Deli>O pancakes<Deli>n.FOOD are<Deli>v.stative to<Deli>O die<Deli>O for<Deli>O .<Deli>O 
+house<Deli>n.ARTIFACT closing<Deli>n.EVENT 
+Mrs.<Deli>n.PERSON Tolchin<Deli>O provided<Deli>v.social us<Deli>O with<Deli>p.Theme excellent<Deli>O service<Deli>n.ACT and<Deli>O came<Deli>v.stative with<Deli>p.Characteristic a<Deli>O great<Deli>O deal<Deli>O of<Deli>p.Quantity knowledge<Deli>n.COGNITION and<Deli>O professionalism<Deli>n.COGNITION !<Deli>O 
+Her<Deli>p.Gestalt flexibility<Deli>n.ATTRIBUTE and<Deli>O accessibility<Deli>n.ATTRIBUTE made<Deli>v.stative for<Deli>O an<Deli>O easy<Deli>O closing<Deli>n.EVENT .<Deli>O 
+this<Deli>O is<Deli>v.stative the<Deli>O worst<Deli>O Sam<Deli>n.GROUP s<Deli>O club<Deli>O I<Deli>O 've<Deli>O ever<Deli>O been<Deli>v.motion to<Deli>O 
+what<Deli>O a<Deli>O mind<Deli>n.COGNITION blowing<Deli>O servicing<Deli>n.ACT 
+They<Deli>O treat<Deli>v.social there<Deli>p.SocialRel|p.Gestalt employees<Deli>n.PERSON with<Deli>p.Manner respect<Deli>n.COGNITION and<Deli>O concern<Deli>n.COGNITION and<Deli>O expect<Deli>v.cognition that<Deli>O they<Deli>O will<Deli>O extend<Deli>v.social the<Deli>O same<Deli>O politeness<Deli>n.COGNITION to<Deli>p.Recipient|p.Goal there<Deli>p.SocialRel|p.Gestalt customers<Deli>n.PERSON .<Deli>O 
+ipad<Deli>n.ARTIFACT reiew<Deli>n.COMMUNICATION 
+they<Deli>O are<Deli>v.stative the<Deli>O best<Deli>O orthodontics<Deli>n.PERSON in<Deli>p.Locus the<Deli>O world<Deli>n.COGNITION .<Deli>O 
+i<Deli>O went<Deli>v.motion there<Deli>O since<Deli>p.StartTime i<Deli>O was<Deli>v.stative four<Deli>O .<Deli>O 
+now<Deli>O i<Deli>O will<Deli>O have<Deli>v.stative really<Deli>O straight<Deli>O teeth<Deli>n.BODY .<Deli>O 
+Yeah<Deli>O they<Deli>O ruined<Deli>v.change some<Deli>O shirts<Deli>n.ARTIFACT I<Deli>O had<Deli>v.possession too<Deli>O .<Deli>O 
+Horrible<Deli>O !<Deli>O 
+This<Deli>O is<Deli>v.stative a<Deli>O Ralph<Deli>n.GROUP 's<Deli>O 
+I<Deli>O just<Deli>O called<Deli>v.communication this<Deli>O number<Deli>n.COMMUNICATION and<Deli>O it<Deli>O is<Deli>v.stative a<Deli>O Ralph<Deli>n.GROUP 's<Deli>O Market<Deli>O .<Deli>O 
+Excellent<Deli>O medical<Deli>n.ACT care<Deli>O !!!!!!<Deli>O 
+Highly<Deli>O recommend<Deli>v.communication 
+I<Deli>O went<Deli>v.motion to<Deli>p.Goal this<Deli>O urgent<Deli>n.ACT care<Deli>O center<Deli>n.GROUP and<Deli>O was<Deli>O blown<Deli>v.cognition away<Deli>O with<Deli>p.Stimulus|p.Topic their<Deli>p.Agent|p.Gestalt service<Deli>n.ACT .<Deli>O 
+Finally<Deli>O a<Deli>O convenient<Deli>O place<Deli>n.GROUP close<Deli>O to<Deli>p.Locus|p.Goal home<Deli>n.LOCATION .<Deli>O 
+Wonderful<Deli>O staff<Deli>n.GROUP and<Deli>O physician<Deli>n.PERSON .<Deli>O 
+Clean<Deli>O and<Deli>O superb<Deli>O .<Deli>O 
+Thanks<Deli>O for<Deli>p.Explanation the<Deli>O great<Deli>O care<Deli>n.ACT !!!!<Deli>O 
+Will<Deli>O definitely<Deli>O go<Deli>v.motion back<Deli>O when<Deli>O I<Deli>O need<Deli>v.cognition medical<Deli>n.ACT care<Deli>O .<Deli>O 
+Winning<Deli>v.competition Attorney<Deli>n.PERSON !<Deli>O 
+The<Deli>O only<Deli>O 10.0<Deli>O "<Deli>O Perfect<Deli>O Score<Deli>n.COMMUNICATION "<Deli>O AVVO<Deli>n.GROUP Rated<Deli>v.communication Attorney<Deli>n.PERSON I<Deli>O Have<Deli>O Ever<Deli>O Met<Deli>v.social .<Deli>O 
+I<Deli>O Highly<Deli>O Recommend<Deli>v.communication ,<Deli>O The<Deli>n.GROUP Law<Deli>O Offices<Deli>O Of<Deli>O Dale<Deli>O Gribow<Deli>O !!<Deli>O 
+wow<Deli>O wow<Deli>O wow<Deli>O .<Deli>O 
+the<Deli>O bast<Deli>O cab<Deli>n.GROUP in<Deli>p.Locus minneapolis<Deli>n.LOCATION 
+wow<Deli>O ,<Deli>O the<Deli>O representative<Deli>n.PERSON went<Deli>v.social way<Deli>O above<Deli>O and<Deli>O beyond<Deli>O in<Deli>p.Circumstance helping<Deli>v.social me<Deli>O with<Deli>p.Theme my<Deli>p.Possessor account<Deli>n.POSSESSION set<Deli>n.ACT up<Deli>O .<Deli>O 
+i<Deli>O wish<Deli>v.cognition the<Deli>O other<Deli>O utilities<Deli>n.ARTIFACT i<Deli>O had<Deli>O to<Deli>O set<Deli>v.stative up<Deli>O had<Deli>v.stative people<Deli>n.PERSON to<Deli>p.Characteristic|p.Purpose work<Deli>v.social with<Deli>O like<Deli>p.ComparisonRef this<Deli>O ..<Deli>O 
+Linda<Deli>n.PERSON 
+I<Deli>O would<Deli>O highly<Deli>O recommend<Deli>v.communication Landscape<Deli>n.GROUP by<Deli>O Hiro<Deli>O .<Deli>O 
+Excellent<Deli>O customer<Deli>n.ACT service<Deli>O and<Deli>O quality<Deli>O work<Deli>n.ACT .<Deli>O 
+This<Deli>O is<Deli>v.stative a<Deli>O great<Deli>O place<Deli>n.GROUP to<Deli>p.Characteristic|p.Purpose shop<Deli>v.social .<Deli>O 
+I<Deli>O 've<Deli>O been<Deli>v.stative a<Deli>O regular<Deli>O customer<Deli>n.PERSON at<Deli>p.Locus this<Deli>O store<Deli>n.GROUP since<Deli>p.StartTime it<Deli>O opened<Deli>v.social ,<Deli>O and<Deli>O love<Deli>v.emotion the<Deli>O fact<Deli>n.COGNITION that<Deli>O all<Deli>O of<Deli>p.Quantity|p.Whole the<Deli>O employees<Deli>n.PERSON are<Deli>v.stative friendly<Deli>O locals<Deli>n.GROUP .<Deli>O 
+Particularly<Deli>O the<Deli>O lady<Deli>n.PERSON who<Deli>O operates<Deli>v.social the<Deli>O front<Deli>O register<Deli>n.ARTIFACT ,<Deli>O she<Deli>O 's<Deli>v.stative very<Deli>O kind<Deli>O !<Deli>O 
+Kyle<Deli>n.PERSON with<Deli>p.OrgRole|p.Accompanier Bullwark<Deli>n.PERSON 
+Great<Deli>O job<Deli>n.ACT !<Deli>O 
+Listened<Deli>v.perception to<Deli>p.Stimulus|p.Goal my<Deli>p.Experiencer|p.Gestalt problem<Deli>n.COGNITION and<Deli>O took<Deli>v.social care<Deli>O of<Deli>O it<Deli>O .<Deli>O 
+Thanks<Deli>O !<Deli>O 
+Gets<Deli>O the<Deli>O Job<Deli>O Done<Deli>O 
+We<Deli>O have<Deli>O utilized<Deli>v.social Mr.<Deli>n.PERSON Pozza<Deli>O and<Deli>O his<Deli>p.OrgRole|p.Possessor firm<Deli>n.GROUP twice<Deli>O now<Deli>O in<Deli>p.OrgRole|p.Locus our<Deli>p.SocialRel|p.Gestalt family<Deli>n.GROUP and<Deli>O both<Deli>O times<Deli>n.EVENT have<Deli>O been<Deli>v.stative very<Deli>O pleased<Deli>O .<Deli>O 
+I<Deli>O would<Deli>O not<Deli>O hesitate<Deli>v.cognition to<Deli>O use<Deli>v.social him<Deli>O again<Deli>O or<Deli>O refer<Deli>v.communication him<Deli>O to<Deli>?? my<Deli>p.SocialRel|p.Gestalt family<Deli>n.GROUP or<Deli>O friends<Deli>n.PERSON .<Deli>O 
+green<Deli>n.FOOD curry<Deli>O and<Deli>O red<Deli>n.FOOD curry<Deli>O is<Deli>v.stative awesome<Deli>O !<Deli>O 
+remember<Deli>v.cognition to<Deli>O ask<Deli>v.communication for<Deli>p.Theme extra<Deli>O vege<Deli>n.FOOD 
+THE<Deli>O TEACHING<Deli>n.ACT THERE<Deli>O SUCKS<Deli>O !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!<Deli>O 
+ALL<Deli>O OF<Deli>p.Quantity|p.Whole THE<Deli>O TEACHERS<Deli>n.PERSON THERE<Deli>O ARE<Deli>v.stative SO<Deli>O MEAN<Deli>O THEY<Deli>O GET<Deli>v.cognition MAD<Deli>O AT<Deli>p.Stimulus|p.Direction YOU<Deli>O FOR<Deli>p.Explanation NOTHING<Deli>O !!!!!!!!!!!!!!!!!!!<Deli>O 
+THIS<Deli>O IS<Deli>v.stative THE<Deli>O WORST<Deli>O SCHOOL<Deli>n.GROUP I<Deli>O VE<Deli>O BEEN<Deli>v.motion TO<Deli>O !!!!!!<Deli>O 
+kudos<Deli>O to<Deli>p.Recipient|p.Goal Allentown<Deli>n.GROUP Post<Deli>O Office<Deli>O staff<Deli>n.GROUP 
+The<Deli>O staff<Deli>n.GROUP in<Deli>p.Locus Allentown<Deli>n.LOCATION are<Deli>v.stative friendly<Deli>O ,<Deli>O helpful<Deli>O and<Deli>O a<Deli>O delight<Deli>n.FEELING to<Deli>O know<Deli>v.cognition ..<Deli>O 
+Natasha<Deli>n.PERSON 
+A<Deli>O real<Deli>O pleasure<Deli>n.FEELING training<Deli>v.social with<Deli>O Natasha<Deli>n.PERSON .<Deli>O 
+Always<Deli>O professional<Deli>O and<Deli>O reliable<Deli>O ,<Deli>O sessions<Deli>n.EVENT are<Deli>v.stative good<Deli>O fun<Deli>n.FEELING and<Deli>O suitably<Deli>O challenging<Deli>O .<Deli>O 
+She<Deli>O really<Deli>O listens<Deli>v.perception to<Deli>p.Stimulus|p.Goal what<Deli>O it<Deli>O is<Deli>v.stative you<Deli>O would<Deli>O like<Deli>v.emotion to<Deli>O achieve<Deli>v.cognition ,<Deli>O and<Deli>O I<Deli>O am<Deli>v.stative very<Deli>O happy<Deli>O with<Deli>p.Stimulus|p.Topic my<Deli>p.Experiencer|p.Gestalt results<Deli>n.PHENOMENON .<Deli>O 
+I<Deli>O would<Deli>O highly<Deli>O recommend<Deli>v.communication her<Deli>p.Agent|p.Gestalt services<Deli>n.ACT .<Deli>O 
+Feels<Deli>v.cognition like<Deli>p.ComparisonRef you<Deli>O are<Deli>v.stative in<Deli>p.Locus Brooklyn<Deli>n.LOCATION ,<Deli>O but<Deli>O people<Deli>n.PERSON watching<Deli>O is<Deli>v.stative entertaining<Deli>O .<Deli>O 
+Poor<Deli>O Taste<Deli>n.COGNITION 
+There<Deli>O is<Deli>v.stative no<Deli>O lower<Deli>O rating<Deli>n.COMMUNICATION for<Deli>p.Topic Noonan<Deli>n.GROUP 's<Deli>O Liquor<Deli>O ,<Deli>O owners<Deli>n.PERSON and<Deli>O employees<Deli>n.PERSON .<Deli>O 
+A<Deli>O negative<Deli>O number<Deli>n.QUANTITY is<Deli>v.stative not<Deli>O available<Deli>O .<Deli>O 
+CLH<Deli>n.GROUP 
+Bulwark<Deli>n.GROUP regarding<Deli>v.cognition service<Deli>n.ACT by<Deli>p.Agent Eric<Deli>n.PERSON 
+Just<Deli>O wanted<Deli>v.cognition you<Deli>O to<Deli>O know<Deli>v.cognition that<Deli>O Eric<Deli>n.PERSON came<Deli>v.motion by<Deli>O as<Deli>p.ComparisonRef scheduled<Deli>v.social today<Deli>n.TIME and<Deli>O sprayed<Deli>v.contact our<Deli>p.Possessor house<Deli>n.ARTIFACT for<Deli>p.Purpose scorpions<Deli>n.ANIMAL .<Deli>O 
+He<Deli>O seemed<Deli>v.cognition to<Deli>O understand<Deli>v.cognition how<Deli>O important<Deli>O it<Deli>O was<Deli>v.stative for<Deli>p.Experiencer|p.Beneficiary us<Deli>O to<Deli>O make<Deli>v.cognition sure<Deli>O the<Deli>O whole<Deli>O house<Deli>n.ARTIFACT was<Deli>O sprayed<Deli>v.contact so<Deli>O he<Deli>O took<Deli>v.social his<Deli>p.Possessor time<Deli>O .<Deli>O 
+Thank<Deli>O you<Deli>O !<Deli>O 
+Best<Deli>O ceviche<Deli>n.FOOD that<Deli>O I<Deli>O 'd<Deli>O had<Deli>v.consumption so<Deli>O far<Deli>O !<Deli>O :)<Deli>O 
+Deep<Deli>n.BODY tissue<Deli>O massage<Deli>n.ACT helps<Deli>v.body with<Deli>p.Theme pain<Deli>n.STATE in<Deli>p.Locus neck<Deli>n.BODY and<Deli>O shoulders<Deli>n.BODY 
+Seth<Deli>n.PERSON provides<Deli>v.social deep<Deli>n.BODY tissue<Deli>O massage<Deli>n.ACT which<Deli>O has<Deli>O significantly<Deli>O reduced<Deli>v.change the<Deli>O pain<Deli>n.STATE in<Deli>p.Locus my<Deli>p.Whole|p.Gestalt neck<Deli>n.BODY and<Deli>O shoulders<Deli>n.BODY and<Deli>O added<Deli>v.change flexibility<Deli>n.ATTRIBUTE and<Deli>O movement<Deli>n.ACT back<Deli>p.Direction to<Deli>p.Goal the<Deli>O area<Deli>n.LOCATION .<Deli>O 
+He<Deli>O listens<Deli>v.communication and<Deli>O is<Deli>v.stative excellent<Deli>O in<Deli>p.Topic diagnosing<Deli>v.cognition ,<Deli>O addressing<Deli>v.cognition and<Deli>O explaining<Deli>v.communication the<Deli>O specific<Deli>O issues<Deli>n.COGNITION and<Deli>O suggesting<Deli>v.communication exercises<Deli>n.ACT to<Deli>p.Characteristic|p.Purpose use<Deli>v.stative .<Deli>O 
+Place<Deli>n.GROUP is<Deli>v.stative legit<Deli>O .<Deli>O 
+We<Deli>O got<Deli>v.change upgraded<Deli>O to<Deli>p.Goal a<Deli>O corner<Deli>n.LOCATION suite<Deli>n.ARTIFACT !<Deli>O 
+Room<Deli>n.ARTIFACT was<Deli>v.stative amazing<Deli>O .<Deli>O 
+I<Deli>O have<Deli>O used<Deli>v.social Bright<Deli>n.GROUP Futures<Deli>O for<Deli>p.Duration the<Deli>O last<Deli>O 7<Deli>O years<Deli>n.TIME .<Deli>O 
+I<Deli>O have<Deli>v.stative 3<Deli>O children<Deli>n.PERSON there<Deli>O and<Deli>O they<Deli>O are<Deli>v.stative the<Deli>O Best<Deli>O .<Deli>O 
+They<Deli>O are<Deli>v.stative like<Deli>p.ComparisonRef family<Deli>n.GROUP .<Deli>O 
+Your<Deli>p.SocialRel|p.Gestalt children<Deli>n.PERSON will<Deli>O be<Deli>O taken<Deli>v.social care<Deli>O of<Deli>O and<Deli>O loved<Deli>v.emotion by<Deli>p.Experiencer|p.Agent a<Deli>O professional<Deli>O staff<Deli>n.GROUP .<Deli>O 
+On<Deli>O time<Deli>O ,<Deli>O Clean<Deli>O and<Deli>O very<Deli>O nice<Deli>O 
+I<Deli>O called<Deli>v.communication over<Deli>p.Time|p.Duration the<Deli>O weekend<Deli>n.TIME due<Deli>p.Explanation to<Deli>O clogged<Deli>v.stative kitchen<Deli>n.LOCATION sink<Deli>n.ARTIFACT .<Deli>O 
+Scheduled<Deli>v.social appointment<Deli>n.EVENT for<Deli>p.Time|p.Direction 8:30<Deli>O Monday<Deli>n.TIME morning<Deli>n.TIME .<Deli>O 
+Rich<Deli>n.PERSON was<Deli>v.stative here<Deli>O before<Deli>p.Time the<Deli>O scheduled<Deli>v.social time<Deli>n.EVENT .<Deli>O 
+He<Deli>O was<Deli>v.stative very<Deli>O clean<Deli>O ,<Deli>O very<Deli>O nice<Deli>O to<Deli>O work<Deli>v.social with<Deli>O and<Deli>O gave<Deli>v.communication a<Deli>O very<Deli>O reasonable<Deli>O price<Deli>n.POSSESSION .<Deli>O 
+HIGHLY<Deli>O recommend<Deli>v.communication .<Deli>O 
+thanks<Deli>O Rich<Deli>n.PERSON 
+Seth<Deli>n.PERSON K<Deli>O .<Deli>O 
+exelent<Deli>O Job<Deli>n.ACT 
+"<Deli>O Thank<Deli>O you<Deli>O so<Deli>O much<Deli>O for<Deli>p.Explanation the<Deli>O superior<Deli>O job<Deli>n.ACT well<Deli>O done<Deli>O .<Deli>O 
+We<Deli>O love<Deli>v.emotion everything<Deli>O about<Deli>p.Gestalt|p.Topic the<Deli>O fence<Deli>n.ARTIFACT .<Deli>O 
+You<Deli>p.SocialRel|p.Gestalt company<Deli>n.GROUP and<Deli>O services<Deli>n.ACT will<Deli>O be<Deli>O recommended<Deli>v.communication by<Deli>p.Originator|p.Agent us<Deli>O to<Deli>p.Recipient|p.Goal everyone<Deli>O .<Deli>O "<Deli>O 
+never<Deli>O response<Deli>v.communication the<Deli>O phone<Deli>n.ACT call<Deli>O 
+I<Deli>O love<Deli>v.emotion this<Deli>O place<Deli>n.GROUP lots<Deli>O of<Deli>p.Quantity people<Deli>n.PERSON to<Deli>p.Characteristic|p.Purpose talk<Deli>v.communication to<Deli>p.Recipient|p.Goal and<Deli>O school<Deli>n.GROUP is<Deli>v.stative across<Deli>p.Locus|p.Path the<Deli>O street<Deli>n.LOCATION !<Deli>O 
+Drove<Deli>v.motion all<Deli>O the<Deli>O way<Deli>O over<Deli>p.Direction from<Deli>p.Source the<Deli>O highway<Deli>n.LOCATION ...<Deli>O closed<Deli>v.stative at<Deli>p.Time 7<Deli>O .<Deli>O 
+Who<Deli>O does<Deli>v.stative that<Deli>O ?!<Deli>O 
+My<Deli>p.Experiencer|p.Gestalt favorite<Deli>O place<Deli>n.GROUP ...<Deli>O 
+My<Deli>p.SocialRel|p.Gestalt daughter<Deli>n.PERSON and<Deli>O I<Deli>O stayed<Deli>v.social here<Deli>O again<Deli>O from<Deli>p.StartTime the<Deli>O 7th<Deli>n.EVENT to<Deli>p.EndTime the<Deli>O 14th<Deli>n.EVENT of<Deli>p.Time|p.Whole December<Deli>n.TIME .<Deli>O 
+yet<Deli>O again<Deli>O it<Deli>O was<Deli>v.stative a<Deli>O great<Deli>O stay<Deli>n.EVENT from<Deli>p.StartTime begiinning<Deli>O to<Deli>p.EndTime end<Deli>O .<Deli>O 
+Okay<Deli>O our<Deli>p.Possessor room<Deli>n.ARTIFACT was<Deli>v.stative at<Deli>p.Time times<Deli>O noisy<Deli>O but<Deli>O we<Deli>O were<Deli>v.stative in<Deli>p.Locus a<Deli>O mega<Deli>O busy<Deli>O city<Deli>n.LOCATION at<Deli>p.Time an<Deli>O extremely<Deli>O busy<Deli>O time<Deli>n.TIME of<Deli>O year<Deli>O .<Deli>O 
+Inford<Deli>n.GROUP Media<Deli>O 
+Media<Deli>n.COMMUNICATION ,<Deli>O Software<Deli>n.COMMUNICATION ,<Deli>O Fun<Deli>n.COGNITION and<Deli>O Games<Deli>O ,<Deli>O Website<Deli>n.COMMUNICATION design<Deli>n.COGNITION ,<Deli>O Web<Deli>n.COMMUNICATION Promotion<Deli>n.COMMUNICATION ,<Deli>O B2B<Deli>n.COMMUNICATION ,<Deli>O Business<Deli>n.GROUP Promotion<Deli>n.COMMUNICATION ,<Deli>O Search<Deli>n.COGNITION Engine<Deli>O Optimization<Deli>O .<Deli>O 
+BEST<Deli>O DENTIST<Deli>n.PERSON EVER<Deli>O -<Deli>O 
+Very<Deli>O fast<Deli>O and<Deli>O efficient<Deli>O service<Deli>n.ACT .<Deli>O 
+I<Deli>O have<Deli>O had<Deli>v.stative several<Deli>O dentists<Deli>n.PERSON in<Deli>p.Time my<Deli>p.Possessor life<Deli>n.TIME ,<Deli>O but<Deli>O Dr.<Deli>n.PERSON Deters<Deli>O is<Deli>v.stative by<Deli>p.Extent far<Deli>O my<Deli>p.Experiencer|p.Gestalt favorite<Deli>O .<Deli>O 
+I<Deli>O never<Deli>O wait<Deli>v.cognition in<Deli>p.Locus the<Deli>O waiting<Deli>n.LOCATION room<Deli>O more<Deli>p.Approximator than<Deli>O two<Deli>O minutes<Deli>n.TIME and<Deli>O the<Deli>O cleanings<Deli>n.ACT are<Deli>v.stative quick<Deli>O and<Deli>O painless<Deli>O .<Deli>O 
+Good<Deli>O local<Deli>O steakhouse<Deli>n.GROUP ,<Deli>O I<Deli>O recommend<Deli>v.communication it<Deli>O !<Deli>O 
+Great<Deli>O Place<Deli>n.GROUP !<Deli>O 
+Love<Deli>v.emotion this<Deli>O place<Deli>n.GROUP !!<Deli>O 
+Has<Deli>v.stative another<Deli>O store<Deli>n.GROUP in<Deli>p.Locus the<Deli>O st.<Deli>n.GROUP charles<Deli>O mall<Deli>O .<Deli>O 
+Place<Deli>n.LOCATION is<Deli>v.stative next<Deli>p.Locus to<Deli>O carval<Deli>n.LOCATION and<Deli>O walmart<Deli>n.LOCATION .<Deli>O 
+Do<Deli>O nt<Deli>O go<Deli>v.motion to<Deli>p.Goal the<Deli>O one<Deli>O by<Deli>p.Locus pepco<Deli>n.LOCATION ,<Deli>O I<Deli>O got<Deli>v.cognition confused<Deli>O !!!<Deli>O 
+Bad<Deli>O place<Deli>n.GROUP .<Deli>O 
+Go<Deli>v.motion to<Deli>p.Goal ATLANTIC<Deli>n.GROUP WIRELESS<Deli>O !!<Deli>O 
+I<Deli>O love<Deli>v.emotion them<Deli>O !!!<Deli>O 
+nice<Deli>O friendly<Deli>O local<Deli>O bagel<Deli>n.FOOD place<Deli>n.GROUP 
+there<Deli>O might<Deli>O be<Deli>v.stative bigger<Deli>O and<Deli>O more<Deli>O well<Deli>O known<Deli>O bagel<Deli>n.FOOD places<Deli>n.GROUP in<Deli>p.Locus the<Deli>O area<Deli>n.LOCATION but<Deli>O Family<Deli>n.GROUP Bagels<Deli>O are<Deli>v.stative nice<Deli>O people<Deli>n.PERSON ,<Deli>O small<Deli>O shop<Deli>n.GROUP and<Deli>O incredibly<Deli>O friendly<Deli>O .<Deli>O 
+While<Deli>O other<Deli>O may<Deli>O be<Deli>v.stative ok<Deli>O waiting<Deli>v.stative in<Deli>p.Locus line<Deli>n.COGNITION at<Deli>p.Locus Town<Deli>n.GROUP Bagel<Deli>O we<Deli>O are<Deli>v.stative happy<Deli>O with<Deli>p.Stimulus|p.Topic the<Deli>O quality<Deli>n.COGNITION and<Deli>O service<Deli>n.ACT we<Deli>O get<Deli>v.social at<Deli>p.Locus Family<Deli>n.GROUP Bagels<Deli>O 
+You<Deli>O are<Deli>v.stative the<Deli>O only<Deli>O one<Deli>O auto<Deli>n.ARTIFACT glass<Deli>O repair<Deli>n.ACT shop<Deli>n.GROUP in<Deli>p.Locus the<Deli>O area<Deli>n.LOCATION I<Deli>O would<Deli>O count<Deli>v.cognition on<Deli>O .<Deli>O 
+Channel<Deli>n.COMMUNICATION Guide<Deli>n.COMMUNICATION 
+Believe<Deli>v.cognition it<Deli>O or<Deli>O not<Deli>O ,<Deli>O but<Deli>O the<Deli>O channel<Deli>n.COMMUNICATION guide<Deli>n.COMMUNICATION has<Deli>O been<Deli>v.stative most<Deli>O helpful<Deli>O to<Deli>p.Beneficiary|p.Goal my<Deli>p.SocialRel|p.Gestalt family<Deli>n.GROUP members<Deli>n.PERSON that<Deli>O visit<Deli>v.social and<Deli>O do<Deli>O n't<Deli>O know<Deli>v.cognition where<Deli>O to<Deli>O start<Deli>v.change when<Deli>v.stative it<Deli>O comes<Deli>O to<Deli>O watching<Deli>v.perception satellite<Deli>n.COMMUNICATION tv<Deli>O .<Deli>O 
+I<Deli>O just<Deli>O give<Deli>v.social them<Deli>O guide<Deli>n.COMMUNICATION and<Deli>O they<Deli>O can<Deli>O find<Deli>v.cognition anything<Deli>O they<Deli>O need<Deli>v.cognition .<Deli>O 
+Thanks<Deli>O again<Deli>O ,<Deli>O Directv<Deli>n.GROUP .<Deli>O 
+STAY<Deli>O AWAY<Deli>O 
+Horrible<Deli>O service<Deli>n.ACT .<Deli>O 
+Absolutely<Deli>O rude<Deli>O .<Deli>O 
+Did<Deli>v.stative services<Deli>n.ACT I<Deli>O asked<Deli>v.communication them<Deli>O NOT<Deli>O to<Deli>O do<Deli>v.stative and<Deli>O was<Deli>O still<Deli>O charged<Deli>v.possession .<Deli>O 
+Rude<Deli>O and<Deli>O Untrustworthy<Deli>O 
+These<Deli>O guys<Deli>n.PERSON took<Deli>v.social Customer<Deli>n.COGNITION Service<Deli>O 101<Deli>O from<Deli>p.SocialRel|p.Source a<Deli>O Neanderthal<Deli>n.PERSON .<Deli>O 
+They<Deli>O are<Deli>v.stative especially<Deli>O rude<Deli>O to<Deli>p.Beneficiary|p.Goal women<Deli>n.PERSON .<Deli>O 
+Do<Deli>O not<Deli>O trust<Deli>v.cognition them<Deli>O !<Deli>O 
+This<Deli>O is<Deli>v.stative my<Deli>p.Experiencer|p.Gestalt favorite<Deli>O coffee<Deli>n.GROUP store<Deli>O .<Deli>O 
+Just<Deli>O ask<Deli>v.communication American<Deli>n.GROUP Express<Deli>O 
+Absolutely<Deli>O amazing<Deli>O job<Deli>n.ACT !<Deli>O 
+Susanna<Deli>n.PERSON is<Deli>v.stative the<Deli>O best<Deli>O dress<Deli>n.PERSON maker<Deli>O /<Deli>O tailor<Deli>n.PERSON I<Deli>O 've<Deli>O ever<Deli>O come<Deli>v.stative across<Deli>O in<Deli>p.Time my<Deli>p.Possessor whole<Deli>O life<Deli>n.COGNITION !<Deli>O 
+She<Deli>O makes<Deli>v.stative every<Deli>O item<Deli>n.ARTIFACT fit<Deli>v.body you<Deli>O perfectly<Deli>O .<Deli>O 
+She<Deli>O is<Deli>v.stative always<Deli>O so<Deli>O busy<Deli>O ,<Deli>O too<Deli>O ,<Deli>O which<Deli>O is<Deli>v.stative a<Deli>O good<Deli>O indication<Deli>n.COGNITION of<Deli>p.Topic her<Deli>p.Gestalt talent<Deli>n.ATTRIBUTE .<Deli>O 
+She<Deli>O 's<Deli>v.stative the<Deli>O best<Deli>O !<Deli>O 
+no<Deli>O feathers<Deli>n.NATURALOBJECT in<Deli>p.Manner|p.Locus stock<Deli>O !!!!<Deli>O 
+I<Deli>O was<Deli>v.stative very<Deli>O upset<Deli>O when<Deli>O I<Deli>O went<Deli>v.motion to<Deli>p.Goal Mother<Deli>n.GROUP Plucker<Deli>O ,<Deli>O they<Deli>O had<Deli>v.stative NO<Deli>O FEATHERS<Deli>n.NATURALOBJECT and<Deli>O the<Deli>O quality<Deli>n.ATTRIBUTE is<Deli>v.stative TERRIBLE<Deli>O .<Deli>O 
+I<Deli>O had<Deli>O to<Deli>O dig<Deli>v.contact in<Deli>p.Locus a<Deli>O bag<Deli>n.ARTIFACT to<Deli>p.Purpose find<Deli>v.cognition one<Deli>O nice<Deli>O feather<Deli>n.NATURALOBJECT ,<Deli>O what<Deli>O a<Deli>O joke<Deli>n.COGNITION !<Deli>O 
+I<Deli>O hired<Deli>v.social this<Deli>O company<Deli>n.GROUP to<Deli>p.Purpose unlock<Deli>v.change my<Deli>p.Possessor car<Deli>n.ARTIFACT .<Deli>O 
+The<Deli>O price<Deli>n.POSSESSION they<Deli>O gave<Deli>v.communication was<Deli>v.stative good<Deli>O so<Deli>O I<Deli>O said<Deli>v.communication hey<Deli>O this<Deli>O seems<Deli>v.cognition great<Deli>O .<Deli>O 
+After<Deli>p.Time they<Deli>O showed<Deli>v.cognition up<Deli>O there<Deli>O was<Deli>v.stative a<Deli>O little<Deli>O trouble<Deli>n.COGNITION to<Deli>O get<Deli>v.change my<Deli>p.Possessor car<Deli>n.ARTIFACT unlocked<Deli>O ,<Deli>O it<Deli>O took<Deli>v.stative quite<Deli>O a<Deli>n.QUANTITY bit<Deli>O of<Deli>p.Quantity time<Deli>O but<Deli>O the<Deli>O job<Deli>n.ACT was<Deli>O well<Deli>O done<Deli>v.social .<Deli>O 
+they<Deli>O recovered<Deli>v.cognition the<Deli>O pics<Deli>n.ARTIFACT geeksquad<Deli>n.GROUP deleted<Deli>v.change .<Deli>O 
+many<Deli>O thanks<Deli>O 
+Love<Deli>v.emotion Hop<Deli>n.GROUP City<Deli>O 
+This<Deli>O place<Deli>n.GROUP is<Deli>v.stative great<Deli>O !<Deli>O 
+Craig<Deli>n.PERSON and<Deli>O Nate<Deli>n.PERSON are<Deli>v.stative wonderful<Deli>O .<Deli>O 
+I<Deli>O know<Deli>v.cognition now<Deli>O where<Deli>O to<Deli>O get<Deli>v.possession all<Deli>O of<Deli>p.Quantity|p.Whole my<Deli>p.Possessor wine<Deli>n.FOOD and<Deli>O beer<Deli>n.FOOD .<Deli>O 
+No<Deli>O need<Deli>n.COGNITION to<Deli>O go<Deli>v.motion to<Deli>p.Goal a<Deli>O grocer<Deli>n.GROUP again<Deli>O .<Deli>O 
+Do<Deli>O n't<Deli>O waste<Deli>v.consumption your<Deli>p.Possessor money<Deli>n.POSSESSION on<Deli>p.Theme the<Deli>O jukebox<Deli>n.ARTIFACT 
+The<Deli>O bartender<Deli>n.PERSON is<Deli>v.stative a<Deli>O douchebag<Deli>n.PERSON and<Deli>O he<Deli>O has<Deli>v.stative a<Deli>O little<Deli>O console<Deli>n.ARTIFACT behind<Deli>p.Locus the<Deli>O bar<Deli>n.LOCATION where<Deli>O he<Deli>O can<Deli>O delete<Deli>v.change songs<Deli>n.COMMUNICATION he<Deli>O does<Deli>O n't<Deli>O like<Deli>v.emotion ,<Deli>O and<Deli>O you<Deli>O end<Deli>v.stative up<Deli>O paying<Deli>v.possession for<Deli>p.Theme it<Deli>O .<Deli>O 
+Not<Deli>O enough<Deli>O seating<Deli>n.ATTRIBUTE .<Deli>O 
+Great<Deli>O Service<Deli>n.ACT Great<Deli>O People<Deli>n.PERSON 
+Bisconti<Deli>n.GROUP wanted<Deli>v.cognition over<Deli>p.Approximator $<Deli>O 300<Deli>O to<Deli>p.Theme|p.Purpose fix<Deli>v.change my<Deli>p.Possessor laptop<Deli>n.ARTIFACT and<Deli>O these<Deli>O guys<Deli>n.PERSON fixed<Deli>v.change it<Deli>O for<Deli>p.Cost $<Deli>O 90<Deli>O !<Deli>O 
+Call<Deli>v.communication them<Deli>O today<Deli>n.TIME !<Deli>O 
+Had<Deli>v.stative it<Deli>O fixed<Deli>v.change within<Deli>p.Duration a<Deli>O few<Deli>O days<Deli>n.TIME (<Deli>O had<Deli>O to<Deli>O order<Deli>v.communication a<Deli>O part<Deli>n.ARTIFACT )<Deli>O .<Deli>O 
+An<Deli>O Hour<Deli>n.TIME Of<Deli>p.Quantity Prego<Deli>n.SUBSTANCE Bliss<Deli>n.COGNITION !<Deli>O 
+I<Deli>O schedule<Deli>v.communication my<Deli>p.Agent|p.Gestalt weekly<Deli>O appointment<Deli>n.EVENT here<Deli>O just<Deli>O to<Deli>p.Purpose get<Deli>v.cognition a<Deli>O chance<Deli>O to<Deli>O lie<Deli>v.body comfortably<Deli>O on<Deli>p.Manner|p.Locus my<Deli>p.Whole|p.Gestalt tummy<Deli>n.BODY .<Deli>O 
+And<Deli>O the<Deli>O massages<Deli>n.ACT are<Deli>v.stative heavenly<Deli>O !<Deli>O 
+Very<Deli>O friendly<Deli>O place<Deli>n.GROUP .<Deli>O 
+The<Deli>O finest<Deli>O German<Deli>n.ARTIFACT bedding<Deli>O and<Deli>O linens<Deli>n.ARTIFACT store<Deli>n.GROUP .<Deli>O 
+Quality<Deli>n.COGNITION and<Deli>O service<Deli>n.ACT come<Deli>v.stative first<Deli>O here<Deli>O .<Deli>O 
+Wonderful<Deli>O Atmosphere<Deli>n.ATTRIBUTE 
+I<Deli>O have<Deli>O been<Deli>O going<Deli>v.motion there<Deli>O since<Deli>p.StartTime I<Deli>O was<Deli>v.stative a<Deli>O little<Deli>O girl<Deli>n.PERSON and<Deli>O love<Deli>v.emotion the<Deli>O friendly<Deli>O and<Deli>O relaxing<Deli>O atmosphere<Deli>n.ATTRIBUTE .<Deli>O 
+Dr.<Deli>n.PERSON Stiefvater<Deli>O has<Deli>O always<Deli>O been<Deli>v.stative very<Deli>O professional<Deli>O and<Deli>O helpful<Deli>O .<Deli>O 
+I<Deli>O would<Deli>O recommend<Deli>v.communication Bayside<Deli>n.GROUP Chiropractic<Deli>O to<Deli>p.Recipient|p.Goal anyone<Deli>O who<Deli>O is<Deli>v.stative in<Deli>p.Manner|p.Locus need<Deli>O of<Deli>O a<Deli>O regular<Deli>O adjustment<Deli>n.ACT or<Deli>O is<Deli>O suffering<Deli>v.cognition from<Deli>p.Stimulus|p.Source a<Deli>O chronic<Deli>O condition<Deli>n.STATE .<Deli>O 
+Staten<Deli>n.GROUP Island<Deli>O Computers<Deli>O 
+Superior<Deli>O work<Deli>n.ACT -<Deli>O always<Deli>O comes<Deli>v.social through<Deli>O when<Deli>O we<Deli>O need<Deli>v.cognition him<Deli>O .<Deli>O 
+We<Deli>O have<Deli>O tried<Deli>v.social many<Deli>O different<Deli>O computer<Deli>n.PERSON people<Deli>O until<Deli>p.EndTime now<Deli>O -<Deli>O we<Deli>O will<Deli>O stick<Deli>v.social with<Deli>O Qualitech<Deli>n.GROUP Computers<Deli>O !!!<Deli>O 
+teeth<Deli>n.BODY 
+this<Deli>O dentist<Deli>n.PERSON want<Deli>v.cognition to<Deli>O pull<Deli>v.contact the<Deli>O tooth<Deli>O out<Deli>O always<Deli>O ..<Deli>O always<Deli>O wants<Deli>v.cognition to<Deli>O do<Deli>v.stative the<Deli>O cheapest<Deli>O for<Deli>p.Purpose his<Deli>p.Experiencer|p.Gestalt benefit<Deli>n.COGNITION ..<Deli>O not<Deli>O unless<Deli>O he<Deli>O knows<Deli>v.cognition you<Deli>O .<Deli>O 
+and<Deli>O hopefully<Deli>O you<Deli>O do<Deli>O not<Deli>O know<Deli>v.cognition the<Deli>O same<Deli>O people<Deli>n.PERSON because<Deli>O he<Deli>O tells<Deli>v.communication others<Deli>O about<Deli>p.Topic you<Deli>p.Gestalt payment<Deli>n.POSSESSION status<Deli>n.STATE .<Deli>O 
+Which<Deli>O should<Deli>O be<Deli>v.stative a<Deli>O private<Deli>O issue<Deli>n.COGNITION 
+The<Deli>O best<Deli>O Supermarket<Deli>n.GROUP in<Deli>p.Locus Bay<Deli>n.LOCATION Ridge<Deli>O have<Deli>v.stative everything<Deli>O what<Deli>O a<Deli>O customer<Deli>n.PERSON needs<Deli>v.cognition .<Deli>O 
+very<Deli>O reasonable<Deli>O prices<Deli>n.POSSESSION .<Deli>O 
+quick<Deli>O in<Deli>p.Direction &<Deli>O out<Deli>p.Direction .<Deli>O 
+Friendly<Deli>O service<Deli>n.ACT .<Deli>O 
+This<Deli>O place<Deli>n.GROUP is<Deli>v.stative awesome<Deli>O 
+Great<Deli>O work<Deli>n.ACT ,<Deli>O good<Deli>O price<Deli>n.POSSESSION .<Deli>O 
+Definetely<Deli>O going<Deli>v.motion back<Deli>p.Direction 
+So<Deli>O delightful<Deli>O .<Deli>O 
+What<Deli>O a<Deli>O group<Deli>n.GROUP !<Deli>O 
+I<Deli>O would<Deli>O n't<Deli>O want<Deli>v.cognition any<Deli>O other<Deli>O company<Deli>n.GROUP in<Deli>p.Circumstance my<Deli>p.Possessor time<Deli>O of<Deli>O need<Deli>O .<Deli>O 
+Great<Deli>O people<Deli>n.PERSON !<Deli>O 
+So<Deli>O professional<Deli>O !<Deli>O 
+These<Deli>O guys<Deli>n.GROUP know<Deli>v.cognition what<Deli>O they<Deli>O 're<Deli>O doing<Deli>v.stative !<Deli>O 
+Way<Deli>O to<Deli>O go<Deli>O !<Deli>O 
+Awesome<Deli>O service<Deli>n.ACT with<Deli>p.Characteristic a<Deli>O smile<Deli>n.ACT :)<Deli>O 
+Out<Deli>p.Manner|p.Locus of<Deli>O business<Deli>O ?<Deli>O 
+I<Deli>O think<Deli>v.cognition this<Deli>O location<Deli>n.GROUP is<Deli>v.stative no<Deli>O longer<Deli>O in<Deli>p.Manner|p.Locus business<Deli>O .<Deli>O 
+If<Deli>O you<Deli>O check<Deli>v.communication RecWarehouse.com<Deli>n.COMMUNICATION ,<Deli>O they<Deli>O do<Deli>O n't<Deli>O list<Deli>v.communication this<Deli>O as<Deli>p.Identity a<Deli>O location<Deli>n.LOCATION .<Deli>O 
+You<Deli>O 'll<Deli>O have<Deli>O to<Deli>O drive<Deli>v.motion 10<Deli>O miles<Deli>n.QUANTITY down<Deli>p.Path 75<Deli>O to<Deli>p.Goal Allen<Deli>n.LOCATION .<Deli>O 
+not<Deli>O impressive<Deli>O enough<Deli>O 
+It<Deli>O 's<Deli>v.stative a<Deli>O fine<Deli>O place<Deli>n.GROUP ,<Deli>O I<Deli>O 'm<Deli>v.stative just<Deli>O a<Deli>O little<Deli>O mystified<Deli>O about<Deli>p.Stimulus|p.Topic the<Deli>O Michelin<Deli>n.COMMUNICATION star<Deli>O .<Deli>O 
+Nothing<Deli>O wrong<Deli>O with<Deli>p.Theme it<Deli>O ,<Deli>O just<Deli>O better<Deli>O options<Deli>n.COGNITION at<Deli>p.Cost|p.Locus this<Deli>O price<Deli>n.POSSESSION point<Deli>O .<Deli>O 
+Very<Deli>O Informative<Deli>O website<Deli>n.COMMUNICATION with<Deli>p.Characteristic a<Deli>O lot<Deli>O of<Deli>p.Quantity good<Deli>O work<Deli>n.ACT 
+Close<Deli>O to<Deli>p.Locus|p.Goal my<Deli>p.Possessor house<Deli>n.ARTIFACT ,<Deli>O this<Deli>O is<Deli>v.stative the<Deli>O only<Deli>O reason<Deli>n.MOTIVE I<Deli>O would<Deli>O go<Deli>v.motion to<Deli>p.Goal this<Deli>O particular<Deli>O QT<Deli>n.GROUP .<Deli>O 
+Terrible<Deli>O customer<Deli>n.ACT service<Deli>O 
+Fried<Deli>n.FOOD rice<Deli>O has<Deli>v.stative NO<Deli>O flavor<Deli>n.COGNITION ,<Deli>O it<Deli>O literally<Deli>O taste<Deli>v.perception like<Deli>p.ComparisonRef water<Deli>n.FOOD .<Deli>O 
+When<Deli>O I<Deli>O tried<Deli>v.social to<Deli>O return<Deli>v.possession it<Deli>O they<Deli>O refused<Deli>v.communication ,<Deli>O so<Deli>O I<Deli>O had<Deli>O to<Deli>O leave<Deli>v.motion without<Deli>p.Possession|p.Accompanier a<Deli>O refund<Deli>n.POSSESSION and<Deli>O still<Deli>O hungry<Deli>O .<Deli>O 
+Quality<Deli>n.ATTRIBUTE has<Deli>O fallen<Deli>v.change over<Deli>p.Duration the<Deli>O years<Deli>O ,<Deli>O but<Deli>O still<Deli>O the<Deli>O best<Deli>O go<Deli>O -<Deli>O to<Deli>O burger<Deli>n.FOOD place<Deli>n.LOCATION on<Deli>p.Locus the<Deli>O East<Deli>n.LOCATION Bay<Deli>O .<Deli>O 
+Great<Deli>O place<Deli>n.GROUP 
+Really<Deli>O great<Deli>O service<Deli>n.ACT and<Deli>O kind<Deli>O staff<Deli>n.GROUP .<Deli>O 
+The<Deli>O haircut<Deli>n.ACT was<Deli>v.stative inexpensive<Deli>O and<Deli>O so<Deli>O were<Deli>v.stative the<Deli>O salon<Deli>n.GROUP services<Deli>n.ACT (<Deli>O eyebrows<Deli>n.BODY were<Deli>v.stative cheap<Deli>O !<Deli>O )<Deli>O .<Deli>O 
+It<Deli>O 's<Deli>v.stative a<Deli>O nice<Deli>O ,<Deli>O relaxed<Deli>O place<Deli>n.GROUP to<Deli>p.Characteristic|p.Purpose get<Deli>v.social stuff<Deli>O done<Deli>O and<Deli>O relax<Deli>v.emotion .<Deli>O 
+I<Deli>O plan<Deli>v.cognition on<Deli>p.Topic going<Deli>v.motion again<Deli>O .<Deli>O 
+Great<Deli>O gym<Deli>n.GROUP and<Deli>O great<Deli>O services<Deli>n.ACT .<Deli>O 
+A<Deli>O very<Deli>O nice<Deli>O park<Deli>n.LOCATION .<Deli>O 
+The<Deli>O architecture<Deli>n.ARTIFACT is<Deli>v.stative simplz<Deli>O splendid<Deli>O .<Deli>O 
+Best<Deli>O Limo<Deli>n.ARTIFACT Limousine<Deli>n.ARTIFACT service<Deli>n.ACT in<Deli>p.Locus all<Deli>O of<Deli>p.Quantity|p.Whole Dallas<Deli>n.LOCATION 
+Great<Deli>n.GROUP Limos<Deli>n.ARTIFACT company<Deli>n.GROUP int<Deli>p.Locus he<Deli>O DFW<Deli>n.LOCATION fort<Deli>n.LOCATION Worth<Deli>O Metro<Deli>O area<Deli>O .<Deli>O 
+I<Deli>O use<Deli>v.consumption their<Deli>p.Agent|p.Gestalt limo<Deli>n.ARTIFACT services<Deli>n.ACT for<Deli>p.Purpose all<Deli>O of<Deli>p.Quantity|p.Whole my<Deli>p.Beneficiary|p.Possessor airport<Deli>n.LOCATION car<Deli>n.ARTIFACT services<Deli>n.ACT and<Deli>O airport<Deli>n.LOCATION transportation<Deli>n.ACT needs<Deli>n.COGNITION 
+slow<Deli>O service<Deli>n.ACT 
+I<Deli>O used<Deli>O to<Deli>O take<Deli>v.motion my<Deli>p.Possessor cars<Deli>n.ARTIFACT there<Deli>O all<Deli>O the<Deli>O time<Deli>O ,<Deli>O but<Deli>O management<Deli>n.GROUP changes<Deli>v.change hands<Deli>n.COGNITION too<Deli>O frequently<Deli>O ,<Deli>O the<Deli>O service<Deli>n.ACT has<Deli>O been<Deli>v.stative slow<Deli>O ,<Deli>O and<Deli>O they<Deli>O often<Deli>O try<Deli>v.cognition to<Deli>O "<Deli>O add<Deli>v.possession on<Deli>O "<Deli>O extra<Deli>O services<Deli>n.ACT ,<Deli>O which<Deli>O sometimes<Deli>O is<Deli>O not<Deli>O needed<Deli>v.cognition .<Deli>O 
+I<Deli>O do<Deli>O nt<Deli>O go<Deli>v.motion there<Deli>O anymore<Deli>O 
+I<Deli>O gave<Deli>v.stative Dr.<Deli>n.PERSON Rohatgi<Deli>O 2<Deli>n.COMMUNICATION stars<Deli>O because<Deli>O her<Deli>p.SocialRel|p.Gestalt assistant<Deli>n.PERSON was<Deli>v.stative very<Deli>O pleasant<Deli>O .<Deli>O 
+However<Deli>O ,<Deli>O I<Deli>O did<Deli>O not<Deli>O find<Deli>v.cognition her<Deli>O very<Deli>O helpful<Deli>O and<Deli>O her<Deli>p.SocialRel|p.Gestalt receptionist<Deli>n.PERSON was<Deli>v.stative rude<Deli>O .<Deli>O 
+Old<Deli>O time<Deli>O grocery<Deli>n.ARTIFACT ,<Deli>O best<Deli>O steaks<Deli>n.FOOD I<Deli>O have<Deli>O ever<Deli>O had<Deli>v.consumption !<Deli>O 
+Great<Deli>O meats<Deli>n.FOOD that<Deli>O are<Deli>O already<Deli>O cooked<Deli>v.creation ,<Deli>O easy<Deli>O to<Deli>O take<Deli>v.motion home<Deli>p.Goal|p.Locus for<Deli>p.Purpose dinner<Deli>n.EVENT .<Deli>O 
+Dr.<Deli>n.PERSON White<Deli>O is<Deli>v.stative the<Deli>O best<Deli>O !<Deli>O 
+I<Deli>O am<Deli>v.stative in<Deli>p.Manner|p.Locus love<Deli>O with<Deli>p.Stimulus|p.Topic the<Deli>O giant<Deli>O plate<Deli>n.QUANTITY of<Deli>p.Quantity|p.Stuff nachos<Deli>n.FOOD !<Deli>O 
+Last<Deli>O time<Deli>n.EVENT I<Deli>O went<Deli>v.motion however<Deli>O ,<Deli>O my<Deli>p.Possessor beer<Deli>n.FOOD was<Deli>v.stative warm<Deli>O and<Deli>O the<Deli>O service<Deli>n.ACT was<Deli>v.stative so<Deli>O -<Deli>O so<Deli>O .<Deli>O 
+I<Deli>O get<Deli>v.cognition that<Deli>O careless<Deli>O teenager<Deli>n.PERSON kind<Deli>n.COGNITION of<Deli>p.Species treatment<Deli>n.COGNITION from<Deli>p.Source some<Deli>O of<Deli>p.Quantity|p.Whole their<Deli>p.SocialRel|p.Gestalt staff<Deli>n.GROUP ...<Deli>O perhaps<Deli>O they<Deli>O should<Deli>O hire<Deli>v.social more<Deli>O serious<Deli>O adults<Deli>n.PERSON to<Deli>p.Characteristic|p.Purpose help<Deli>v.social serve<Deli>v.social /<Deli>O cook<Deli>v.creation .<Deli>O 
+The<Deli>O best<Deli>O pilates<Deli>n.ACT on<Deli>p.Locus the<Deli>O Gold<Deli>n.LOCATION Coast<Deli>O !<Deli>O 
+Not<Deli>O impressed<Deli>O .<Deli>O 
+Overpriced<Deli>O and<Deli>O the<Deli>O doctor<Deli>n.PERSON acted<Deli>v.social arrogant<Deli>O and<Deli>O rushed<Deli>v.cognition at<Deli>p.Time a<Deli>O time<Deli>n.EVENT when<Deli>O there<Deli>O was<Deli>v.stative very<Deli>O few<Deli>O clients<Deli>n.PERSON in<Deli>p.Locus the<Deli>O facility<Deli>n.LOCATION .<Deli>O 
+I<Deli>O wo<Deli>O n't<Deli>O return<Deli>v.motion .<Deli>O 
+Class<Deli>n.COGNITION act<Deli>O .<Deli>O 
+It<Deli>O was<Deli>v.stative late<Deli>O in<Deli>p.Time the<Deli>O day<Deli>n.TIME and<Deli>O I<Deli>O was<Deli>v.stative worried<Deli>O I<Deli>O would<Deli>O get<Deli>O charged<Deli>v.possession an<Deli>n.QUANTITY arm<Deli>O and<Deli>O a<Deli>O leg<Deli>O and<Deli>O have<Deli>O to<Deli>O wait<Deli>v.stative forever<Deli>O .<Deli>O 
+They<Deli>O picked<Deli>v.motion my<Deli>p.Possessor car<Deli>n.ARTIFACT up<Deli>O in<Deli>p.Locus Yarmouth<Deli>n.LOCATION and<Deli>O towed<Deli>v.motion to<Deli>p.Goal Bath<Deli>n.GROUP for<Deli>p.Cost a<Deli>O great<Deli>O price<Deli>n.POSSESSION .<Deli>O 
+Would<Deli>O do<Deli>v.social business<Deli>O with<Deli>O them<Deli>O again<Deli>O .<Deli>O 
+Good<Deli>O clean<Deli>O store<Deli>n.GROUP nice<Deli>O car<Deli>n.GROUP wash<Deli>O 
+Best<Deli>O Electrician<Deli>n.PERSON in<Deli>p.Locus Florence<Deli>n.LOCATION 
+I<Deli>O have<Deli>O been<Deli>O using<Deli>v.social Steele<Deli>n.GROUP Electric<Deli>O for<Deli>p.Duration years<Deli>n.TIME .<Deli>O 
+They<Deli>O have<Deli>O always<Deli>O done<Deli>v.stative a<Deli>O great<Deli>O job<Deli>n.ACT at<Deli>p.Cost|p.Locus a<Deli>O reasonable<Deli>O price<Deli>n.POSSESSION .<Deli>O 
+Highly<Deli>O recommended<Deli>v.communication .<Deli>O 
+Would<Deli>O not<Deli>O recommend<Deli>v.communication I<Deli>O Was<Deli>v.stative in<Deli>p.Manner|p.Locus a<Deli>O fair<Deli>O amount<Deli>n.QUANTITY of<Deli>p.Quantity|p.Gestalt pain<Deli>O for<Deli>p.Duration several<Deli>O weeks<Deli>n.TIME .<Deli>O 
+his<Deli>p.OrgRole|p.Possessor clinic<Deli>n.GROUP is<Deli>v.stative very<Deli>O very<Deli>O dirty<Deli>O he<Deli>O is<Deli>v.stative a<Deli>O real<Deli>O disaster<Deli>n.EVENT to<Deli>O go<Deli>v.motion totally<Deli>O not<Deli>O organized<Deli>O for<Deli>?? every<Deli>O step<Deli>v.motion he<Deli>O take<Deli>O .<Deli>O 
+WHAT<Deli>O A<Deli>O GREAT<Deli>O DEAL<Deli>n.COMMUNICATION THANK<Deli>O YOU<Deli>O 
+Great<Deli>O deals<Deli>n.POSSESSION ,<Deli>O great<Deli>O pizza<Deli>n.FOOD !<Deli>O 
+One<Deli>O of<Deli>p.Whole the<Deli>O better<Deli>O vegetarian<Deli>O sandwiches<Deli>n.FOOD I<Deli>O 've<Deli>O had<Deli>v.consumption in<Deli>p.Locus Seattle<Deli>n.LOCATION .<Deli>O 
+And<Deli>O from<Deli>p.Originator|p.Source a<Deli>O place<Deli>n.LOCATION that<Deli>O specializes<Deli>v.stative in<Deli>p.Topic high<Deli>O quality<Deli>n.ATTRIBUTE meat<Deli>n.FOOD ,<Deli>O too<Deli>O .<Deli>O 
+Cleanest<Deli>O guesthouse<Deli>n.ARTIFACT i<Deli>O have<Deli>O been<Deli>v.motion to<Deli>O 
+Stayed<Deli>v.social here<Deli>O for<Deli>p.Duration 2<Deli>O nights<Deli>n.TIME .<Deli>O 
+The<Deli>O owner<Deli>n.PERSON was<Deli>v.stative very<Deli>O friendly<Deli>O and<Deli>O helpful<Deli>O .<Deli>O 
+The<Deli>O rooms<Deli>n.ARTIFACT were<Deli>v.stative very<Deli>O clean<Deli>O and<Deli>O the<Deli>O breakfast<Deli>n.FOOD was<Deli>v.stative excellent<Deli>O .<Deli>O 
+Good<Deli>O location<Deli>n.LOCATION and<Deli>O off<Deli>O road<Deli>O parking<Deli>n.COGNITION made<Deli>v.social our<Deli>p.Agent|p.Gestalt stay<Deli>n.EVENT very<Deli>O convenient<Deli>O .<Deli>O 
+What<Deli>O a<Deli>O Preschool<Deli>n.GROUP !<Deli>O 
+If<Deli>O you<Deli>O want<Deli>v.cognition the<Deli>O best<Deli>O for<Deli>p.Beneficiary your<Deli>p.SocialRel|p.Gestalt child<Deli>n.PERSON ,<Deli>O do<Deli>O n't<Deli>O hesitate<Deli>v.cognition in<Deli>p.Topic visiting<Deli>v.social this<Deli>O wornderful<Deli>O school<Deli>n.GROUP .<Deli>O 
+This<Deli>O is<Deli>v.stative the<Deli>O very<Deli>O best<Deli>O in<Deli>p.Locus the<Deli>n.LOCATION Gables<Deli>O .<Deli>O 
+hard<Deli>O to<Deli>O forgive<Deli>v.cognition such<Deli>O an<Deli>O awful<Deli>O margarita<Deli>n.FOOD and<Deli>O steep<Deli>O prices<Deli>n.POSSESSION but<Deli>O the<Deli>O food<Deli>n.FOOD can<Deli>O be<Deli>v.stative good<Deli>O 
+Not<Deli>O so<Deli>O good<Deli>O 
+Not<Deli>O worth<Deli>O the<Deli>O money<Deli>n.POSSESSION .<Deli>O 
+Bland<Deli>O and<Deli>O over<Deli>O cooked<Deli>O .<Deli>O 
+I<Deli>O felt<Deli>v.cognition as<Deli>p.ComparisonRef if<Deli>O I<Deli>O was<Deli>v.stative in<Deli>p.Locus an<Deli>O over<Deli>O priced<Deli>O Olive<Deli>n.GROUP Garden<Deli>O .<Deli>O 
+I<Deli>O was<Deli>O hoping<Deli>v.cognition to<Deli>O have<Deli>O found<Deli>v.cognition a<Deli>O regular<Deli>O place<Deli>n.GROUP to<Deli>p.Characteristic|p.Purpose eat<Deli>v.consumption .<Deli>O 
+But<Deli>O not<Deli>O so<Deli>O .<Deli>O 
+Got<Deli>O to<Deli>O love<Deli>v.emotion this<Deli>O place<Deli>n.GROUP .<Deli>O 
+Everyone<Deli>O is<Deli>v.stative relaxed<Deli>O and<Deli>O having<Deli>v.social fun<Deli>O !!!<Deli>O 
+Bad<Deli>O Service<Deli>n.ACT 
+Definately<Deli>O wo<Deli>O n't<Deli>O be<Deli>O returning<Deli>v.motion .<Deli>O 
+Travelled<Deli>v.motion 40<Deli>O mins<Deli>n.TIME after<Deli>p.Time calling<Deli>v.communication to<Deli>p.Purpose see<Deli>v.social if<Deli>O a<Deli>O product<Deli>n.ARTIFACT was<Deli>O in<Deli>p.Manner|p.Locus stock<Deli>O .<Deli>O 
+Told<Deli>v.communication that<Deli>O they<Deli>O had<Deli>v.stative plenty<Deli>O .<Deli>O 
+Get<Deli>v.motion there<Deli>O and<Deli>O there<Deli>O was<Deli>v.stative nothing<Deli>O .<Deli>O 
+Not<Deli>O impressed<Deli>O !!!<Deli>O 
+Did<Deli>v.social a<Deli>O great<Deli>O job<Deli>n.ACT of<Deli>p.Identity removing<Deli>v.change my<Deli>p.Possessor tree<Deli>n.ARTIFACT in<Deli>p.Locus Conyers<Deli>n.LOCATION .<Deli>O 
+Thanks<Deli>O Southland<Deli>n.GROUP .<Deli>O 
+A<Deli>O TERRIBLE<Deli>O EXPERIENCE<Deli>n.EVENT !<Deli>O 
+I<Deli>O remain<Deli>v.stative unhappy<Deli>O .<Deli>O 
+I<Deli>O still<Deli>O have<Deli>v.stative noticeable<Deli>O scarring<Deli>n.STATE .<Deli>O 
+I<Deli>O still<Deli>O have<Deli>v.stative surgically<Deli>O induced<Deli>v.change hair<Deli>n.STATE loss<Deli>O .<Deli>O 
+My<Deli>p.Recipient|p.Gestalt results<Deli>n.PHENOMENON were<Deli>v.stative just<Deli>O AWFUL<Deli>O .<Deli>O 
+My<Deli>p.Theme|p.Gestalt post-op<Deli>O treatment<Deli>n.ACT was<Deli>v.stative TERRIBLE<Deli>O .<Deli>O 
+I<Deli>O would<Deli>O n't<Deli>O recommend<Deli>v.communication this<Deli>O place<Deli>n.GROUP last<Deli>O year<Deli>n.TIME ,<Deli>O and<Deli>O I<Deli>O certainly<Deli>O would<Deli>O n't<Deli>O recommend<Deli>v.communication them<Deli>O this<Deli>O year<Deli>n.TIME .<Deli>O 
+local<Deli>O crew<Deli>n.GROUP !!!<Deli>O 
+home<Deli>n.GROUP team<Deli>O -<Deli>O thanks<Deli>O 4<Deli>p.Explanation playin<Deli>v.social !!!<Deli>O 
+Great<Deli>O Manicure<Deli>n.ACT 
+This<Deli>O place<Deli>n.GROUP offers<Deli>v.stative a<Deli>O great<Deli>O manicure<Deli>n.ACT and<Deli>O pedicure<Deli>n.ACT .<Deli>O 
+My<Deli>p.Whole|p.Gestalt nails<Deli>n.BODY looked<Deli>v.perception great<Deli>O for<Deli>p.Duration the<Deli>O better<Deli>O part<Deli>O of<Deli>O 2<Deli>O weeks<Deli>n.TIME !<Deli>O 
+Also<Deli>O very<Deli>O friendly<Deli>O and<Deli>O the<Deli>O stylists<Deli>n.PERSON are<Deli>v.stative not<Deli>O in<Deli>p.Manner|p.Locus the<Deli>O "<Deli>O been<Deli>O there<Deli>O /<Deli>O done<Deli>O that<Deli>O "<Deli>O mood<Deli>n.ATTRIBUTE !<Deli>O 
+Great<Deli>O work<Deli>n.ACT !<Deli>O 
+The<Deli>O people<Deli>n.PERSON at<Deli>p.OrgRole|p.Locus Gulf<Deli>n.GROUP Coast<Deli>O Siding<Deli>O were<Deli>v.stative very<Deli>O easy<Deli>O and<Deli>O clear<Deli>O to<Deli>O work<Deli>v.social with<Deli>O .<Deli>O 
+They<Deli>O walked<Deli>v.social me<Deli>O through<Deli>O all<Deli>O the<Deli>O steps<Deli>n.ATTRIBUTE involved<Deli>O in<Deli>p.Whole|p.Circumstance the<Deli>O the<Deli>O installation<Deli>n.ACT project<Deli>n.ACT so<Deli>O that<Deli>O there<Deli>O were<Deli>v.stative no<Deli>O surprises<Deli>n.COGNITION .<Deli>O 
+I<Deli>O found<Deli>v.cognition them<Deli>O extremely<Deli>O professional<Deli>O and<Deli>O would<Deli>O highly<Deli>O recommend<Deli>v.communication them<Deli>O .<Deli>O 
+Thanks<Deli>O 
+the<Deli>O service<Deli>n.ACT is<Deli>v.stative quick<Deli>O .<Deli>O 
+and<Deli>O the<Deli>O people<Deli>n.PERSON are<Deli>v.stative sweet<Deli>O :)<Deli>O 
+A<Deli>O Definite<Deli>O No<Deli>O 
+Incompetent<Deli>O servers<Deli>n.GROUP ,<Deli>O kitchen<Deli>n.GROUP and<Deli>O management<Deli>n.GROUP .<Deli>O 
+Expect<Deli>v.cognition either<Deli>O undercooked<Deli>v.stative or<Deli>O mushy<Deli>O food<Deli>n.FOOD and<Deli>O lackluster<Deli>O service<Deli>n.ACT .<Deli>O 
+The<Deli>O investors<Deli>n.GROUP put<Deli>v.possession big<Deli>n.POSSESSION bucks<Deli>O into<Deli>p.Purpose|p.Goal the<Deli>O building<Deli>n.ARTIFACT but<Deli>O are<Deli>v.stative clueless<Deli>O about<Deli>p.Topic what<Deli>O makes<Deli>v.stative a<Deli>O good<Deli>O dining<Deli>n.EVENT or<Deli>O bar<Deli>n.GROUP experience<Deli>n.ACT .<Deli>O 
+Even<Deli>O the<Deli>O least<Deli>O discriminating<Deli>O diner<Deli>n.PERSON would<Deli>O know<Deli>v.cognition not<Deli>O to<Deli>O eat<Deli>v.consumption at<Deli>p.Locus Sprecher<Deli>n.GROUP 's<Deli>O .<Deli>O 
+Great<Deli>O food<Deli>n.FOOD and<Deli>O nice<Deli>O people<Deli>n.PERSON very<Deli>O pleasant<Deli>O experience<Deli>n.EVENT .<Deli>O 
+Pam<Deli>n.ANIMAL the<Deli>O Pom<Deli>n.ANIMAL 
+Fantastic<Deli>O couple<Deli>n.QUANTITY of<Deli>p.Quantity days<Deli>n.TIME .<Deli>O 
+Breathtaking<Deli>O views<Deli>n.NATURALOBJECT and<Deli>O fabulous<Deli>O accommodation<Deli>n.ACT .<Deli>O 
+Nothing<Deli>O too<Deli>O much<Deli>O trouble<Deli>O for<Deli>p.Experiencer|p.Beneficiary Ian<Deli>n.PERSON ,<Deli>O thanks<Deli>O for<Deli>p.Explanation a<Deli>O great<Deli>O stay<Deli>n.EVENT .<Deli>O 
+The<Deli>O food<Deli>n.FOOD is<Deli>v.stative excellent<Deli>O ,<Deli>O but<Deli>O very<Deli>O overpriced<Deli>O .<Deli>O 
+How<Deli>O do<Deli>O you<Deli>O run<Deli>v.social a<Deli>O cafe<Deli>n.GROUP ,<Deli>O with<Deli>p.Manner no<Deli>O refills<Deli>n.ACT on<Deli>p.Theme coffee<Deli>n.FOOD -<Deli>O ?<Deli>O 
+The<Deli>O management<Deli>n.GROUP and<Deli>O staff<Deli>n.GROUP are<Deli>v.stative superb<Deli>O .<Deli>O 
+I<Deli>O worked<Deli>v.social with<Deli>O Sam<Deli>n.PERSON Mones<Deli>O who<Deli>O took<Deli>v.social great<Deli>O care<Deli>O of<Deli>O me<Deli>O .<Deli>O 
+This<Deli>O is<Deli>v.stative by<Deli>p.Extent far<Deli>O the<Deli>O best<Deli>O run<Deli>v.social dealership<Deli>n.GROUP in<Deli>p.Locus Miami<Deli>n.LOCATION .<Deli>O 
+AMAZING<Deli>O 
+Absoul<Deli>n.PERSON is<Deli>v.stative the<Deli>O greatest<Deli>O donair<Deli>n.FOOD man<Deli>n.PERSON on<Deli>p.Locus the<Deli>O planet<Deli>O .<Deli>O 
+Highly<Deli>O recommended<Deli>v.communication .<Deli>O 
+If<Deli>O you<Deli>O enjoy<Deli>v.emotion amazing<Deli>O things<Deli>O ,<Deli>O you<Deli>O must<Deli>O go<Deli>v.motion to<Deli>p.Goal World<Deli>n.GROUP 's<Deli>O Finest<Deli>O Donair<Deli>O .<Deli>O 
+Lest<Deli>O you<Deli>O be<Deli>v.stative lame<Deli>O !!!<Deli>O 
+I<Deli>O give<Deli>v.communication this<Deli>O place<Deli>n.GROUP 11<Deli>O /<Deli>O 10<Deli>O .<Deli>O 
+3<Deli>O thumbs<Deli>n.COMMUNICATION up<Deli>O .<Deli>O 
+Bon<Deli>O appetit<Deli>O !<Deli>O 
+great<Deli>O tmobile<Deli>n.GROUP service<Deli>n.ARTIFACT 
+I<Deli>O was<Deli>v.stative with<Deli>p.OrgRole|p.Accompanier verizon<Deli>n.GROUP and<Deli>O I<Deli>O checked<Deli>v.cognition my<Deli>p.Beneficiary|p.Possessor service<Deli>n.ACT with<Deli>p.OrgRole|p.Accompanier tmobile<Deli>n.GROUP and<Deli>O it<Deli>O was<Deli>v.stative great<Deli>O so<Deli>O I<Deli>O thought<Deli>v.cognition I<Deli>O would<Deli>O try<Deli>v.social tmobile<Deli>n.GROUP .<Deli>O 
+It<Deli>O turned<Deli>v.stative out<Deli>O being<Deli>v.stative very<Deli>O good<Deli>O quality<Deli>n.ATTRIBUTE tmobile<Deli>n.GROUP service<Deli>n.ACT and<Deli>O I<Deli>O was<Deli>v.stative happy<Deli>O with<Deli>p.Stimulus|p.Topic the<Deli>O new<Deli>O tmobile<Deli>n.GROUP phone<Deli>n.ARTIFACT .<Deli>O 
+Too<Deli>O many<Deli>O kids<Deli>n.PERSON ,<Deli>O too<Deli>O many<Deli>O knifings<Deli>n.ARTIFACT ,<Deli>O too<Deli>O many<Deli>O taserings<Deli>n.ACT .<Deli>O 
+Great<Deli>O quality<Deli>n.ATTRIBUTE doors<Deli>n.ARTIFACT and<Deli>O great<Deli>O quality<Deli>n.ATTRIBUTE people<Deli>n.PERSON !<Deli>O 
+The<Deli>O door<Deli>n.ARTIFACT is<Deli>v.stative easy<Deli>O to<Deli>O use<Deli>v.contact and<Deli>O it<Deli>O keeps<Deli>v.stative the<Deli>O cold<Deli>n.NATURALOBJECT out<Deli>p.Locus during<Deli>p.Time the<Deli>O winter<Deli>n.TIME .<Deli>O 
+The<Deli>O sales<Deli>n.POSSESSION staff<Deli>n.GROUP and<Deli>O the<Deli>O installation<Deli>n.ACT staff<Deli>n.GROUP were<Deli>v.stative all<Deli>O easy<Deli>O to<Deli>O get<Deli>v.social along<Deli>O with<Deli>O .<Deli>O 
+I<Deli>O highly<Deli>O recommend<Deli>v.communication Garage<Deli>n.GROUP Pros<Deli>O to<Deli>p.Recipient|p.Goal my<Deli>p.SocialRel|p.Gestalt friends<Deli>n.GROUP .<Deli>O 
+I<Deli>O appreciate<Deli>v.emotion the<Deli>O quick<Deli>O ,<Deli>O good<Deli>O service<Deli>n.ACT and<Deli>O the<Deli>O reasonable<Deli>O prices<Deli>n.POSSESSION and<Deli>O will<Deli>O definitely<Deli>O use<Deli>v.social American<Deli>n.GROUP Pride<Deli>O Irrigation<Deli>O &<Deli>O Landscaping<Deli>O again<Deli>O .<Deli>O 
+Extremely<Deli>O greasy<Deli>O .<Deli>O 
+Hit<Deli>O or<Deli>O miss<Deli>O on<Deli>p.Topic the<Deli>O service<Deli>n.ACT .<Deli>O 
+My<Deli>p.Possessor fries<Deli>n.FOOD were<Deli>O n't<Deli>O fully<Deli>O cooked<Deli>v.creation last<Deli>O time<Deli>n.EVENT I<Deli>O went<Deli>v.motion there<Deli>O .<Deli>O 
+Pretty<Deli>O spendy<Deli>O for<Deli>p.ComparisonRef really<Deli>O not<Deli>O great<Deli>O quality<Deli>n.ATTRIBUTE 
+Tire<Deli>n.PERSON Gooroo<Deli>O 
+David<Deli>n.PERSON Bundren<Deli>O is<Deli>v.stative the<Deli>O Tire<Deli>n.PERSON GooRoo<Deli>O .<Deli>O 
+Do<Deli>O n't<Deli>O bother<Deli>v.social .<Deli>O 
+It<Deli>O 's<Deli>v.stative impossible<Deli>O to<Deli>O understand<Deli>v.cognition how<Deli>O this<Deli>O place<Deli>n.GROUP has<Deli>O survived<Deli>v.social .<Deli>O 
+Worst<Deli>O experience<Deli>n.EVENT ever<Deli>O like<Deli>p.ComparisonRef a<Deli>O sardine<Deli>n.COGNITION can<Deli>O and<Deli>O the<Deli>O bartender<Deli>n.PERSON downstairs<Deli>p.Locus is<Deli>v.stative the<Deli>O rudest<Deli>O person<Deli>n.PERSON I<Deli>O have<Deli>O ever<Deli>O met<Deli>v.social .<Deli>O 
+DO<Deli>O Nt<Deli>O Go<Deli>v.motion here<Deli>O 

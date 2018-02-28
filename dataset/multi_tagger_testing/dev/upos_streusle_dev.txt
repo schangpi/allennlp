@@ -1,0 +1,554 @@
+Buyer<Deli>NOUN Beware<Deli>VERB !!<Deli>PUNCT 
+Rusted<Deli>VERB out<Deli>ADP and<Deli>CCONJ unsafe<Deli>ADJ cars<Deli>NOUN sold<Deli>VERB here<Deli>ADV !<Deli>PUNCT 
+Have<Deli>VERB a<Deli>DET real<Deli>ADJ mechanic<Deli>NOUN check<Deli>VERB before<Deli>SCONJ you<Deli>PRON buy<Deli>VERB !!!!<Deli>PUNCT 
+Save<Deli>VERB money<Deli>NOUN and<Deli>CCONJ go<Deli>VERB somewhere<Deli>ADV else<Deli>ADV !<Deli>PUNCT 
+Good<Deli>ADJ food<Deli>NOUN and<Deli>CCONJ very<Deli>ADV friendly<Deli>ADJ staff<Deli>NOUN .<Deli>PUNCT 
+Very<Deli>ADV good<Deli>ADJ with<Deli>ADP my<Deli>PRON 5<Deli>NUM year<Deli>NOUN old<Deli>ADJ daughter<Deli>NOUN .<Deli>PUNCT 
+Interesting<Deli>ADJ good<Deli>ADJ value<Deli>NOUN wine<Deli>NOUN list<Deli>NOUN to<Deli>ADV .<Deli>PUNCT 
+Beer<Deli>NOUN a<Deli>DET bit<Deli>NOUN expensive<Deli>ADJ .<Deli>PUNCT 
+gone<Deli>ADJ 
+library<Deli>NOUN is<Deli>AUX closed<Deli>ADJ .<Deli>PUNCT 
+it<Deli>PRON is<Deli>AUX now<Deli>ADV bislas<Deli>PROPN .<Deli>PUNCT 
+Want<Deli>VERB a<Deli>DET great<Deli>ADJ burger<Deli>NOUN ?<Deli>PUNCT 
+The<Deli>DET smokehouse<Deli>NOUN ca<Deli>AUX n't<Deli>PART be<Deli>AUX beat<Deli>VERB anywhere<Deli>ADV .<Deli>PUNCT 
+Salad<Deli>NOUN bar<Deli>NOUN is<Deli>AUX hit<Deli>NOUN and<Deli>CCONJ miss<Deli>NOUN for<Deli>ADP freshness<Deli>NOUN -<Deli>PUNCT sometimes<Deli>ADV the<Deli>DET broccoli<Deli>NOUN looks<Deli>VERB browned<Deli>ADJ around<Deli>ADP the<Deli>DET edges<Deli>NOUN .<Deli>PUNCT 
+Never<Deli>ADV a<Deli>DET bad<Deli>ADJ smokehouse<Deli>NOUN burger<Deli>NOUN though<Deli>ADV !<Deli>PUNCT 
+I<Deli>PRON crave<Deli>VERB those<Deli>PRON .<Deli>PUNCT 
+such<Deli>DET a<Deli>DET great<Deli>ADJ idea<Deli>NOUN this<Deli>PRON was<Deli>AUX ,<Deli>PUNCT so<Deli>ADV easy<Deli>ADJ to<Deli>PART load<Deli>VERB and<Deli>CCONJ pack<Deli>VERB ,<Deli>PUNCT no<Deli>DET ramp<Deli>NOUN ,<Deli>PUNCT no<Deli>DET step<Deli>NOUN up<Deli>ADV no<Deli>DET back<Deli>NOUN aches<Deli>NOUN .<Deli>PUNCT 
+moving<Deli>VERB with<Deli>ADP a<Deli>DET pod<Deli>NOUN was<Deli>AUX the<Deli>DET best<Deli>ADJ moving<Deli>NOUN experience<Deli>NOUN i<Deli>PRON have<Deli>AUX had<Deli>VERB .<Deli>PUNCT 
+Poor<Deli>ADJ Service<Deli>NOUN 
+After<Deli>SCONJ firing<Deli>VERB this<Deli>DET company<Deli>NOUN my<Deli>PRON next<Deli>ADJ pool<Deli>NOUN service<Deli>NOUN found<Deli>VERB the<Deli>DET filters<Deli>NOUN had<Deli>AUX not<Deli>PART been<Deli>AUX cleaned<Deli>VERB as<Deli>SCONJ they<Deli>PRON should<Deli>AUX have<Deli>AUX been<Deli>AUX .<Deli>PUNCT 
+I<Deli>PRON would<Deli>AUX recommend<Deli>VERB not<Deli>ADV using<Deli>VERB this<Deli>DET company<Deli>NOUN .<Deli>PUNCT 
+There<Deli>PRON is<Deli>VERB no<Deli>DET delivery<Deli>NOUN .<Deli>PUNCT 
+There<Deli>PRON is<Deli>VERB no<Deli>DET delivery<Deli>NOUN .<Deli>PUNCT 
+Buyer<Deli>NOUN beware<Deli>VERB 
+Do<Deli>AUX not<Deli>PART use<Deli>VERB these<Deli>DET guys<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON 'll<Deli>AUX tell<Deli>VERB you<Deli>PRON one<Deli>NUM thing<Deli>NOUN then<Deli>ADV $<Deli>SYM 5,000<Deli>NUM later<Deli>ADV do<Deli>VERB another<Deli>DET .<Deli>PUNCT 
+Lied<Deli>VERB right<Deli>ADV to<Deli>ADP my<Deli>PRON face<Deli>NOUN then<Deli>ADV denied<Deli>VERB it<Deli>PRON .<Deli>PUNCT 
+Run<Deli>VERB away<Deli>ADV .<Deli>PUNCT 
+marisol<Deli>PROPN 
+this<Deli>DET place<Deli>NOUN is<Deli>AUX awesome<Deli>ADJ twelve<Deli>PROPN did<Deli>VERB an<Deli>DET amazing<Deli>ADJ job<Deli>NOUN place<Deli>NOUN is<Deli>AUX clean<Deli>ADJ and<Deli>CCONJ staff<Deli>NOUN is<Deli>AUX friendly<Deli>ADJ 
+Stayed<Deli>VERB in<Deli>ADP the<Deli>DET Seaview<Deli>NOUN room<Deli>NOUN here<Deli>ADV in<Deli>ADP December<Deli>PROPN 2009<Deli>NUM !<Deli>PUNCT 
+WOW<Deli>INTJ what<Deli>DET stunning<Deli>ADJ views<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET furnishing<Deli>NOUN and<Deli>CCONJ finishes<Deli>NOUN are<Deli>AUX great<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON highly<Deli>ADV recommend<Deli>VERB Bay<Deli>PROPN View<Deli>PROPN if<Deli>SCONJ you<Deli>PRON are<Deli>AUX looking<Deli>VERB for<Deli>ADP Accommodation<Deli>NOUN in<Deli>ADP Camps<Deli>PROPN Bay<Deli>PROPN .<Deli>PUNCT 
+best<Deli>ADJ square<Deli>ADJ slice<Deli>NOUN around<Deli>ADV .<Deli>PUNCT 
+He<Deli>PRON 's<Deli>AUX great<Deli>ADJ !<Deli>PUNCT 
+I<Deli>PRON wo<Deli>AUX n't<Deli>PART go<Deli>VERB to<Deli>ADP anyone<Deli>PRON else<Deli>ADJ .<Deli>PUNCT 
+It<Deli>PRON 's<Deli>AUX fine<Deli>ADJ for<Deli>ADP ...<Deli>PUNCT 
+It<Deli>PRON 's<Deli>AUX fine<Deli>ADJ for<Deli>ADP mass<Deli>ADJ -<Deli>PUNCT market<Deli>NOUN chocolate<Deli>NOUN ,<Deli>PUNCT but<Deli>CCONJ with<Deli>ADP companies<Deli>NOUN like<Deli>ADP Scharffen<Deli>PROPN Berger<Deli>PROPN ,<Deli>PUNCT TCHO<Deli>PROPN ,<Deli>PUNCT and<Deli>CCONJ smaller<Deli>ADJ artisan<Deli>NOUN chocolate<Deli>NOUN makers<Deli>NOUN in<Deli>ADP the<Deli>DET area<Deli>NOUN ,<Deli>PUNCT why<Deli>ADV ?<Deli>PUNCT 
+Very<Deli>ADV hard<Deli>ADJ work<Deli>NOUN from<Deli>ADP the<Deli>DET boys<Deli>NOUN in<Deli>ADP blue<Deli>ADJ there<Deli>ADV !<Deli>PUNCT 
+Brilll<Deli>ADJ .<Deli>PUNCT 
+Very<Deli>ADV hard<Deli>ADJ work<Deli>NOUN from<Deli>ADP the<Deli>DET boys<Deli>NOUN in<Deli>ADP blue<Deli>ADJ there<Deli>ADV !<Deli>PUNCT 
+Great<Deli>ADJ job<Deli>NOUN !<Deli>PUNCT 
+Mercedes<Deli>PROPN and<Deli>CCONJ Dan<Deli>PROPN are<Deli>AUX very<Deli>ADV thorough<Deli>ADJ and<Deli>CCONJ on<Deli>ADP top<Deli>NOUN of<Deli>ADP everything<Deli>PRON !<Deli>PUNCT 
+Slice<Deli>PROPN Pizza<Deli>PROPN at<Deli>ADP former<Deli>ADJ Britt<Deli>PROPN 's<Deli>PART Location<Deli>NOUN 
+Britt<Deli>PROPN 's<Deli>PART Pizza<Deli>PROPN is<Deli>AUX long<Deli>ADV gone<Deli>ADJ .<Deli>PUNCT 
+Their<Deli>PRON location<Deli>NOUN ,<Deli>PUNCT the<Deli>DET northwest<Deli>NOUN corner<Deli>NOUN of<Deli>ADP S.<Deli>PROPN 10th<Deli>PROPN &<Deli>CCONJ Federal<Deli>PROPN Sts.<Deli>PROPN ,<Deli>PUNCT is<Deli>AUX now<Deli>ADV home<Deli>NOUN to<Deli>ADP Slice<Deli>PROPN Pizza<Deli>PROPN .<Deli>PUNCT 
+Responsive<Deli>ADJ ,<Deli>PUNCT kept<Deli>VERB me<Deli>PRON apprised<Deli>ADJ of<Deli>ADP status<Deli>NOUN .<Deli>PUNCT 
+criminal<Deli>ADJ defense<Deli>NOUN lawyer<Deli>NOUN 
+Mr.<Deli>PROPN Villega<Deli>PROPN is<Deli>AUX an<Deli>DET exceptional<Deli>ADJ California<Deli>PROPN criminal<Deli>ADJ defense<Deli>NOUN lawyer<Deli>NOUN .<Deli>PUNCT 
+He<Deli>PRON cross<Deli>VERB examined<Deli>VERB witnesses<Deli>NOUN relentlessly<Deli>ADV and<Deli>CCONJ had<Deli>VERB them<Deli>PRON break<Deli>VERB down<Deli>ADP and<Deli>CCONJ tell<Deli>VERB the<Deli>DET truth<Deli>NOUN .<Deli>PUNCT 
+If<Deli>SCONJ you<Deli>PRON want<Deli>VERB an<Deli>DET attorney<Deli>NOUN who<Deli>PRON will<Deli>AUX defend<Deli>VERB your<Deli>PRON right<Deli>NOUN ,<Deli>PUNCT contact<Deli>VERB Law<Deli>PROPN Offices<Deli>PROPN of<Deli>ADP Armando<Deli>PROPN Villega<Deli>PROPN 
+Simple<Deli>ADJ ,<Deli>PUNCT Quick<Deli>ADJ take<Deli>NOUN away<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON heard<Deli>VERB the<Deli>DET libido<Deli>NOUN band<Deli>NOUN play<Deli>VERB live<Deli>ADV and<Deli>CCONJ they<Deli>PRON are<Deli>AUX out<Deli>ADP of<Deli>ADP site<Deli>NOUN !!<Deli>PUNCT 
+I<Deli>PRON will<Deli>AUX be<Deli>AUX calling<Deli>VERB tropics<Deli>NOUN for<Deli>ADP my<Deli>PRON companie<Deli>NOUN s<Deli>PART next<Deli>ADJ event<Deli>NOUN !<Deli>PUNCT 
+Compare<Deli>VERB to<Deli>ADP last<Deli>ADJ decade<Deli>NOUN this<Deli>DET University<Deli>PROPN is<Deli>AUX gaining<Deli>VERB more<Deli>ADJ prestige<Deli>NOUN in<Deli>ADP International<Deli>ADJ level<Deli>NOUN 
+rug<Deli>NOUN works<Deli>VERB for<Deli>ADP me<Deli>PRON 
+Called<Deli>VERB to<Deli>PART check<Deli>VERB if<Deli>SCONJ they<Deli>PRON had<Deli>VERB a<Deli>DET product<Deli>NOUN I<Deli>PRON 've<Deli>AUX been<Deli>AUX using<Deli>VERB on<Deli>ADP my<Deli>PRON dog<Deli>NOUN for<Deli>ADP years<Deli>NOUN ...<Deli>PUNCT the<Deli>DET boy<Deli>NOUN who<Deli>PRON answered<Deli>VERB the<Deli>DET phone<Deli>NOUN could<Deli>AUX n't<Deli>PART possibly<Deli>ADV have<Deli>AUX been<Deli>AUX ruder<Deli>ADJ to<Deli>ADP me<Deli>PRON .<Deli>PUNCT 
+I<Deli>PRON will<Deli>AUX never<Deli>ADV come<Deli>VERB here<Deli>ADV again<Deli>ADV .<Deli>PUNCT 
+Lovely<Deli>ADJ Cottage<Deli>NOUN 
+This<Deli>DET cottage<Deli>NOUN is<Deli>AUX a<Deli>DET charming<Deli>ADJ homely<Deli>ADJ ,<Deli>PUNCT friendly<Deli>ADJ ,<Deli>PUNCT place<Deli>NOUN to<Deli>PART stay<Deli>VERB .<Deli>PUNCT 
+Mary<Deli>PROPN is<Deli>AUX an<Deli>DET excellent<Deli>ADJ host<Deli>NOUN who<Deli>PRON does<Deli>VERB yummy<Deli>ADJ breakfasts<Deli>NOUN .<Deli>PUNCT 
+My<Deli>PRON room<Deli>NOUN was<Deli>AUX delightful<Deli>ADJ and<Deli>CCONJ the<Deli>DET attention<Deli>NOUN to<Deli>ADP detail<Deli>NOUN was<Deli>AUX amazing<Deli>ADJ .<Deli>PUNCT 
+Will<Deli>AUX come<Deli>VERB again<Deli>ADV !<Deli>PUNCT 
+Sophie<Deli>PROPN .<Deli>PUNCT 
+Blooming<Deli>VERB onion<Deli>NOUN ,<Deli>PUNCT the<Deli>DET only<Deli>ADJ reason<Deli>NOUN to<Deli>PART visit<Deli>VERB this<Deli>DET restaurant<Deli>NOUN .<Deli>PUNCT 
+Bad<Deli>ADJ food<Deli>NOUN and<Deli>CCONJ bad<Deli>ADJ service<Deli>NOUN !<Deli>PUNCT 
+Save<Deli>VERB yourself<Deli>PRON a<Deli>DET trip<Deli>NOUN !<Deli>PUNCT 
+unique<Deli>ADJ gifts<Deli>NOUN and<Deli>CCONJ cards<Deli>NOUN 
+find<Deli>VERB another<Deli>DET place<Deli>NOUN 
+Run<Deli>VERB down<Deli>ADP .<Deli>PUNCT 
+Dark<Deli>ADJ ,<Deli>PUNCT dark<Deli>ADJ main<Deli>ADJ room<Deli>NOUN .<Deli>PUNCT 
+No<Deli>DET way<Deli>NOUN to<Deli>PART read<Deli>VERB /<Deli>SYM relax<Deli>VERB .<Deli>PUNCT 
+'<Deli>PUNCT Electric<Deli>ADJ '<Deli>PUNCT blanket<Deli>NOUN on<Deli>ADP one<Deli>NUM bed<Deli>NOUN did<Deli>AUX not<Deli>PART heat<Deli>VERB .<Deli>PUNCT 
+Quite<Deli>ADV cold<Deli>ADJ .<Deli>PUNCT 
+Removing<Deli>VERB 90<Deli>NUM %<Deli>SYM of<Deli>ADP '<Deli>PUNCT sit<Deli>NOUN -<Deli>PUNCT abouts<Deli>NOUN '<Deli>PUNCT in<Deli>ADP main<Deli>ADJ room<Deli>NOUN would<Deli>AUX look<Deli>VERB cleaner<Deli>ADJ .<Deli>PUNCT 
+Food<Deli>NOUN -<Deli>PUNCT very<Deli>ADV good<Deli>ADJ for<Deli>ADP a<Deli>DET midnight<Deli>NOUN meal<Deli>NOUN that<Deli>PRON is<Deli>AUX n't<Deli>PART fast<Deli>ADJ food<Deli>NOUN .<Deli>PUNCT 
+Service<Deli>NOUN -<Deli>PUNCT the<Deli>DET workers<Deli>NOUN are<Deli>AUX usually<Deli>ADV pleasant<Deli>ADJ .<Deli>PUNCT 
+Atmosphere<Deli>NOUN is<Deli>AUX always<Deli>ADV fun<Deli>ADJ ,<Deli>PUNCT the<Deli>DET assortment<Deli>NOUN of<Deli>ADP customers<Deli>NOUN adds<Deli>VERB entertainment<Deli>NOUN to<Deli>ADP the<Deli>DET meal<Deli>NOUN 
+Best<Deli>ADJ Cigar<Deli>NOUN lounge<Deli>NOUN on<Deli>ADP the<Deli>DET blouvard<Deli>NOUN .<Deli>PUNCT 
+Encino<Deli>PROPN has<Deli>AUX been<Deli>AUX blessed<Deli>VERB by<Deli>ADP the<Deli>DET opening<Deli>NOUN of<Deli>ADP this<Deli>DET smoke<Deli>NOUN shop<Deli>NOUN most<Deli>ADV definately<Deli>ADV .<Deli>PUNCT 
+If<Deli>SCONJ you<Deli>PRON mention<Deli>VERB the<Deli>DET name<Deli>NOUN Amir<Deli>PROPN you<Deli>PRON will<Deli>AUX receive<Deli>VERB %<Deli>SYM 10<Deli>NUM off<Deli>ADV at<Deli>ADP time<Deli>NOUN of<Deli>ADP purchase<Deli>NOUN 
+Best<Deli>ADJ YET<Deli>ADV !<Deli>PUNCT 
+We<Deli>PRON go<Deli>VERB to<Deli>ADP Japaneiro<Deli>PROPN 's<Deli>PART all<Deli>DET the<Deli>DET time<Deli>NOUN and<Deli>CCONJ we<Deli>PRON have<Deli>AUX NEVER<Deli>ADV been<Deli>AUX disappointed<Deli>VERB !<Deli>PUNCT 
+Wait<Deli>NOUN staff<Deli>NOUN is<Deli>AUX always<Deli>ADV ready<Deli>ADJ to<Deli>PART help<Deli>VERB if<Deli>SCONJ you<Deli>PRON ca<Deli>AUX n't<Deli>PART decide<Deli>VERB (<Deli>PUNCT which<Deli>PRON happens<Deli>VERB every<Deli>DET time<Deli>NOUN for<Deli>ADP me<Deli>PRON d<Deli>ADP /<Deli>PUNCT t<Deli>ADP the<Deli>DET huge<Deli>ADJ menu<Deli>NOUN of<Deli>ADP rolls<Deli>NOUN )<Deli>PUNCT and<Deli>CCONJ always<Deli>ADV courteous<Deli>ADJ !<Deli>PUNCT 
+Soooo<Deli>ADV tasty<Deli>ADJ !<Deli>PUNCT 
+Horrible<Deli>ADJ customer<Deli>NOUN service<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON came<Deli>VERB in<Deli>ADV to<Deli>PART get<Deli>VERB a<Deli>DET nice<Deli>ADJ gift<Deli>NOUN for<Deli>ADP my<Deli>PRON wife<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET one<Deli>NUM guy<Deli>NOUN who<Deli>PRON was<Deli>AUX there<Deli>ADV ,<Deli>PUNCT I<Deli>PRON 'm<Deli>AUX guessing<Deli>VERB was<Deli>AUX the<Deli>DET owner<Deli>NOUN ,<Deli>PUNCT was<Deli>AUX probably<Deli>ADV the<Deli>DET least<Deli>ADV helpful<Deli>ADJ person<Deli>NOUN I<Deli>PRON 've<Deli>AUX ever<Deli>ADV met<Deli>VERB .<Deli>PUNCT 
+But<Deli>CCONJ thankfully<Deli>ADV there<Deli>PRON are<Deli>VERB other<Deli>ADJ flowers<Deli>NOUN shops<Deli>NOUN around<Deli>ADP Norman<Deli>PROPN .<Deli>PUNCT 
+Chuck<Deli>PROPN and<Deli>CCONJ Gretchen<Deli>PROPN were<Deli>AUX very<Deli>ADV positive<Deli>ADJ ,<Deli>PUNCT and<Deli>CCONJ when<Deli>ADV Alan<Deli>PROPN 's<Deli>PART refused<Deli>VERB to<Deli>PART work<Deli>VERB on<Deli>ADP my<Deli>PRON bike<Deli>NOUN ,<Deli>PUNCT Chuck<Deli>PROPN came<Deli>VERB right<Deli>ADV out<Deli>ADV and<Deli>CCONJ saw<Deli>VERB the<Deli>DET problem<Deli>NOUN and<Deli>CCONJ did<Deli>VERB what<Deli>PRON Alan<Deli>PROPN 's<Deli>PART mechanic<Deli>NOUN would<Deli>AUX n't<Deli>PART do<Deli>VERB .<Deli>PUNCT 
+He<Deli>PRON worked<Deli>VERB on<Deli>ADP it<Deli>PRON right<Deli>ADV on<Deli>ADP the<Deli>DET back<Deli>NOUN of<Deli>ADP my<Deli>PRON car<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON am<Deli>AUX extremely<Deli>ADV pleased<Deli>ADJ 
+Great<Deli>ADJ spot<Deli>NOUN to<Deli>PART kick<Deli>VERB back<Deli>ADV for<Deli>ADP a<Deli>DET cup<Deli>NOUN of<Deli>ADP joe<Deli>NOUN and<Deli>CCONJ a<Deli>DET snack<Deli>NOUN .<Deli>PUNCT 
+Cool<Deli>ADJ ambience<Deli>NOUN .<Deli>PUNCT 
+Best<Deli>ADJ Pizzas<Deli>NOUN and<Deli>CCONJ Calzones<Deli>NOUN in<Deli>ADP the<Deli>DET City<Deli>NOUN !<Deli>PUNCT 
+What<Deli>DET a<Deli>DET hidden<Deli>ADJ gem<Deli>NOUN !<Deli>PUNCT 
+The<Deli>DET food<Deli>NOUN is<Deli>AUX superb<Deli>ADJ and<Deli>CCONJ they<Deli>PRON were<Deli>AUX delivered<Deli>VERB nice<Deli>ADJ and<Deli>CCONJ hot<Deli>ADJ !<Deli>PUNCT 
+I<Deli>PRON highly<Deli>ADV recommend<Deli>VERB this<Deli>DET place<Deli>NOUN !<Deli>PUNCT 
+Doctor<Deli>PROPN Hank<Deli>PROPN is<Deli>AUX Amazing<Deli>ADJ 
+Our<Deli>PRON family<Deli>NOUN has<Deli>AUX been<Deli>AUX trusting<Deli>VERB Doctor<Deli>PROPN Hank<Deli>PROPN with<Deli>ADP our<Deli>PRON teeth<Deli>NOUN for<Deli>ADP the<Deli>DET last<Deli>ADJ seven<Deli>NUM years<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON would<Deli>AUX n't<Deli>PART go<Deli>VERB to<Deli>ADP anyone<Deli>PRON else<Deli>ADJ .<Deli>PUNCT 
+Everyone<Deli>PRON on<Deli>ADP staff<Deli>NOUN is<Deli>AUX very<Deli>ADV professional<Deli>ADJ and<Deli>CCONJ friendly<Deli>ADJ .<Deli>PUNCT 
+If<Deli>SCONJ you<Deli>PRON 're<Deli>AUX looking<Deli>VERB for<Deli>ADP homestyle<Deli>ADJ Japanese<Deli>ADJ food<Deli>NOUN ,<Deli>PUNCT you<Deli>PRON ca<Deli>AUX n't<Deli>PART beat<Deli>VERB this<Deli>PRON 
+Good<Deli>ADJ ,<Deli>PUNCT friendly<Deli>ADJ ,<Deli>PUNCT reasonable<Deli>ADJ service<Deli>NOUN 
+It<Deli>PRON was<Deli>AUX ok<Deli>ADJ ,<Deli>PUNCT nice<Deli>ADJ management<Deli>NOUN ,<Deli>PUNCT they<Deli>PRON let<Deli>VERB us<Deli>PRON check<Deli>VERB in<Deli>ADP early<Deli>ADV ,<Deli>PUNCT but<Deli>CCONJ the<Deli>DET place<Deli>NOUN was<Deli>AUX old<Deli>ADJ .<Deli>PUNCT 
+It<Deli>PRON was<Deli>AUX clean<Deli>ADJ ,<Deli>PUNCT but<Deli>CCONJ just<Deli>ADV a<Deli>DET little<Deli>ADJ dumpy<Deli>ADJ .<Deli>PUNCT 
+Lots<Deli>NOUN of<Deli>ADP room<Deli>NOUN for<Deli>ADP big<Deli>ADJ rig<Deli>NOUN parking<Deli>NOUN .<Deli>PUNCT 
+Hard<Deli>ADJ to<Deli>PART get<Deli>VERB into<Deli>ADP though<Deli>ADV because<Deli>ADP of<Deli>ADP road<Deli>NOUN construction<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ School<Deli>NOUN !<Deli>PUNCT 
+Teachers<Deli>NOUN good<Deli>ADJ Diverse<Deli>ADJ student<Deli>NOUN body<Deli>NOUN (<Deli>PUNCT African<Deli>ADJ -<Deli>PUNCT American<Deli>ADJ ,<Deli>PUNCT Asian<Deli>ADJ ,<Deli>PUNCT ect.<Deli>X )<Deli>PUNCT equals<Deli>VERB kids<Deli>NOUN staying<Deli>VERB here<Deli>ADV !<Deli>PUNCT 
+Pure<Deli>ADJ Beauty<Deli>NOUN 
+What<Deli>DET a<Deli>DET joy<Deli>NOUN to<Deli>PART stroll<Deli>VERB off<Deli>ADP historic<Deli>ADJ Canyon<Deli>PROPN Road<Deli>PROPN in<Deli>ADP Santa<Deli>PROPN Fe<Deli>PROPN into<Deli>ADP a<Deli>DET gallery<Deli>NOUN with<Deli>ADP a<Deli>DET gorgeous<Deli>ADJ diversity<Deli>NOUN of<Deli>ADP art<Deli>NOUN .<Deli>PUNCT 
+Destiny<Deli>PROPN Allison<Deli>PROPN 's<Deli>PART metal<Deli>NOUN sculptures<Deli>NOUN were<Deli>AUX my<Deli>PRON favorite<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET owner<Deli>NOUN Karla<Deli>PROPN is<Deli>AUX welcoming<Deli>ADJ and<Deli>CCONJ fun<Deli>ADJ .<Deli>PUNCT 
+Give<Deli>VERB yourself<Deli>PRON the<Deli>DET gift<Deli>NOUN of<Deli>SCONJ visiting<Deli>VERB Winterowd<Deli>PROPN Fine<Deli>PROPN Art<Deli>PROPN !<Deli>PUNCT 
+Beautiful<Deli>ADJ hotel<Deli>NOUN !<Deli>PUNCT 
+Great<Deli>ADJ service<Deli>NOUN -<Deli>PUNCT high<Deli>ADJ class<Deli>NOUN !<Deli>PUNCT 
+Shuttle<Deli>NOUN available<Deli>ADJ to<Deli>ADP a<Deli>DET private<Deli>ADJ beach<Deli>NOUN area<Deli>NOUN with<Deli>ADP food<Deli>NOUN /<Deli>PUNCT drinks<Deli>NOUN /<Deli>PUNCT towels<Deli>NOUN .<Deli>PUNCT 
+Food<Deli>NOUN is<Deli>AUX always<Deli>ADV good<Deli>ADJ 
+really<Deli>ADV amazing<Deli>ADJ the<Deli>DET new<Deli>ADJ and<Deli>CCONJ exciting<Deli>ADJ plays<Deli>NOUN done<Deli>VERB at<Deli>ADP this<Deli>DET theatre<Deli>NOUN !<Deli>PUNCT 
+I<Deli>PRON loved<Deli>VERB the<Deli>DET atmosphere<Deli>NOUN here<Deli>ADV and<Deli>CCONJ the<Deli>DET food<Deli>NOUN is<Deli>AUX good<Deli>ADJ ,<Deli>PUNCT however<Deli>ADV the<Deli>DET tables<Deli>NOUN are<Deli>AUX so<Deli>ADV close<Deli>ADJ together<Deli>ADJ that<Deli>SCONJ it<Deli>PRON feels<Deli>VERB very<Deli>ADV cramped<Deli>ADJ .<Deli>PUNCT 
+We<Deli>PRON were<Deli>AUX made<Deli>VERB to<Deli>PART feel<Deli>VERB very<Deli>ADV welcome<Deli>ADJ .<Deli>PUNCT 
+Well<Deli>ADV worth<Deli>ADJ a<Deli>DET visit<Deli>NOUN .<Deli>PUNCT 
+http://cambridgefoodfrivolity.blogspot.com/<Deli>X 
+the<Deli>DET food<Deli>NOUN is<Deli>AUX mediocre<Deli>ADJ at<Deli>ADV best<Deli>ADV .<Deli>PUNCT 
+the<Deli>DET waitress<Deli>NOUN took<Deli>VERB my<Deli>PRON name<Deli>NOUN and<Deli>CCONJ then<Deli>ADV called<Deli>VERB me<Deli>PRON that<Deli>PRON all<Deli>DET night<Deli>NOUN .<Deli>PUNCT 
+not<Deli>PART sure<Deli>ADJ how<Deli>ADV I<Deli>PRON feel<Deli>VERB about<Deli>ADP that<Deli>DET one<Deli>NUM .<Deli>PUNCT 
+it<Deli>PRON 's<Deli>AUX passable<Deli>ADJ as<Deli>ADP a<Deli>DET pub<Deli>NOUN ,<Deli>PUNCT but<Deli>CCONJ the<Deli>DET pizza<Deli>NOUN is<Deli>AUX not<Deli>PART that<Deli>ADV great<Deli>ADJ .<Deli>PUNCT 
+if<Deli>SCONJ you<Deli>PRON want<Deli>VERB good<Deli>ADJ pizza<Deli>NOUN ,<Deli>PUNCT go<Deli>VERB to<Deli>ADP famoso<Deli>PROPN .<Deli>PUNCT 
+seriously<Deli>ADV .<Deli>PUNCT 
+No<Deli>DET service<Deli>NOUN ..<Deli>PUNCT But<Deli>CCONJ good<Deli>ADJ food<Deli>NOUN ..<Deli>PUNCT 
+Fantastic<Deli>ADJ fresh<Deli>ADJ food<Deli>NOUN !<Deli>PUNCT 
+What<Deli>DET a<Deli>DET neat<Deli>ADJ gem<Deli>NOUN of<Deli>ADP a<Deli>DET restaurant<Deli>NOUN in<Deli>ADP a<Deli>DET corner<Deli>NOUN one<Deli>PRON would<Deli>AUX n't<Deli>PART expect<Deli>VERB it<Deli>PRON .<Deli>PUNCT 
+Cozy<Deli>ADJ ,<Deli>PUNCT warm<Deli>ADJ atmosphere<Deli>NOUN ,<Deli>PUNCT great<Deli>ADJ service<Deli>NOUN .<Deli>PUNCT 
+Most<Deli>ADV importantly<Deli>ADV ,<Deli>PUNCT the<Deli>DET food<Deli>NOUN was<Deli>AUX outstanding<Deli>ADJ .<Deli>PUNCT 
+It<Deli>PRON clearly<Deli>ADV had<Deli>AUX been<Deli>AUX prepared<Deli>VERB from<Deli>ADP fresh<Deli>ADJ ingredients<Deli>NOUN .<Deli>PUNCT 
+We<Deli>PRON 'll<Deli>AUX be<Deli>VERB back<Deli>ADV often<Deli>ADV .<Deli>PUNCT 
+Fast<Deli>ADJ and<Deli>CCONJ affordable<Deli>ADJ .<Deli>PUNCT 
+Great<Deli>ADJ job<Deli>NOUN master<Deli>NOUN keying<Deli>VERB our<Deli>PRON building<Deli>NOUN .<Deli>PUNCT 
+Surprisingly<Deli>ADV ,<Deli>PUNCT this<Deli>DET little<Deli>ADJ strip<Deli>NOUN mall<Deli>NOUN restaurant<Deli>NOUN has<Deli>VERB the<Deli>DET best<Deli>ADJ sushi<Deli>NOUN I<Deli>PRON 've<Deli>AUX found<Deli>VERB in<Deli>ADP the<Deli>DET Tampa<Deli>PROPN area<Deli>NOUN .<Deli>PUNCT 
+It<Deli>PRON 's<Deli>AUX fresh<Deli>ADJ and<Deli>CCONJ really<Deli>ADV tasty<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON 'll<Deli>AUX drive<Deli>VERB an<Deli>DET hour<Deli>NOUN just<Deli>ADV for<Deli>ADP their<Deli>PRON volcano<Deli>NOUN ,<Deli>PUNCT yum<Deli>INTJ !<Deli>PUNCT 
+A<Deli>SYM ++<Deli>SYM 
+They<Deli>PRON are<Deli>AUX by<Deli>ADP far<Deli>ADV the<Deli>DET best<Deli>ADJ salon<Deli>NOUN in<Deli>ADP 50<Deli>NUM miles<Deli>NOUN ,<Deli>PUNCT Trust<Deli>VERB me<Deli>PRON I<Deli>PRON know<Deli>VERB !!<Deli>PUNCT 
+They<Deli>PRON did<Deli>VERB a<Deli>DET vehicle<Deli>NOUN wrap<Deli>NOUN for<Deli>ADP my<Deli>PRON Toyota<Deli>PROPN Venza<Deli>PROPN that<Deli>PRON looks<Deli>VERB amazing<Deli>ADJ .<Deli>PUNCT 
+They<Deli>PRON also<Deli>ADV do<Deli>VERB banners<Deli>NOUN ,<Deli>PUNCT billboards<Deli>NOUN and<Deli>CCONJ lots<Deli>NOUN more<Deli>ADJ .<Deli>PUNCT 
+wrong<Deli>ADJ location<Deli>NOUN 
+this<Deli>PRON is<Deli>AUX not<Deli>PART where<Deli>ADV the<Deli>DET Blue<Deli>PROPN Water<Deli>PROPN Bridge<Deli>PROPN Duty<Deli>PROPN Free<Deli>PROPN is<Deli>AUX located<Deli>VERB .<Deli>PUNCT 
+It<Deli>PRON is<Deli>VERB ,<Deli>PUNCT surprisingly<Deli>ADV ,<Deli>PUNCT near<Deli>ADP the<Deli>DET Blue<Deli>PROPN Water<Deli>PROPN Bridges<Deli>PROPN ,<Deli>PUNCT some<Deli>DET miles<Deli>NOUN to<Deli>ADP the<Deli>DET west<Deli>NOUN of<Deli>ADP this<Deli>DET location<Deli>NOUN .<Deli>PUNCT 
+ONe<Deli>NUM of<Deli>ADP a<Deli>DET few<Deli>ADJ .<Deli>PUNCT 
+Hancocks<Deli>PROPN is<Deli>AUX one<Deli>NUM of<Deli>ADP four<Deli>NUM fabric<Deli>NOUN stores<Deli>NOUN in<Deli>ADP Fort<Deli>PROPN Smith<Deli>PROPN .<Deli>PUNCT 
+We<Deli>PRON have<Deli>VERB Hobby<Deli>PROPN Lobby<Deli>PROPN ,<Deli>PUNCT Just<Deli>ADV for<Deli>ADP Fun<Deli>PROPN Fabrics<Deli>PROPN ,<Deli>PUNCT Walmart<Deli>PROPN ,<Deli>PUNCT and<Deli>CCONJ Interior<Deli>PROPN Mall<Deli>PROPN just<Deli>ADV inside<Deli>ADP Barling<Deli>PROPN .<Deli>PUNCT 
+They<Deli>PRON do<Deli>AUX have<Deli>VERB a<Deli>DET good<Deli>ADJ selection<Deli>NOUN of<Deli>ADP fabric<Deli>NOUN and<Deli>CCONJ notions<Deli>NOUN .<Deli>PUNCT 
+Best<Deli>ADJ meat<Deli>NOUN pies<Deli>NOUN in<Deli>ADP Canada<Deli>PROPN 
+If<Deli>SCONJ you<Deli>PRON are<Deli>AUX looking<Deli>VERB for<Deli>ADP authentic<Deli>ADJ British<Deli>ADJ meat<Deli>NOUN pies<Deli>NOUN ,<Deli>PUNCT then<Deli>ADV look<Deli>VERB know<Deli>ADV further<Deli>ADV .<Deli>PUNCT 
+I<Deli>PRON especially<Deli>ADV like<Deli>VERB the<Deli>DET Chicken<Deli>NOUN Curry<Deli>NOUN pie<Deli>NOUN .<Deli>PUNCT 
+Good<Deli>ADJ Food<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET owner<Deli>NOUN /<Deli>SYM baker<Deli>NOUN ,<Deli>PUNCT "<Deli>PUNCT Pie<Deli>PROPN Guy<Deli>PROPN "<Deli>PUNCT is<Deli>AUX a<Deli>DET hoot<Deli>NOUN to<Deli>PART deal<Deli>VERB with<Deli>ADP as<Deli>ADV well<Deli>ADV .<Deli>PUNCT 
+Mo<Deli>PROPN 
+excellent<Deli>ADJ !<Deli>PUNCT 
+answered<Deli>VERB all<Deli>DET my<Deli>PRON questions<Deli>NOUN ,<Deli>PUNCT and<Deli>CCONJ called<Deli>VERB me<Deli>PRON back<Deli>ADV when<Deli>ADV I<Deli>PRON needed<Deli>VERB something<Deli>PRON .<Deli>PUNCT 
+highly<Deli>ADV recommended<Deli>VERB !<Deli>PUNCT 
+Great<Deli>ADJ Family<Deli>NOUN Fun<Deli>NOUN and<Deli>CCONJ Bonding<Deli>NOUN 
+What<Deli>PRON more<Deli>ADJ can<Deli>AUX be<Deli>AUX said<Deli>VERB :<Deli>PUNCT "<Deli>PUNCT Burch<Deli>PROPN 's<Deli>PART Karate<Deli>PROPN is<Deli>AUX the<Deli>DET GREATEST<Deli>ADJ !<Deli>PUNCT "<Deli>PUNCT 
+Worst<Deli>ADJ place<Deli>NOUN flour<Deli>NOUN tortillas<Deli>NOUN are<Deli>AUX always<Deli>ADV hard<Deli>ADJ the<Deli>DET beef<Deli>NOUN enchiladas<Deli>NOUN are<Deli>AUX discussing<Deli>ADJ meat<Deli>NOUN all<Deli>ADV over<Deli>X cooked<Deli>VERB was<Deli>AUX good<Deli>ADJ many<Deli>ADJ yrs<Deli>NOUN ago<Deli>ADV but<Deli>CCONJ restaurant<Deli>NOUN has<Deli>AUX gone<Deli>VERB down<Deli>X hill<Deli>ADV 
+How<Deli>ADV a<Deli>DET pizza<Deli>NOUN place<Deli>NOUN should<Deli>AUX be<Deli>AUX !<Deli>PUNCT 
++<Deli>SYM there<Deli>PRON is<Deli>VERB a<Deli>DET free<Deli>ADJ cola<Deli>NOUN with<Deli>ADP every<Deli>DET pizza<Deli>NOUN .<Deli>PUNCT 
+Over<Deli>X priced<Deli>ADJ for<Deli>ADP Mexican<Deli>ADJ food<Deli>NOUN 
+awesome<Deli>ADJ bagels<Deli>NOUN 
+long<Deli>ADJ lines<Deli>NOUN on<Deli>ADP the<Deli>DET weekends<Deli>NOUN but<Deli>CCONJ worth<Deli>ADJ it<Deli>PRON 
+Give<Deli>VERB them<Deli>PRON a<Deli>DET try<Deli>NOUN !<Deli>PUNCT 
+The<Deli>DET pizzas<Deli>NOUN are<Deli>AUX huge<Deli>ADJ and<Deli>CCONJ super<Deli>ADV delicious<Deli>ADJ .<Deli>PUNCT 
+They<Deli>PRON 're<Deli>AUX our<Deli>PRON favorite<Deli>ADJ pizza<Deli>NOUN place<Deli>NOUN to<Deli>PART order<Deli>VERB from<Deli>ADP ...<Deli>PUNCT and<Deli>CCONJ they<Deli>PRON 're<Deli>AUX a<Deli>DET local<Deli>ADJ ,<Deli>PUNCT family<Deli>NOUN owned<Deli>VERB company<Deli>NOUN !<Deli>PUNCT 
+How<Deli>ADV much<Deli>ADV better<Deli>ADJ does<Deli>AUX it<Deli>PRON get<Deli>VERB ?!<Deli>PUNCT 
+Not<Deli>PART friendly<Deli>ADJ ,<Deli>PUNCT not<Deli>PART helpful<Deli>ADJ ,<Deli>PUNCT overall<Deli>ADV poor<Deli>ADJ customer<Deli>NOUN service<Deli>NOUN .<Deli>PUNCT 
+Definitely<Deli>ADV not<Deli>PART going<Deli>VERB to<Deli>PART purchase<Deli>VERB a<Deli>DET car<Deli>NOUN from<Deli>ADP here<Deli>ADV .<Deli>PUNCT 
+Retired<Deli>VERB 
+Dr<Deli>PROPN Joseph<Deli>PROPN retired<Deli>VERB .<Deli>PUNCT 
+Dr.<Deli>PROPN Dorn<Deli>PROPN is<Deli>AUX his<Deli>PRON backup<Deli>NOUN .<Deli>PUNCT 
+Aweesome<Deli>ADJ 
+Holy<Deli>ADJ cow<Deli>NOUN was<Deli>AUX that<Deli>PRON a<Deli>DET delicious<Deli>ADJ meal<Deli>NOUN .<Deli>PUNCT 
+Hot<Deli>ADJ ,<Deli>PUNCT fresh<Deli>ADJ ,<Deli>PUNCT delicious<Deli>ADJ .<Deli>PUNCT 
+Loved<Deli>VERB every<Deli>DET bit<Deli>NOUN of<Deli>ADP it<Deli>PRON .<Deli>PUNCT :)<Deli>SYM 
+This<Deli>DET place<Deli>NOUN is<Deli>VERB clean<Deli>ADJ and<Deli>CCONJ well<Deli>ADV run<Deli>VERB with<Deli>ADP great<Deli>ADJ people<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET food<Deli>NOUN is<Deli>AUX fresh<Deli>ADJ and<Deli>CCONJ taste<Deli>VERB great<Deli>ADJ .<Deli>PUNCT 
+Great<Deli>ADJ value<Deli>NOUN and<Deli>CCONJ service<Deli>NOUN .<Deli>PUNCT 
+We<Deli>PRON will<Deli>AUX be<Deli>VERB back<Deli>ADV again<Deli>ADV and<Deli>CCONJ again<Deli>ADV !!<Deli>PUNCT 
+Holly<Deli>PROPN -<Deli>PUNCT the<Deli>DET owner<Deli>NOUN ,<Deli>PUNCT knows<Deli>VERB exactly<Deli>ADV how<Deli>ADV to<Deli>PART make<Deli>VERB you<Deli>PRON feel<Deli>VERB beautiful<Deli>ADJ in<Deli>ADP clothes<Deli>NOUN .<Deli>PUNCT 
+Stylish<Deli>ADJ and<Deli>CCONJ contemporary<Deli>ADJ ,<Deli>PUNCT no<Deli>ADV matter<Deli>ADV your<Deli>PRON size<Deli>NOUN or<Deli>CCONJ personality<Deli>NOUN type<Deli>NOUN .<Deli>PUNCT 
+She<Deli>PRON 's<Deli>AUX an<Deli>DET A<Deli>SYM +<Deli>SYM and<Deli>CCONJ so<Deli>ADV are<Deli>AUX her<Deli>PRON clothes<Deli>NOUN !<Deli>PUNCT 
+They<Deli>PRON have<Deli>VERB good<Deli>ADJ sushi<Deli>NOUN for<Deli>ADP a<Deli>DET good<Deli>ADJ price<Deli>NOUN .<Deli>PUNCT 
+My<Deli>PRON favorite<Deli>NOUN so<Deli>ADV far<Deli>ADV in<Deli>ADP Bellevue<Deli>PROPN .<Deli>PUNCT 
+Store<Deli>NOUN is<Deli>AUX on<Deli>ADP the<Deli>DET small<Deli>ADJ side<Deli>NOUN and<Deli>CCONJ atmosphere<Deli>NOUN is<Deli>AUX just<Deli>ADV average<Deli>ADJ .<Deli>PUNCT 
+They<Deli>PRON are<Deli>AUX out<Deli>ADP of<Deli>ADP business<Deli>NOUN .<Deli>PUNCT 
+Nice<Deli>ADJ people<Deli>NOUN ...<Deli>PUNCT I<Deli>PRON hear<Deli>VERB .<Deli>PUNCT 
+Calls<Deli>NOUN are<Deli>AUX now<Deli>ADV forwarded<Deli>VERB to<Deli>ADP Malcolm<Deli>PROPN Smith<Deli>PROPN Motorsports<Deli>PROPN down<Deli>ADP the<Deli>DET road<Deli>NOUN .<Deli>PUNCT 
+Anyone<Deli>PRON else<Deli>ADJ find<Deli>VERB it<Deli>PRON a<Deli>DET little<Deli>ADJ suspicious<Deli>ADJ that<Deli>SCONJ there<Deli>PRON are<Deli>VERB not<Deli>PART only<Deli>ADV 20<Deli>NUM reviews<Deli>NOUN for<Deli>ADP this<Deli>DET dentist<Deli>NOUN (<Deli>PUNCT a<Deli>DET HUGE<Deli>ADJ number<Deli>NOUN compared<Deli>VERB to<Deli>ADP the<Deli>DET others<Deli>NOUN in<Deli>ADP the<Deli>DET area<Deli>NOUN )<Deli>PUNCT ,<Deli>PUNCT but<Deli>CCONJ that<Deli>SCONJ they<Deli>PRON all<Deli>DET have<Deli>VERB the<Deli>DET same<Deli>ADJ unique<Deli>ADJ grammar<Deli>NOUN structure<Deli>NOUN ?<Deli>PUNCT 
+And<Deli>CCONJ they<Deli>PRON seem<Deli>VERB to<Deli>PART be<Deli>AUX posted<Deli>VERB at<Deli>ADP fairly<Deli>ADV regular<Deli>ADJ intervals<Deli>NOUN ?<Deli>PUNCT 
+I<Deli>PRON love<Deli>VERB the<Deli>DET meat<Deli>NOUN !<Deli>PUNCT 
+Great<Deli>ADJ Job<Deli>PROPN !<Deli>PUNCT 
+Thanks<Deli>NOUN for<Deli>SCONJ fixing<Deli>VERB my<Deli>PRON garage<Deli>NOUN door<Deli>NOUN A<Deli>SYM ++++++++++++++++++<Deli>SYM 
+Great<Deli>ADJ Neighborhood<Deli>NOUN Hangout<Deli>NOUN 
+Great<Deli>ADJ place<Deli>NOUN to<Deli>PART catch<Deli>VERB a<Deli>DET band<Deli>NOUN or<Deli>CCONJ catch<Deli>VERB up<Deli>ADP with<Deli>ADP friends<Deli>NOUN .<Deli>PUNCT 
+Ice<Deli>ADJ cold<Deli>ADJ beer<Deli>NOUN and<Deli>CCONJ good<Deli>ADJ prices<Deli>NOUN .<Deli>PUNCT 
+Kitchen<Deli>NOUN puts<Deli>VERB out<Deli>ADV good<Deli>ADJ food<Deli>NOUN and<Deli>CCONJ has<Deli>VERB daily<Deli>ADJ specials<Deli>NOUN .<Deli>PUNCT 
+professional<Deli>ADJ 
+Good<Deli>ADJ job<Deli>NOUN very<Deli>ADV professional<Deli>ADJ .<Deli>PUNCT 
+It<Deli>PRON made<Deli>VERB me<Deli>PRON feel<Deli>VERB good<Deli>ADJ to<Deli>PART see<Deli>VERB people<Deli>NOUN work<Deli>VERB so<Deli>ADV hard<Deli>ADV to<Deli>PART take<Deli>VERB care<Deli>NOUN of<Deli>ADP others<Deli>NOUN belongings<Deli>NOUN .<Deli>PUNCT 
+Your<Deli>PRON average<Deli>ADJ crappy<Deli>ADJ chain<Deli>NOUN .<Deli>PUNCT 
+Food<Deli>NOUN is<Deli>AUX awful<Deli>ADJ and<Deli>CCONJ the<Deli>DET place<Deli>NOUN caters<Deli>VERB to<Deli>ADP the<Deli>DET yuppy<Deli>NOUN crowd<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ service<Deli>NOUN and<Deli>CCONJ awesome<Deli>ADJ prices<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON get<Deli>VERB Microdermabrasions<Deli>NOUN regularly<Deli>ADV and<Deli>CCONJ I<Deli>PRON love<Deli>VERB the<Deli>DET environment<Deli>NOUN 
+Pleasure<Deli>NOUN to<Deli>PART work<Deli>VERB with<Deli>ADP .<Deli>PUNCT 
+The<Deli>DET experience<Deli>NOUN with<Deli>ADP every<Deli>DET department<Deli>NOUN has<Deli>AUX been<Deli>AUX great<Deli>ADJ .<Deli>PUNCT 
+No<Deli>DET complaints<Deli>NOUN !<Deli>PUNCT 
+If<Deli>SCONJ you<Deli>PRON want<Deli>VERB cheaply<Deli>ADV made<Deli>VERB glass<Deli>NOUN from<Deli>ADP India<Deli>PROPN and<Deli>CCONJ China<Deli>PROPN ,<Deli>PUNCT this<Deli>PRON is<Deli>AUX not<Deli>PART your<Deli>PRON place<Deli>NOUN .<Deli>PUNCT 
+These<Deli>DET people<Deli>NOUN only<Deli>ADV carry<Deli>VERB the<Deli>DET very<Deli>ADV best<Deli>ADJ American<Deli>ADJ blown<Deli>VERB glass<Deli>NOUN .<Deli>PUNCT 
+Their<Deli>PRON selection<Deli>NOUN is<Deli>AUX top<Deli>ADJ notch<Deli>NOUN and<Deli>CCONJ the<Deli>DET staff<Deli>NOUN is<Deli>AUX very<Deli>ADV knowledgable<Deli>ADJ .<Deli>PUNCT 
+Go<Deli>VERB to<Deli>ADP the<Deli>DET Looking<Deli>PROPN Glass<Deli>PROPN for<Deli>ADP all<Deli>DET your<Deli>PRON smoking<Deli>NOUN needs<Deli>NOUN !!!!!!!!!!<Deli>PUNCT 
+5<Deli>NUM star<Deli>NOUN detail<Deli>NOUN job<Deli>NOUN 
+I<Deli>PRON took<Deli>VERB my<Deli>PRON Mustang<Deli>PROPN here<Deli>ADV and<Deli>CCONJ it<Deli>PRON looked<Deli>VERB amazing<Deli>ADJ after<Deli>SCONJ they<Deli>PRON were<Deli>AUX done<Deli>ADJ ,<Deli>PUNCT they<Deli>PRON did<Deli>VERB a<Deli>DET great<Deli>ADJ job<Deli>NOUN ,<Deli>PUNCT I<Deli>PRON 'm<Deli>AUX very<Deli>ADV satisfied<Deli>ADJ with<Deli>ADP the<Deli>DET results<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET paint<Deli>NOUN and<Deli>CCONJ wheels<Deli>NOUN looked<Deli>VERB like<Deli>ADP glass<Deli>NOUN and<Deli>CCONJ the<Deli>DET interior<Deli>ADJ looked<Deli>VERB new<Deli>ADJ !<Deli>PUNCT 
+Also<Deli>ADV ,<Deli>PUNCT they<Deli>PRON have<Deli>VERB great<Deli>ADJ customer<Deli>NOUN service<Deli>NOUN and<Deli>CCONJ a<Deli>DET very<Deli>ADV knowledgeable<Deli>ADJ staff<Deli>NOUN 
+Rip<Deli>NOUN Off<Deli>NOUN !<Deli>PUNCT 
+45<Deli>NUM p<Deli>NOUN for<Deli>ADP tap<Deli>NOUN water<Deli>NOUN !<Deli>PUNCT 
+Ridiculous<Deli>ADJ !<Deli>PUNCT 
+Do<Deli>AUX n't<Deli>PART think<Deli>VERB I<Deli>PRON 've<Deli>AUX ever<Deli>ADV been<Deli>AUX charged<Deli>VERB before<Deli>ADV .<Deli>PUNCT 
+Oh<Deli>INTJ ,<Deli>PUNCT and<Deli>CCONJ salad<Deli>NOUN cream<Deli>NOUN ,<Deli>PUNCT not<Deli>CCONJ mayonnaise<Deli>NOUN ,<Deli>PUNCT on<Deli>ADP the<Deli>DET coleslaw<Deli>NOUN .<Deli>PUNCT 
+Avoid<Deli>VERB !<Deli>PUNCT 
+Great<Deli>ADJ lunch<Deli>NOUN specials<Deli>NOUN .<Deli>PUNCT 
+Delivery<Deli>NOUN is<Deli>AUX lightning<Deli>NOUN fast<Deli>ADJ .<Deli>PUNCT 
+Perfect<Deli>ADJ since<Deli>SCONJ I<Deli>PRON 'm<Deli>AUX on<Deli>ADP a<Deli>DET budget<Deli>NOUN .<Deli>PUNCT 
+But<Deli>CCONJ otherwise<Deli>ADV ,<Deli>PUNCT it<Deli>PRON can<Deli>AUX feel<Deli>VERB pricey<Deli>ADJ for<Deli>SCONJ what<Deli>PRON you<Deli>PRON get<Deli>VERB .<Deli>PUNCT 
+Like<Deli>VERB the<Deli>DET sushi<Deli>NOUN ,<Deli>PUNCT do<Deli>AUX n't<Deli>PART like<Deli>VERB the<Deli>DET pad<Deli>NOUN thai<Deli>NOUN .<Deli>PUNCT 
+Best<Deli>ADJ place<Deli>NOUN to<Deli>PART sleep<Deli>VERB !!!!!!!<Deli>PUNCT 
+Good<Deli>ADJ fun<Deli>NOUN for<Deli>ADP wing<Deli>NOUN night<Deli>NOUN ,<Deli>PUNCT food<Deli>NOUN eh<Deli>INTJ ,<Deli>PUNCT beer<Deli>NOUN list<Deli>NOUN eh<Deli>INTJ ...<Deli>PUNCT 
+Clean<Deli>ADJ rooms<Deli>NOUN ,<Deli>PUNCT great<Deli>ADJ for<Deli>ADP the<Deli>DET price<Deli>NOUN and<Deli>CCONJ cheapest<Deli>ADJ on<Deli>ADP the<Deli>DET exit<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET front<Deli>NOUN desk<Deli>NOUN staff<Deli>NOUN was<Deli>AUX very<Deli>ADV pleasant<Deli>ADJ and<Deli>CCONJ efficient<Deli>ADJ .<Deli>PUNCT 
+Serves<Deli>VERB FREE<Deli>ADJ breakfast<Deli>NOUN !<Deli>PUNCT 
+A<Deli>DET good<Deli>ADJ cut<Deli>NOUN !<Deli>PUNCT 
+Cécile<Deli>PROPN is<Deli>AUX a<Deli>DET hairdresser<Deli>NOUN and<Deli>CCONJ has<Deli>AUX just<Deli>ADV moved<Deli>VERB into<Deli>ADP the<Deli>DET neighbourhood<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON go<Deli>VERB to<Deli>PART see<Deli>VERB her<Deli>PRON to<Deli>PART have<Deli>VERB my<Deli>PRON hair<Deli>NOUN cut<Deli>VERB .<Deli>PUNCT 
+awesome<Deli>ADJ place<Deli>NOUN !!!<Deli>PUNCT 
+it<Deli>PRON was<Deli>AUX worth<Deli>ADJ of<Deli>ADP the<Deli>DET ride<Deli>NOUN more<Deli>ADJ than<Deli>ADP an<Deli>DET hour<Deli>NOUN ...<Deli>PUNCT 
+I<Deli>PRON had<Deli>VERB so<Deli>ADV many<Deli>ADJ strawberries<Deli>NOUN right<Deli>ADV on<Deli>ADP the<Deli>DET field<Deli>NOUN ...<Deli>PUNCT strongly<Deli>ADV recomend<Deli>VERB ...<Deli>PUNCT do<Deli>AUX nt<Deli>PART forget<Deli>VERB to<Deli>PART try<Deli>VERB their<Deli>PRON great<Deli>ADJ ice<Deli>NOUN cream<Deli>NOUN 
+Over<Deli>X charged<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON used<Deli>VERB my<Deli>PRON card<Deli>NOUN to<Deli>PART purchase<Deli>VERB a<Deli>DET meal<Deli>NOUN on<Deli>ADP the<Deli>DET menu<Deli>NOUN and<Deli>CCONJ the<Deli>DET total<Deli>NOUN on<Deli>ADP my<Deli>PRON receipt<Deli>NOUN was<Deli>AUX $<Deli>SYM 8.95<Deli>NUM but<Deli>CCONJ when<Deli>ADV I<Deli>PRON went<Deli>VERB on<Deli>ADP line<Deli>NOUN to<Deli>PART check<Deli>VERB my<Deli>PRON transaction<Deli>NOUN it<Deli>PRON show<Deli>VERB $<Deli>SYM 10.74<Deli>NUM .<Deli>PUNCT 
+There<Deli>PRON is<Deli>VERB something<Deli>PRON wrong<Deli>ADJ or<Deli>CCONJ maybe<Deli>ADV the<Deli>DET individual<Deli>NOUN made<Deli>VERB a<Deli>DET mistake<Deli>NOUN but<Deli>CCONJ to<Deli>ADP me<Deli>PRON that<Deli>PRON is<Deli>AUX not<Deli>PART integrity<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ place<Deli>NOUN for<Deli>ADP embroidery<Deli>NOUN .<Deli>PUNCT 
+Service<Deli>NOUN was<Deli>AUX friendly<Deli>ADJ and<Deli>CCONJ VERY<Deli>ADV fast<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON purchased<Deli>VERB four<Deli>NUM gift<Deli>NOUN items<Deli>NOUN there<Deli>ADV and<Deli>CCONJ had<Deli>VERB them<Deli>PRON all<Deli>DET embroidered<Deli>VERB within<Deli>ADP a<Deli>DET week<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET best<Deli>ADJ photographer<Deli>NOUN in<Deli>ADP Miami<Deli>PROPN 
+I<Deli>PRON was<Deli>AUX soooo<Deli>ADV lucky<Deli>ADJ to<Deli>PART have<Deli>AUX used<Deli>VERB Marlon<Deli>PROPN 's<Deli>PART photography<Deli>NOUN services<Deli>NOUN ....<Deli>PUNCT such<Deli>DET a<Deli>DET creative<Deli>ADJ and<Deli>CCONJ talented<Deli>ADJ photographer<Deli>NOUN and<Deli>CCONJ a<Deli>DET pleasure<Deli>NOUN to<Deli>PART work<Deli>VERB with<Deli>ADP .<Deli>PUNCT 
+The<Deli>DET images<Deli>NOUN turned<Deli>VERB out<Deli>ADP amazing<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON definitely<Deli>ADV recommend<Deli>VERB him<Deli>PRON :)<Deli>SYM 
+Great<Deli>ADJ Service<Deli>NOUN and<Deli>CCONJ hairstyles<Deli>NOUN that<Deli>PRON last<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON am<Deli>AUX pleased<Deli>ADJ with<Deli>ADP the<Deli>DET service<Deli>NOUN that<Deli>PRON i<Deli>PRON get<Deli>VERB at<Deli>ADP Luxe<Deli>PROPN .<Deli>PUNCT 
+The<Deli>DET staff<Deli>NOUN is<Deli>AUX very<Deli>ADV pleasant<Deli>ADJ and<Deli>CCONJ my<Deli>PRON hair<Deli>NOUN is<Deli>AUX always<Deli>ADV fresh<Deli>ADJ .<Deli>PUNCT 
+Cheap<Deli>PROPN Hotel<Deli>PROPN Rome<Deli>PROPN -<Deli>PUNCT Thanks<Deli>NOUN for<Deli>ADP all<Deli>DET your<Deli>PRON help<Deli>NOUN !<Deli>PUNCT 
+Cheap<Deli>PROPN Hotel<Deli>PROPN Rome<Deli>PROPN -<Deli>PUNCT thanks<Deli>NOUN for<Deli>SCONJ finding<Deli>VERB us<Deli>PRON a<Deli>DET hotel<Deli>NOUN at<Deli>ADP the<Deli>DET last<Deli>ADJ minute<Deli>NOUN .<Deli>PUNCT 
+We<Deli>PRON had<Deli>VERB a<Deli>DET great<Deli>ADJ stay<Deli>NOUN ,<Deli>PUNCT your<Deli>PRON service<Deli>NOUN was<Deli>AUX excellent<Deli>ADJ and<Deli>CCONJ we<Deli>PRON will<Deli>AUX use<Deli>VERB you<Deli>PRON again<Deli>ADV !<Deli>PUNCT 
+Great<Deli>ADJ store<Deli>NOUN great<Deli>ADJ products<Deli>NOUN 
+best<Deli>ADJ place<Deli>NOUN for<Deli>ADP snowboard<Deli>NOUN eva<Deli>ADV .<Deli>PUNCT 
+Great<Deli>ADJ Service<Deli>NOUN 
+Dr<Deli>PROPN Mcdonald<Deli>PROPN is<Deli>AUX wonderful<Deli>ADJ .<Deli>PUNCT 
+She<Deli>PRON answers<Deli>VERB all<Deli>DET questions<Deli>NOUN asked<Deli>VERB and<Deli>CCONJ provides<Deli>VERB the<Deli>DET best<Deli>ADJ service<Deli>NOUN i<Deli>PRON have<Deli>AUX ever<Deli>ADV seen<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON have<Deli>VERB a<Deli>DET new<Deli>ADJ born<Deli>ADJ daughter<Deli>NOUN and<Deli>CCONJ she<Deli>PRON helped<Deli>VERB me<Deli>PRON with<Deli>ADP a<Deli>DET lot<Deli>NOUN .<Deli>PUNCT 
+Good<Deli>ADJ Job<Deli>NOUN DR<Deli>PROPN .<Deli>PUNCT 
+Brain<Deli>NOUN Dead<Deli>ADJ 
+Not<Deli>ADV only<Deli>ADV are<Deli>AUX these<Deli>DET people<Deli>NOUN completely<Deli>ADV inefficient<Deli>ADJ and<Deli>CCONJ ineffective<Deli>ADJ ,<Deli>PUNCT but<Deli>CCONJ they<Deli>PRON just<Deli>ADV do<Deli>AUX n't<Deli>PART give<Deli>VERB a<Deli>DET darn<Deli>NOUN .<Deli>PUNCT 
+This<Deli>DET place<Deli>NOUN is<Deli>AUX a<Deli>DET complete<Deli>ADJ embarrassment<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET World<Deli>PROPN 's<Deli>PART Fair<Deli>PROPN museum<Deli>NOUN was<Deli>AUX pretty<Deli>ADV cool<Deli>ADJ .<Deli>PUNCT 
+Too<Deli>ADV Expensive<Deli>ADJ 
+The<Deli>DET food<Deli>NOUN 's<Deli>AUX okay<Deli>ADJ ,<Deli>PUNCT but<Deli>CCONJ the<Deli>DET price<Deli>NOUN is<Deli>AUX outrageous<Deli>ADJ .<Deli>PUNCT 
+:)<Deli>SYM 
+I<Deli>PRON will<Deli>AUX gladly<Deli>ADV recommend<Deli>VERB you<Deli>PRON to<Deli>ADP anyone<Deli>PRON in<Deli>ADP need<Deli>NOUN of<Deli>ADP or<Deli>CCONJ looking<Deli>VERB for<Deli>ADP a<Deli>DET good<Deli>ADJ florist<Deli>NOUN .<Deli>PUNCT 
+Totally<Deli>ADV flavored<Deli>ADJ 
+The<Deli>DET statement<Deli>NOUN about<Deli>ADP "<Deli>PUNCT best<Deli>ADJ hamburguers<Deli>NOUN in<Deli>ADP town<Deli>NOUN "<Deli>PUNCT can<Deli>AUX be<Deli>AUX even<Deli>ADV amplifiaed<Deli>VERB to<Deli>ADP "<Deli>PUNCT best<Deli>ADJ hamburguers<Deli>NOUN in<Deli>ADP world<Deli>NOUN "<Deli>PUNCT Totally<Deli>ADV worth<Deli>ADJ ,<Deli>PUNCT juicy<Deli>ADJ ,<Deli>PUNCT big<Deli>ADJ ,<Deli>PUNCT fresh<Deli>ADJ ,<Deli>PUNCT and<Deli>CCONJ excellent<Deli>ADJ customer<Deli>NOUN service<Deli>NOUN !<Deli>PUNCT 
+A<Deli>DET most<Deli>ADV outstanding<Deli>ADJ ,<Deli>PUNCT professional<Deli>ADJ firm<Deli>NOUN .<Deli>PUNCT 
+very<Deli>ADV miss<Deli>X informed<Deli>ADJ people<Deli>NOUN !!<Deli>PUNCT 
+Awsome<Deli>ADJ !<Deli>PUNCT 
+Great<Deli>ADJ food<Deli>NOUN cheap<Deli>ADJ 
+Every<Deli>DET thing<Deli>NOUN here<Deli>ADV is<Deli>AUX good<Deli>ADJ .<Deli>PUNCT 
+Fish<Deli>NOUN tacos<Deli>NOUN are<Deli>AUX my<Deli>PRON fave<Deli>NOUN simple<Deli>ADJ and<Deli>CCONJ filling<Deli>ADJ Highly<Deli>ADV recommend<Deli>VERB Mi<Deli>PROPN Pueblo<Deli>PROPN .<Deli>PUNCT 
+Gets<Deli>VERB busy<Deli>ADJ so<Deli>ADV come<Deli>VERB early<Deli>ADV 
+Barb<Deli>PROPN does<Deli>VERB an<Deli>DET AMAZING<Deli>ADJ JOB<Deli>NOUN ,<Deli>PUNCT she<Deli>PRON is<Deli>AUX always<Deli>ADV learning<Deli>VERB new<Deli>ADJ things<Deli>NOUN on<Deli>SCONJ how<Deli>ADV to<Deli>PART use<Deli>VERB her<Deli>PRON hands<Deli>NOUN and<Deli>CCONJ body<Deli>NOUN ,<Deli>PUNCT to<Deli>PART give<Deli>VERB every<Deli>DET person<Deli>NOUN an<Deli>DET AWESOME<Deli>ADJ MASSAGE<Deli>NOUN ,<Deli>PUNCT CALL<Deli>VERB TODAY<Deli>NOUN AND<Deli>CCONJ SCHEDULE<Deli>VERB YOU<Deli>PRON MUST<Deli>AUX SEE<Deli>VERB HER<Deli>PRON ,<Deli>PUNCT YOU<Deli>PRON WILL<Deli>AUX FALL<Deli>VERB IN<Deli>ADP LOVE<Deli>NOUN SHE<Deli>PRON IS<Deli>AUX THE<Deli>DET BEST<Deli>ADJ OF<Deli>ADP THE<Deli>DET BEST<Deli>ADJ !<Deli>PUNCT 
+Excellent<Deli>ADJ Pizza<Deli>NOUN !!<Deli>PUNCT 
+It<Deli>PRON s<Deli>AUX the<Deli>DET only<Deli>ADJ pizza<Deli>NOUN place<Deli>NOUN I<Deli>PRON recommend<Deli>VERB in<Deli>ADP Woodland<Deli>PROPN Hills<Deli>PROPN .<Deli>PUNCT 
+Yum<Deli>INTJ .<Deli>PUNCT 
+My<Deli>PRON wife<Deli>NOUN and<Deli>CCONJ kids<Deli>NOUN ca<Deli>AUX n't<Deli>PART get<Deli>VERB enough<Deli>ADJ .<Deli>PUNCT 
+Highly<Deli>ADV recommended<Deli>VERB .<Deli>PUNCT 
+impressive<Deli>ADJ truly<Deli>ADV impressive<Deli>ADJ 
+The<Deli>DET First<Deli>ADJ time<Deli>NOUN I<Deli>PRON walked<Deli>VERB in<Deli>ADP there<Deli>ADV with<Deli>ADP my<Deli>PRON teacup<Deli>NOUN chihuahua<Deli>NOUN puppy<Deli>NOUN I<Deli>PRON knew<Deli>VERB I<Deli>PRON 'd<Deli>AUX be<Deli>AUX here<Deli>ADV a<Deli>DET lot<Deli>NOUN .<Deli>PUNCT 
+Pets<Deli>PROPN Discount<Deli>PROPN has<Deli>VERB lovely<Deli>ADJ employees<Deli>NOUN ,<Deli>PUNCT a<Deli>DET wonderful<Deli>ADJ grooming<Deli>NOUN service<Deli>NOUN ,<Deli>PUNCT and<Deli>CCONJ everything<Deli>PRON I<Deli>PRON need<Deli>VERB to<Deli>PART keep<Deli>VERB my<Deli>PRON dog<Deli>NOUN in<Deli>ADP tip<Deli>ADJ top<Deli>ADJ condition<Deli>NOUN !<Deli>PUNCT 
+Great<Deli>ADJ service<Deli>NOUN 
+I<Deli>PRON had<Deli>VERB a<Deli>DET dead<Deli>ADJ battery<Deli>NOUN last<Deli>ADJ week<Deli>NOUN and<Deli>CCONJ called<Deli>VERB this<Deli>DET company<Deli>NOUN since<Deli>SCONJ they<Deli>PRON were<Deli>AUX the<Deli>DET closest<Deli>ADJ they<Deli>PRON had<Deli>VERB very<Deli>ADV quick<Deli>ADJ service<Deli>NOUN for<Deli>ADP a<Deli>DET Monday<Deli>PROPN morning<Deli>NOUN ,<Deli>PUNCT thanks<Deli>NOUN again<Deli>ADV guys<Deli>NOUN .<Deli>PUNCT 
+SERVERS<Deli>NOUN 
+When<Deli>ADV my<Deli>PRON server<Deli>NOUN crashed<Deli>VERB ,<Deli>PUNCT Greg<Deli>PROPN worked<Deli>VERB from<Deli>ADP 7<Deli>NUM PM<Deli>NOUN until<Deli>ADP 4<Deli>NUM AM<Deli>NOUN and<Deli>CCONJ had<Deli>VERB my<Deli>PRON company<Deli>NOUN up<Deli>ADV and<Deli>CCONJ running<Deli>VERB the<Deli>DET next<Deli>ADJ morning<Deli>NOUN .<Deli>PUNCT 
+That<Deli>PRON 's<Deli>VERB what<Deli>PRON I<Deli>PRON call<Deli>VERB customer<Deli>NOUN service<Deli>NOUN !<Deli>PUNCT 
+Elmira<Deli>PROPN ,<Deli>PUNCT you<Deli>PRON r<Deli>AUX the<Deli>DET best<Deli>ADJ !<Deli>PUNCT 
+All<Deli>DET I<Deli>PRON can<Deli>AUX say<Deli>VERB is<Deli>VERB that<Deli>SCONJ Elmira<Deli>PROPN you<Deli>PRON are<Deli>AUX the<Deli>DET best<Deli>ADJ I<Deli>PRON ve<Deli>AUX experienced<Deli>VERB ,<Deli>PUNCT never<Deli>ADV before<Deli>ADV has<Deli>AUX the<Deli>DET seamstress<Deli>NOUN done<Deli>VERB a<Deli>DET perfect<Deli>ADJ job<Deli>NOUN until<Deli>SCONJ i<Deli>PRON met<Deli>VERB you<Deli>PRON .<Deli>PUNCT 
+I<Deli>PRON recommend<Deli>VERB you<Deli>PRON to<Deli>ADP everyone<Deli>PRON in<Deli>ADP Calgary<Deli>PROPN ,<Deli>PUNCT as<Deli>SCONJ she<Deli>PRON is<Deli>AUX a<Deli>DET professional<Deli>NOUN and<Deli>CCONJ the<Deli>DET cost<Deli>NOUN for<Deli>ADP her<Deli>PRON was<Deli>AUX low<Deli>ADJ .<Deli>PUNCT 
+VINGAS<Deli>PROPN 
+VISAKHA<Deli>PROPN INDUSTRIAL<Deli>PROPN GASES<Deli>PROPN PVT.<Deli>PROPN LTD.<Deli>PROPN ,<Deli>PUNCT location<Deli>NOUN at<Deli>ADP google<Deli>PROPN maps<Deli>PROPN .<Deli>PUNCT 
+A<Deli>DET Great<Deli>ADJ Help<Deli>NOUN !<Deli>PUNCT 
+Ashdown<Deli>PROPN Horse<Deli>PROPN Transport<Deli>PROPN were<Deli>AUX fantastic<Deli>ADJ !<Deli>PUNCT 
+Very<Deli>ADV friendly<Deli>ADJ and<Deli>CCONJ ALWAY<Deli>ADV contactable<Deli>ADJ even<Deli>ADV at<Deli>ADP weekends<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON would<Deli>AUX hesitate<Deli>VERB to<Deli>PART recommend<Deli>VERB anyone<Deli>PRON .<Deli>PUNCT 
+Thanks<Deli>NOUN again<Deli>ADV Nina<Deli>PROPN .<Deli>PUNCT 
+PS.<Deli>NOUN Love<Deli>VERB the<Deli>DET new<Deli>ADJ website<Deli>NOUN !<Deli>PUNCT 
+Not<Deli>PART a<Deli>DET clothing<Deli>NOUN store<Deli>NOUN 
+Be<Deli>AUX more<Deli>ADV careful<Deli>ADJ when<Deli>ADV you<Deli>PRON write<Deli>VERB reviews<Deli>NOUN -<Deli>PUNCT this<Deli>PRON is<Deli>AUX an<Deli>DET accounting<Deli>NOUN group<Deli>NOUN ,<Deli>PUNCT not<Deli>ADV Hollister<Deli>PROPN the<Deli>DET clothing<Deli>NOUN store<Deli>NOUN .<Deli>PUNCT 
+Good<Deli>ADJ quality<Deli>NOUN Indian<Deli>ADJ food<Deli>NOUN in<Deli>ADP a<Deli>DET pleasant<Deli>ADJ environment<Deli>NOUN 
+Whatever<Deli>PRON you<Deli>PRON order<Deli>VERB ,<Deli>PUNCT you<Deli>PRON will<Deli>AUX LOVE<Deli>VERB !<Deli>PUNCT 
+We<Deli>PRON have<Deli>AUX stayed<Deli>VERB at<Deli>ADP Tanglewood<Deli>PROPN for<Deli>ADP many<Deli>ADJ years<Deli>NOUN now<Deli>ADV .<Deli>PUNCT 
+We<Deli>PRON go<Deli>VERB over<Deli>ADV about<Deli>ADV 5<Deli>NUM times<Deli>NOUN a<Deli>DET year<Deli>NOUN .<Deli>PUNCT 
+We<Deli>PRON have<Deli>AUX never<Deli>ADV had<Deli>VERB a<Deli>DET problem<Deli>NOUN with<Deli>ADP the<Deli>DET cabins<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON are<Deli>AUX always<Deli>ADV so<Deli>ADV helpful<Deli>ADJ .<Deli>PUNCT 
+The<Deli>DET cabins<Deli>NOUN have<Deli>AUX always<Deli>ADV been<Deli>AUX clean<Deli>ADJ .<Deli>PUNCT 
+Helen<Deli>PROPN is<Deli>AUX a<Deli>DET wonderful<Deli>ADJ place<Deli>NOUN to<Deli>PART take<Deli>VERB you<Deli>PRON family<Deli>NOUN .<Deli>PUNCT 
+We<Deli>PRON recommend<Deli>VERB these<Deli>DET cabins<Deli>NOUN !<Deli>PUNCT 
+Favorite<Deli>ADJ DD<Deli>PROPN spot<Deli>NOUN in<Deli>ADP the<Deli>DET area<Deli>NOUN !<Deli>PUNCT 
+I<Deli>PRON 'll<Deli>AUX admit<Deli>VERB I<Deli>PRON was<Deli>AUX n't<Deli>PART expecting<Deli>VERB much<Deli>ADJ from<Deli>ADP this<Deli>DET place<Deli>NOUN ,<Deli>PUNCT but<Deli>CCONJ they<Deli>PRON really<Deli>ADV did<Deli>AUX do<Deli>VERB a<Deli>DET good<Deli>ADJ job<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET chicken<Deli>NOUN cordon<Deli>NOUN -<Deli>PUNCT blu<Deli>NOUN was<Deli>AUX tasty<Deli>ADJ and<Deli>CCONJ came<Deli>VERB in<Deli>ADP a<Deli>DET huge<Deli>ADJ portion<Deli>NOUN size<Deli>NOUN for<Deli>ADP the<Deli>DET money<Deli>NOUN .<Deli>PUNCT 
+Service<Deli>NOUN was<Deli>AUX a<Deli>DET touch<Deli>NOUN slow<Deli>ADJ ,<Deli>PUNCT but<Deli>CCONJ friendly<Deli>ADJ .<Deli>PUNCT 
+ok<Deli>INTJ 
+ca<Deli>AUX n't<Deli>PART remember<Deli>VERB good<Deli>ADJ or<Deli>CCONJ bad<Deli>ADJ ,<Deli>PUNCT so<Deli>ADV it<Deli>PRON must<Deli>AUX have<Deli>AUX been<Deli>AUX meh<Deli>ADJ .<Deli>PUNCT 
+Good<Deli>ADJ food<Deli>NOUN and<Deli>CCONJ coffee<Deli>NOUN with<Deli>ADP a<Deli>DET nice<Deli>ADJ atmosphere<Deli>NOUN 
+Best<Deli>ADJ in<Deli>ADP Memphis<Deli>PROPN 
+This<Deli>DET shop<Deli>NOUN is<Deli>AUX by<Deli>ADP far<Deli>ADV the<Deli>DET best<Deli>ADJ I<Deli>PRON have<Deli>AUX been<Deli>AUX to<Deli>ADP .<Deli>PUNCT 
+I<Deli>PRON have<Deli>VERB a<Deli>DET Saab<Deli>PROPN ...<Deli>PUNCT which<Deli>PRON everything<Deli>PRON is<Deli>AUX expensive<Deli>ADJ on<Deli>ADP and<Deli>CCONJ they<Deli>PRON have<Deli>AUX been<Deli>AUX extrememly<Deli>ADV fair<Deli>ADJ and<Deli>CCONJ price<Deli>NOUN a<Deli>DET lot<Deli>NOUN lower<Deli>ADJ than<Deli>ADP any<Deli>DET other<Deli>ADJ shop<Deli>NOUN I<Deli>PRON called<Deli>VERB .<Deli>PUNCT 
+They<Deli>PRON are<Deli>AUX the<Deli>DET only<Deli>ADJ place<Deli>NOUN I<Deli>PRON would<Deli>AUX take<Deli>VERB my<Deli>PRON car<Deli>NOUN peiod<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON used<Deli>VERB Birdies<Deli>PROPN for<Deli>ADP our<Deli>PRON Annual<Deli>ADJ Walk<Deli>PROPN Against<Deli>ADP Drugs<Deli>PROPN and<Deli>CCONJ Alcohol<Deli>PROPN event<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON were<Deli>AUX very<Deli>ADV professional<Deli>ADJ ,<Deli>PUNCT neat<Deli>ADJ and<Deli>CCONJ clean<Deli>ADJ .<Deli>PUNCT 
+They<Deli>PRON came<Deli>VERB through<Deli>ADV on<Deli>ADP all<Deli>DET of<Deli>ADP their<Deli>PRON promises<Deli>NOUN and<Deli>CCONJ we<Deli>PRON had<Deli>VERB a<Deli>DET very<Deli>ADV successful<Deli>ADJ day<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON will<Deli>AUX be<Deli>AUX using<Deli>VERB Bridies<Deli>PROPN again<Deli>ADV .<Deli>PUNCT 
+Rooms<Deli>NOUN were<Deli>AUX outdated<Deli>ADJ ,<Deli>PUNCT dirty<Deli>ADJ ,<Deli>PUNCT and<Deli>CCONJ small<Deli>ADJ .<Deli>PUNCT 
+Service<Deli>NOUN was<Deli>AUX horrible<Deli>ADJ .<Deli>PUNCT 
+Go<Deli>VERB down<Deli>ADV 1<Deli>NUM block<Deli>NOUN to<Deli>ADP Super<Deli>PROPN 8<Deli>PROPN .<Deli>PUNCT 
+Clean<Deli>ADJ &<Deli>CCONJ tidy<Deli>ADJ with<Deli>ADP good<Deli>ADJ atmosphere<Deli>NOUN &<Deli>CCONJ pleasant<Deli>ADJ staff<Deli>NOUN .<Deli>PUNCT 
+Food<Deli>NOUN drastically<Deli>ADV let's<Deli>VERB the<Deli>DET place<Deli>NOUN down<Deli>ADP though<Deli>ADV 
+Hobbs<Deli>PROPN on<Deli>ADP Mass<Deli>PROPN .<Deli>PUNCT 
+Absolutely<Deli>ADV my<Deli>PRON favorite<Deli>ADJ store<Deli>NOUN in<Deli>ADP Lawrence<Deli>PROPN ,<Deli>PUNCT KS<Deli>PROPN 
+Quick<Deli>ADJ and<Deli>CCONJ Cheap<Deli>ADJ 
+Walked<Deli>VERB in<Deli>ADV and<Deli>CCONJ was<Deli>VERB out<Deli>ADP ta<Deli>ADP there<Deli>ADV in<Deli>ADP 10<Deli>NUM mins<Deli>NOUN with<Deli>ADP a<Deli>DET really<Deli>ADV good<Deli>ADJ deal<Deli>NOUN i<Deli>PRON thought<Deli>VERB i<Deli>PRON was<Deli>AUX going<Deli>VERB to<Deli>PART be<Deli>AUX paying<Deli>VERB a<Deli>DET lot<Deli>NOUN because<Deli>SCONJ i<Deli>PRON had<Deli>VERB a<Deli>DET DUI<Deli>NOUN but<Deli>CCONJ with<Deli>ADP my<Deli>PRON DUI<Deli>NOUN and<Deli>CCONJ Sr<Deli>NOUN -<Deli>PUNCT 22<Deli>NUM they<Deli>PRON were<Deli>AUX able<Deli>ADJ to<Deli>PART get<Deli>VERB me<Deli>PRON the<Deli>DET best<Deli>ADJ deal<Deli>NOUN out<Deli>ADV there<Deli>ADV .<Deli>PUNCT 
+Awesome<Deli>ADJ bacon<Deli>NOUN egg<Deli>NOUN and<Deli>CCONJ cheese<Deli>NOUN sandwich<Deli>NOUN for<Deli>ADP breakfast<Deli>NOUN .<Deli>PUNCT 
+You<Deli>PRON are<Deli>AUX the<Deli>DET best<Deli>ADJ !<Deli>PUNCT 
+Just<Deli>ADV received<Deli>VERB from<Deli>ADP your<Deli>PRON flower<Deli>NOUN store<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON are<Deli>AUX sooooo<Deli>ADV beautiful<Deli>ADJ .<Deli>PUNCT 
+Thank<Deli>VERB you<Deli>PRON guys<Deli>NOUN .<Deli>PUNCT 
+Took<Deli>VERB a<Deli>DET laptop<Deli>NOUN in<Deli>ADV for<Deli>SCONJ a<Deli>DET video<Deli>NOUN cable<Deli>NOUN to<Deli>PART be<Deli>AUX replaced<Deli>VERB .<Deli>PUNCT 
+Everything<Deli>PRON except<Deli>ADP the<Deli>DET display<Deli>NOUN worked<Deli>VERB fine<Deli>ADV before<Deli>SCONJ I<Deli>PRON took<Deli>VERB it<Deli>PRON in<Deli>ADV .<Deli>PUNCT 
+The<Deli>DET video<Deli>NOUN cable<Deli>NOUN was<Deli>AUX replaced<Deli>VERB and<Deli>CCONJ suddenly<Deli>ADV the<Deli>DET motherboard<Deli>NOUN was<Deli>AUX dead<Deli>ADJ .<Deli>PUNCT 
+Phone<Deli>NOUN calls<Deli>NOUN were<Deli>AUX n't<Deli>PART returned<Deli>VERB when<Deli>ADV promised<Deli>VERB and<Deli>CCONJ the<Deli>DET botched<Deli>VERB repair<Deli>NOUN took<Deli>VERB a<Deli>DET week<Deli>NOUN longer<Deli>ADV than<Deli>SCONJ promised<Deli>VERB .<Deli>PUNCT 
+great<Deli>ADJ garage<Deli>NOUN and<Deli>CCONJ customer<Deli>NOUN service<Deli>NOUN .<Deli>PUNCT 
+great<Deli>ADJ knowledge<Deli>NOUN and<Deli>CCONJ prices<Deli>NOUN compared<Deli>VERB to<Deli>ADP anyone<Deli>PRON in<Deli>ADP the<Deli>DET industry<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ People<Deli>NOUN and<Deli>CCONJ even<Deli>ADV better<Deli>ADJ service<Deli>NOUN !<Deli>PUNCT 
+Best<Deli>ADJ to<Deli>PART deal<Deli>VERB with<Deli>ADP !<Deli>PUNCT 
+In<Deli>ADP a<Deli>DET few<Deli>ADJ words<Deli>NOUN ...<Deli>PUNCT I<Deli>PRON 'm<Deli>AUX pleasantly<Deli>ADV surprised<Deli>ADJ that<Deli>SCONJ you<Deli>PRON can<Deli>AUX still<Deli>ADV find<Deli>VERB "<Deli>PUNCT old<Deli>ADJ school<Deli>NOUN "<Deli>PUNCT service<Deli>NOUN out<Deli>ADV there<Deli>ADV where<Deli>ADV company<Deli>NOUN care<Deli>VERB more<Deli>ADV about<Deli>ADP good<Deli>ADJ name<Deli>NOUN and<Deli>CCONJ customers<Deli>NOUN than<Deli>ADP their<Deli>PRON pockets<Deli>NOUN ...<Deli>PUNCT 
+Highly<Deli>ADV recommended<Deli>VERB people<Deli>NOUN /<Deli>PUNCT business<Deli>NOUN .<Deli>PUNCT 
+Thanks<Deli>NOUN Josh<Deli>PROPN !<Deli>PUNCT 
+Cheapest<Deli>ADJ drinks<Deli>NOUN in<Deli>ADP Keene<Deli>PROPN !<Deli>PUNCT 
+Remember<Deli>VERB seeing<Deli>VERB "<Deli>PUNCT Stop<Deli>VERB Making<Deli>VERB Sense<Deli>PROPN "<Deli>PUNCT at<Deli>ADP Cinema<Deli>PROPN 21<Deli>NUM multiple<Deli>ADJ times<Deli>NOUN !<Deli>PUNCT 
+YAY<Deli>INTJ ,<Deli>PUNCT great<Deli>ADJ theater<Deli>NOUN !!!<Deli>PUNCT 
+Lovley<Deli>ADJ food<Deli>NOUN and<Deli>CCONJ fab<Deli>ADJ chips<Deli>NOUN 
+Good<Deli>ADJ local<Deli>ADJ bike<Deli>NOUN shop<Deli>NOUN 
+Good<Deli>ADJ local<Deli>ADJ bike<Deli>NOUN shop<Deli>NOUN .<Deli>PUNCT 
+Jason<Deli>PROPN and<Deli>CCONJ the<Deli>DET boys<Deli>NOUN can<Deli>AUX do<Deli>VERB about<Deli>ADV anything<Deli>PRON you<Deli>PRON need<Deli>VERB .<Deli>PUNCT 
+The<Deli>DET shop<Deli>NOUN is<Deli>AUX located<Deli>VERB just<Deli>ADV off<Deli>ADP the<Deli>DET river<Deli>PROPN road<Deli>PROPN .<Deli>PUNCT 
+recommended<Deli>ADJ 
+Excellent<Deli>ADJ location<Deli>NOUN .<Deli>PUNCT 
+Good<Deli>ADJ sports<Deli>NOUN bar<Deli>NOUN .<Deli>PUNCT 
+Hyatt<Deli>PROPN web<Deli>NOUN site<Deli>NOUN improved<Deli>VERB .<Deli>PUNCT 
+Accurate<Deli>ADJ check<Deli>NOUN -<Deli>PUNCT out<Deli>NOUN .<Deli>PUNCT 
+Rooms<Deli>NOUN clean<Deli>ADJ .<Deli>PUNCT 
+Lifts<Deli>NOUN quick<Deli>ADJ ,<Deli>PUNCT clean<Deli>ADJ ,<Deli>PUNCT accurate<Deli>ADJ ,<Deli>PUNCT and<Deli>CCONJ correctly<Deli>ADV sized<Deli>VERB .<Deli>PUNCT 
+Choose<Deli>VERB this<Deli>DET hotel<Deli>NOUN over<Deli>ADP the<Deli>DET Hilton<Deli>PROPN (<Deli>PUNCT which<Deli>PRON is<Deli>AUX on<Deli>ADP the<Deli>DET next<Deli>ADJ block<Deli>NOUN )<Deli>PUNCT .<Deli>PUNCT 
+Nice<Deli>ADJ teachers<Deli>NOUN good<Deli>ADJ school<Deli>NOUN 
+They<Deli>PRON are<Deli>AUX very<Deli>ADV good<Deli>ADJ teachers<Deli>NOUN and<Deli>CCONJ nice<Deli>ADJ people<Deli>NOUN to<Deli>PART meet<Deli>VERB here<Deli>ADV .<Deli>PUNCT 
+I<Deli>PRON enjoyed<Deli>VERB very<Deli>ADV much<Deli>ADV to<Deli>PART study<Deli>VERB here<Deli>ADV .<Deli>PUNCT 
+A<Deli>DET good<Deli>ADJ place<Deli>NOUN to<Deli>PART improve<Deli>VERB your<Deli>PRON English<Deli>PROPN 
+Thanks<Deli>NOUN For<Deli>ADP A<Deli>DET Great<Deli>ADJ Job<Deli>NOUN 
+Thanks<Deli>NOUN For<Deli>ADP The<Deli>DET Prompt<Deli>ADJ Service<Deli>NOUN And<Deli>CCONJ Great<Deli>ADJ Job<Deli>NOUN You<Deli>PRON And<Deli>CCONJ Your<Deli>PRON Boys<Deli>NOUN Have<Deli>AUX Done<Deli>VERB On<Deli>ADP Our<Deli>PRON New<Deli>ADJ Solar<Deli>ADJ System<Deli>NOUN ,<Deli>PUNCT The<Deli>DET Panels<Deli>NOUN On<Deli>ADP The<Deli>DET Roof<Deli>NOUN Look<Deli>VERB Great<Deli>ADJ And<Deli>CCONJ The<Deli>DET Power<Deli>NOUN We<Deli>PRON Are<Deli>AUX Putting<Deli>VERB Back<Deli>ADV In<Deli>X To<Deli>ADP The<Deli>DET Grid<Deli>NOUN Is<Deli>AUX Great<Deli>ADJ ,<Deli>PUNCT Great<Deli>ADJ Job<Deli>NOUN Thanks<Deli>NOUN 
+I<Deli>PRON won<Deli>VERB a<Deli>DET golf<Deli>NOUN lesson<Deli>NOUN certificate<Deli>NOUN with<Deli>ADP Adz<Deli>PROPN through<Deli>ADP a<Deli>DET charity<Deli>NOUN auction<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET lesson<Deli>NOUN was<Deli>AUX donated<Deli>VERB by<Deli>ADP the<Deli>DET teacher<Deli>NOUN Adz<Deli>PROPN .<Deli>PUNCT 
+So<Deli>ADV i<Deli>PRON booked<Deli>VERB the<Deli>DET lesson<Deli>NOUN and<Deli>CCONJ loved<Deli>VERB it<Deli>PRON .<Deli>PUNCT 
+Great<Deli>ADJ teacher<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON 'm<Deli>AUX really<Deli>ADV surprised<Deli>VERB by<Deli>ADP the<Deli>DET negative<Deli>ADJ reviews<Deli>NOUN .<Deli>PUNCT 
+We<Deli>PRON 've<Deli>AUX had<Deli>VERB about<Deli>ADV 5<Deli>NUM repairs<Deli>NOUN done<Deli>VERB on<Deli>ADP 3<Deli>NUM different<Deli>ADJ laptops<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON 've<Deli>AUX always<Deli>ADV been<Deli>AUX timely<Deli>ADJ and<Deli>CCONJ inexpensive<Deli>ADJ .<Deli>PUNCT 
+Great<Deli>ADJ Meal<Deli>NOUN 
+Happened<Deli>VERB on<Deli>ADP to<Deli>ADP this<Deli>DET place<Deli>NOUN while<Deli>SCONJ out<Deli>ADP of<Deli>ADP town<Deli>NOUN on<Deli>ADP business<Deli>NOUN ,<Deli>PUNCT and<Deli>CCONJ it<Deli>PRON was<Deli>AUX great<Deli>ADJ !<Deli>PUNCT 
+The<Deli>DET food<Deli>NOUN was<Deli>AUX excellent<Deli>ADJ and<Deli>CCONJ the<Deli>DET service<Deli>NOUN was<Deli>AUX terrific<Deli>ADJ .<Deli>PUNCT 
+It<Deli>PRON is<Deli>AUX a<Deli>DET cloth<Deli>NOUN napkin<Deli>NOUN kind<Deli>NOUN of<Deli>ADP place<Deli>NOUN ,<Deli>PUNCT but<Deli>CCONJ I<Deli>PRON thought<Deli>VERB well<Deli>ADV worth<Deli>ADJ it<Deli>PRON .<Deli>PUNCT 
+Excellent<Deli>ADJ service<Deli>NOUN ,<Deli>PUNCT close<Deli>ADJ to<Deli>ADP the<Deli>DET morse<Deli>PROPN red<Deli>PROPN line<Deli>PROPN stop<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ computer<Deli>NOUN repair<Deli>NOUN store<Deli>NOUN ,<Deli>PUNCT highly<Deli>ADV recommended<Deli>VERB .<Deli>PUNCT 
+Ca<Deli>AUX n't<Deli>PART say<Deli>VERB enough<Deli>ADJ 
+I<Deli>PRON used<Deli>VERB to<Deli>PART tan<Deli>VERB down<Deli>ADP the<Deli>DET street<Deli>NOUN before<Deli>SCONJ I<Deli>PRON was<Deli>AUX referred<Deli>VERB to<Deli>ADP this<Deli>DET place<Deli>NOUN by<Deli>ADP one<Deli>NUM of<Deli>ADP my<Deli>PRON friends<Deli>NOUN .<Deli>PUNCT 
+WOW<Deli>INTJ !<Deli>PUNCT 
+I<Deli>PRON did<Deli>AUX n't<Deli>PART know<Deli>VERB what<Deli>PRON I<Deli>PRON was<Deli>AUX missing<Deli>VERB .<Deli>PUNCT 
+The<Deli>DET lowest<Deli>ADJ bed<Deli>NOUN here<Deli>ADV is<Deli>AUX better<Deli>ADJ than<Deli>ADP my<Deli>PRON last<Deli>ADJ salon<Deli>NOUN s<Deli>PART highest<Deli>ADJ level<Deli>NOUN .<Deli>PUNCT 
+Salon<Deli>NOUN is<Deli>AUX clean<Deli>ADJ and<Deli>CCONJ girls<Deli>NOUN are<Deli>AUX nice<Deli>ADJ .<Deli>PUNCT 
+This<Deli>PRON is<Deli>AUX not<Deli>PART your<Deli>PRON usual<Deli>ADJ cheap<Deli>ADJ hotdog<Deli>NOUN place<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON offer<Deli>VERB a<Deli>DET large<Deli>ADJ variety<Deli>NOUN of<Deli>ADP quality<Deli>ADJ hotdogs<Deli>NOUN and<Deli>CCONJ hamburgers<Deli>NOUN They<Deli>PRON also<Deli>ADV offer<Deli>VERB veggie<Deli>NOUN dogs<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET fries<Deli>NOUN are<Deli>AUX of<Deli>ADP good<Deli>ADJ quality<Deli>NOUN ,<Deli>PUNCT the<Deli>DET staff<Deli>NOUN is<Deli>AUX friendly<Deli>ADJ .<Deli>PUNCT 
+The<Deli>DET atmosphere<Deli>NOUN is<Deli>AUX your<Deli>PRON typical<Deli>ADJ indie<Deli>ADJ outfit<Deli>NOUN with<Deli>ADP old<Deli>ADJ movie<Deli>NOUN posters<Deli>NOUN and<Deli>CCONJ memorabilia<Deli>NOUN from<Deli>ADP the<Deli>DET 70's<Deli>NOUN and<Deli>CCONJ 80's<Deli>NOUN .<Deli>PUNCT 
+Kliotech<Deli>PROPN 
+A<Deli>DET company<Deli>NOUN which<Deli>PRON provide<Deli>VERB good<Deli>ADJ quality<Deli>NOUN portals<Deli>NOUN ,<Deli>PUNCT E-commerce<Deli>NOUN solutions<Deli>NOUN ,<Deli>PUNCT web<Deli>NOUN based<Deli>VERB MMOG<Deli>NOUN ...<Deli>PUNCT etc<Deli>X 
+Wrong<Deli>ADJ Information<Deli>NOUN 
+The<Deli>DET address<Deli>NOUN is<Deli>AUX for<Deli>ADP Noida<Deli>PROPN Location<Deli>NOUN not<Deli>ADV for<Deli>ADP Gurgaon<Deli>PROPN Location<Deli>NOUN .<Deli>PUNCT 
+Please<Deli>INTJ update<Deli>VERB this<Deli>DET listing<Deli>NOUN in<Deli>ADP you<Deli>PRON database<Deli>NOUN .<Deli>PUNCT 
+great<Deli>ADJ !<Deli>PUNCT :P<Deli>SYM 
+you<Deli>PRON get<Deli>VERB a<Deli>DET really<Deli>ADV good<Deli>ADJ view<Deli>NOUN of<Deli>ADP the<Deli>DET city<Deli>NOUN and<Deli>CCONJ there<Deli>PRON is<Deli>VERB also<Deli>ADV attractions<Deli>NOUN like<Deli>ADP simulator<Deli>NOUN ,<Deli>PUNCT short<Deli>ADJ movies<Deli>NOUN .<Deli>PUNCT 
+Try<Deli>VERB the<Deli>DET 360<Deli>NUM restraunt<Deli>NOUN u<Deli>PRON spin<Deli>VERB in<Deli>ADP the<Deli>DET cn<Deli>PROPN tower<Deli>PROPN with<Deli>ADP a<Deli>DET beautiful<Deli>ADJ view<Deli>NOUN the<Deli>DET sky<Deli>NOUN pod<Deli>NOUN elevator<Deli>NOUN is<Deli>AUX about<Deli>ADV an<Deli>DET hour<Deli>NOUN line<Deli>NOUN up<Deli>NOUN in<Deli>ADP the<Deli>DET summer<Deli>NOUN 
+I<Deli>PRON am<Deli>AUX a<Deli>DET new<Deli>ADJ patient<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON have<Deli>AUX visited<Deli>VERB Dr.<Deli>PROPN Cooper<Deli>PROPN 's<Deli>PART office<Deli>NOUN twice<Deli>ADV and<Deli>CCONJ I<Deli>PRON am<Deli>AUX very<Deli>ADV impressed<Deli>ADJ with<Deli>SCONJ how<Deli>ADV friendly<Deli>ADJ and<Deli>CCONJ polite<Deli>ADJ the<Deli>DET staff<Deli>NOUN is<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON found<Deli>VERB the<Deli>DET office<Deli>NOUN to<Deli>PART be<Deli>AUX very<Deli>ADV clean<Deli>ADJ and<Deli>CCONJ professional<Deli>ADJ -<Deli>PUNCT looking<Deli>VERB .<Deli>PUNCT 
+It<Deli>PRON 's<Deli>AUX now<Deli>ADV called<Deli>VERB Sushi<Deli>PROPN Lover<Deli>PROPN .<Deli>PUNCT 
+Food<Deli>NOUN is<Deli>AUX just<Deli>ADV okay<Deli>ADJ ..<Deli>PUNCT wo<Deli>AUX n't<Deli>PART crave<Deli>VERB it<Deli>PRON ,<Deli>PUNCT but<Deli>CCONJ would<Deli>AUX n't<Deli>PART mind<Deli>VERB coming<Deli>VERB back<Deli>ADV for<Deli>ADP a<Deli>DET quick<Deli>ADJ meal<Deli>NOUN .<Deli>PUNCT 
+Horrible<Deli>ADJ tap<Deli>NOUN water<Deli>NOUN .<Deli>PUNCT 
+But<Deli>CCONJ no<Deli>DET other<Deli>ADJ complaints<Deli>NOUN .<Deli>PUNCT 
+This<Deli>PRON is<Deli>AUX a<Deli>DET great<Deli>ADJ facility<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ instructors<Deli>NOUN !<Deli>PUNCT 
+Most<Deli>ADV of<Deli>ADP all<Deli>DET ,<Deli>PUNCT my<Deli>PRON daughter<Deli>NOUN loves<Deli>VERB it<Deli>PRON !<Deli>PUNCT 
+Miami<Deli>PROPN 's<Deli>PART best<Deli>ADJ tutoring<Deli>NOUN service<Deli>NOUN !<Deli>PUNCT 
+My<Deli>PRON son<Deli>NOUN was<Deli>AUX able<Deli>ADJ to<Deli>PART advance<Deli>VERB a<Deli>DET full<Deli>ADJ two<Deli>NUM grades<Deli>NOUN within<Deli>ADP 9<Deli>NUM months<Deli>NOUN !<Deli>PUNCT 
+A<Deli>DET wonderful<Deli>ADJ tutoring<Deli>NOUN service<Deli>NOUN for<Deli>ADP students<Deli>NOUN needing<Deli>VERB help<Deli>NOUN with<Deli>ADP elementary<Deli>ADJ -<Deli>PUNCT middle<Deli>NOUN school<Deli>NOUN work<Deli>NOUN .<Deli>PUNCT 
+LOCATION<Deli>NOUN HAS<Deli>AUX CLOSED<Deli>VERB .<Deli>PUNCT 
+HAS<Deli>AUX MOVED<Deli>VERB TO<Deli>ADP 4783<Deli>NUM Bay<Deli>PROPN Rd<Deli>PROPN Saginaw<Deli>PROPN ,<Deli>PUNCT Michigan<Deli>PROPN 48604<Deli>NUM (<Deli>PUNCT 989<Deli>NUM )<Deli>PUNCT 755-1109<Deli>NUM 
+$<Deli>SYM 9.62<Deli>NUM excluding<Deli>VERB tip<Deli>NOUN with<Deli>ADP water<Deli>NOUN to<Deli>PART drink<Deli>VERB for<Deli>ADP the<Deli>DET buffet<Deli>NOUN .<Deli>PUNCT 
+Worst<Deli>ADJ buffet<Deli>NOUN period<Deli>NOUN by<Deli>ADP far<Deli>ADV .<Deli>PUNCT 
+I<Deli>PRON want<Deli>VERB my<Deli>PRON money<Deli>NOUN back<Deli>ADV !<Deli>PUNCT 
+Great<Deli>ADJ Place<Deli>NOUN !<Deli>PUNCT 
+This<Deli>PRON is<Deli>AUX one<Deli>NUM of<Deli>ADP my<Deli>PRON favorite<Deli>ADJ places<Deli>NOUN to<Deli>PART eat<Deli>VERB for<Deli>ADP lunch<Deli>NOUN .<Deli>PUNCT 
+They<Deli>PRON offer<Deli>VERB a<Deli>DET good<Deli>ADJ portions<Deli>NOUN at<Deli>ADP a<Deli>DET great<Deli>ADJ price<Deli>NOUN ,<Deli>PUNCT it<Deli>PRON 's<Deli>AUX enough<Deli>ADJ food<Deli>NOUN to<Deli>PART fill<Deli>VERB you<Deli>PRON up<Deli>ADP ,<Deli>PUNCT but<Deli>CCONJ you<Deli>PRON do<Deli>AUX n't<Deli>PART ever<Deli>ADV feel<Deli>VERB like<Deli>SCONJ you<Deli>PRON ate<Deli>VERB too<Deli>ADV much<Deli>ADJ .<Deli>PUNCT 
+Plus<Deli>CCONJ ,<Deli>PUNCT it<Deli>PRON 's<Deli>AUX super<Deli>ADV healthy<Deli>ADJ !<Deli>PUNCT 
+love<Deli>VERB this<Deli>DET park<Deli>NOUN 
+this<Deli>PRON is<Deli>AUX a<Deli>DET great<Deli>ADJ park<Deli>NOUN to<Deli>PART have<Deli>VERB kids<Deli>NOUN birthday<Deli>NOUN parties<Deli>NOUN at<Deli>ADP !!<Deli>PUNCT 
+Natasha<Deli>PROPN is<Deli>AUX the<Deli>DET BEST<Deli>ADJ photographer<Deli>NOUN we<Deli>PRON have<Deli>AUX ever<Deli>ADV worked<Deli>VERB with<Deli>ADP .<Deli>PUNCT 
+She<Deli>PRON has<Deli>VERB a<Deli>DET great<Deli>ADJ way<Deli>NOUN with<Deli>ADP children<Deli>NOUN and<Deli>CCONJ is<Deli>AUX able<Deli>ADJ to<Deli>PART capture<Deli>VERB their<Deli>PRON personality<Deli>NOUN as<Deli>ADV well<Deli>ADV as<Deli>ADP many<Deli>ADJ spontaneous<Deli>ADJ images<Deli>NOUN .<Deli>PUNCT 
+You<Deli>PRON will<Deli>AUX not<Deli>PART be<Deli>AUX disappointed<Deli>VERB with<Deli>ADP her<Deli>PRON work<Deli>NOUN !!<Deli>PUNCT 
+Dentist<Deli>NOUN you<Deli>PRON can<Deli>AUX trust<Deli>VERB 
+If<Deli>SCONJ possible<Deli>ADJ I<Deli>PRON try<Deli>VERB the<Deli>DET services<Deli>NOUN on<Deli>ADP myself<Deli>PRON before<Deli>SCONJ I<Deli>PRON bring<Deli>VERB in<Deli>ADV my<Deli>PRON son<Deli>NOUN .<Deli>PUNCT 
+Drs.<Deli>PROPN Ali<Deli>PROPN work<Deli>VERB wonders<Deli>NOUN .<Deli>PUNCT 
+Neither<Deli>CCONJ me<Deli>PRON nor<Deli>CCONJ my<Deli>PRON son<Deli>NOUN have<Deli>AUX n't<Deli>PART had<Deli>VERB a<Deli>DET single<Deli>ADJ cavity<Deli>NOUN since<Deli>SCONJ we<Deli>PRON started<Deli>VERB dental<Deli>ADJ care<Deli>NOUN there<Deli>ADV .<Deli>PUNCT 
+The<Deli>DET team<Deli>NOUN focus<Deli>NOUN is<Deli>AUX prevention<Deli>NOUN and<Deli>CCONJ education<Deli>NOUN .<Deli>PUNCT 
+That<Deli>PRON alone<Deli>ADJ makes<Deli>VERB them<Deli>PRON unique<Deli>ADJ .<Deli>PUNCT 
+Midtown<Deli>PROPN Reston<Deli>PROPN has<Deli>VERB great<Deli>ADJ location<Deli>NOUN and<Deli>CCONJ luxurious<Deli>ADJ environment<Deli>NOUN .<Deli>PUNCT 
+Really<Deli>ADV enjoyed<Deli>VERB it<Deli>PRON .<Deli>PUNCT 
+Great<Deli>ADJ atmosphere<Deli>NOUN ,<Deli>PUNCT great<Deli>ADJ food<Deli>NOUN .<Deli>PUNCT 
+Definitely<Deli>ADV a<Deli>DET must<Deli>NOUN .<Deli>PUNCT 
+Summary<Deli>NOUN :<Deli>PUNCT Not<Deli>ADV cheep<Deli>ADJ ,<Deli>PUNCT but<Deli>CCONJ very<Deli>ADV fast<Deli>ADJ ,<Deli>PUNCT and<Deli>CCONJ super<Deli>ADV friendly<Deli>ADJ service<Deli>NOUN .<Deli>PUNCT 
+Quality<Deli>NOUN of<Deli>ADP work<Deli>NOUN is<Deli>AUX sufficient<Deli>ADJ but<Deli>CCONJ not<Deli>ADV outstanding<Deli>ADJ .<Deli>PUNCT 
+Like<Deli>ADP all<Deli>DET oil<Deli>NOUN place<Deli>NOUN changes<Deli>NOUN ,<Deli>PUNCT ask<Deli>VERB /<Deli>SYM recommend<Deli>VERB the<Deli>DET 100<Deli>NUM other<Deli>ADJ services<Deli>NOUN they<Deli>PRON have<Deli>VERB .<Deli>PUNCT 
+Will<Deli>AUX be<Deli>AUX a<Deli>DET repeat<Deli>NOUN customer<Deli>NOUN with<Deli>ADP discount<Deli>NOUN coupons<Deli>NOUN .<Deli>PUNCT 
+Wonderful<Deli>ADJ staff<Deli>NOUN and<Deli>CCONJ great<Deli>ADJ service<Deli>NOUN !!<Deli>PUNCT 
+Checked<Deli>VERB in<Deli>ADP real<Deli>ADV late<Deli>ADV ,<Deli>PUNCT but<Deli>CCONJ staff<Deli>NOUN was<Deli>AUX very<Deli>ADV kind<Deli>ADJ and<Deli>CCONJ helpful<Deli>ADJ .<Deli>PUNCT 
+Rooms<Deli>NOUN very<Deli>ADV clean<Deli>ADJ and<Deli>CCONJ smelled<Deli>VERB very<Deli>ADV fresh<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON would<Deli>AUX recommend<Deli>VERB this<Deli>DET hotel<Deli>NOUN to<Deli>ADP anyone<Deli>PRON .<Deli>PUNCT 
+I<Deli>PRON loved<Deli>VERB my<Deli>PRON stay<Deli>NOUN here<Deli>ADV and<Deli>CCONJ if<Deli>SCONJ ever<Deli>ADV back<Deli>ADV in<Deli>ADP the<Deli>DET area<Deli>NOUN ,<Deli>PUNCT I<Deli>PRON will<Deli>AUX be<Deli>AUX staying<Deli>VERB here<Deli>ADV again<Deli>ADV .<Deli>PUNCT 
+Some<Deli>DET of<Deli>ADP the<Deli>DET nicest<Deli>ADJ people<Deli>NOUN and<Deli>CCONJ very<Deli>ADV good<Deli>ADJ work<Deli>NOUN standards<Deli>NOUN 
+Thanks<Deli>NOUN for<Deli>SCONJ following<Deli>VERB me<Deli>PRON around<Deli>ADP the<Deli>DET store<Deli>NOUN 
+Enough<Deli>ADJ said<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON do<Deli>AUX n't<Deli>PART steal<Deli>VERB ,<Deli>PUNCT I<Deli>PRON was<Deli>AUX n't<Deli>PART acting<Deli>VERB suspiciously<Deli>ADV .<Deli>PUNCT 
+I<Deli>PRON was<Deli>AUX ready<Deli>ADJ to<Deli>PART buy<Deli>VERB a<Deli>DET new<Deli>ADJ jacket<Deli>NOUN ,<Deli>PUNCT a<Deli>DET new<Deli>ADJ sweater<Deli>NOUN and<Deli>CCONJ a<Deli>DET couple<Deli>NOUN of<Deli>ADP your<Deli>PRON overpriced<Deli>ADJ belts<Deli>NOUN and<Deli>CCONJ I<Deli>PRON walked<Deli>VERB out<Deli>ADV because<Deli>ADP of<Deli>ADP your<Deli>PRON obvious<Deli>ADJ lurking<Deli>NOUN 
+The<Deli>DET best<Deli>ADJ pizza<Deli>NOUN ever<Deli>ADV i<Deli>PRON m<Deli>AUX fat<Deli>ADJ so<Deli>ADV i<Deli>PRON ve<Deli>AUX had<Deli>VERB a<Deli>DET ton<Deli>NOUN of<Deli>ADP pizza<Deli>NOUN other<Deli>ADJ than<Deli>ADP pizza<Deli>NOUN from<Deli>ADP chicago<Deli>PROPN it<Deli>PRON s<Deli>AUX the<Deli>DET best<Deli>ADJ 
+Very<Deli>ADV poor<Deli>ADJ customer<Deli>NOUN service<Deli>NOUN .<Deli>PUNCT 
+There<Deli>PRON are<Deli>VERB a<Deli>DET couple<Deli>NOUN decent<Deli>ADJ people<Deli>NOUN working<Deli>VERB there<Deli>ADV ,<Deli>PUNCT but<Deli>CCONJ the<Deli>DET rest<Deli>ADJ are<Deli>AUX VERY<Deli>ADV dishonest<Deli>ADJ ,<Deli>PUNCT as<Deli>ADV well<Deli>ADV as<Deli>ADP rude<Deli>ADJ ,<Deli>PUNCT I<Deli>PRON have<Deli>VERB yet<Deli>ADV to<Deli>PART hear<Deli>VERB the<Deli>DET truth<Deli>NOUN come<Deli>VERB out<Deli>ADP of<Deli>ADP their<Deli>PRON mouths<Deli>NOUN .<Deli>PUNCT 
+The<Deli>DET food<Deli>NOUN tasted<Deli>VERB like<Deli>ADP rat<Deli>NOUN feces<Deli>NOUN 
+Nice<Deli>ADJ and<Deli>CCONJ quiet<Deli>ADJ place<Deli>NOUN with<Deli>ADP cosy<Deli>ADJ living<Deli>NOUN room<Deli>NOUN just<Deli>ADV outside<Deli>ADP the<Deli>DET city<Deli>NOUN .<Deli>PUNCT 
+Excellent<Deli>ADJ piano<Deli>NOUN lessons<Deli>NOUN 
+I<Deli>PRON 'm<Deli>AUX very<Deli>ADV happy<Deli>ADJ with<Deli>ADP the<Deli>DET piano<Deli>NOUN lessons<Deli>NOUN Mrs.<Deli>PROPN Lynda<Deli>PROPN Mcmanus<Deli>PROPN taught<Deli>VERB me<Deli>PRON .<Deli>PUNCT 
+Now<Deli>ADV I<Deli>PRON 'm<Deli>AUX able<Deli>ADJ to<Deli>PART play<Deli>VERB the<Deli>DET piano<Deli>NOUN pretty<Deli>ADV well<Deli>ADV .<Deli>PUNCT 
+Caldwell<Deli>PROPN insurance<Deli>PROPN has<Deli>AUX been<Deli>AUX doing<Deli>VERB our<Deli>PRON insurance<Deli>NOUN for<Deli>ADP a<Deli>DET couple<Deli>NOUN years<Deli>NOUN now<Deli>ADV and<Deli>CCONJ they<Deli>PRON have<Deli>AUX been<Deli>AUX extremely<Deli>ADV thorough<Deli>ADJ .<Deli>PUNCT 
+We<Deli>PRON 've<Deli>AUX only<Deli>ADV had<Deli>VERB one<Deli>NUM urgent<Deli>ADJ issue<Deli>NOUN to<Deli>PART deal<Deli>VERB with<Deli>ADP and<Deli>CCONJ they<Deli>PRON were<Deli>AUX very<Deli>ADV prompt<Deli>ADJ in<Deli>ADP their<Deli>PRON response<Deli>NOUN .<Deli>PUNCT 
+Highly<Deli>ADV recommend<Deli>VERB !<Deli>PUNCT 
+Easy<Deli>ADJ registration<Deli>NOUN ,<Deli>PUNCT helpful<Deli>ADJ staff<Deli>NOUN and<Deli>CCONJ fun<Deli>ADJ teachers<Deli>NOUN !<Deli>PUNCT 
+My<Deli>PRON favorite<Deli>ADJ place<Deli>NOUN to<Deli>PART eat<Deli>VERB .<Deli>PUNCT 
+The<Deli>DET Atmosphere<Deli>NOUN is<Deli>AUX the<Deli>DET best<Deli>ADJ ..<Deli>PUNCT Italian<Deli>ADJ music<Deli>NOUN ,<Deli>PUNCT candles<Deli>NOUN ,<Deli>PUNCT helpful<Deli>ADJ and<Deli>CCONJ friendly<Deli>ADJ staff<Deli>NOUN ...<Deli>PUNCT And<Deli>CCONJ the<Deli>DET food<Deli>NOUN is<Deli>AUX beautiful<Deli>ADJ too<Deli>ADV !<Deli>PUNCT 
+The<Deli>DET best<Deli>ADJ company<Deli>NOUN in<Deli>ADP Phuket<Deli>PROPN for<Deli>SCONJ creating<Deli>VERB website<Deli>NOUN and<Deli>CCONJ e-commerce<Deli>NOUN website<Deli>NOUN .<Deli>PUNCT 
+From<Deli>ADP first<Deli>ADJ meeting<Deli>NOUN with<Deli>ADP them<Deli>PRON to<Deli>ADP launch<Deli>NOUN of<Deli>ADP my<Deli>PRON website<Deli>NOUN ,<Deli>PUNCT everything<Deli>PRON went<Deli>VERB smooth<Deli>ADV and<Deli>CCONJ on<Deli>ADP schedule<Deli>NOUN .<Deli>PUNCT 
+Highly<Deli>ADV recommended<Deli>ADJ for<Deli>SCONJ who<Deli>PRON wants<Deli>VERB to<Deli>PART have<Deli>VERB website<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ with<Deli>ADP SEO<Deli>PROPN as<Deli>ADV well<Deli>ADV .<Deli>PUNCT 
+Great<Deli>ADJ service<Deli>NOUN 
+A<Deli>DET very<Deli>ADV well<Deli>ADV established<Deli>VERB service<Deli>NOUN with<Deli>ADP a<Deli>DET satisfying<Deli>ADJ outcome<Deli>NOUN .<Deli>PUNCT 
+A<Deli>DET well<Deli>ADV communicated<Deli>VERB and<Deli>CCONJ will<Deli>AUX be<Deli>AUX hireing<Deli>VERB again<Deli>ADV for<Deli>ADP another<Deli>DET projects<Deli>NOUN ......<Deli>PUNCT 
+Thanks<Deli>NOUN 
+You<Deli>PRON were<Deli>AUX extremely<Deli>ADV polite<Deli>ADJ and<Deli>CCONJ professional<Deli>ADJ .<Deli>PUNCT 
+Very<Deli>ADV Impressed<Deli>ADJ .<Deli>PUNCT 
+Great<Deli>ADJ electrician<Deli>NOUN .<Deli>PUNCT 
+Friendly<Deli>ADJ Efficient<Deli>ADJ and<Deli>CCONJ overall<Deli>ADV great<Deli>ADJ place<Deli>NOUN for<Deli>ADP people<Deli>NOUN in<Deli>ADP chronic<Deli>ADJ intractable<Deli>ADJ pain<Deli>NOUN 
+Great<Deli>ADJ place<Deli>NOUN for<Deli>ADP people<Deli>NOUN in<Deli>ADP chronic<Deli>ADJ pain<Deli>NOUN .<Deli>PUNCT 
+Staff<Deli>NOUN is<Deli>AUX very<Deli>ADV friendly<Deli>ADJ they<Deli>PRON treat<Deli>VERB you<Deli>PRON like<Deli>ADP a<Deli>DET human<Deli>ADJ being<Deli>NOUN and<Deli>CCONJ not<Deli>ADV just<Deli>ADV another<Deli>DET patient<Deli>NOUN .<Deli>PUNCT 
+Very<Deli>ADV efficient<Deli>ADJ at<Deli>SCONJ treating<Deli>VERB chronic<Deli>ADJ pain<Deli>NOUN !<Deli>PUNCT 
+Good<Deli>ADJ honest<Deli>ADJ wrok<Deli>NOUN 
+Harlan<Deli>PROPN provides<Deli>VERB great<Deli>ADJ service<Deli>NOUN .<Deli>PUNCT 
+He<Deli>PRON is<Deli>AUX very<Deli>ADV knowledgeable<Deli>ADJ and<Deli>CCONJ took<Deli>VERB the<Deli>DET time<Deli>NOUN to<Deli>PART explain<Deli>VERB the<Deli>DET repairs<Deli>NOUN to<Deli>ADP me<Deli>PRON .<Deli>PUNCT 
+The<Deli>DET work<Deli>NOUN on<Deli>ADP my<Deli>PRON car<Deli>NOUN was<Deli>AUX done<Deli>VERB quickly<Deli>ADV and<Deli>CCONJ I<Deli>PRON felt<Deli>VERB I<Deli>PRON could<Deli>AUX trust<Deli>VERB his<Deli>PRON work<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON have<Deli>VERB nothing<Deli>PRON but<Deli>ADP fantastic<Deli>ADJ things<Deli>NOUN to<Deli>PART say<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON highly<Deli>ADV recommend<Deli>VERB his<Deli>PRON shop<Deli>NOUN .<Deli>PUNCT 
+High<Deli>ADJ guality<Deli>NOUN pup<Deli>NOUN food<Deli>NOUN at<Deli>ADP a<Deli>DET good<Deli>ADJ price<Deli>NOUN .<Deli>PUNCT 
+Great<Deli>ADJ Place<Deli>NOUN To<Deli>PART Use<Deli>VERB The<Deli>PRON Fix<Deli>VERB appliances<Deli>NOUN Plumbing<Deli>PROPN Air<Deli>PROPN Conditioning<Deli>PROPN &<Deli>CCONJ Electric<Deli>PROPN Problems<Deli>PROPN .<Deli>PUNCT 
+We<Deli>PRON have<Deli>AUX used<Deli>VERB them<Deli>PRON for<Deli>ADP plumbing<Deli>NOUN &<Deli>CCONJ A<Deli>NOUN /<Deli>PUNCT C<Deli>NOUN and<Deli>CCONJ they<Deli>PRON are<Deli>AUX affordable<Deli>ADJ and<Deli>CCONJ get<Deli>VERB the<Deli>DET work<Deli>NOUN done<Deli>VERB right<Deli>ADJ .<Deli>PUNCT 
+Great<Deli>ADJ place<Deli>NOUN 5<Deli>NUM stars<Deli>NOUN for<Deli>ADP sure<Deli>ADJ .<Deli>PUNCT 
+Thanks<Deli>NOUN From<Deli>ADP Bill<Deli>PROPN 
+Favorite<Deli>ADJ Restaurant<Deli>NOUN 
+Best<Deli>ADJ yellow<Deli>ADJ curry<Deli>NOUN that<Deli>PRON I<Deli>PRON have<Deli>AUX ever<Deli>ADV tasted<Deli>VERB .<Deli>PUNCT 
+Staff<Deli>NOUN is<Deli>AUX super<Deli>ADV friendly<Deli>ADJ and<Deli>CCONJ very<Deli>ADV attentive<Deli>ADJ .<Deli>PUNCT 
+Price<Deli>NOUN is<Deli>AUX also<Deli>ADV very<Deli>ADV reasonable<Deli>ADJ .<Deli>PUNCT 
+No<Deli>DET meat<Deli>NOUN on<Deli>ADP Burger<Deli>NOUN and<Deli>CCONJ too<Deli>ADV much<Deli>ADJ pepper<Deli>NOUN .<Deli>PUNCT 
+no<Deli>DET place<Deli>NOUN to<Deli>PART seat<Deli>VERB 
+Well<Deli>ADV kept<Deli>VERB facility<Deli>NOUN with<Deli>ADP friendly<Deli>ADJ staff<Deli>NOUN .<Deli>PUNCT 
+Ray<Deli>PROPN 's<Deli>PART pizza<Deli>PROPN :<Deli>PUNCT my<Deli>PRON favorite<Deli>NOUN 
+Ray<Deli>PROPN 's<Deli>PART Pizza<Deli>PROPN is<Deli>AUX just<Deli>ADV too<Deli>ADV good<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON wish<Deli>VERB I<Deli>PRON could<Deli>AUX have<Deli>VERB a<Deli>DET slice<Deli>NOUN for<Deli>ADP every<Deli>DET single<Deli>ADJ meal<Deli>NOUN .<Deli>PUNCT 
+Luckily<Deli>ADV I<Deli>PRON live<Deli>VERB very<Deli>ADV close<Deli>ADV ,<Deli>PUNCT so<Deli>ADV I<Deli>PRON can<Deli>AUX abuse<Deli>VERB it<Deli>PRON during<Deli>ADP week<Deli>NOUN -<Deli>PUNCT ends<Deli>NOUN ...<Deli>PUNCT 
+beware<Deli>VERB they<Deli>PRON will<Deli>AUX rip<Deli>VERB u<Deli>PRON off<Deli>ADP 
+Excellent<Deli>ADJ service<Deli>NOUN !<Deli>PUNCT 
+I<Deli>PRON am<Deli>AUX so<Deli>ADV glad<Deli>ADJ that<Deli>SCONJ we<Deli>PRON now<Deli>ADV have<Deli>VERB a<Deli>DET good<Deli>ADJ nail<Deli>NOUN shop<Deli>NOUN on<Deli>ADP San<Deli>PROPN Mateo<Deli>PROPN Avenue<Deli>PROPN !<Deli>PUNCT 
+No<Deli>ADV more<Deli>ADV having<Deli>VERB to<Deli>PART drive<Deli>VERB to<Deli>ADP San<Deli>PROPN Francisco<Deli>PROPN for<Deli>ADP a<Deli>DET great<Deli>ADJ mani<Deli>NOUN pedi<Deli>NOUN .<Deli>PUNCT 
+Both<Deli>CCONJ Tina<Deli>PROPN and<Deli>CCONJ Vicky<Deli>PROPN are<Deli>AUX excellent<Deli>ADJ .<Deli>PUNCT 
+I<Deli>PRON will<Deli>AUX definitely<Deli>ADV refer<Deli>VERB my<Deli>PRON friends<Deli>NOUN and<Deli>CCONJ family<Deli>NOUN :)<Deli>SYM 
+Prime<Deli>ADJ rib<Deli>NOUN was<Deli>AUX very<Deli>ADV tough<Deli>ADJ .<Deli>PUNCT 
+Staff<Deli>NOUN were<Deli>AUX pleasant<Deli>ADJ .<Deli>PUNCT 
+Wo<Deli>AUX n't<Deli>PART return<Deli>VERB .<Deli>PUNCT 
+Is<Deli>AUX not<Deli>PART a<Deli>DET service<Deli>NOUN office<Deli>NOUN 
+This<Deli>PRON is<Deli>AUX a<Deli>DET delivery<Deli>NOUN office<Deli>NOUN only<Deli>ADV and<Deli>CCONJ does<Deli>AUX not<Deli>PART take<Deli>VERB walk<Deli>NOUN ins<Deli>NOUN but<Deli>CCONJ they<Deli>PRON do<Deli>AUX have<Deli>VERB a<Deli>DET blue<Deli>NOUN box<Deli>NOUN out<Deli>ADV front<Deli>ADV .<Deli>PUNCT 
+Glad<Deli>ADJ I<Deli>PRON called<Deli>VERB before<Deli>SCONJ I<Deli>PRON arrived<Deli>VERB with<Deli>ADP my<Deli>PRON box<Deli>NOUN to<Deli>PART ship<Deli>VERB .<Deli>PUNCT 
+Thought<Deli>VERB adding<Deli>VERB a<Deli>DET comment<Deli>NOUN would<Deli>AUX save<Deli>VERB someone<Deli>PRON the<Deli>DET hassle<Deli>NOUN with<Deli>ADP a<Deli>DET useless<Deli>ADJ trip<Deli>NOUN there<Deli>ADV .<Deli>PUNCT 
+GREAT<Deli>ADJ Store<Deli>NOUN GREAT<Deli>ADJ Service<Deli>NOUN !<Deli>PUNCT 
+“<Deli>PUNCT This<Deli>DET store<Deli>NOUN is<Deli>AUX great<Deli>ADJ !!<Deli>PUNCT 
+I<Deli>PRON love<Deli>VERB walking<Deli>VERB in<Deli>ADV and<Deli>CCONJ not<Deli>PART being<Deli>AUX hassled<Deli>VERB .<Deli>PUNCT 
+I<Deli>PRON was<Deli>AUX there<Deli>ADV when<Deli>ADV they<Deli>PRON did<Deli>VERB a<Deli>DET free<Deli>ADJ raffle<Deli>NOUN in<Deli>ADP August<Deli>PROPN and<Deli>CCONJ I<Deli>PRON won<Deli>VERB a<Deli>DET hard<Deli>ADJ drive<Deli>NOUN !<Deli>PUNCT 
+The<Deli>DET reason<Deli>NOUN I<Deli>PRON go<Deli>VERB back<Deli>ADV is<Deli>VERB because<Deli>SCONJ the<Deli>DET employees<Deli>NOUN are<Deli>AUX sooooo<Deli>ADV nice<Deli>ADJ .<Deli>PUNCT ”<Deli>PUNCT 
+VERYYYY<Deli>ADV !!!!<Deli>PUNCT VERYYY<Deli>ADV !!<Deli>PUNCT Good<Deli>ADJ auto<Deli>NOUN repair<Deli>NOUN men<Deli>NOUN .<Deli>PUNCT 
+Do<Deli>VERB the<Deli>DET job<Deli>NOUN honest<Deli>ADV and<Deli>CCONJ quickly<Deli>ADV as<Deli>SCONJ possible<Deli>ADJ .<Deli>PUNCT 
+Would<Deli>AUX 100<Deli>NUM %<Deli>SYM recomend<Deli>VERB to<Deli>ADP others<Deli>NOUN for<Deli>ADP a<Deli>DET great<Deli>ADJ service<Deli>NOUN .<Deli>PUNCT 
+Thank<Deli>VERB You<Deli>PRON Barry<Deli>PROPN s<Deli>PART Auto<Deli>PROPN Tech<Deli>PROPN !<Deli>PUNCT 
+Fantastic<Deli>ADJ Nova<Deli>PROPN Scotia<Deli>PROPN Cottage<Deli>NOUN 
+We<Deli>PRON had<Deli>VERB a<Deli>DET fantastic<Deli>ADJ time<Deli>NOUN .<Deli>PUNCT 
+Such<Deli>DET a<Deli>DET relaxing<Deli>ADJ atmosphere<Deli>NOUN and<Deli>CCONJ inspiring<Deli>ADJ architecture<Deli>NOUN .<Deli>PUNCT 
+Sand<Deli>PROPN Hill<Deli>PROPN park<Deli>PROPN was<Deli>AUX a<Deli>DET great<Deli>ADJ beach<Deli>NOUN ...<Deli>PUNCT 
+Nice<Deli>ADJ warm<Deli>ADJ water<Deli>NOUN .<Deli>PUNCT 
+Thank<Deli>VERB -<Deli>PUNCT You<Deli>PRON for<Deli>SCONJ sharing<Deli>VERB your<Deli>PRON cottage<Deli>NOUN !<Deli>PUNCT 
+This<Deli>PRON is<Deli>AUX the<Deli>DET best<Deli>ADJ Mediterranean<Deli>ADJ Restaurant<Deli>NOUN in<Deli>ADP the<Deli>DET West<Deli>PROPN Valley<Deli>PROPN ,<Deli>PUNCT I<Deli>PRON have<Deli>VERB friend<Deli>NOUN who<Deli>PRON drive<Deli>VERB from<Deli>ADP central<Deli>ADJ Phx<Deli>PROPN to<Deli>PART come<Deli>VERB here<Deli>ADV .<Deli>PUNCT 
+great<Deli>ADJ !<Deli>PUNCT 
+I<Deli>PRON go<Deli>VERB Disco<Deli>NOUN dancing<Deli>VERB and<Deli>CCONJ Cheerleading<Deli>VERB .<Deli>PUNCT 
+It<Deli>PRON s<Deli>AUX fab<Deli>ADJ !<Deli>PUNCT 
+so<Deli>ADV go<Deli>VERB and<Deli>CCONJ get<Deli>VERB dancing<Deli>VERB !!!!!!!!!!!!!!!!!!!!!!!!!<Deli>PUNCT 
+By<Deli>ADP samantha<Deli>PROPN Fox<Deli>PROPN 
+WONDERFUL<Deli>ADJ service<Deli>NOUN .<Deli>PUNCT 
+I<Deli>PRON have<Deli>AUX used<Deli>VERB them<Deli>PRON once<Deli>ADV and<Deli>CCONJ will<Deli>AUX use<Deli>VERB them<Deli>PRON in<Deli>ADP the<Deli>DET future<Deli>NOUN .<Deli>PUNCT 
+Beautiful<Deli>ADJ work<Deli>NOUN ,<Deli>PUNCT fast<Deli>ADJ shipping<Deli>NOUN and<Deli>CCONJ great<Deli>ADJ communication<Deli>NOUN .<Deli>PUNCT 
