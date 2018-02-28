@@ -17,4 +17,5 @@ from allennlp.models.simple_tagger import SimpleTagger
 from allennlp.models.tagger import Tagger
 from allennlp.models.multi_tagger import MultiTagger
 from allennlp.models.task_embedding_tagger import TaskEmbeddingTagger
+from allennlp.models.taskonly_embedding_tagger import TaskOnlyEmbeddingTagger
 from allennlp.models.coreference_resolution.coref import CoreferenceResolver
