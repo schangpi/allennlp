@@ -29,6 +29,7 @@ dataset_tasks = "dataset_reader/tasks"
 dataset_domains = "dataset_reader/domains"
 model_tasks = "model/tasks"
 model_domains = "model/domains"
+iter_tasks = "train_iterator/tasks"
 
 with open('multi_all.json', 'r') as f:
     data = json.load(f)
@@ -39,6 +40,7 @@ with open('multi_all.json', 'r') as f:
                 domains = sorted(list(set(ds1 + ds2)))
                 data = set_data(data, dataset_tasks, tasks)
                 data = set_data(data, model_tasks, tasks)
+                data = set_data(data, iter_tasks, tasks)
                 data = set_data(data, dataset_domains, domains)
                 data = set_data(data, model_domains, domains)
                 with open('multi/multi_' + ''.join(tasks) + '.json', 'w') as fw:
@@ -53,6 +55,7 @@ with open('task_embedding_tagger_all.json', 'r') as f:
                 domains = sorted(list(set(ds1 + ds2)))
                 data = set_data(data, dataset_tasks, tasks)
                 data = set_data(data, model_tasks, tasks)
+                data = set_data(data, iter_tasks, tasks)
                 data = set_data(data, dataset_domains, domains)
                 data = set_data(data, model_domains, domains)
                 with open('task_embedding/task_embedding_tagger_' + ''.join(tasks) +'.json', 'w') as fw:
@@ -67,6 +70,7 @@ with open('task_prepend_embedding_tagger_all.json', 'r') as f:
                 domains = sorted(list(set(ds1 + ds2)))
                 data = set_data(data, dataset_tasks, tasks)
                 data = set_data(data, model_tasks, tasks)
+                data = set_data(data, iter_tasks, tasks)
                 data = set_data(data, dataset_domains, domains)
                 data = set_data(data, model_domains, domains)
                 with open('task_prepend_embedding/task_prepend_embedding_tagger_' + ''.join(tasks) + '.json', 'w') as fw:

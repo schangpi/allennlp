@@ -32,21 +32,124 @@ TASK_DOMAIN=upos_uni
 python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
 
 
-TASK_DOMAIN=upos
-
 EVAL_SET=test
-TASK_NAME=multitagger
-ext=upos
-MODEL=multi_"$ext"
-TASK_DOMAIN=upos_streusle
-python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
+TASK_NAME=taskembtagger
 
-
-EVAL_SET=test
-TASK_NAME=multitagger
-ext=uni
-MODEL=multi_"$ext"
+for ext in "nerupos" "mweupos" "semupos" "semtrupos" "supsenseupos" "comupos" "uposxpos" "chunkupos"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
 TASK_DOMAIN=upos_uni
-python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+TASK_DOMAIN=upos_streusle
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "nerxpos" "mwexpos" "semxpos" "semtrxpos" "supsensexpos" "comxpos" "uposxpos" "chunkxpos"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=xpos_uni
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+TASK_DOMAIN=xpos_streusle
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+TASK_DOMAIN=xpos_conll03
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "chunkner" "chunkmwe" "chunksem" "chunksemtr" "chunksupsense" "chunkcom" "chunkupos" "chunkxpos"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=chunk_conll03
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+TASK_DOMAIN=chunk_conll02
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "nerupos" "nerxpos" "chunkner" "nersemtr" "nersem" "nersupsense" "comner" "mwener"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=ner_conll03
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "commwe" "chunkmwe" "mwexpos" "mweupos" "mwesupsense" "mwesemtr" "mwesem" "mwener"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=mwe_streusle
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "semxpos" "semupos" "chunksem" "semsemtr" "comsem" "semsupsense" "mwesem" "nersem" 
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=sem_semcor
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "semtrxpos" "semtrupos" "chunksemtr" "comsemtr" "semtrsupsense" "semsemtr" "mwesemtr" "nersemtr"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=semtr_semtraits
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "nersupsense" "mwesupsense" "semsupsense" "semtrsupsense" "supsensexpos" "supsenseupos" "chunksupsense" "comsupsense"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=supsense_streusle
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+for ext in "comner" "commwe" "comsem" "comsemtr" "comsupsense" "comxpos" "comupos" "chunkcom"
+do
+MODEL=task_embedding_tagger_"$ext"
+MODEL=task_prepend_embedding_tagger_"$ext"
+TASK_DOMAIN=com_broadcast1
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+TASK_DOMAIN=com_broadcast2
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+TASK_DOMAIN=com_broadcast3
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
 
 
+
+
+
+EVAL_SET=test
+TASK_NAME=taskembtagger
+MODEL=task_embedding_tagger_all
+for TASK_DOMAIN in "upos_uni" "upos_streusle" "xpos_uni" "xpos_streusle" "xpos_conll03" "chunk_conll03" "chunk_conll02" "ner_conll03" "mwe_streusle" "sem_semcor" "semtr_semtraits" "supsense_streusle" "com_broadcast1" "com_broadcast2" "com_broadcast3"
+do
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+EVAL_SET=test
+TASK_NAME=taskembtagger
+MODEL=task_prepend_embedding_tagger_all
+for TASK_DOMAIN in "upos_uni" "upos_streusle" "xpos_uni" "xpos_streusle" "xpos_conll03" "chunk_conll03" "chunk_conll02" "ner_conll03" "mwe_streusle" "sem_semcor" "semtr_semtraits" "supsense_streusle" "com_broadcast1" "com_broadcast2" "com_broadcast3"
+do
+python -m allennlp.run evaluate --archive-file /data/tagger/"$TASK_NAME"_"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/evaluate/"$EVAL_SET"_"$TASK_DOMAIN"/ 2> results/"$EVAL_SET"_"$TASK_DOMAIN"_"$MODEL"_screenlog
+done
+
+
+
+
+
+
+
+for td in "ner_conll03" "mwe_streusle" "com_broadcast1" "com_broadcast2" "com_broadcast3" "sem_semcor" "semtr_semtraits" "supsense_streusle"
+do
+for fol in "train" "dev" "test"
+do
+mkdir evaluate/"$fol"_"$td"/
+cp multi_tagger/"$fol"/"$td"_"$fol".txt evaluate/"$fol"_"$td"/
+done
+done
