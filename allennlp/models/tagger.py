@@ -203,14 +203,19 @@ class Tagger(Model):
                 task_ids.append(self.task_to_id[self.vocab.get_token_from_index(tt, 'task_labels')])
             task_ids = numpy.array(task_ids)
             predicted_tags = numpy.array(predicted_tags)
-            for i, tsk in enumerate(self.tasks):
-                print(i, tsk, task_ids)
-                task_indices = (task_ids == i).nonzero()[0]
-                class_probabilities[tsk] = logits[task_indices, :, :] * 0.
+            for k, tsk in enumerate(self.tasks):
+                task_indices = (task_ids == k).nonzero()[0]
+                task_indices = task_indices.tolist()
+                # print(k, tsk, task_ids, task_indices)
+                if len(task_indices) < 1:
+                    continue
+                class_probabilities[tsk] = logits[task_indices,] * 0.
                 for i, instance_tags in enumerate(predicted_tags[task_indices]):
                     for j, tag_id in enumerate(instance_tags):
                         class_probabilities[tsk][i, j, tag_id] = 1
-                self.span_metric[tsk](class_probabilities[tsk], tags[task_indices, :], mask[task_indices, :])
+                self.span_metric[tsk](class_probabilities[tsk],
+                                      tags[task_indices,],
+                                      mask[task_indices,])
             self._print_source_target_triplets(tokens['tokens'], predicted_tags, tags)
         return output_dict
 

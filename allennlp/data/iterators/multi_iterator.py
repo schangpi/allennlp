@@ -126,25 +126,25 @@ class MultiIterator(DataIterator):
     @overrides
     def _create_batches(self, instances: Iterable[Instance], shuffle: bool) -> Iterable[Batch]:
         # First break the dataset into memory-sized lists:
-        instance_list_dict = {}
-        iterator = {}
         num_tasks = len(self._tasks)
         size_per_task = int(self._batch_size / num_tasks)
+        rmd = self._batch_size - size_per_task * num_tasks
         batch_sizes = {}
+        for tsk in self._tasks:
+            batch_sizes[tsk] = size_per_task
+        # remainder
+        for tsk in self._tasks[:rmd]:
+            batch_sizes[tsk] += 1
         for instance_list in self._memory_sized_lists(instances):
-            max_task_size = -1
             min_task_size = 1000000000
+            min_tsk = 0
+            instance_list_dict = {}
             for tsk in self._tasks:
                 instance_list_dict[tsk] = [x for x in instance_list if x.fields['task_token'].label == tsk]
                 task_size = len(instance_list_dict[tsk])
                 if task_size < min_task_size:
                     min_task_size = task_size
                     min_tsk = tsk
-                if task_size > max_task_size:
-                    max_task_size = task_size
-                    max_tsk = tsk
-                batch_sizes[tsk] = size_per_task
-            batch_sizes[max_tsk] += self._batch_size - size_per_task * num_tasks # remainder
             num_batches = int(min_task_size / batch_sizes[min_tsk])
             # if shuffle:
             #     random.shuffle(instance_list)
@@ -153,6 +153,7 @@ class MultiIterator(DataIterator):
                 for tsk in self._tasks:
                     random.shuffle(instance_list_dict[tsk])
             all_batch_instances = []
+            iterator = {}
             for i, tsk in enumerate(self._tasks):
                 iterator[tsk] = iter(instance_list_dict[tsk][:num_batches*batch_sizes[tsk]])
                 if i == 0:
