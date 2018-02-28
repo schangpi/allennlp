@@ -1,0 +1,60 @@
+/data/tagger/upos_uni_tagger_crf_template/vocabulary
+vocab size:  19315
+vocab size:  17
+/data/tagger/upos_streusle_tagger_crf_template/vocabulary
+vocab size:  5979
+vocab size:  17
+/data/tagger/xpos_uni_tagger_crf_template/vocabulary
+vocab size:  19315
+vocab size:  50
+/data/tagger/xpos_streusle_tagger_crf_template/vocabulary
+vocab size:  5979
+vocab size:  50
+/data/tagger/xpos_conll03_tagger_crf_template/vocabulary
+vocab size:  26869
+vocab size:  45
+/data/tagger/chunk-iobes_conll02_tagger_crf_template/vocabulary
+vocab size:  19460
+vocab size:  42
+/data/tagger/chunk-iobes_conll03_tagger_crf_template/vocabulary
+vocab size:  26869
+vocab size:  38
+/data/tagger/chunk_conll02_tagger_crf_template/vocabulary
+vocab size:  19460
+vocab size:  23
+/data/tagger/chunk_conll03_tagger_crf_template/vocabulary
+vocab size:  26869
+vocab size:  17
+/data/tagger/com_broadcast1_tagger_crf_template/vocabulary
+vocab size:  4455
+vocab size:  2
+/data/tagger/com_broadcast2_tagger_crf_template/vocabulary
+vocab size:  4467
+vocab size:  2
+/data/tagger/com_broadcast3_tagger_crf_template/vocabulary
+vocab size:  4467
+vocab size:  2
+/data/tagger/ner-iobes_conll03_tagger_crf_template/vocabulary
+vocab size:  26869
+vocab size:  17
+/data/tagger/ner_conll03_tagger_crf_template/vocabulary
+vocab size:  26869
+vocab size:  8
+/data/tagger/supsense_streusle_tagger_crf_template/vocabulary
+vocab size:  5979
+vocab size:  212
+/data/tagger/mwe_streusle_tagger_crf_template/vocabulary
+vocab size:  5979
+vocab size:  3
+/data/tagger/smwe_streusle_tagger_crf_template/vocabulary
+vocab size:  5979
+vocab size:  3
+/data/tagger/sem_semcor_tagger_crf_template/vocabulary
+vocab size:  32411
+vocab size:  73
+/data/tagger/semtr_semtraits_tagger_crf_template/vocabulary
+vocab size:  26821
+vocab size:  11
+/data/tagger/ccg_ccg_tagger_crf_template/vocabulary
+vocab size:  41478
+vocab size:  1322

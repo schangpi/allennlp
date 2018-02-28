@@ -1,0 +1,330 @@
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{upos} on uni} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{95.45}  \\ \hline
++\task{xpos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & 93.92 & 95.23 & 95.17  \\ 
++\task{mwe} & & 95.25 & 95.4  \\ 
++\task{sem} & 94.1 & 95.31 & 95.34  \\ 
++\task{semtr} & 93.95 & 95.27 & 95.21  \\ 
++\task{supsense} & & 95.21 & 95.22  \\ 
++\task{com} & & 95.45 &  \\ 
+ \hline 
++\task{all} & & 95.28 & 95.08  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultiuposuni}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{upos} on streusle} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{94.89}  \\ \hline
++\task{xpos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & 93.92 & 95.35 & 95.43  \\ 
++\task{mwe} & & 95.3 & 95.72  \\ 
++\task{sem} & 94.1 & 95.28 & 95.6  \\ 
++\task{semtr} & 93.95 & 95.43 & 95.61  \\ 
++\task{supsense} & & 95.54 & 95.58  \\ 
++\task{com} & & 95.47 &  \\ 
+ \hline 
++\task{all} & & 95.15 & 95.34  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultiuposstreusle}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{xpos} on uni} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{94.96}  \\ \hline
++\task{upos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & & 94.66 & 94.84  \\ 
++\task{mwe} & & 94.53 & 94.8  \\ 
++\task{sem} & & 94.62 & 94.75  \\ 
++\task{semtr} & & 94.54 & 94.88  \\ 
++\task{supsense} & & 94.55 & 94.83  \\ 
++\task{com} & & 94.46 &  \\ 
+ \hline 
++\task{all} & & 94.66 & 94.61  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultixposuni}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{xpos} on streusle} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{94.11}  \\ \hline
++\task{upos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & & 95.02 & 95.02  \\ 
++\task{mwe} & & 94.7 & 95.04  \\ 
++\task{sem} & & 94.76 & 94.98  \\ 
++\task{semtr} & & 94.82 & 95.09  \\ 
++\task{supsense} & & 95.06 & 94.98  \\ 
++\task{com} & & 94.72 &  \\ 
+ \hline 
++\task{all} & & 94.76 & 94.52  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultixposstreusle}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{xpos} on conll03} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{95.19}  \\ \hline
++\task{upos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & & 94.99 & 95.11  \\ 
++\task{mwe} & & 94.9 & 95.03  \\ 
++\task{sem} & & 94.88 & 94.97  \\ 
++\task{semtr} & & 94.91 & 95.04  \\ 
++\task{supsense} & & 94.78 & 95.0  \\ 
++\task{com} & & 94.89 &  \\ 
+ \hline 
++\task{all} & & 94.68 & 94.75  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultixposconll03}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{chunk} on conll02} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{93.46}  \\ \hline
++\task{upos} & & &  \\ 
++\task{xpos} & & &  \\ 
++\task{ner} & 91.59 & 93.4 & 93.55  \\ 
++\task{mwe} & & 93.44 & 93.2  \\ 
++\task{sem} & & 93.36 & 93.65  \\ 
++\task{semtr} & & 93.11 & 93.34  \\ 
++\task{supsense} & & 93.28 &  \\ 
++\task{com} & & 93.32 &  \\ 
+ \hline 
++\task{all} & & 93.25 & 93.25  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultichunkconll02}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{chunk} on conll03} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{89.57}  \\ \hline
++\task{upos} & & &  \\ 
++\task{xpos} & & &  \\ 
++\task{ner} & 91.59 & 90.66 & 90.66  \\ 
++\task{mwe} & & 90.16 & 90.38  \\ 
++\task{sem} & & 90.39 & 90.3  \\ 
++\task{semtr} & & 90.32 & 90.34  \\ 
++\task{supsense} & & 90.21 &  \\ 
++\task{com} & & 89.73 &  \\ 
+ \hline 
++\task{all} & & 90.76 & 90.75  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultichunkconll03}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{ner} on conll03} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{88.14}  \\ \hline
++\task{upos} & 88.13 & 87.65 & 87.47  \\ 
++\task{xpos} & & 87.45 & 87.29  \\ 
++\task{chunk} & 87.4 & 87.43 & 87.63  \\ 
++\task{mwe} & & 88.01 & 87.86  \\ 
++\task{sem} & & 87.74 & 87.47  \\ 
++\task{semtr} & 87.95 & 87.85 & 87.83  \\ 
++\task{supsense} & & 88.21 &  \\ 
++\task{com} & & 87.14 &  \\ 
+ \hline 
++\task{all} & & 85.39 & 85.52  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultinerconll03}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{mwe} on streusle} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{52.7}  \\ \hline
++\task{upos} & & 58.89 & 59.88  \\ 
++\task{xpos} & & 58.92 & 56.69  \\ 
++\task{chunk} & & 58.0 & 58.63  \\ 
++\task{ner} & & 53.8 & 55.35  \\ 
++\task{sem} & & 58.76 & 58.96  \\ 
++\task{semtr} & & 58.73 & 59.51  \\ 
++\task{supsense} & & 60.12 & 59.95  \\ 
++\task{com} & & 45.61 & 50.47  \\ 
+ \hline 
++\task{all} & & 60.35 & 58.15  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultimwestreusle}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{sem} on semcor} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{74.81}  \\ \hline
++\task{upos} & 75.2 & 75.38 & 75.28  \\ 
++\task{xpos} & & 74.94 & 75.22  \\ 
++\task{chunk} & & 75.01 & 75.36  \\ 
++\task{ner} & & 75.02 & 75.01  \\ 
++\task{mwe} & & 75.28 & 75.13  \\ 
++\task{semtr} & 74.33 & 74.17 & 74.34  \\ 
++\task{supsense} & & 75.17 &  \\ 
++\task{com} & & 75.09 & 74.99  \\ 
+ \hline 
++\task{all} & & 74.77 & 74.31  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultisemsemcor}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{semtr} on semtraits} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{74.14}  \\ \hline
++\task{upos} & 74.76 & 75.32 & 74.6  \\ 
++\task{xpos} & & 74.89 & 74.81  \\ 
++\task{chunk} & & 74.84 & 74.82  \\ 
++\task{ner} & 74.07 & 74.88 & 74.18  \\ 
++\task{mwe} & & 74.53 & 74.55  \\ 
++\task{sem} & 74.55 & 74.6 & 74.45  \\ 
++\task{supsense} & & 74.71 & 74.23  \\ 
++\task{com} & & 74.48 & 74.35  \\ 
+ \hline 
++\task{all} & & 75.05 & 74.14  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultisemtrsemtraits}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{supsense} on streusle} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{66.46}  \\ \hline
++\task{upos} & & 67.88 & 66.76  \\ 
++\task{xpos} & & 66.82 & 67.69  \\ 
++\task{chunk} & & 66.21 &  \\ 
++\task{ner} & & 66.51 &  \\ 
++\task{mwe} & & 66.67 & 67.12  \\ 
++\task{sem} & & 66.56 &  \\ 
++\task{semtr} & & 66.35 & 66.97  \\ 
++\task{com} & & 65.91 &  \\ 
+ \hline 
++\task{all} & & 67.36 & 66.68  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMultisupsensestreusle}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{com} on broadcast1} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{73.48}  \\ \hline
++\task{upos} & & 74.65 &  \\ 
++\task{xpos} & & 74.52 &  \\ 
++\task{chunk} & & 73.94 &  \\ 
++\task{ner} & & 74.52 & 72.51  \\ 
++\task{mwe} & & 73.12 & 74.59  \\ 
++\task{sem} & & 74.13 & 74.17  \\ 
++\task{semtr} & & 73.92 & 74.35  \\ 
++\task{supsense} & & 72.76 &  \\ 
+ \hline 
++\task{all} & & 75.14 & 74.58  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMulticombroadcast1}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{com} on broadcast2} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{78.7}  \\ \hline
++\task{upos} & & &  \\ 
++\task{xpos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & & &  \\ 
++\task{mwe} & & &  \\ 
++\task{sem} & & &  \\ 
++\task{semtr} & & &  \\ 
++\task{supsense} & & &  \\ 
+ \hline 
++\task{all} & & 80.98 & 80.92  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMulticombroadcast2}}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\footnotesize{
+\begin{tabular}{c|c|c|c}
+Trained with & \multicolumn{3}{|c}{\task{com} on broadcast3} \\ \cline{2-4}
+& Multiple Decoders & Task Embeddings (All Steps) & Task Embeddings (Prepend) \\ \hline
+Self only &  \multicolumn{3}{|c}{67.26}  \\ \hline
++\task{upos} & & &  \\ 
++\task{xpos} & & &  \\ 
++\task{chunk} & & &  \\ 
++\task{ner} & & &  \\ 
++\task{mwe} & & &  \\ 
++\task{sem} & & &  \\ 
++\task{semtr} & & &  \\ 
++\task{supsense} & & &  \\ 
+ \hline 
++\task{all} & & 71.17 & 70.47  \\ 
+ \hline 
+\end{tabular}
+\caption{\small F1-Score}\label{tMulticombroadcast3}}
+\end{table*}
+

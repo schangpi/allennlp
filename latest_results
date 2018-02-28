@@ -1,0 +1,1991 @@
+/data/tagger/upos_uni_tagger_template
+training_duration 00:55:41
+training_start_epoch 0
+training_epochs 23
+training_precision-overall 0.9996920610403449
+training_recall-overall 0.9996920610403449
+training_f1-measure-overall 0.999692061040295
+training_loss 0.0010314317187294364
+validation_precision-overall 0.9491013201845078
+validation_recall-overall 0.9491013201845078
+validation_f1-measure-overall 0.9491013201844578
+validation_loss 0.35395729541778564
+test_precision-overall 0.9513069811922219
+test_recall-overall 0.9513069811922219
+test_f1-measure-overall 0.9513069811921718
+
+/data/tagger/upos_streusle_tagger_template
+training_duration 00:18:16
+training_start_epoch 0
+training_epochs 40
+training_precision-overall 0.9999553611284707
+training_recall-overall 0.9999553611284707
+training_f1-measure-overall 0.9999553611284208
+training_loss 0.0009250234579667449
+validation_precision-overall 0.9390063032999629
+validation_recall-overall 0.9390063032999629
+validation_f1-measure-overall 0.939006303299913
+validation_loss 0.43447649478912354
+test_precision-overall 0.944434120052035
+test_recall-overall 0.944434120052035
+test_f1-measure-overall 0.944434120051985
+
+/data/tagger/xpos_uni_tagger_template
+training_duration 01:47:59
+training_start_epoch 0
+training_epochs 46
+training_precision-overall 0.9998924657601205
+training_recall-overall 0.9998924657601205
+training_f1-measure-overall 0.9998924657600705
+training_loss 0.0005333248409442604
+validation_precision-overall 0.946317798632098
+validation_recall-overall 0.946317798632098
+validation_f1-measure-overall 0.946317798632048
+validation_loss 0.4266006052494049
+test_precision-overall 0.9494341727765381
+test_recall-overall 0.9494341727765381
+test_f1-measure-overall 0.9494341727764881
+
+/data/tagger/xpos_streusle_tagger_template
+training_duration 00:16:06
+training_start_epoch 0
+training_epochs 35
+training_precision-overall 0.9996875278992947
+training_recall-overall 0.9996875278992947
+training_f1-measure-overall 0.9996875278992448
+training_loss 0.0033801360987126827
+validation_precision-overall 0.9338153503893215
+validation_recall-overall 0.9338153503893215
+validation_f1-measure-overall 0.9338153503892715
+validation_loss 0.38475877046585083
+test_precision-overall 0.9399739825311281
+test_recall-overall 0.9399739825311281
+test_f1-measure-overall 0.9399739825310781
+
+/data/tagger/xpos_conll03_tagger_template
+training_duration 01:14:51
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9998133787772381
+training_recall-overall 0.9998133787772381
+training_f1-measure-overall 0.9998133787771881
+training_loss 0.0007836460717953742
+validation_precision-overall 0.9538958763288033
+validation_recall-overall 0.9538958763288033
+validation_f1-measure-overall 0.9538958763287534
+validation_loss 0.6696861982345581
+test_precision-overall 0.9499300096909659
+test_recall-overall 0.9499300096909659
+test_f1-measure-overall 0.9499300096909159
+
+/data/tagger/chunk-iobes_conll02_tagger_template
+training_duration 00:30:40
+training_start_epoch 0
+training_epochs 18
+training_precision-overall 0.9986076588109967
+training_recall-overall 0.9989437080521228
+training_f1-measure-overall 0.9987756551646291
+training_loss 0.0038194034714251757
+validation_precision-overall 0.9227969186489461
+validation_recall-overall 0.9369144821658788
+validation_f1-measure-overall 0.9298021153189538
+validation_loss 0.30083829164505005
+test_precision-overall 0.9270400260862477
+test_recall-overall 0.9308340836539248
+test_f1-measure-overall 0.9289331808527519
+
+/data/tagger/chunk-iobes_conll03_tagger_template
+training_duration 01:08:25
+training_start_epoch 0
+training_epochs 29
+training_precision-overall 0.9990501044885063
+training_recall-overall 0.9991899756992709
+training_f1-measure-overall 0.9991200351985421
+training_loss 0.0016821312019601464
+validation_precision-overall 0.8947063145276671
+validation_recall-overall 0.8990169794459338
+validation_f1-measure-overall 0.8968564673048843
+validation_loss 0.5679181218147278
+test_precision-overall 0.8814804735338141
+test_recall-overall 0.8825613079019073
+test_f1-measure-overall 0.8820205596023737
+
+/data/tagger/chunk_conll02_tagger_template
+training_duration 00:37:49
+training_start_epoch 0
+training_epochs 21
+training_precision-overall 0.9991588706436508
+training_recall-overall 0.9993550075716503
+training_f1-measure-overall 0.9992569294830254
+training_loss 0.0017455975757911801
+validation_precision-overall 0.9224379079426973
+validation_recall-overall 0.935281478298238
+validation_f1-measure-overall 0.9288152953225858
+validation_loss 0.24887344241142273
+test_precision-overall 0.9237931879441313
+test_recall-overall 0.9257591880166981
+test_f1-measure-overall 0.9247751430907105
+
+/data/tagger/chunk_conll03_tagger_template
+training_duration 01:12:07
+training_start_epoch 0
+training_epochs 30
+training_precision-overall 0.9998299846986228
+training_recall-overall 0.999769993099793
+training_f1-measure-overall 0.99979998799923
+training_loss 0.00040855357656255364
+validation_precision-overall 0.8979925303454716
+validation_recall-overall 0.8968411236740879
+validation_f1-measure-overall 0.8974164576893416
+validation_loss 0.3407692611217499
+test_precision-overall 0.8893857807794104
+test_recall-overall 0.8851044504995459
+test_f1-measure-overall 0.8872399508352941
+
+/data/tagger/com_broadcast1_tagger_template
+training_duration 00:02:52
+training_start_epoch 0
+training_epochs 17
+training_precision-overall 0.873038274810884
+training_recall-overall 0.873038274810884
+training_f1-measure-overall 0.8730382748108341
+training_loss 0.232650488615036
+validation_precision-overall 0.7007042253521126
+validation_recall-overall 0.7007042253521126
+validation_f1-measure-overall 0.7007042253520627
+validation_loss 0.6669459342956543
+test_precision-overall 0.7268875192604006
+test_recall-overall 0.7268875192604006
+test_f1-measure-overall 0.7268875192603507
+
+/data/tagger/com_broadcast2_tagger_template
+training_duration 00:02:21
+training_start_epoch 0
+training_epochs 14
+training_precision-overall 0.9250127240852797
+training_recall-overall 0.9250127240852797
+training_f1-measure-overall 0.9250127240852298
+training_loss 0.13923394680023193
+validation_precision-overall 0.7492660011743981
+validation_recall-overall 0.7492660011743981
+validation_f1-measure-overall 0.7492660011743482
+validation_loss 0.6908181309700012
+test_precision-overall 0.7774343122102009
+test_recall-overall 0.7774343122102009
+test_f1-measure-overall 0.7774343122101509
+
+/data/tagger/com_broadcast3_tagger_template
+training_duration 00:02:47
+training_start_epoch 0
+training_epochs 17
+training_precision-overall 0.8448792625685687
+training_recall-overall 0.8448792625685687
+training_f1-measure-overall 0.8448792625685188
+training_loss 0.27559664845466614
+validation_precision-overall 0.6611861421021726
+validation_recall-overall 0.6611861421021726
+validation_f1-measure-overall 0.6611861421021227
+validation_loss 0.6902883648872375
+test_precision-overall 0.6745234415249871
+test_recall-overall 0.6745234415249871
+test_f1-measure-overall 0.6745234415249372
+
+/data/tagger/ner-iobes_conll03_tagger_template
+training_duration 01:11:26
+training_start_epoch 0
+training_epochs 33
+training_precision-overall 0.9999148863733084
+training_recall-overall 0.9998723349929785
+training_f1-measure-overall 0.9998936102303903
+training_loss 0.0001543141552247107
+validation_precision-overall 0.9243894279023085
+validation_recall-overall 0.9299899023897678
+validation_f1-measure-overall 0.9271812080536413
+validation_loss 0.1152849942445755
+test_precision-overall 0.8678260869565217
+test_recall-overall 0.8834985835694051
+test_f1-measure-overall 0.8755922091594517
+
+/data/tagger/ner_conll03_tagger_template
+training_duration 01:49:06
+training_start_epoch 0
+training_epochs 46
+training_precision-overall 0.9999148863733084
+training_recall-overall 0.9998723349929785
+training_f1-measure-overall 0.9998936102303903
+training_loss 6.454213871620595e-05
+validation_precision-overall 0.9192070631350991
+validation_recall-overall 0.9286435543588017
+validation_f1-measure-overall 0.9239012138969781
+validation_loss 0.10786796361207962
+test_precision-overall 0.8606144766533588
+test_recall-overall 0.8778328611898017
+test_f1-measure-overall 0.8691383995091095
+
+/data/tagger/supsense_streusle_tagger_template
+training_duration 00:15:29
+training_start_epoch 0
+training_epochs 33
+training_precision-overall 0.9964323540888567
+training_recall-overall 0.9961547035220687
+training_f1-measure-overall 0.996293509461255
+training_loss 0.012916945852339268
+validation_precision-overall 0.6717267552182163
+validation_recall-overall 0.6626111371080955
+validation_f1-measure-overall 0.6671378091872292
+validation_loss 0.9345729351043701
+test_precision-overall 0.6682808716707022
+test_recall-overall 0.6454630495790459
+test_f1-measure-overall 0.6566738044253604
+
+/data/tagger/mwe_streusle_tagger_template
+training_duration 00:07:21
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9544311288652167
+training_recall-overall 0.9365563298490128
+training_f1-measure-overall 0.9454092474536028
+training_loss 0.033262453973293304
+validation_precision-overall 0.514945652173913
+validation_recall-overall 0.4725685785536159
+validation_f1-measure-overall 0.4928478543562569
+validation_loss 0.7122671604156494
+test_precision-overall 0.5368020304568527
+test_recall-overall 0.5047732696897373
+test_f1-measure-overall 0.5202952029519794
+
+/data/tagger/smwe_streusle_tagger_template
+training_duration 00:07:09
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9543597939975138
+training_recall-overall 0.938034561005411
+training_f1-measure-overall 0.9461267605633304
+training_loss 0.024991504848003387
+validation_precision-overall 0.514388489208633
+validation_recall-overall 0.43137254901960775
+validation_f1-measure-overall 0.46923707957337113
+validation_loss 0.6770290732383728
+test_precision-overall 0.5337726523887972
+test_recall-overall 0.4901664145234492
+test_f1-measure-overall 0.5110410094636725
+
+/data/tagger/sem_semcor_tagger_template
+training_duration 01:11:02
+training_start_epoch 0
+training_epochs 20
+training_precision-overall 0.981441034008711
+training_recall-overall 0.9814788641911859
+training_f1-measure-overall 0.9814599487353591
+training_loss 0.022766491398215294
+validation_precision-overall 0.7401664932362123
+validation_recall-overall 0.7385142501168043
+validation_f1-measure-overall 0.7393394485876381
+validation_loss 0.6867051124572754
+test_precision-overall 0.7456865028846935
+test_recall-overall 0.7444765948240893
+test_f1-measure-overall 0.7450810576740414
+
+/data/tagger/semtr_semtraits_tagger_template
+training_duration 00:40:23
+training_start_epoch 0
+training_epochs 14
+training_precision-overall 0.970681670302752
+training_recall-overall 0.9702731655061596
+training_f1-measure-overall 0.9704773749162421
+training_loss 0.028461258858442307
+validation_precision-overall 0.7184286844186659
+validation_recall-overall 0.7208041264383018
+validation_f1-measure-overall 0.7196144451045912
+validation_loss 0.636298418045044
+test_precision-overall 0.7375549567437243
+test_recall-overall 0.738576247115214
+test_f1-measure-overall 0.738065248629516
+
+/data/tagger/upos_uni_tagger_crf_template
+training_duration 01:49:51
+training_start_epoch 0
+training_epochs 24
+training_precision-overall 0.9998680261601478
+training_recall-overall 0.9998680261601478
+training_f1-measure-overall 0.9998680261600978
+training_loss 0.2970474660396576
+validation_precision-overall 0.9504930809607126
+validation_recall-overall 0.9504930809607126
+validation_f1-measure-overall 0.9504930809606625
+validation_loss 158.44480895996094
+test_precision-overall 0.9545345871852088
+test_recall-overall 0.9545345871852088
+test_f1-measure-overall 0.9545345871851588
+
+/data/tagger/upos_streusle_tagger_crf_template
+training_duration 00:24:00
+training_start_epoch 0
+training_epochs 26
+training_precision-overall 0.9999776805642353
+training_recall-overall 0.9999776805642353
+training_f1-measure-overall 0.9999776805641853
+training_loss 0.23802976310253143
+validation_precision-overall 0.9397478680014831
+validation_recall-overall 0.9397478680014831
+validation_f1-measure-overall 0.9397478680014332
+validation_loss 128.59259033203125
+test_precision-overall 0.9488942575729419
+test_recall-overall 0.9488942575729419
+test_f1-measure-overall 0.9488942575728919
+
+/data/tagger/xpos_uni_tagger_crf_template
+training_duration 02:43:46
+training_start_epoch 0
+training_epochs 35
+training_precision-overall 0.9998729140801423
+training_recall-overall 0.9998729140801423
+training_f1-measure-overall 0.9998729140800924
+training_loss 0.23669978976249695
+validation_precision-overall 0.9486241450612375
+validation_recall-overall 0.9486241450612375
+validation_f1-measure-overall 0.9486241450611875
+validation_loss 172.27420043945312
+test_precision-overall 0.949593560726809
+test_recall-overall 0.949593560726809
+test_f1-measure-overall 0.949593560726759
+
+/data/tagger/xpos_streusle_tagger_crf_template
+training_duration 00:22:29
+training_start_epoch 0
+training_epochs 24
+training_precision-overall 0.9998884028211766
+training_recall-overall 0.9998884028211766
+training_f1-measure-overall 0.9998884028211267
+training_loss 0.5620302557945251
+validation_precision-overall 0.9345569150908417
+validation_recall-overall 0.9345569150908417
+validation_f1-measure-overall 0.9345569150907918
+validation_loss 119.00675201416016
+test_precision-overall 0.9410890169113547
+test_recall-overall 0.9410890169113547
+test_f1-measure-overall 0.9410890169113048
+
+/data/tagger/xpos_conll03_tagger_crf_template
+training_duration 02:26:31
+training_start_epoch 0
+training_epochs 30
+training_precision-overall 0.9999459780670953
+training_recall-overall 0.9999459780670953
+training_f1-measure-overall 0.9999459780670453
+training_loss 0.21714212000370026
+validation_precision-overall 0.955200342665784
+validation_recall-overall 0.955200342665784
+validation_f1-measure-overall 0.9552003426657341
+validation_loss 201.96168518066406
+test_precision-overall 0.9519112738236244
+test_recall-overall 0.9519112738236244
+test_f1-measure-overall 0.9519112738235744
+
+/data/tagger/chunk-iobes_conll02_tagger_crf_template
+training_duration 02:25:47
+training_start_epoch 0
+training_epochs 38
+training_precision-overall 0.9998878274037653
+training_recall-overall 0.9998878274037653
+training_f1-measure-overall 0.9998878274037153
+training_loss 0.5204149484634399
+validation_precision-overall 0.9316013628620102
+validation_recall-overall 0.9400085947571981
+validation_f1-measure-overall 0.9357860962566347
+validation_loss 240.97845458984375
+test_precision-overall 0.934309554973822
+test_recall-overall 0.9348448882704429
+test_f1-measure-overall 0.9345771449612855
+
+/data/tagger/chunk-iobes_conll03_tagger_crf_template
+training_duration 01:18:24
+training_start_epoch 0
+training_epochs 14
+training_precision-overall 0.999310013799724
+training_recall-overall 0.999359980799424
+training_f1-measure-overall 0.9993349966749333
+training_loss 1.5395371913909912
+validation_precision-overall 0.9056926364872742
+validation_recall-overall 0.9056222558961806
+validation_f1-measure-overall 0.9056574448243205
+validation_loss 187.4296112060547
+test_precision-overall 0.8982826345117384
+test_recall-overall 0.8931425976385104
+test_f1-measure-overall 0.8957052420639843
+
+/data/tagger/chunk_conll02_tagger_crf_template
+training_duration 01:38:20
+training_start_epoch 0
+training_epochs 29
+training_precision-overall 0.9998784796874124
+training_recall-overall 0.9998784796874124
+training_f1-measure-overall 0.9998784796873624
+training_loss 0.3743155300617218
+validation_precision-overall 0.9307090630845094
+validation_recall-overall 0.940868070477009
+validation_f1-measure-overall 0.9357609949993089
+validation_loss 208.1309051513672
+test_precision-overall 0.9343550237665956
+test_recall-overall 0.93320782516166
+test_f1-measure-overall 0.9337810721159253
+
+/data/tagger/chunk_conll03_tagger_crf_template
+training_duration 02:34:03
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.99987
+training_recall-overall 0.99989999699991
+training_f1-measure-overall 0.9998849982749242
+training_loss 0.12714536488056183
+validation_precision-overall 0.9065169065169065
+validation_recall-overall 0.9031355635854995
+validation_f1-measure-overall 0.9048230760247077
+validation_loss 183.4443817138672
+test_precision-overall 0.8985566821960355
+test_recall-overall 0.8934150772025431
+test_f1-measure-overall 0.895978503438489
+
+/data/tagger/com_broadcast1_tagger_crf_template
+training_duration 00:04:15
+training_start_epoch 0
+training_epochs 13
+training_precision-overall 0.8698769334989274
+training_recall-overall 0.8698769334989274
+training_f1-measure-overall 0.8698769334988774
+training_loss 175.78018188476562
+validation_precision-overall 0.6795774647887324
+validation_recall-overall 0.6795774647887324
+validation_f1-measure-overall 0.6795774647886824
+validation_loss 321.7848815917969
+test_precision-overall 0.7348484848484849
+test_recall-overall 0.7348484848484849
+test_f1-measure-overall 0.7348484848484348
+
+/data/tagger/com_broadcast2_tagger_crf_template
+training_duration 00:04:20
+training_start_epoch 0
+training_epochs 13
+training_precision-overall 0.8921563083187242
+training_recall-overall 0.8921563083187242
+training_f1-measure-overall 0.8921563083186742
+training_loss 135.85646057128906
+validation_precision-overall 0.7580739870816207
+validation_recall-overall 0.7580739870816207
+validation_f1-measure-overall 0.7580739870815707
+validation_loss 247.6552734375
+test_precision-overall 0.7869654817104585
+test_recall-overall 0.7869654817104585
+test_f1-measure-overall 0.7869654817104086
+
+/data/tagger/com_broadcast3_tagger_crf_template
+training_duration 00:07:10
+training_start_epoch 0
+training_epochs 23
+training_precision-overall 0.9620539501215857
+training_recall-overall 0.9620539501215857
+training_f1-measure-overall 0.9620539501215357
+training_loss 63.20952606201172
+validation_precision-overall 0.6881972988843218
+validation_recall-overall 0.6881972988843218
+validation_f1-measure-overall 0.6881972988842718
+validation_loss 633.2294311523438
+test_precision-overall 0.6725914477073673
+test_recall-overall 0.6725914477073673
+test_f1-measure-overall 0.6725914477073174
+
+/data/tagger/ner-iobes_conll03_tagger_crf_template
+training_duration 01:49:22
+training_start_epoch 0
+training_epochs 34
+training_precision-overall 0.9998297727466168
+training_recall-overall 0.9997872249882974
+training_f1-measure-overall 0.9998084984147424
+training_loss 0.04951019212603569
+validation_precision-overall 0.9295633260833194
+validation_recall-overall 0.9350387075058902
+validation_f1-measure-overall 0.9322929775987417
+validation_loss 73.9247055053711
+test_precision-overall 0.8734353268428373
+test_recall-overall 0.8895184135977338
+test_f1-measure-overall 0.8814035087718799
+
+/data/tagger/ner_conll03_tagger_crf_template
+training_duration 01:36:22
+training_start_epoch 0
+training_epochs 23
+training_precision-overall 0.9998723186925434
+training_recall-overall 0.9997446699859569
+training_f1-measure-overall 0.9998084902648718
+training_loss 0.048641666769981384
+validation_precision-overall 0.9191213180229656
+validation_recall-overall 0.9294850218781555
+validation_f1-measure-overall 0.9242741193205091
+validation_loss 60.833248138427734
+test_precision-overall 0.864321608040201
+test_recall-overall 0.8831444759206799
+test_f1-measure-overall 0.873631666520661
+
+/data/tagger/supsense_streusle_tagger_crf_template
+training_duration 00:43:23
+training_start_epoch 0
+training_epochs 42
+training_precision-overall 0.9997770966843131
+training_recall-overall 0.9998328131966117
+training_f1-measure-overall 0.9998049541641786
+training_loss 2.6690115928649902
+validation_precision-overall 0.6803435114503816
+validation_recall-overall 0.6672905942910622
+validation_f1-measure-overall 0.6737538388849016
+validation_loss 313.3295593261719
+test_precision-overall 0.6746987951807228
+test_recall-overall 0.6548175865294668
+test_f1-measure-overall 0.6646095418940872
+
+/data/tagger/mwe_streusle_tagger_crf_template
+training_duration 00:12:36
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9773391812865497
+training_recall-overall 0.9705284552845529
+training_f1-measure-overall 0.9739219114218615
+training_loss 11.303165435791016
+validation_precision-overall 0.5502793296089384
+validation_recall-overall 0.49127182044887774
+validation_f1-measure-overall 0.5191040843214259
+validation_loss 176.8157958984375
+test_precision-overall 0.5483870967741935
+test_recall-overall 0.5071599045346061
+test_f1-measure-overall 0.5269683818970363
+
+/data/tagger/smwe_streusle_tagger_crf_template
+training_duration 00:18:28
+training_start_epoch 0
+training_epochs 21
+training_precision-overall 0.9994757077944775
+training_recall-overall 0.9982544946762087
+training_f1-measure-overall 0.9988647279713062
+training_loss 0.7053992748260498
+validation_precision-overall 0.5620567375886524
+validation_recall-overall 0.478129713423831
+validation_f1-measure-overall 0.516707416462868
+validation_loss 266.6455993652344
+test_precision-overall 0.559618441971383
+test_recall-overall 0.5325264750378214
+test_f1-measure-overall 0.545736434108477
+
+/data/tagger/sem_semcor_tagger_crf_template
+training_duration 02:04:49
+training_start_epoch 0
+training_epochs 20
+training_precision-overall 0.9913848486405921
+training_recall-overall 0.9913593729924194
+training_f1-measure-overall 0.9913721106527916
+training_loss 13.041400909423828
+validation_precision-overall 0.738763899663822
+validation_recall-overall 0.7415252037585007
+validation_f1-measure-overall 0.7401419762681505
+validation_loss 489.9003601074219
+test_precision-overall 0.747529297402387
+test_recall-overall 0.7486411206360367
+test_f1-measure-overall 0.7480847959141814
+
+/data/tagger/semtr_semtraits_tagger_crf_template
+training_duration 01:13:42
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9902525349148651
+training_recall-overall 0.9901388782615349
+training_f1-measure-overall 0.9901957033267152
+training_loss 10.7341947555542
+validation_precision-overall 0.7254643656962192
+validation_recall-overall 0.7283428117973813
+validation_f1-measure-overall 0.7269007391762964
+validation_loss 651.2142944335938
+test_precision-overall 0.740308019118428
+test_recall-overall 0.7424107935380792
+test_f1-measure-overall 0.7413579152632012
+
+/data/tagger/multitagger_multi_xpos
+training_duration 08:35:29
+training_start_epoch 0
+training_epochs 18
+training_f1-measure-overall 0.998331166351319
+training_xpos-f1-measure-overall 0.998331166351319
+training_loss 3.2279441356658936
+validation_f1-measure-overall 0.9485983590544529
+validation_xpos-f1-measure-overall 0.9485983590544529
+validation_loss 137.66822814941406
+test_f1-measure-overall 0.94576919076342
+test_xpos-f1-measure-overall 0.94576919076342
+
+/data/tagger/multitagger_multi_upos
+training_duration 01:05:09
+training_start_epoch 0
+training_epochs 23
+training_f1-measure-overall 0.9856128954648845
+training_upos-f1-measure-overall 0.9856128954648845
+training_loss 11.287476539611816
+validation_f1-measure-overall 0.9364154279352522
+validation_upos-f1-measure-overall 0.9364154279352522
+validation_loss 127.46296691894531
+test_f1-measure-overall 0.9379203989893519
+test_upos-f1-measure-overall 0.9379203989893519
+
+/data/tagger/multitagger_multi_uni
+training_duration 03:53:00
+training_start_epoch 0
+training_epochs 23
+training_f1-measure-overall 0.999850918440117
+training_upos-f1-measure-overall 0.9998533624001142
+training_xpos-f1-measure-overall 0.9998484744801197
+training_loss 0.29728439450263977
+validation_f1-measure-overall 0.947709559408253
+validation_upos-f1-measure-overall 0.9501749642118158
+validation_xpos-f1-measure-overall 0.94524415460469
+validation_loss 171.53329467773438
+test_f1-measure-overall 0.9533591010519105
+test_upos-f1-measure-overall 0.9553713739240813
+test_xpos-f1-measure-overall 0.9513468281797397
+
+/data/tagger/multitagger_multi_conll03
+training_duration 04:23:08
+training_start_epoch 0
+training_epochs 27
+training_f1-measure-overall 0.9994343074741145
+training_xpos-f1-measure-overall 0.9995236247734263
+training_chunk-f1-measure-overall 0.9993449901748027
+training_loss 1.263779878616333
+validation_f1-measure-overall 0.9362555724817476
+validation_xpos-f1-measure-overall 0.9550835247848104
+validation_chunk-f1-measure-overall 0.917427620178685
+validation_loss 184.5448760986328
+test_f1-measure-overall 0.9292855513970553
+test_xpos-f1-measure-overall 0.9494346936577513
+test_chunk-f1-measure-overall 0.9091364091363592
+
+/data/tagger/multitagger_multi_uposchunk  does not exist
+/data/tagger/multitagger_multi_nerupos
+training_duration 07:14:24
+training_start_epoch 0
+training_epochs 22
+training_f1-measure-overall 0.9926174350594859
+training_ner-f1-measure-overall 0.9994254952443273
+training_upos-f1-measure-overall 0.9858093748746443
+training_loss 6.5328779220581055
+validation_f1-measure-overall 0.9297787062448577
+validation_ner-f1-measure-overall 0.9216358618382037
+validation_upos-f1-measure-overall 0.9379215506515118
+validation_loss 89.95785522460938
+test_f1-measure-overall 0.9102097134745565
+test_ner-f1-measure-overall 0.8812521860789986
+test_upos-f1-measure-overall 0.9391672408701144
+
+/data/tagger/multitagger_multi_nerxpos  does not exist
+/data/tagger/multitagger_multi_chunkner
+training_duration 06:57:38
+training_start_epoch 0
+training_epochs 18
+training_f1-measure-overall 0.9986797791041493
+training_chunk-f1-measure-overall 0.9985723499698752
+training_ner-f1-measure-overall 0.9987872082384233
+training_loss 2.099193572998047
+validation_f1-measure-overall 0.9229772886874753
+validation_chunk-f1-measure-overall 0.9231736855486807
+validation_ner-f1-measure-overall 0.9227808918262699
+validation_loss 120.39152526855469
+test_f1-measure-overall 0.8949505601212064
+test_chunk-f1-measure-overall 0.9159280386133769
+test_ner-f1-measure-overall 0.8739730816290359
+
+/data/tagger/multitagger_multi_nersemtr
+training_duration 04:27:42
+training_start_epoch 0
+training_epochs 14
+training_f1-measure-overall 0.989462360474793
+training_ner-f1-measure-overall 0.9988086120329686
+training_semtr-f1-measure-overall 0.9801161089166175
+training_loss 9.57613468170166
+validation_f1-measure-overall 0.8302529168113222
+validation_ner-f1-measure-overall 0.9237848238935332
+validation_semtr-f1-measure-overall 0.7367210097291113
+validation_loss 217.9056854248047
+test_f1-measure-overall 0.810136055437374
+test_ner-f1-measure-overall 0.8795444590450663
+test_semtr-f1-measure-overall 0.7407276518296817
+
+/data/tagger/multitagger_multi_nersem  does not exist
+/data/tagger/multitagger_multi_nersupsense  does not exist
+/data/tagger/multitagger_multi_comner  does not exist
+/data/tagger/multitagger_multi_commwe  does not exist
+/data/tagger/multitagger_multi_chunkmwe  does not exist
+/data/tagger/multitagger_multi_mwexpos  does not exist
+/data/tagger/multitagger_multi_mweupos  does not exist
+/data/tagger/multitagger_multi_mwesupsense  does not exist
+/data/tagger/multitagger_multi_mwesemtr  does not exist
+/data/tagger/multitagger_multi_mwesem  does not exist
+/data/tagger/multitagger_multi_mwener  does not exist
+/data/tagger/multitagger_multi_semxpos  does not exist
+/data/tagger/multitagger_multi_semupos
+training_duration 04:34:16
+training_start_epoch 0
+training_epochs 24
+training_f1-measure-overall 0.9845659509753455
+training_sem-f1-measure-overall 0.9844973937507329
+training_upos-f1-measure-overall 0.984634508199958
+training_loss 17.596282958984375
+validation_f1-measure-overall 0.8412077021610855
+validation_sem-f1-measure-overall 0.7447557880560955
+validation_upos-f1-measure-overall 0.9376596162660754
+validation_loss 270.52587890625
+test_f1-measure-overall 0.8464615269194774
+test_sem-f1-measure-overall 0.7519511734045788
+test_upos-f1-measure-overall 0.940971880434376
+
+/data/tagger/multitagger_multi_chunksem  does not exist
+/data/tagger/multitagger_multi_semsemtr
+training_duration 23:49:35
+training_start_epoch 0
+training_epochs 86
+training_f1-measure-overall 0.9983830576892392
+training_sem-f1-measure-overall 0.9979570072082453
+training_semtr-f1-measure-overall 0.9988091081702332
+training_loss 2.052347421646118
+validation_f1-measure-overall 0.8312525618195477
+validation_sem-f1-measure-overall 0.7358163819172909
+validation_semtr-f1-measure-overall 0.9266887417218043
+validation_loss 689.5112915039062
+test_f1-measure-overall 0.7444040004670057
+test_sem-f1-measure-overall 0.7432851100514061
+test_semtr-f1-measure-overall 0.7455228908826054
+
+/data/tagger/multitagger_multi_comsem  does not exist
+/data/tagger/multitagger_multi_semsupsense  does not exist
+/data/tagger/multitagger_multi_semtrxpos  does not exist
+/data/tagger/multitagger_multi_semtrupos  does not exist
+/data/tagger/multitagger_multi_chunksemtr  does not exist
+/data/tagger/multitagger_multi_comsemtr  does not exist
+/data/tagger/multitagger_multi_semtrsupsense  does not exist
+/data/tagger/multitagger_multi_supsensexpos  does not exist
+/data/tagger/multitagger_multi_supsenseupos  does not exist
+/data/tagger/multitagger_multi_chunksupsense  does not exist
+/data/tagger/multitagger_multi_comsupsense  does not exist
+/data/tagger/multitagger_multi_comxpos  does not exist
+/data/tagger/multitagger_multi_comupos  does not exist
+/data/tagger/multitagger_multi_chunkcom  does not exist
+/data/tagger/taskembtagger_task_embedding_tagger_xpos
+training_duration 06:50:42
+training_start_epoch 0
+training_epochs 53
+training_precision-overall 0.9996688822125732
+training_recall-overall 0.9996688822125732
+training_f1-measure-overall 0.9996688822125233
+training_loss 0.7365136742591858
+validation_precision-overall 0.9505274467669467
+validation_recall-overall 0.9505274467669467
+validation_f1-measure-overall 0.9505274467668967
+validation_loss 179.13174438476562
+test_precision-overall 0.9481095277719992
+test_recall-overall 0.9481095277719992
+test_f1-measure-overall 0.9481095277719492
+
+/data/tagger/taskembtagger_task_embedding_tagger_upos
+training_duration 03:10:43
+training_start_epoch 0
+training_epochs 28
+training_precision-overall 0.9998716869160752
+training_recall-overall 0.9998716869160752
+training_f1-measure-overall 0.9998716869160252
+training_loss 0.3576161563396454
+validation_precision-overall 0.951771331281514
+validation_recall-overall 0.951771331281514
+validation_f1-measure-overall 0.9517713312814641
+validation_loss 143.30697631835938
+test_precision-overall 0.9542605899530794
+test_recall-overall 0.9542605899530794
+test_f1-measure-overall 0.9542605899530294
+
+/data/tagger/taskembtagger_task_embedding_tagger_uni
+training_duration 02:59:44
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9998851338801287
+training_recall-overall 0.9998851338801287
+training_f1-measure-overall 0.9998851338800787
+training_loss 0.26874402165412903
+validation_precision-overall 0.9496779067917925
+validation_recall-overall 0.9496779067917925
+validation_f1-measure-overall 0.9496779067917427
+validation_loss 181.84857177734375
+test_precision-overall 0.9522633088938476
+test_recall-overall 0.9522633088938476
+test_f1-measure-overall 0.9522633088937976
+
+/data/tagger/taskembtagger_task_embedding_tagger_conll03
+training_duration 04:08:34
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9997463976945244
+training_recall-overall 0.9997694471342279
+training_f1-measure-overall 0.9997579222814749
+training_loss 0.8358157277107239
+validation_precision-overall 0.9438297098625938
+validation_recall-overall 0.9425932891477191
+validation_f1-measure-overall 0.9432110943106764
+validation_loss 188.56341552734375
+test_precision-overall 0.9369850584636998
+test_recall-overall 0.9353151705499964
+test_f1-measure-overall 0.9361493698277128
+
+/data/tagger/taskembtagger_task_embedding_tagger_uposchunk
+training_duration 03:28:51
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9997785380946573
+training_recall-overall 0.9997849558999115
+training_f1-measure-overall 0.9997817469869351
+training_loss 0.8021429181098938
+validation_precision-overall 0.9475553868264772
+validation_recall-overall 0.9499768914987902
+validation_f1-measure-overall 0.9487645940808623
+validation_loss 164.17059326171875
+test_precision-overall 0.9495742059878957
+test_recall-overall 0.950312223621794
+test_f1-measure-overall 0.9499430714620088
+
+/data/tagger/taskembtagger_task_embedding_tagger_nerupos
+training_duration 05:21:57
+training_start_epoch 0
+training_epochs 42
+training_precision-overall 0.999791123863549
+training_recall-overall 0.999791123863549
+training_f1-measure-overall 0.999791123863499
+training_loss 0.22902080416679382
+validation_precision-overall 0.9453137823494009
+validation_recall-overall 0.9471275079486898
+validation_f1-measure-overall 0.9462197760069601
+validation_loss 122.42899322509766
+test_precision-overall 0.9388194386952562
+test_recall-overall 0.9417301038062283
+test_f1-measure-overall 0.9402725187252479
+
+/data/tagger/taskembtagger_task_embedding_tagger_nerxpos
+training_duration 06:21:32
+training_start_epoch 0
+training_epochs 39
+training_precision-overall 0.999299065910889
+training_recall-overall 0.9992927745482781
+training_f1-measure-overall 0.9992959202196313
+training_loss 0.9041663408279419
+validation_precision-overall 0.9491776053870828
+validation_recall-overall 0.9499123466065614
+validation_f1-measure-overall 0.9495448338643104
+validation_loss 128.15464782714844
+test_precision-overall 0.9427427838978439
+test_recall-overall 0.9443071705426357
+test_f1-measure-overall 0.9435243287727101
+
+/data/tagger/taskembtagger_task_embedding_tagger_chunkner
+training_duration 02:36:26
+training_start_epoch 0
+training_epochs 21
+training_precision-overall 0.9990759259178918
+training_recall-overall 0.9991929675364684
+training_f1-measure-overall 0.9991344432994782
+training_loss 1.542502999305725
+validation_precision-overall 0.9249245096005347
+validation_recall-overall 0.9263979313847717
+validation_f1-measure-overall 0.9256606341626085
+validation_loss 119.35149383544922
+test_precision-overall 0.9085361278543381
+test_recall-overall 0.9107684593205466
+test_f1-measure-overall 0.9096509240245907
+
+/data/tagger/taskembtagger_task_embedding_tagger_nersemtr
+training_duration 01:40:16
+training_start_epoch 0
+training_epochs 17
+training_precision-overall 0.9916517637503807
+training_recall-overall 0.9916517637503807
+training_f1-measure-overall 0.9916517637503307
+training_loss 5.671010971069336
+validation_precision-overall 0.7817456593148756
+validation_recall-overall 0.7908754272692746
+validation_f1-measure-overall 0.7862840421012385
+validation_loss 241.4444122314453
+test_precision-overall 0.7607120861072821
+test_recall-overall 0.7671014107000266
+test_f1-measure-overall 0.7638933883080047
+
+/data/tagger/taskembtagger_task_embedding_tagger_nersem
+training_duration 02:54:24
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9939446366782007
+training_recall-overall 0.9940611412209267
+training_f1-measure-overall 0.9940028855357136
+training_loss 5.364818572998047
+validation_precision-overall 0.781284519488717
+validation_recall-overall 0.7857171196191232
+validation_f1-measure-overall 0.7834945502739198
+validation_loss 236.46522521972656
+test_precision-overall 0.7641520454173772
+test_recall-overall 0.7673071058249467
+test_f1-measure-overall 0.7657263256466783
+
+/data/tagger/taskembtagger_task_embedding_tagger_nersupsense
+training_duration 02:13:01
+training_start_epoch 0
+training_epochs 28
+training_precision-overall 0.999758698904493
+training_recall-overall 0.9997345751996718
+training_f1-measure-overall 0.9997466369065072
+training_loss 0.3216313123703003
+validation_precision-overall 0.8665102494443072
+validation_recall-overall 0.8685480876346082
+validation_f1-measure-overall 0.8675279718117817
+validation_loss 98.5434799194336
+test_precision-overall 0.8207090028054068
+test_recall-overall 0.8266118674544053
+test_f1-measure-overall 0.8236498592269784
+
+/data/tagger/taskembtagger_task_embedding_tagger_comner
+training_duration 00:36:53
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9864110652754186
+training_recall-overall 0.9863392618833863
+training_f1-measure-overall 0.9863751622726166
+training_loss 3.322355031967163
+validation_precision-overall 0.8803028325283906
+validation_recall-overall 0.8820298195134711
+validation_f1-measure-overall 0.8811654798457723
+validation_loss 68.09122467041016
+test_precision-overall 0.7958669728168284
+test_recall-overall 0.7997171777314677
+test_f1-measure-overall 0.7977874299290438
+
+/data/tagger/taskembtagger_task_embedding_tagger_commwe
+training_duration 00:12:50
+training_start_epoch 0
+training_epochs 13
+training_precision-overall 0.9305208887434019
+training_recall-overall 0.9243557434354931
+training_f1-measure-overall 0.9274280703900318
+training_loss 47.33692169189453
+validation_precision-overall 0.6123936816524909
+validation_recall-overall 0.6033519553072626
+validation_f1-measure-overall 0.6078391959798495
+validation_loss 177.30039978027344
+test_precision-overall 0.700423429781228
+test_recall-overall 0.6903547414792488
+test_f1-measure-overall 0.69535263895371
+
+/data/tagger/taskembtagger_task_embedding_tagger_chunkmwe
+training_duration 02:19:35
+training_start_epoch 0
+training_epochs 19
+training_precision-overall 0.9992611850965135
+training_recall-overall 0.9992284780443556
+training_f1-measure-overall 0.9992448313027447
+training_loss 2.2353737354278564
+validation_precision-overall 0.915944540727903
+validation_recall-overall 0.9137370985487504
+validation_f1-measure-overall 0.9148394880402355
+validation_loss 176.63845825195312
+test_precision-overall 0.9089264173703256
+test_recall-overall 0.9022665716322167
+test_f1-measure-overall 0.905584250210987
+
+/data/tagger/taskembtagger_task_embedding_tagger_mwexpos
+training_duration 04:43:56
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.999408531069515
+training_recall-overall 0.999349857251266
+training_f1-measure-overall 0.9993791932991517
+training_loss 1.3952258825302124
+validation_precision-overall 0.9485630583734838
+validation_recall-overall 0.9474161487679249
+validation_f1-measure-overall 0.9479892566782311
+validation_loss 169.48382568359375
+test_precision-overall 0.9443628776756047
+test_recall-overall 0.9430996784565916
+test_f1-measure-overall 0.9437308553630225
+
+/data/tagger/taskembtagger_task_embedding_tagger_mweupos
+training_duration 01:47:40
+training_start_epoch 0
+training_epochs 21
+training_precision-overall 0.9996839184743799
+training_recall-overall 0.9996254067848196
+training_f1-measure-overall 0.9996546617733497
+training_loss 0.9177321791648865
+validation_precision-overall 0.9423089243385226
+validation_recall-overall 0.9385209290454314
+validation_f1-measure-overall 0.9404111121766707
+validation_loss 139.5517578125
+test_precision-overall 0.9477794202712256
+test_recall-overall 0.9418170205971579
+test_f1-measure-overall 0.9447888136081379
+
+/data/tagger/taskembtagger_task_embedding_tagger_mwesupsense
+training_duration 01:03:04
+training_start_epoch 0
+training_epochs 31
+training_precision-overall 0.9997986225784365
+training_recall-overall 0.9996778350515464
+training_f1-measure-overall 0.9997382251665798
+training_loss 2.012411117553711
+validation_precision-overall 0.6879329201604083
+validation_recall-overall 0.6420551207893841
+validation_f1-measure-overall 0.6642027455120937
+validation_loss 236.2488250732422
+test_precision-overall 0.683007740508662
+test_recall-overall 0.6226478494623656
+test_f1-measure-overall 0.6514325892071922
+
+/data/tagger/taskembtagger_task_embedding_tagger_mwesemtr
+training_duration 01:41:00
+training_start_epoch 0
+training_epochs 20
+training_precision-overall 0.9899446055502186
+training_recall-overall 0.9894382627422829
+training_f1-measure-overall 0.9896913693828234
+training_loss 11.257120132446289
+validation_precision-overall 0.7285332654878515
+validation_recall-overall 0.7192916352675207
+validation_f1-measure-overall 0.7238829551917594
+validation_loss 472.5049743652344
+test_precision-overall 0.7423378970046564
+test_recall-overall 0.7365789745888356
+test_f1-measure-overall 0.7394472231355829
+
+/data/tagger/taskembtagger_task_embedding_tagger_mwesem
+training_duration 02:30:03
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9940424170061914
+training_recall-overall 0.993638802076925
+training_f1-measure-overall 0.993840568562852
+training_loss 8.863408088684082
+validation_precision-overall 0.7388455382152861
+validation_recall-overall 0.7361574881634687
+validation_f1-measure-overall 0.7374990638339866
+validation_loss 437.828369140625
+test_precision-overall 0.7492449531076141
+test_recall-overall 0.7478382737922099
+test_f1-measure-overall 0.7485409525825633
+
+/data/tagger/taskembtagger_task_embedding_tagger_mwener
+training_duration 01:48:26
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9998683560967583
+training_recall-overall 0.9998025471418699
+training_f1-measure-overall 0.9998354505363813
+training_loss 0.12751524150371552
+validation_precision-overall 0.890906362545018
+validation_recall-overall 0.880338078291815
+validation_f1-measure-overall 0.885590692124055
+validation_loss 97.55685424804688
+test_precision-overall 0.8398020720581413
+test_recall-overall 0.8373419673142153
+test_f1-measure-overall 0.8385702153940672
+
+/data/tagger/taskembtagger_task_embedding_tagger_semxpos
+training_duration 10:04:52
+training_start_epoch 0
+training_epochs 43
+training_precision-overall 0.9958860717900188
+training_recall-overall 0.9958746186363405
+training_f1-measure-overall 0.9958803451802003
+training_loss 6.709546089172363
+validation_precision-overall 0.9100532235289471
+validation_recall-overall 0.9109887611572943
+validation_f1-measure-overall 0.9105207520326711
+validation_loss 254.048583984375
+test_precision-overall 0.8827800284105856
+test_recall-overall 0.8839504438454312
+test_f1-measure-overall 0.8833648484422554
+
+/data/tagger/taskembtagger_task_embedding_tagger_semupos
+training_duration 04:57:53
+training_start_epoch 0
+training_epochs 31
+training_precision-overall 0.9969017012252476
+training_recall-overall 0.9969287742254043
+training_f1-measure-overall 0.9969152375414723
+training_loss 5.254621982574463
+validation_precision-overall 0.8690552441953563
+validation_recall-overall 0.8717598634675233
+validation_f1-measure-overall 0.8704054528140632
+validation_loss 321.5345458984375
+test_precision-overall 0.8414762066571129
+test_recall-overall 0.8443578036053131
+test_f1-measure-overall 0.842914542373584
+
+/data/tagger/taskembtagger_task_embedding_tagger_chunksem
+training_duration 03:52:22
+training_start_epoch 0
+training_epochs 20
+training_precision-overall 0.9909868179800436
+training_recall-overall 0.9911398513656983
+training_f1-measure-overall 0.9910633287652224
+training_loss 11.55155086517334
+validation_precision-overall 0.8610513318045511
+validation_recall-overall 0.861887525381831
+validation_f1-measure-overall 0.8614692256783087
+validation_loss 254.48147583007812
+test_precision-overall 0.8278671255003862
+test_recall-overall 0.8276230060660525
+test_f1-measure-overall 0.8277450477841802
+
+/data/tagger/taskembtagger_task_embedding_tagger_semsemtr
+training_duration 10:06:03
+training_start_epoch 0
+training_epochs 70
+training_precision-overall 0.9985857141759095
+training_recall-overall 0.9985473383241357
+training_f1-measure-overall 0.9985665258812677
+training_loss 1.7737611532211304
+validation_precision-overall 0.8188132046960362
+validation_recall-overall 0.8194561582085211
+validation_f1-measure-overall 0.819134555285791
+validation_loss 659.2933349609375
+test_precision-overall 0.7432484242489303
+test_recall-overall 0.7439672111015596
+test_f1-measure-overall 0.7436076439765977
+
+/data/tagger/taskembtagger_task_embedding_tagger_comsem
+training_duration 01:44:25
+training_start_epoch 0
+training_epochs 22
+training_precision-overall 0.9888227559000623
+training_recall-overall 0.98890260361992
+training_f1-measure-overall 0.9888626781480748
+training_loss 15.999582290649414
+validation_precision-overall 0.7369570377403275
+validation_recall-overall 0.7404015834406448
+validation_f1-measure-overall 0.7386752950132733
+validation_loss 472.6430358886719
+test_precision-overall 0.7457253539941223
+test_recall-overall 0.7482073849040588
+test_f1-measure-overall 0.7469643076167782
+
+/data/tagger/taskembtagger_task_embedding_tagger_semsupsense
+training_duration 05:17:11
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9935717248053085
+training_recall-overall 0.9935946176355384
+training_f1-measure-overall 0.9935831710885068
+training_loss 10.181764602661133
+validation_precision-overall 0.7350706260780383
+validation_recall-overall 0.736822429906542
+validation_f1-measure-overall 0.7359454855195412
+validation_loss 463.8981628417969
+test_precision-overall 0.7466540662035145
+test_recall-overall 0.7473221361556357
+test_f1-measure-overall 0.7469879518071789
+
+/data/tagger/taskembtagger_task_embedding_tagger_semtrxpos
+training_duration 03:07:26
+training_start_epoch 0
+training_epochs 14
+training_precision-overall 0.9893889879361617
+training_recall-overall 0.9893375277771301
+training_f1-measure-overall 0.9893632571874413
+training_loss 15.481254577636719
+validation_precision-overall 0.9162486480918782
+validation_recall-overall 0.9168058046296869
+validation_f1-measure-overall 0.916527141686923
+validation_loss 202.33984375
+test_precision-overall 0.8939264490896318
+test_recall-overall 0.8961808959144246
+test_f1-measure-overall 0.8950522528858585
+
+/data/tagger/taskembtagger_task_embedding_tagger_semtrupos
+training_duration 02:30:30
+training_start_epoch 0
+training_epochs 17
+training_precision-overall 0.9950386650731627
+training_recall-overall 0.9950246085516836
+training_f1-measure-overall 0.9950316367627301
+training_loss 8.231624603271484
+validation_precision-overall 0.8777534965034965
+validation_recall-overall 0.8795988086895585
+validation_f1-measure-overall 0.878675183759138
+validation_loss 287.0995788574219
+test_precision-overall 0.8535868919263095
+test_recall-overall 0.8572695337812489
+test_f1-measure-overall 0.85542424938525
+
+/data/tagger/taskembtagger_task_embedding_tagger_chunksemtr
+training_duration 03:51:54
+training_start_epoch 0
+training_epochs 21
+training_precision-overall 0.9929426489938702
+training_recall-overall 0.993143451450436
+training_f1-measure-overall 0.9930430400710764
+training_loss 9.312938690185547
+validation_precision-overall 0.8687280768644197
+validation_recall-overall 0.8680992113384387
+validation_f1-measure-overall 0.8684135302524512
+validation_loss 255.18295288085938
+test_precision-overall 0.8382393044482587
+test_recall-overall 0.8373930322746066
+test_f1-measure-overall 0.8378159546580015
+
+/data/tagger/taskembtagger_task_embedding_tagger_comsemtr
+training_duration 01:07:49
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9853026572991895
+training_recall-overall 0.9853107159799126
+training_f1-measure-overall 0.9853066866230236
+training_loss 14.752001762390137
+validation_precision-overall 0.726290303531357
+validation_recall-overall 0.7309520979436587
+validation_f1-measure-overall 0.7286137440757794
+validation_loss 603.8461303710938
+test_precision-overall 0.7394370107156738
+test_recall-overall 0.7408561177092315
+test_f1-measure-overall 0.7401458839874457
+
+/data/tagger/taskembtagger_task_embedding_tagger_semtrsupsense
+training_duration 02:30:57
+training_start_epoch 0
+training_epochs 19
+training_precision-overall 0.9889281719236076
+training_recall-overall 0.9887424895506792
+training_f1-measure-overall 0.9888353220202875
+training_loss 13.413352966308594
+validation_precision-overall 0.7290408732001857
+validation_recall-overall 0.7275624311953184
+validation_f1-measure-overall 0.7283009018936366
+validation_loss 496.9210510253906
+test_precision-overall 0.7415033654962034
+test_recall-overall 0.7379797379797379
+test_f1-measure-overall 0.7397373556944358
+
+/data/tagger/taskembtagger_task_embedding_tagger_supsensexpos
+training_duration 10:39:38
+training_start_epoch 0
+training_epochs 46
+training_precision-overall 0.9990699847120774
+training_recall-overall 0.9990805915639498
+training_f1-measure-overall 0.9990752881098113
+training_loss 1.912960410118103
+validation_precision-overall 0.9444537034832504
+validation_recall-overall 0.9440154210444902
+validation_f1-measure-overall 0.944234511404769
+validation_loss 174.25576782226562
+test_precision-overall 0.9398663697104677
+test_recall-overall 0.9395572422517394
+test_f1-measure-overall 0.9397117805584225
+
+/data/tagger/taskembtagger_task_embedding_tagger_supsenseupos
+training_duration 04:29:56
+training_start_epoch 0
+training_epochs 38
+training_precision-overall 0.9997269313063906
+training_recall-overall 0.9997194520711918
+training_f1-measure-overall 0.9997231916747525
+training_loss 0.8391159176826477
+validation_precision-overall 0.9352784496218963
+validation_recall-overall 0.9348205269439089
+validation_f1-measure-overall 0.9350494322181252
+validation_loss 168.6923370361328
+test_precision-overall 0.9361244973756101
+test_recall-overall 0.9350912156982983
+test_f1-measure-overall 0.935607571248838
+
+/data/tagger/taskembtagger_task_embedding_tagger_chunksupsense
+training_duration 05:21:29
+training_start_epoch 0
+training_epochs 28
+training_precision-overall 0.9993375216194706
+training_recall-overall 0.999310863021799
+training_f1-measure-overall 0.9993241921427943
+training_loss 2.600806713104248
+validation_precision-overall 0.9101931303313336
+validation_recall-overall 0.9101470551013693
+validation_f1-measure-overall 0.9101700921331889
+validation_loss 188.2080535888672
+test_precision-overall 0.9004506123351671
+test_recall-overall 0.8954501718213058
+test_f1-measure-overall 0.8979434305562713
+
+/data/tagger/taskembtagger_task_embedding_tagger_comsupsense
+training_duration 00:25:38
+training_start_epoch 0
+training_epochs 18
+training_precision-overall 0.98228523301516
+training_recall-overall 0.9812384317684671
+training_f1-measure-overall 0.9817615533544213
+training_loss 29.866619110107422
+validation_precision-overall 0.6965553510386537
+validation_recall-overall 0.6896641499609477
+validation_f1-measure-overall 0.6930926216640003
+validation_loss 276.5212707519531
+test_precision-overall 0.6991339786041773
+test_recall-overall 0.691315736449728
+test_f1-measure-overall 0.6952028772604738
+
+/data/tagger/taskembtagger_task_embedding_tagger_comxpos
+training_duration 03:38:50
+training_start_epoch 0
+training_epochs 29
+training_precision-overall 0.9988613309256997
+training_recall-overall 0.9988613309256997
+training_f1-measure-overall 0.9988613309256498
+training_loss 2.011260509490967
+validation_precision-overall 0.9454478040378911
+validation_recall-overall 0.9454478040378911
+validation_f1-measure-overall 0.9454478040378411
+validation_loss 174.37648010253906
+test_precision-overall 0.9292443919716648
+test_recall-overall 0.9292443919716648
+test_f1-measure-overall 0.9292443919716149
+
+/data/tagger/taskembtagger_task_embedding_tagger_comupos
+training_duration 02:15:25
+training_start_epoch 0
+training_epochs 31
+training_precision-overall 0.9996780280340242
+training_recall-overall 0.9996780280340242
+training_f1-measure-overall 0.9996780280339742
+training_loss 0.9922428131103516
+validation_precision-overall 0.93676735098927
+validation_recall-overall 0.93676735098927
+validation_f1-measure-overall 0.93676735098922
+validation_loss 149.2567138671875
+test_precision-overall 0.9114595583431334
+test_recall-overall 0.9114595583431334
+test_f1-measure-overall 0.9114595583430833
+
+/data/tagger/taskembtagger_task_embedding_tagger_chunkcom
+training_duration 04:00:50
+training_start_epoch 0
+training_epochs 23
+training_precision-overall 0.9989630480157724
+training_recall-overall 0.998998615864595
+training_f1-measure-overall 0.9989808316235431
+training_loss 2.202648162841797
+validation_precision-overall 0.9122878861559724
+validation_recall-overall 0.9121711536492988
+validation_f1-measure-overall 0.9122295161681971
+validation_loss 199.45111083984375
+test_precision-overall 0.8787214263580674
+test_recall-overall 0.8772159428911362
+test_f1-measure-overall 0.8779680392483248
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_xpos
+training_duration 03:25:41
+training_start_epoch 0
+training_epochs 33
+training_precision-overall 0.9996357704338306
+training_recall-overall 0.9996357704338306
+training_f1-measure-overall 0.9996357704337806
+training_loss 0.7116953134536743
+validation_precision-overall 0.9520042000903508
+validation_recall-overall 0.9519925766751318
+validation_f1-measure-overall 0.9519983883472124
+validation_loss 171.15704345703125
+test_precision-overall 0.950228832951945
+test_recall-overall 0.950228832951945
+test_f1-measure-overall 0.9502288329518951
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_upos
+training_duration 02:11:23
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9998957456193112
+training_recall-overall 0.9998957456193112
+training_f1-measure-overall 0.9998957456192612
+training_loss 0.24794122576713562
+validation_precision-overall 0.951181978914282
+validation_recall-overall 0.951181978914282
+validation_f1-measure-overall 0.9511819789142321
+validation_loss 157.90658569335938
+test_precision-overall 0.9541293434393149
+test_recall-overall 0.9541293434393149
+test_f1-measure-overall 0.9541293434392648
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_uni
+training_duration 03:42:18
+training_start_epoch 0
+training_epochs 23
+training_precision-overall 0.9998778020001369
+training_recall-overall 0.9998778020001369
+training_f1-measure-overall 0.9998778020000869
+training_loss 0.24902941286563873
+validation_precision-overall 0.9492404962621283
+validation_recall-overall 0.9492404962621283
+validation_f1-measure-overall 0.9492404962620783
+validation_loss 173.94241333007812
+test_precision-overall 0.9528003028431392
+test_recall-overall 0.9527813197322282
+test_f1-measure-overall 0.9527908111930803
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_conll03
+training_duration 04:03:29
+training_start_epoch 0
+training_epochs 26
+training_precision-overall 0.9995290180850468
+training_recall-overall 0.9995388942684558
+training_f1-measure-overall 0.9995339561523051
+training_loss 1.0640742778778076
+validation_precision-overall 0.9426486058260497
+validation_recall-overall 0.9414259588321509
+validation_f1-measure-overall 0.9420368856181929
+validation_loss 186.9593048095703
+test_precision-overall 0.9369745437501831
+test_recall-overall 0.9344971148929954
+test_f1-measure-overall 0.9357341895281409
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_uposchunk
+training_duration 04:02:23
+training_start_epoch 0
+training_epochs 34
+training_precision-overall 0.9997977975986058
+training_recall-overall 0.9998138424208188
+training_f1-measure-overall 0.9998058199452908
+training_loss 0.6707249879837036
+validation_precision-overall 0.9482047944462523
+validation_recall-overall 0.9506021803550553
+validation_f1-measure-overall 0.949401973961041
+validation_loss 170.69989013671875
+test_precision-overall 0.9488182646444075
+test_recall-overall 0.9489454077667301
+test_f1-measure-overall 0.9488818319464601
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_nerupos
+training_duration 02:06:17
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9997837956685844
+training_recall-overall 0.999787459369927
+training_f1-measure-overall 0.9997856275158493
+training_loss 0.224209725856781
+validation_precision-overall 0.9455222042848934
+validation_recall-overall 0.9471549172239886
+validation_f1-measure-overall 0.9463378565266305
+validation_loss 107.9120864868164
+test_precision-overall 0.9377725040013246
+test_recall-overall 0.9407058823529412
+test_f1-measure-overall 0.9392369028370353
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_nerxpos
+training_duration 04:47:20
+training_start_epoch 0
+training_epochs 37
+training_precision-overall 0.9993725210383833
+training_recall-overall 0.9993725210383833
+training_f1-measure-overall 0.9993725210383333
+training_loss 0.8279719352722168
+validation_precision-overall 0.9506769825918762
+validation_recall-overall 0.951153154383808
+validation_f1-measure-overall 0.9509150088769018
+validation_loss 129.72210693359375
+test_precision-overall 0.9442563072978399
+test_recall-overall 0.9456516472868217
+test_f1-measure-overall 0.9449534621947916
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_chunkner
+training_duration 02:11:54
+training_start_epoch 0
+training_epochs 19
+training_precision-overall 0.9990629067245119
+training_recall-overall 0.9991756119996181
+training_f1-measure-overall 0.999119256183596
+training_loss 1.4930752515792847
+validation_precision-overall 0.9243430152143846
+validation_recall-overall 0.9257514891259178
+validation_f1-measure-overall 0.9250467160356619
+validation_loss 128.05763244628906
+test_precision-overall 0.9077870391229256
+test_recall-overall 0.9092892064685972
+test_f1-measure-overall 0.9085375018788017
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_nersemtr
+training_duration 01:18:36
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9892926594972001
+training_recall-overall 0.9892308533318755
+training_f1-measure-overall 0.989261755449121
+training_loss 6.526254177093506
+validation_precision-overall 0.7866585124900033
+validation_recall-overall 0.7938663121914167
+validation_f1-measure-overall 0.7902459771744024
+validation_loss 245.80197143554688
+test_precision-overall 0.7575086020878288
+test_recall-overall 0.7682843876615503
+test_f1-measure-overall 0.7628584433317662
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_nersem
+training_duration 02:52:42
+training_start_epoch 0
+training_epochs 27
+training_precision-overall 0.9945910945637431
+training_recall-overall 0.9945355801271496
+training_f1-measure-overall 0.9945633365707216
+training_loss 4.81660795211792
+validation_precision-overall 0.7828713574982231
+validation_recall-overall 0.7866296369767903
+validation_f1-measure-overall 0.7847459975064311
+validation_loss 246.7309112548828
+test_precision-overall 0.7639319788191934
+test_recall-overall 0.768268937527858
+test_f1-measure-overall 0.7660943202020648
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_nersupsense
+training_duration 02:52:02
+training_start_epoch 0
+training_epochs 34
+training_precision-overall 0.9998552158490384
+training_recall-overall 0.9998069637815795
+training_f1-measure-overall 0.9998310892330952
+training_loss 0.20498861372470856
+validation_precision-overall 0.8621113432468969
+validation_recall-overall 0.8683005322440897
+validation_f1-measure-overall 0.8651948692648735
+validation_loss 104.68753814697266
+test_precision-overall 0.817152309454129
+test_recall-overall 0.8248137683020806
+test_f1-measure-overall 0.8209651645892757
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_comner
+training_duration 00:38:25
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9817758256691499
+training_recall-overall 0.9816805376944168
+training_f1-measure-overall 0.9817281793695357
+training_loss 4.111484527587891
+validation_precision-overall 0.8733385457388585
+validation_recall-overall 0.8765367512424798
+validation_f1-measure-overall 0.8749347258485141
+validation_loss 72.54529571533203
+test_precision-overall 0.7836656043874601
+test_recall-overall 0.7869901756475142
+test_f1-measure-overall 0.7853243714953638
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_commwe
+training_duration 00:17:08
+training_start_epoch 0
+training_epochs 16
+training_precision-overall 0.9721170676110229
+training_recall-overall 0.9707340866596211
+training_f1-measure-overall 0.9714250849111746
+training_loss 20.10524559020996
+validation_precision-overall 0.6382544861337683
+validation_recall-overall 0.6245011971268954
+validation_f1-measure-overall 0.6313029447357306
+validation_loss 257.8513488769531
+test_precision-overall 0.7064380685794261
+test_recall-overall 0.7021794574542082
+test_f1-measure-overall 0.7043023255813453
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_chunkmwe
+training_duration 02:17:52
+training_start_epoch 0
+training_epochs 19
+training_precision-overall 0.9990600141231709
+training_recall-overall 0.9989198692620977
+training_f1-measure-overall 0.9989899367774743
+training_loss 2.3952314853668213
+validation_precision-overall 0.9160872189131747
+validation_recall-overall 0.9145753654319694
+validation_f1-measure-overall 0.9153306678900989
+validation_loss 174.63864135742188
+test_precision-overall 0.9060806742925949
+test_recall-overall 0.9010691375623664
+test_f1-measure-overall 0.9035679570014938
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_mwexpos
+training_duration 03:50:40
+training_start_epoch 0
+training_epochs 25
+training_precision-overall 0.9991845503828264
+training_recall-overall 0.9991193718620828
+training_f1-measure-overall 0.9991519600594433
+training_loss 1.7318578958511353
+validation_precision-overall 0.9493956057266054
+validation_recall-overall 0.9477426063405315
+validation_f1-measure-overall 0.948568385894376
+validation_loss 159.8141326904297
+test_precision-overall 0.9468698039518967
+test_recall-overall 0.9448360128617364
+test_f1-measure-overall 0.9458518151326005
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_mweupos
+training_duration 02:52:32
+training_start_epoch 0
+training_epochs 33
+training_precision-overall 0.9998595258999122
+training_recall-overall 0.999847821506333
+training_f1-measure-overall 0.9998536736688194
+training_loss 0.5060091018676758
+validation_precision-overall 0.9441330044527021
+validation_recall-overall 0.9403075548749362
+validation_f1-measure-overall 0.9422163967966765
+validation_loss 148.3751983642578
+test_precision-overall 0.9482221437060354
+test_recall-overall 0.942711160785566
+test_f1-measure-overall 0.9454586215730989
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_mwesupsense
+training_duration 01:00:40
+training_start_epoch 0
+training_epochs 29
+training_precision-overall 0.9994361432196223
+training_recall-overall 0.9993153994845361
+training_f1-measure-overall 0.9993757677049903
+training_loss 1.7280162572860718
+validation_precision-overall 0.6690467690110675
+validation_recall-overall 0.6376318475671997
+validation_f1-measure-overall 0.6529616724738176
+validation_loss 272.0293273925781
+test_precision-overall 0.6673736302580418
+test_recall-overall 0.6344086021505376
+test_f1-measure-overall 0.6504737295434472
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_mwesemtr
+training_duration 01:37:04
+training_start_epoch 0
+training_epochs 19
+training_precision-overall 0.9920292261707074
+training_recall-overall 0.9917354630294328
+training_f1-measure-overall 0.9918823228492591
+training_loss 9.01641845703125
+validation_precision-overall 0.7236079617031999
+validation_recall-overall 0.7214267771916604
+validation_f1-measure-overall 0.7225157232703905
+validation_loss 525.5687255859375
+test_precision-overall 0.735303265940902
+test_recall-overall 0.7335792849015619
+test_f1-measure-overall 0.7344402637301444
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_mwesem
+training_duration 03:22:41
+training_start_epoch 0
+training_epochs 33
+training_precision-overall 0.9949598759354077
+training_recall-overall 0.9946415827940055
+training_f1-measure-overall 0.9948007039046523
+training_loss 7.720646381378174
+validation_precision-overall 0.7390849803355404
+validation_recall-overall 0.7398953401445303
+validation_f1-measure-overall 0.7394899382346583
+validation_loss 450.14892578125
+test_precision-overall 0.7472977615687518
+test_recall-overall 0.7477325012560488
+test_f1-measure-overall 0.7475150682033973
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_mwener
+training_duration 00:54:19
+training_start_epoch 0
+training_epochs 20
+training_precision-overall 0.9991772797577911
+training_recall-overall 0.9991772797577911
+training_f1-measure-overall 0.9991772797577412
+training_loss 0.3571775257587433
+validation_precision-overall 0.8909253464461332
+validation_recall-overall 0.8865658362989324
+validation_f1-measure-overall 0.8887402452619344
+validation_loss 90.79253387451172
+test_precision-overall 0.8351783517835178
+test_recall-overall 0.8374961455442491
+test_f1-measure-overall 0.8363356428021055
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semxpos
+training_duration 08:49:10
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9944286810382927
+training_recall-overall 0.9943992731705634
+training_f1-measure-overall 0.994413976886958
+training_loss 8.451033592224121
+validation_precision-overall 0.9120571016753379
+validation_recall-overall 0.9131930372552315
+validation_f1-measure-overall 0.9126247159932328
+validation_loss 236.53892517089844
+test_precision-overall 0.8836646893373172
+test_recall-overall 0.8854957810538147
+test_f1-measure-overall 0.8845792876000519
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semupos
+training_duration 07:30:35
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9953857206694532
+training_recall-overall 0.9953783483520553
+training_f1-measure-overall 0.9953820344970535
+training_loss 8.245430946350098
+validation_precision-overall 0.871232766912472
+validation_recall-overall 0.8729645617909848
+validation_f1-measure-overall 0.8720978046113694
+validation_loss 277.7139892578125
+test_precision-overall 0.8423520016563392
+test_recall-overall 0.8443874525616698
+test_f1-measure-overall 0.843368498981997
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_chunksem
+training_duration 09:26:15
+training_start_epoch 0
+training_epochs 31
+training_precision-overall 0.9936862768884649
+training_recall-overall 0.9938698691521778
+training_f1-measure-overall 0.993778064540984
+training_loss 8.753734588623047
+validation_precision-overall 0.8613296720705497
+validation_recall-overall 0.8640063564933345
+validation_f1-measure-overall 0.8626659379792528
+validation_loss 265.1940002441406
+test_precision-overall 0.8298107763631525
+test_recall-overall 0.8319197933048753
+test_f1-measure-overall 0.8308639464844921
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semsemtr
+training_duration 08:39:50
+training_start_epoch 0
+training_epochs 47
+training_precision-overall 0.9983974543735661
+training_recall-overall 0.9983936175118749
+training_f1-measure-overall 0.9983955359389842
+training_loss 2.0326991081237793
+validation_precision-overall 0.811428405931418
+validation_recall-overall 0.8148029664097717
+validation_f1-measure-overall 0.8131121849287732
+validation_loss 649.9124755859375
+test_precision-overall 0.7433740846278764
+test_recall-overall 0.7448575463588358
+test_f1-measure-overall 0.7441150761397468
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_comsem
+training_duration 01:35:43
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9741999861569343
+training_recall-overall 0.974188748024502
+training_f1-measure-overall 0.9741943670582579
+training_loss 29.048385620117188
+validation_precision-overall 0.7377399733890895
+validation_recall-overall 0.7404492774359708
+validation_f1-measure-overall 0.7390921425340482
+validation_loss 439.08837890625
+test_precision-overall 0.7470421782045854
+test_recall-overall 0.7489445350369692
+test_f1-measure-overall 0.747992147064023
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semsupsense
+training_duration 04:32:23
+training_start_epoch 0
+training_epochs 23
+training_precision-overall 0.988327879430336
+training_recall-overall 0.9881684753807516
+training_f1-measure-overall 0.9882481709775408
+training_loss 16.818782806396484
+validation_precision-overall 0.7365598918263626
+validation_recall-overall 0.738177570093458
+validation_f1-measure-overall 0.7373678437229644
+validation_loss 418.54498291015625
+test_precision-overall 0.7463285061170281
+test_recall-overall 0.7470153641639184
+test_f1-measure-overall 0.746671777181501
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semtrxpos
+training_duration 07:28:16
+training_start_epoch 0
+training_epochs 24
+training_precision-overall 0.994497117623214
+training_recall-overall 0.9944311225816634
+training_f1-measure-overall 0.9944641190074913
+training_loss 8.502362251281738
+validation_precision-overall 0.9181561714921131
+validation_recall-overall 0.9190835446169068
+validation_f1-measure-overall 0.9186196240020102
+validation_loss 229.53921508789062
+test_precision-overall 0.8950661236269735
+test_recall-overall 0.8972467809320784
+test_f1-measure-overall 0.896155125706903
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semtrupos
+training_duration 07:01:11
+training_start_epoch 0
+training_epochs 34
+training_precision-overall 0.998341545555229
+training_recall-overall 0.9983471868272202
+training_f1-measure-overall 0.9983443661832055
+training_loss 2.8987739086151123
+validation_precision-overall 0.8791316894018888
+validation_recall-overall 0.8806718640504555
+validation_f1-measure-overall 0.8799011027480684
+validation_loss 373.2093505859375
+test_precision-overall 0.8514178977755137
+test_recall-overall 0.8550185873605948
+test_f1-measure-overall 0.853214443725914
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_chunksemtr
+training_duration 03:46:07
+training_start_epoch 0
+training_epochs 14
+training_precision-overall 0.9863218176798773
+training_recall-overall 0.9862933228901508
+training_f1-measure-overall 0.9863075700791578
+training_loss 15.351634979248047
+validation_precision-overall 0.8668936785435729
+validation_recall-overall 0.8680992113384387
+validation_f1-measure-overall 0.8674960261181098
+validation_loss 231.62615966796875
+test_precision-overall 0.83614835173615
+test_recall-overall 0.8385468414473896
+test_f1-measure-overall 0.8373458790394994
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_comsemtr
+training_duration 01:28:31
+training_start_epoch 0
+training_epochs 16
+training_precision-overall 0.987424213911094
+training_recall-overall 0.987044640374266
+training_f1-measure-overall 0.9872343906578636
+training_loss 12.678483963012695
+validation_precision-overall 0.7213824174521312
+validation_recall-overall 0.7232259598240818
+validation_f1-measure-overall 0.7223030123163173
+validation_loss 664.360107421875
+test_precision-overall 0.7361242029387303
+test_recall-overall 0.7385197340972937
+test_f1-measure-overall 0.7373200227704539
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_semtrsupsense
+training_duration 02:53:55
+training_start_epoch 0
+training_epochs 19
+training_precision-overall 0.9915506755377771
+training_recall-overall 0.9915425809822361
+training_f1-measure-overall 0.9915466282434365
+training_loss 9.4805908203125
+validation_precision-overall 0.7255390679341526
+validation_recall-overall 0.7252447998145894
+validation_f1-measure-overall 0.725391904030549
+validation_loss 576.2418212890625
+test_precision-overall 0.7408434888866872
+test_recall-overall 0.7402567402567403
+test_f1-measure-overall 0.7405499983492948
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_supsensexpos
+training_duration 08:16:47
+training_start_epoch 0
+training_epochs 32
+training_precision-overall 0.9990699669392357
+training_recall-overall 0.9990614814578888
+training_f1-measure-overall 0.9990657241804946
+training_loss 2.1427111625671387
+validation_precision-overall 0.9448563981099063
+validation_recall-overall 0.9445865708404231
+validation_f1-measure-overall 0.94472146520839
+validation_loss 165.10348510742188
+test_precision-overall 0.9422745912013365
+test_recall-overall 0.9418216318785578
+test_f1-measure-overall 0.9420480570914711
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_supsenseupos
+training_duration 02:08:44
+training_start_epoch 0
+training_epochs 24
+training_precision-overall 0.9996633223351963
+training_recall-overall 0.9996034922606178
+training_f1-measure-overall 0.9996334064026196
+training_loss 1.2546356916427612
+validation_precision-overall 0.9360046564347639
+validation_recall-overall 0.9349735304017871
+validation_f1-measure-overall 0.935488809283193
+validation_loss 149.68800354003906
+test_precision-overall 0.9357026670349569
+test_recall-overall 0.9347846083090603
+test_f1-measure-overall 0.9352434123745628
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_chunksupsense
+training_duration 05:13:02
+training_start_epoch 0
+training_epochs 29
+training_precision-overall 0.9988573359476776
+training_recall-overall 0.9988306901595686
+training_f1-measure-overall 0.9988440128758681
+training_loss 3.460381507873535
+validation_precision-overall 0.9078109201213347
+validation_recall-overall 0.9089827634209927
+validation_f1-measure-overall 0.9083964638479816
+validation_loss 172.97911071777344
+test_precision-overall 0.8976499435215032
+test_recall-overall 0.8957250859106529
+test_f1-measure-overall 0.8966864817260619
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_comsupsense
+training_duration 00:25:26
+training_start_epoch 0
+training_epochs 20
+training_precision-overall 0.9867871069094173
+training_recall-overall 0.9864826967300465
+training_f1-measure-overall 0.9866348783394774
+training_loss 19.860519409179688
+validation_precision-overall 0.687516356974614
+validation_recall-overall 0.6839364748763342
+validation_f1-measure-overall 0.68572174367001
+validation_loss 305.9394226074219
+test_precision-overall 0.7140691328077623
+test_recall-overall 0.7117670763651017
+test_f1-measure-overall 0.7129162462158936
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_comxpos
+training_duration 03:40:39
+training_start_epoch 0
+training_epochs 27
+training_precision-overall 0.9985936587179352
+training_recall-overall 0.9985936587179352
+training_f1-measure-overall 0.9985936587178852
+training_loss 2.267792224884033
+validation_precision-overall 0.9472299301502248
+validation_recall-overall 0.9472299301502248
+validation_f1-measure-overall 0.9472299301501749
+validation_loss 161.85989379882812
+test_precision-overall 0.9310271546635183
+test_recall-overall 0.9310271546635183
+test_f1-measure-overall 0.9310271546634683
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_comupos
+training_duration 01:22:36
+training_start_epoch 0
+training_epochs 15
+training_precision-overall 0.9973718102312208
+training_recall-overall 0.9973718102312208
+training_f1-measure-overall 0.9973718102311708
+training_loss 4.047079563140869
+validation_precision-overall 0.9375426409477144
+validation_recall-overall 0.9375426409477144
+validation_f1-measure-overall 0.9375426409476644
+validation_loss 134.21327209472656
+test_precision-overall 0.912450344971775
+test_recall-overall 0.9124264994119953
+test_f1-measure-overall 0.912438422036041
+
+/data/tagger/taskembtagger_task_prepend_embedding_tagger_chunkcom
+training_duration 01:26:58
+training_start_epoch 0
+training_epochs 14
+training_precision-overall 0.9953628709258238
+training_recall-overall 0.9954470401310256
+training_f1-measure-overall 0.995404953749085
+training_loss 5.689760208129883
+validation_precision-overall 0.9125063938618926
+validation_recall-overall 0.9130668440986794
+validation_f1-measure-overall 0.9127865329512393
+validation_loss 157.86306762695312
+test_precision-overall 0.8823178444428534
+test_recall-overall 0.8797144556811421
+test_f1-measure-overall 0.8810142268188143
+

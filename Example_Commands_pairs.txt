@@ -173,3 +173,82 @@ python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
 --test "$DATADIR"/test \
  > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
 done
+############################################
+
+21
+JSONDIR=taskonly_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "nerupos" "nerxpos" "chunkner" "nersemtr" "nersem" "nersupsense" "comner" "mwener"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+JSONDIR=taskonly_prepend_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "nerupos" "nerxpos" "chunkner" "nersemtr" "nersem" "nersupsense" "comner" "mwener"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+#############################
+
+TODO
+
+JSONDIR=taskonly_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "all"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+
+JSONDIR=taskonly_prepend_embedding
+DATADIR=./dataset/multi_tagger
+TMPDIR=/data/tagger
+TASK_NAME=taskembtagger
+CUDA=1
+for ext in "all"
+do
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+done
+

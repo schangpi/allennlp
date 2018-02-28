@@ -1,0 +1,20 @@
+/home/schangpi/tools/anaconda2/envs/allennlp/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+2018-02-26 19:55:50,514 - INFO - allennlp.models.archival - extracting archive file /data/tagger/taskembtagger_task_embedding_tagger_comupos/model.tar.gz to temp dir /tmp/tmpr_qjlq4c
+2018-02-26 19:55:50,744 - INFO - allennlp.data.vocabulary - Loading token dictionary from /tmp/tmpr_qjlq4c/vocabulary.
+2018-02-26 19:55:50,837 - INFO - allennlp.common.checks - Pytorch version: 0.3.0.post4
+2018-02-26 19:55:50,838 - INFO - allennlp.commands.evaluate - Reading evaluation data from ./dataset/evaluate/test_com_broadcast3/
+Traceback (most recent call last):
+  File "/home/schangpi/tools/anaconda2/envs/allennlp/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/schangpi/tools/anaconda2/envs/allennlp/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/schangpi/allennlp/allennlp/run.py", line 18, in <module>
+    main(prog="python -m allennlp.run")
+  File "/home/schangpi/allennlp/allennlp/commands/__init__.py", line 79, in main
+    args.func(args)
+  File "/home/schangpi/allennlp/allennlp/commands/evaluate.py", line 122, in evaluate_from_args
+    instances = dataset_reader.read(evaluation_data_path)
+  File "/home/schangpi/allennlp/allennlp/data/dataset_readers/dataset_reader.py", line 77, in read
+    "Is the path correct?".format(file_path))
+allennlp.common.checks.ConfigurationError: 'No instances were read from the given filepath ./dataset/evaluate/test_com_broadcast3/. Is the path correct?'

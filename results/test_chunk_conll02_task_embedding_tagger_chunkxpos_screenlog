@@ -1,0 +1,18 @@
+/home/schangpi/tools/anaconda2/envs/allennlp/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Traceback (most recent call last):
+  File "/home/schangpi/tools/anaconda2/envs/allennlp/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/schangpi/tools/anaconda2/envs/allennlp/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/schangpi/allennlp/allennlp/run.py", line 18, in <module>
+    main(prog="python -m allennlp.run")
+  File "/home/schangpi/allennlp/allennlp/commands/__init__.py", line 79, in main
+    args.func(args)
+  File "/home/schangpi/allennlp/allennlp/commands/evaluate.py", line 112, in evaluate_from_args
+    archive = load_archive(args.archive_file, args.cuda_device, args.overrides)
+  File "/home/schangpi/allennlp/allennlp/models/archival.py", line 101, in load_archive
+    archive_file = cached_path(archive_file)
+  File "/home/schangpi/allennlp/allennlp/common/file_utils.py", line 76, in cached_path
+    raise FileNotFoundError("file {} not found".format(url_or_filename))
+FileNotFoundError: file /data/tagger/taskembtagger_task_embedding_tagger_chunkxpos/model.tar.gz not found
