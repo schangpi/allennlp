@@ -33,6 +33,8 @@ iter_tasks = "train_iterator/tasks"
 
 with open('multi_all.json', 'r') as f:
     data = json.load(f)
+    with open('multi/multi_all.json', 'w') as fw:
+        json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
@@ -48,6 +50,8 @@ with open('multi_all.json', 'r') as f:
 
 with open('task_embedding_tagger_all.json', 'r') as f:
     data = json.load(f)
+    with open('task_embedding/task_embedding_tagger_all.json', 'w') as fw:
+        json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
@@ -63,6 +67,8 @@ with open('task_embedding_tagger_all.json', 'r') as f:
 
 with open('task_prepend_embedding_tagger_all.json', 'r') as f:
     data = json.load(f)
+    with open('task_prepend_embedding/task_prepend_embedding_tagger_all.json', 'w') as fw:
+        json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
@@ -73,5 +79,41 @@ with open('task_prepend_embedding_tagger_all.json', 'r') as f:
                 data = set_data(data, iter_tasks, tasks)
                 data = set_data(data, dataset_domains, domains)
                 data = set_data(data, model_domains, domains)
-                with open('task_prepend_embedding/task_prepend_embedding_tagger_' + ''.join(tasks) + '.json', 'w') as fw:
+                with open('task_prepend_embedding/task_prepend_embedding_tagger_' + ''.join(tasks) + '.json',
+                          'w') as fw:
+                    json.dump(data, fw, indent=4)
+
+with open('taskonly_embedding_tagger_all.json', 'r') as f:
+    data = json.load(f)
+    with open('taskonly_embedding/taskonly_embedding_tagger_all.json', 'w') as fw:
+        json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
+        for t2, ds2 in tskds.items():
+            if t1 != t2:
+                tasks = sorted(list(set([t1, t2])))
+                domains = sorted(list(set(ds1 + ds2)))
+                data = set_data(data, dataset_tasks, tasks)
+                data = set_data(data, model_tasks, tasks)
+                data = set_data(data, iter_tasks, tasks)
+                data = set_data(data, dataset_domains, domains)
+                data = set_data(data, model_domains, domains)
+                with open('taskonly_embedding/taskonly_embedding_tagger_' + ''.join(tasks) +'.json', 'w') as fw:
+                    json.dump(data, fw, indent=4)
+
+with open('taskonly_prepend_embedding_tagger_all.json', 'r') as f:
+    data = json.load(f)
+    with open('taskonly_prepend_embedding/taskonly_prepend_embedding_tagger_all.json', 'w') as fw:
+        json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
+        for t2, ds2 in tskds.items():
+            if t1 != t2:
+                tasks = sorted(list(set([t1, t2])))
+                domains = sorted(list(set(ds1 + ds2)))
+                data = set_data(data, dataset_tasks, tasks)
+                data = set_data(data, model_tasks, tasks)
+                data = set_data(data, iter_tasks, tasks)
+                data = set_data(data, dataset_domains, domains)
+                data = set_data(data, model_domains, domains)
+                with open('taskonly_prepend_embedding/taskonly_prepend_embedding_tagger_' + ''.join(tasks) + '.json',
+                          'w') as fw:
                     json.dump(data, fw, indent=4)
