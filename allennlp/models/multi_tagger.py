@@ -1,6 +1,6 @@
 from typing import Dict, Optional
 
-# from IPython import embed
+from IPython import embed
 import numpy
 from overrides import overrides
 import torch
@@ -230,6 +230,8 @@ class MultiTagger(Model):
             # map strings to ind
             task_ids.append(self.task_to_id[self.vocab.get_token_from_index(tt, 'task_labels')])
         task_ids = numpy.array(task_ids)
+        # batch_one = False
+
         for i, tsk in enumerate(self.tasks):
             # For each element in tokens (tokens, token_characters, etc.),
             # select only the relevant data in the minibatch
@@ -237,20 +239,30 @@ class MultiTagger(Model):
             print(i, task_indices)
             if task_indices.shape[0] < 1:
                 continue
+            # elif task_indices.shape[0] == 1:
+            #     task_indices = numpy.concatenate((task_indices, task_indices), axis=0)
             task_tokens = {}
             for k in tokens:
                 if task_indices.shape[0] > 1:
                     task_tokens[k] = tokens[k][task_indices, :].squeeze()
                 else:
                     task_tokens[k] = tokens[k][task_indices, :]
-            task_all_tags = all_tags[:, i, :].squeeze()
-            # embed()
-            task_output_dict = self.task_forward(i, tsk, task_tokens, task_all_tags[task_indices, :].contiguous())
+            task_all_tags = all_tags[:, i, :].squeeze(dim=1)
+            if task_indices.shape[0] > 1:
+                task_all_tags = task_all_tags[task_indices, :].squeeze().contiguous()
+            else:
+                task_all_tags = task_all_tags[task_indices, :].contiguous()
+                # embed()
+            task_output_dict = self.task_forward(i, tsk, task_tokens, task_all_tags)
             task_tags = task_output_dict['tags']
             for j, ti in enumerate(task_indices):
                 predictions[ti] = task_tags[j]
                 label_namespaces[ti] = tsk
             loss += task_output_dict['loss']
+            # if task_indices.shape[0] == 1:
+            #     batch_one = True
+        # if batch_one:
+        #     embed()
         output_dict = {'loss': loss,
                        'tags': predictions,
                        'label_namespaces': label_namespaces}

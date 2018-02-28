@@ -136,7 +136,8 @@ class Trainer:
     def __init__(self,
                  model: Model,
                  optimizer: torch.optim.Optimizer,
-                 iterator: DataIterator,
+                 train_iterator: DataIterator,
+                 val_iterator: DataIterator,
                  train_dataset: Iterable[Instance],
                  validation_dataset: Optional[Iterable[Instance]] = None,
                  patience: int = 2,
@@ -222,7 +223,8 @@ class Trainer:
             with tensors as values currently support activation logging.
         """
         self._model = model
-        self._iterator = iterator
+        self._train_iterator = train_iterator
+        self._val_iterator = val_iterator
         self._optimizer = optimizer
         self._train_data = train_dataset
         self._validation_data = validation_dataset
@@ -402,10 +404,10 @@ class Trainer:
         self._model.train()
 
         # Get tqdm for the training batches
-        train_generator = self._iterator(self._train_data,
-                                         num_epochs=1,
-                                         cuda_device=self._iterator_device)
-        num_training_batches = self._iterator.get_num_batches(self._train_data)
+        train_generator = self._train_iterator(self._train_data,
+                                               num_epochs=1,
+                                               cuda_device=self._iterator_device)
+        num_training_batches = self._train_iterator.get_num_batches(self._train_data)
         train_generator_tqdm = Tqdm.tqdm(train_generator,
                                          total=num_training_batches)
         self._last_log = time.time()
@@ -601,11 +603,11 @@ class Trainer:
 
         self._model.eval()
 
-        val_generator = self._iterator(self._validation_data,
-                                       num_epochs=1,
-                                       cuda_device=self._iterator_device,
-                                       for_training=False)
-        num_validation_batches = self._iterator.get_num_batches(self._validation_data)
+        val_generator = self._val_iterator(self._validation_data,
+                                           num_epochs=1,
+                                           cuda_device=self._iterator_device,
+                                           for_training=False)
+        num_validation_batches = self._val_iterator.get_num_batches(self._validation_data)
         val_generator_tqdm = Tqdm.tqdm(val_generator,
                                        total=num_validation_batches)
         batch_num = 0
@@ -841,7 +843,8 @@ class Trainer:
     def from_params(cls,
                     model: Model,
                     serialization_dir: str,
-                    iterator: DataIterator,
+                    train_iterator: DataIterator,
+                    val_iterator: DataIterator,
                     cuda_device: int,
                     train_data: Iterable[Instance],
                     validation_data: Optional[Iterable[Instance]],
@@ -866,7 +869,7 @@ class Trainer:
             scheduler = None
 
         params.assert_empty(cls.__name__)
-        return Trainer(model, optimizer, iterator,
+        return Trainer(model, optimizer, train_iterator, val_iterator,
                        train_data, validation_data,
                        patience=patience,
                        validation_metric=validation_metric,

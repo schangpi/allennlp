@@ -259,8 +259,12 @@ def train_model(params: Params,
     model = Model.from_params(vocab, params.pop('model'))
     if cuda_device >= 0:
         model = model.cuda(cuda_device)
-    iterator = DataIterator.from_params(params.pop("iterator"))
-    iterator.index_with(vocab)
+    # iterator = DataIterator.from_params(params.pop("iterator"))
+    # iterator.index_with(vocab)
+    train_iterator = DataIterator.from_params(params.pop("train_iterator"))
+    val_iterator = DataIterator.from_params(params.pop("val_iterator"))
+    train_iterator.index_with(vocab)
+    val_iterator.index_with(vocab)
 
     train_data = all_datasets['train']
     validation_data = all_datasets.get('validation')
@@ -269,7 +273,8 @@ def train_model(params: Params,
     trainer_params = params.pop("trainer")
     trainer = Trainer.from_params(model,
                                   serialization_dir,
-                                  iterator,
+                                  train_iterator,
+                                  val_iterator,
                                   cuda_device,
                                   train_data,
                                   validation_data,
@@ -283,7 +288,7 @@ def train_model(params: Params,
     archive_model(serialization_dir, files_to_archive=params.files_to_archive)
 
     if test_data and evaluate_on_test:
-        test_metrics = evaluate(model, test_data, iterator, cuda_device=trainer._cuda_devices[0])  # pylint: disable=protected-access
+        test_metrics = evaluate(model, test_data, val_iterator, cuda_device=trainer._cuda_devices[0])  # pylint: disable=protected-access
         for key, value in test_metrics.items():
             metrics["test_" + key] = value
 
