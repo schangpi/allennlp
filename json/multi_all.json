@@ -98,7 +98,7 @@
 		}
 	  ],
 	  [
-	    "tag_projection_layer._module.weight",
+	    "tag_projection_layer.*._module.weight",
 		{
 		  "type":"xavier_uniform"
 		}
