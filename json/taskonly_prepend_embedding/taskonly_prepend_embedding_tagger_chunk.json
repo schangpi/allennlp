@@ -3,7 +3,7 @@
 	"min_count":1
   },
   "dataset_reader":{
-    "type":"sequence_multi_tagging",
+    "type":"taskonly_prepend_sequence_tagging",
     "word_tag_delimiter":"<Deli>",
     "token_indexers":{
       "tokens":{
@@ -15,22 +15,22 @@
       }
     },
 	"tasks":[
-	  "upos"
+	  "chunk"
     ],
 	"domains":[
-      "uni",
-	  "streusle"
+      "conll02",
+	  "conll03"
     ]
   },
   "evaluate_on_test":true,
   "model":{
-    "type":"multi_tagger",
+    "type":"tagger",
 	"tasks":[
-	  "upos"
+	  "chunk"
     ],
 	"domains":[
-      "uni",
-	  "streusle"
+      "conll02",
+	  "conll03"
     ],
     "text_field_embedder":{
       "tokens":{
@@ -101,7 +101,11 @@
       ]
     ]
   },
-  "iterator":{
+  "train_iterator":{
+    "type":"basic",
+    "batch_size":32
+  },
+  "val_iterator":{
     "type":"basic",
     "batch_size":32
   },

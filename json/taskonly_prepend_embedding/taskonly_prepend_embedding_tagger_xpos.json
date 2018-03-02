@@ -3,7 +3,7 @@
 	"min_count":1
   },
   "dataset_reader":{
-    "type":"task_sequence_tagging",
+    "type":"taskonly_prepend_sequence_tagging",
     "word_tag_delimiter":"<Deli>",
     "token_indexers":{
       "tokens":{
@@ -14,29 +14,26 @@
         "type":"characters"
       }
     },
-    "task_token_indexers":{
-      "tokens":{
-        "type":"single_id",
-        "lowercase_tokens":true
-      }
-    },
-    "domain_token_indexers":{
-      "tokens":{
-        "type":"single_id",
-        "lowercase_tokens":true
-      }
-    },
 	"tasks":[
-      "upos"
+	  "xpos"
     ],
 	"domains":[
       "uni",
+      "conll03",
 	  "streusle"
     ]
   },
   "evaluate_on_test":true,
   "model":{
-    "type":"task_embedding_tagger",
+    "type":"tagger",
+	"tasks":[
+	  "xpos"
+    ],
+	"domains":[
+      "uni",
+      "conll03",
+	  "streusle"
+    ],
     "text_field_embedder":{
       "tokens":{
         "type":"embedding",
@@ -58,22 +55,6 @@
           "dropout":0.25,
           "bidirectional":true
         }
-      }
-    },
-    "task_field_embedder":{
-      "tokens":{
-        "type":"embedding",
-        "embedding_dim":25,
-        "trainable":true,
-		"scale_grad_by_freq":false
-      }
-    },
-    "domain_field_embedder":{
-      "tokens":{
-        "type":"embedding",
-        "embedding_dim":25,
-        "trainable":true,
-		"scale_grad_by_freq":false
       }
     },
     "stacked_encoder":{
@@ -122,7 +103,11 @@
       ]
     ]
   },
-  "iterator":{
+  "train_iterator":{
+    "type":"basic",
+    "batch_size":32
+  },
+  "val_iterator":{
     "type":"basic",
     "batch_size":32
   },

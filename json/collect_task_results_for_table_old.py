@@ -26,10 +26,6 @@ task_domains = [
 # 'ccg_ccg'
 
 multi_path = '/data/tagger/multitagger_multi_'
-te_path = '/data/tagger/taskembtagger_task_embedding_tagger_'
-tpe_path = '/data/tagger/taskembtagger_task_prepend_embedding_tagger_'
-teonly_path = '/data/tagger/taskembtagger_taskonly_embedding_tagger_'
-tpeonly_path = '/data/tagger/taskembtagger_taskonly_prepend_embedding_tagger_'
 all_tasks = ["upos", "xpos", "chunk", "ner", "mwe", "sem", "semtr", "supsense", "com"]
 
 current_tsks = ["upos", "upos",
@@ -40,8 +36,7 @@ current_tsks = ["upos", "upos",
                 "sem",
                 "semtr",
                 "supsense",
-                "com"]
-# "com", "com"
+                "com", "com", "com"]
 current_tsk_domains = ["upos_uni", "upos_streusle",
                        "xpos_uni", "xpos_streusle", "xpos_conll03",
                        "chunk_conll02", "chunk_conll03",
@@ -50,8 +45,9 @@ current_tsk_domains = ["upos_uni", "upos_streusle",
                        "sem_semcor",
                        "semtr_semtraits",
                        "supsense_streusle",
-                       "com_broadcast1"]
-# "com_broadcast2", "com_broadcast3"
+                       "com_broadcast1",
+                       "com_broadcast2",
+                       "com_broadcast3"]
 for current_tsk, current_tsk_domain in zip(current_tsks, current_tsk_domains):
     # print(current_tsk, current_tsk_domain)
     top_table = '\\begin{table*}[t]\n\\centering\n\\footnotesize{\n\\begin{tabular}{c|c|c|c}\n'
@@ -85,13 +81,9 @@ for current_tsk, current_tsk_domain in zip(current_tsks, current_tsk_domains):
     print(' \\\\ \\hline')
     filepaths = []
     filepaths += [multi_path + ext for ext in exts]
-    teonly_filepaths = [teonly_path + ext for ext in exts]
-    tpeonly_filepaths = [tpeonly_path + ext for ext in exts]
-    # teonly_filepaths = [te_path + ext for ext in exts]
-    # tpeonly_filepaths = [tpe_path + ext for ext in exts]
-    # te_filepaths = ['results/test_' + current_tsk_domain + '_task_embedding_tagger_' + ext + '_screenlog' for ext in exts]
-    # tpe_filepaths = ['results/test_' + current_tsk_domain + '_task_prepend_embedding_tagger_' + ext + '_screenlog'
-    #                    for ext in exts]
+    te_filepaths = ['results/test_' + current_tsk_domain + '_task_embedding_tagger_' + ext + '_screenlog' for ext in exts]
+    tpe_filepaths = ['results/test_' + current_tsk_domain + '_task_prepend_embedding_tagger_' + ext + '_screenlog'
+                     for ext in exts]
     for i, filepath in enumerate(filepaths):
         print('+\\task{' + other_tasks[i] + '}', end=' ')
         print('&', end=' ')
@@ -101,18 +93,25 @@ for current_tsk, current_tsk_domain in zip(current_tsks, current_tsk_domains):
                 results = json.load(fr)
                 print(round(100*results['test_' + current_tsk + '-f1-measure-overall'], 2), end=' ')
         print('&', end=' ')
-        # res_filepath = te_filepaths[i]
-        res_filepath = os.path.join(teonly_filepaths[i], 'metrics.json')
+        res_filepath = te_filepaths[i]
         if os.path.exists(res_filepath):
             with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_' + current_tsk + '-f1-measure-overall'], 2), end=' ')
+                for line in fr:
+                    pass
+                try:
+                    print(round(100*float(line.split()[-1]), 2), end=' ')
+                except:
+                    pass
         print('&', end=' ')
-        res_filepath = os.path.join(tpeonly_filepaths[i], 'metrics.json')
+        res_filepath = tpe_filepaths[i]
         if os.path.exists(res_filepath):
             with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_' + current_tsk + '-f1-measure-overall'], 2), end=' ')
+                for line in fr:
+                    pass
+                try:
+                    print(round(100*float(line.split()[-1]), 2), end=' ')
+                except:
+                    pass
         print(' \\\\ ')
         if i >= len(filepaths)-2:
             print(' \\hline ')
