@@ -137,7 +137,8 @@ class ConditionalRandomField(torch.nn.Module):
         # Add the last input if it's not masked.
         last_inputs = logits[-1]                                         # (batch_size, num_tags)
         last_input_score = last_inputs.gather(1, last_tags.view(-1, 1))  # (batch_size, 1)
-        last_input_score = last_input_score.squeeze()                    # (batch_size,)
+        # last_input_score = last_input_score.squeeze()                    # (batch_size,)
+        last_input_score = last_input_score.squeeze(1)
 
         score = score + last_transition_score + last_input_score * mask[-1]
 
