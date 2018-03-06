@@ -74,11 +74,7 @@ for current_tsk, current_tsk_domain in zip(current_tsks, current_tsk_domains):
     top_table += '& Multiple & Task Embs & Task Embs & Task+Domain Embs & Task+Domain Embs \\\\'
     top_table += '& Decoders & (All Steps) & (Prepend) & (All Steps) & (Prepend)\\\\ \\hline'
     print(top_table)
-    current_tsk_domain_single = current_tsk_domain
-    if 'ner' in current_tsk_domain:
-        current_tsk_domain_single = current_tsk_domain.replace('ner', 'ner-iobes')
-    if 'chunk' in current_tsk_domain:
-        current_tsk_domain_single = current_tsk_domain.replace('chunk', 'chunk-iobes')
+    current_tsk_domain_single = current_tsk_domain.split('_')[0]
     other_tasks = []
     exts = []
     for tsk in all_tasks:
@@ -90,45 +86,50 @@ for current_tsk, current_tsk_domain in zip(current_tsks, current_tsk_domains):
     other_tasks.append("all")
 
     print("Self only & ", end=' ')
+    # with open(res_filepath, 'r') as fr:
+    #     results = json.load(fr)
+    #     print('\\multicolumn{5}{|c}{', end='')
+    #     print(round(100 * results['test_f1-measure-overall'], 2), end='')
+    #     print('}', end=' ')
     if (current_tsk_domain_single != 'upos' and
         current_tsk_domain_single != 'xpos' and
-        current_tsk_domain_single != 'chunk-iobes'):
-        res_filepath = os.path.join('/data/tagger/' + current_tsk_domain_single + task_crf_suffix, 'metrics.json')
-        with open(res_filepath, 'r') as fr:
-            results = json.load(fr)
-            print('\\multicolumn{5}{|c}{',end='')
-            print(round(100 * results['test_f1-measure-overall'], 2), end='')
-            print('}', end=' ')
+        current_tsk_domain_single != 'chunk'):
+        if 'ner' in current_tsk_domain:
+            current_tsk_domain = current_tsk_domain.replace('ner', 'ner-iobes')
+        # if 'chunk' in current_tsk_domain:
+        #     current_tsk_domain = current_tsk_domain.replace('chunk', 'chunk-iobes')
+        res_filepath = os.path.join(
+            '/data/tagger/' + current_tsk_domain + task_crf_suffix, 'metrics.json')
     else:
         res_filepath = os.path.join(multi_path + current_tsk_domain_single, 'metrics.json')
-        if os.path.exists(res_filepath):
-            with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
-        print('&', end=' ')
-        res_filepath = os.path.join(teonly_path + current_tsk_domain_single, 'metrics.json')
-        if os.path.exists(res_filepath):
-            with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
-        print('&', end=' ')
-        res_filepath = os.path.join(tpeonly_path + current_tsk_domain_single, 'metrics.json')
-        if os.path.exists(res_filepath):
-            with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
-        print('&', end=' ')
-        res_filepath = os.path.join(te_path + current_tsk_domain_single, 'metrics.json')
-        if os.path.exists(res_filepath):
-            with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
-        print('&', end=' ')
-        res_filepath = os.path.join(tpe_path + current_tsk_domain_single, 'metrics.json')
-        if os.path.exists(res_filepath):
-            with open(res_filepath, 'r') as fr:
-                results = json.load(fr)
-                print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
+    if os.path.exists(res_filepath):
+        with open(res_filepath, 'r') as fr:
+            results = json.load(fr)
+            print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
+    print('&', end=' ')
+    res_filepath = os.path.join(teonly_path + current_tsk_domain_single, 'metrics.json')
+    if os.path.exists(res_filepath):
+        with open(res_filepath, 'r') as fr:
+            results = json.load(fr)
+            print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
+    print('&', end=' ')
+    res_filepath = os.path.join(tpeonly_path + current_tsk_domain_single, 'metrics.json')
+    if os.path.exists(res_filepath):
+        with open(res_filepath, 'r') as fr:
+            results = json.load(fr)
+            print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
+    print('&', end=' ')
+    res_filepath = os.path.join(te_path + current_tsk_domain_single, 'metrics.json')
+    if os.path.exists(res_filepath):
+        with open(res_filepath, 'r') as fr:
+            results = json.load(fr)
+            print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
+    print('&', end=' ')
+    res_filepath = os.path.join(tpe_path + current_tsk_domain_single, 'metrics.json')
+    if os.path.exists(res_filepath):
+        with open(res_filepath, 'r') as fr:
+            results = json.load(fr)
+            print(round(100 * results['test_f1-measure-overall'], 2), end=' ')
     print(' \\\\ \\hline')
     filepaths = []
     filepaths += [multi_path + ext for ext in exts]
