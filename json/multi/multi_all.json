@@ -23,7 +23,9 @@
             "sem",
             "semtr",
             "supsense",
-            "com"
+            "com",
+            "frame",
+            "hyp"
         ],
         "domains": [
             "uni",
@@ -32,7 +34,9 @@
             "streusle",
             "semcor",
             "semtraits",
-            "broadcast1"
+            "broadcast1",
+            "fnt",
+            "hyp"
         ]
     },
     "evaluate_on_test": true,
@@ -47,7 +51,9 @@
             "sem",
             "semtr",
             "supsense",
-            "com"
+            "com",
+            "frame",
+            "hyp"
         ],
         "domains": [
             "uni",
@@ -56,7 +62,9 @@
             "streusle",
             "semcor",
             "semtraits",
-            "broadcast1"
+            "broadcast1",
+            "fnt",
+            "hyp"
         ],
         "text_field_embedder": {
             "tokens": {
@@ -139,7 +147,9 @@
             "sem",
             "semtr",
             "supsense",
-            "com"
+            "com",
+            "frame",
+            "hyp"
         ]
     },
     "val_iterator": {
