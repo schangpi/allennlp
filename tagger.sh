@@ -9,7 +9,7 @@ echo "$MODEL"
 echo "$CUDA"
 
 rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
-python -m allennlp.run train json/"$MODEL".json \
+python -m allennlp.run train json/single/"$MODEL".json \
 --serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
 --cuda-device "$CUDA" \
 --train "$DATADIR"/train/"$TASK_NAME"_train.txt \
