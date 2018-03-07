@@ -1,6 +1,7 @@
 import os
 
 task_suffix = '_tagger_crf_template'
+task_suffix_no_template = '_tagger_crf'
 task_domains = [
     'upos_uni',
     'upos_streusle',
@@ -21,10 +22,20 @@ task_domains = [
     'smwe_streusle',
     'sem_semcor',
     'semtr_semtraits',
-    'ccg_ccg'
+    'ccg_ccg',
+    'frame_fnt',
+    'hyp_hyp'
 ]
 
-filepaths = ['/data/tagger/' + td + task_suffix + '/vocabulary' for td in task_domains]
+filepaths = []
+for td in task_domains:
+    tsk, dm = td.split('_')
+    if tsk == 'sem' or tsk =='hyp' or tsk == 'frame':
+        filepaths.append('/data/tagger/' + td + task_suffix_no_template + '_' + tsk + '/vocabulary')
+    else:
+        filepaths.append('/data/tagger/' + td + task_suffix + '/vocabulary')
+
+vocab_dict = {}
 for filepath in filepaths:
     print(filepath)
     with open(os.path.join(filepath, 'tokens.txt'), 'r') as fr:
