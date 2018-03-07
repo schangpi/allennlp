@@ -23,8 +23,11 @@ tskds = {"upos": ["uni", "streusle"],
          "sem": ["semcor"],
          "semtr": ["semtraits"],
          "supsense": ["streusle"],
-         "com": ["broadcast1"]}
-domains = ["uni", "conll03", "conll02", "streusle", "semcor", "semtraits", "broadcast1", "broadcast2", "broadcast3"]
+         "com": ["broadcast1"],
+         "frame": ["fnt"],
+         "hyp": ["hyp"]}
+domains = ["uni", "conll03", "conll02", "streusle", "semcor", "semtraits", "broadcast1", "broadcast2", "broadcast3",
+           "fnt", "hyp"]
 dataset_tasks = "dataset_reader/tasks"
 dataset_domains = "dataset_reader/domains"
 model_tasks = "model/tasks"

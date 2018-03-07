@@ -87,7 +87,11 @@
       ]
     ]
   },
-  "iterator":{
+  "train_iterator":{
+    "type":"basic",
+    "batch_size":32
+  },
+  "val_iterator":{
     "type":"basic",
     "batch_size":32
   },

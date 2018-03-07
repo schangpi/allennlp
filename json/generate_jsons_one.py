@@ -19,17 +19,46 @@ def set_data(data, path, value):
 # "xpos": ["uni", "streusle", "conll03"],
 # "chunk": ["conll02", "conll03"],
 
-tskds = {"mwe": ["streusle"],
-         "ner": ["conll03"],
-         "sem": ["semcor"],
-         "semtr": ["semtraits"],
-         "supsense": ["streusle"],
-         "com": ["broadcast1"]}
-domains = ["uni", "conll03", "conll02", "streusle", "semcor", "semtraits", "broadcast1", "broadcast2", "broadcast3"]
+# tskds = {"mwe": ["streusle"],
+#          "ner": ["conll03"],
+#          "sem": ["semcor"],
+#          "semtr": ["semtraits"],
+#          "supsense": ["streusle"],
+#          "com": ["broadcast1"]}
+tskds = {"sem": ["semcor"],
+         "frame": ["fnt"],
+         "hyp": ["hyp"]}
+
+domains = ["uni", "conll03", "conll02", "streusle", "semcor", "semtraits", "broadcast1", "broadcast2", "broadcast3",
+           "fnt", "hyp"]
 dataset_tasks = "dataset_reader/tasks"
 dataset_domains = "dataset_reader/domains"
 model_tasks = "model/tasks"
 model_domains = "model/domains"
+
+with open('tagger_template.json', 'r') as f:
+    data = json.load(f)
+    for t1, ds1 in tskds.items():
+        tasks = [t1]
+        domains = sorted(list(set(ds1)))
+        # data = set_data(data, dataset_tasks, tasks)
+        data = set_data(data, model_tasks, tasks)
+        # data = set_data(data, dataset_domains, domains)
+        # data = set_data(data, model_domains, domains)
+        with open('single/tagger_' + ''.join(tasks) + '.json', 'w') as fw:
+            json.dump(data, fw, indent=4)
+
+with open('tagger_crf_template.json', 'r') as f:
+    data = json.load(f)
+    for t1, ds1 in tskds.items():
+        tasks = [t1]
+        domains = sorted(list(set(ds1)))
+        # data = set_data(data, dataset_tasks, tasks)
+        data = set_data(data, model_tasks, tasks)
+        # data = set_data(data, dataset_domains, domains)
+        # data = set_data(data, model_domains, domains)
+        with open('single/tagger_crf_' + ''.join(tasks) + '.json', 'w') as fw:
+            json.dump(data, fw, indent=4)
 
 with open('multi/multi_upos.json', 'r') as f:
     data = json.load(f)
