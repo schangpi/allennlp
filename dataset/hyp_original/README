@@ -1,0 +1,106 @@
+This data set is made available under the Open Database License:
+  http://opendatacommons.org/licenses/odbl/1.0/
+
+Any rights in individual contents of the database
+are licensed under the Database Contents License:
+  http://opendatacommons.org/licenses/dbcl/1.0/
+
+Distributed with permission from Daniel Pipes
+  http://danielpipes.org/
+
+
+ODbL Plain Language Summary
+===========================
+
+This summary is not a license.  It is simply a handy reference
+for understanding the ODbL 1.0 -- a human-readable expression
+of some of its key terms.  Read the full ODbL 1.0 license text
+(see LICENSE / odbl-10.txt) for the exact terms that apply.
+
+You are free:
+
+ - To Share:  To copy, distribute and use the database.
+ - To Create: To produce works from the database.
+ - To Adapt:  To modify, transform and build upon the database.
+
+As long as you:
+
+ - Attribute: You must attribute any public use of the database,
+              or works produced from the database, in the manner
+              specified in the ODbL.  For any use or re-
+              distribution of the database, or works produced
+              from it, you must make clear to others the license
+              of the database and keep intact any notices on
+              the original database.
+
+ - Share-Alike: If you publicly use any adapted version of
+                this database, or works produced from an adapted
+                database, you must also offer that adapted
+                database under the ODbL.
+
+ - Keep open: If you redistribute the database, or an adapted
+              version of it, then you may use technological
+              measures that restrict the work (such as DRM)
+              as long as you also redistribute a version
+              without such measures.
+
+
+Content
+=======
+
+This data set accompanies
+
+   Valentin I. Spitkovsky, Hiyan Alshawi, and Daniel Jurafsky. 2010.
+   Profiting from Mark-Up: Hyper-Text Annotations for Guided Parsing.
+   In Proceedings of the 48th Annual Meeting of the
+     Association for Computational Linguistics (ACL 2010).
+
+Please cite the appropriate publication if you use this data.  (See
+  http://nlp.stanford.edu/publications.shtml for .bib entries.)
+
+
+Primary Files
+=============
+
+Mark-up information in BLOGp and BLOGt is appended to POS tags,
+e.g., the suffix "<i>2" indicates that the token in question is
+a member of the second(2) piece of mark-up, which is italics(i).
+
+- dp.charniak        -- the fully annotated blog (BLOGp)
+- dp.info            -- a full analysis of every sentence;
+                        table summaries towards the end...
+
+- dp.stanford        -- unparsed but tagged blog (BLOGt)
+- dp.model.dmv       -- the converged model of BLOGt-best
+
+
+Secondary Files
+===============
+
+Intermediate and other representations not specifically discussed
+or promised in the paper, but which may nevertheless be of use.
+
+- dp.stanford.select -- same as above,
+- dp.charniak.select    but just for marked,
+- dp.info.select        complete sentences
+
+- dp.xin             -- raw input X/HTML
+- dp.xout            -- semi-automatically corrected output X/HTML
+- dp.jmx             -- sentence-breaking, according to MX-terminator
+- dp.plain           -- our final, semi-automatically fixed-up sentences
+- dp.sent            -- sentences suitable for running the Charniak's parser
+- dp.parsed          -- the output from Charniak's parser (BLOGp - mark-up)
+- dp.tagged          -- the output of the Stanford tagger (BLOGt - mark-up)
+- dp.prep            -- clean sentences with all mark-up
+- dp.mark            -- clean sentences with clean mark-up
+
+- dp.raw.stanford    -- an uncleaned version of the data, sentence-broken
+                        and tagged by the Stanford tagger, without any
+                        manual intervention...
+
+Enjoy!
+
+
+Valentin I. Spitkovsky (valentin@cs.stanford.edu)
+
+July 2010.

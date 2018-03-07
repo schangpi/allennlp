@@ -11,18 +11,17 @@ python dataset/preprocess_datasets_tagger.py --domain conll02 --tasks chunk --ta
 python dataset/preprocess_datasets_tagger.py --domain conll03 --tasks xpos_chunk_ner --tag_schemes none_none_none
 python dataset/preprocess_datasets_tagger.py --domain conll02 --tasks chunk --tag_schemes none
 python dataset/preprocess_datasets_tagger.py --domain ccg --tasks ccg --tag_schemes none
-python dataset/preprocess_datasets_tagger.py --domain semcor --tasks sem --tag_schemes none
 python dataset/preprocess_datasets_tagger.py --domain semtraits --tasks semtr --tag_schemes none
 python dataset/preprocess_datasets_tagger.py --domain streusle --tasks xpos_upos_mwe_smwe_wmwe_supsense --tag_schemes none_none_none_none_none_none
 python dataset/preprocess_datasets_tagger.py --domain broadcast1 --tasks com --tag_schemes none
 python dataset/preprocess_datasets_tagger.py --domain broadcast2 --tasks com --tag_schemes none
 python dataset/preprocess_datasets_tagger.py --domain broadcast3 --tasks com --tag_schemes none
+python dataset/preprocess_datasets_tagger.py --domain semcor --tasks xpos_wsd_sem --tag_schemes none_none_none
+python dataset/preprocess_datasets_tagger.py --domain fnt --tasks frame --tag_schemes none
+python dataset/preprocess_datasets_tagger.py --domain hyp --tasks hyp --tag_schemes none
 """
 
-"""
-python dataset/preprocess_datasets_tagger.py --domain fnt --tasks frame --tag_schemes none
-python dataset/preprocess_datasets_tagger.py --domain google --tasks com --tag_schemes none
-"""
+# python dataset/preprocess_datasets_tagger.py --domain google --tasks com --tag_schemes none
 
 # Read parameters from command line
 optparser = optparse.OptionParser()
@@ -60,9 +59,9 @@ elif opts.domain == 'ccg':
     opts.test = os.path.join(dataset_dir, "ccg/eng_ccg_test.conll")
     load_func = dataset_utils.load_sentences_general
 elif opts.domain == 'semcor':
-    opts.train = os.path.join(dataset_dir, "semcor/eng_semcor_train.conll")
-    opts.dev = os.path.join(dataset_dir, "semcor/eng_semcor_dev.conll")
-    opts.test = os.path.join(dataset_dir, "semcor/eng_semcor_test.conll")
+    opts.train = os.path.join(dataset_dir, "semcor/semcor_train.conll")
+    opts.dev = os.path.join(dataset_dir, "semcor/semcor_dev.conll")
+    opts.test = os.path.join(dataset_dir, "semcor/semcor_test.conll")
     load_func = dataset_utils.load_sentences_general
 elif opts.domain == 'semtraits':
     opts.train = os.path.join(dataset_dir, "semtraits/semcor_semantictraits_train.conll.txt")
@@ -79,18 +78,23 @@ elif 'broadcast' in opts.domain:
     opts.dev = os.path.join(dataset_dir, "broadcast/" + opts.domain + "_com_dev.conll")
     opts.test = os.path.join(dataset_dir, "broadcast/" + opts.domain + "_com_test.conll")
     load_func = dataset_utils.load_sentences_general_no_O
-
+elif opts.domain == 'fnt':
+    opts.train = os.path.join(dataset_dir, "fnt/eng_fnt_train.conll")
+    opts.dev = os.path.join(dataset_dir, "fnt/eng_fnt_dev.conll")
+    opts.test = os.path.join(dataset_dir, "fnt/eng_fnt_test.conll")
+    load_func = dataset_utils.load_sentences_general_noutfok
+elif opts.domain == 'hyp':
+    opts.train = os.path.join(dataset_dir, "hyp/eng_hyperlinks_train.conll")
+    opts.dev = os.path.join(dataset_dir, "hyp/eng_hyperlinks_dev.conll")
+    opts.test = os.path.join(dataset_dir, "hyp/eng_hyperlinks_test.conll")
+    load_func = dataset_utils.load_sentences_general_noutfok
 """
 elif opts.domain == 'google':
-    opts.train = os.path.join(dataset_dir, "streusle/streusle.ud_train.conllulex")
-    opts.dev = os.path.join(dataset_dir, "streusle/streusle.ud_dev.conllulex")
-    opts.test = os.path.join(dataset_dir, "streusle/streusle.ud_test.conllulex")
+    opts.train = os.path.join(dataset_dir, "com/streusle.ud_train.conllulex")
+    opts.dev = os.path.join(dataset_dir, "com/streusle.ud_dev.conllulex")
+    opts.test = os.path.join(dataset_dir, "com/streusle.ud_test.conllulex")
     load_func = dataset_utils.load_sentences_streusle
-elif opts.domain == 'fnt':
-    opts.train = os.path.join(dataset_dir, "fnt/eng_fn_train.conll")
-    opts.dev = os.path.join(dataset_dir, "fnt/eng_fn_dev.conll")
-    opts.test = os.path.join(dataset_dir, "fnt/eng_fn_test.conll")
-    load_func = dataset_utils.load_sentences_general
+
 """
 
 sentences = {}

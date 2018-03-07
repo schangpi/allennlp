@@ -223,6 +223,26 @@ def load_sentences_general(path, zeros, lower):
         sentences.append(sentence)
     return sentences
 
+def load_sentences_general_noutfok(path, zeros, lower):
+    # Load sentences. A line must contain at least a word and its tag.
+    # Sentences are separated by empty lines.
+    sentences = []
+    sentence = []
+    for line in open(path, 'r', encoding='utf8', errors="ignore"):
+        line = line.rstrip()
+        if not line:
+            if len(sentence) > 0:
+                sentences.append(sentence)
+                sentence = []
+        else:
+            l = line.split()
+            assert len(l) >= 2
+            word = [f_process(l[0], zeros, lower)] + l[1:]
+            sentence.append(word)
+    if len(sentence) > 0:
+        sentences.append(sentence)
+    return sentences
+
 def load_sentences_general_no_O(path, zeros, lower):
     # Load sentences. A line must contain at least a word and its tag.
     # Sentences are separated by empty lines.
