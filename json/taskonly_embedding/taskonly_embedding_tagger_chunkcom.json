@@ -32,8 +32,7 @@
         ],
         "domains": [
             "broadcast1",
-            "conll02",
-            "conll03"
+            "conll02"
         ]
     },
     "evaluate_on_test": true,
@@ -129,8 +128,7 @@
         ],
         "domains": [
             "broadcast1",
-            "conll02",
-            "conll03"
+            "conll02"
         ]
     },
     "train_iterator": {

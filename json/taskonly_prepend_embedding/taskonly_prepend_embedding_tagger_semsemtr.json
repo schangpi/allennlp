@@ -19,8 +19,7 @@
             "semtr"
         ],
         "domains": [
-            "semcor",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -99,8 +98,7 @@
             ]
         ],
         "domains": [
-            "semcor",
-            "semtraits"
+            "semcor"
         ]
     },
     "train_iterator": {

@@ -19,7 +19,7 @@
             "supsense"
         ],
         "domains": [
-            "semtraits",
+            "semcor",
             "streusle"
         ]
     },
@@ -99,7 +99,7 @@
             ]
         ],
         "domains": [
-            "semtraits",
+            "semcor",
             "streusle"
         ]
     },

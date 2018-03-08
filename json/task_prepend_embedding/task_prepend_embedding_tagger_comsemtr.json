@@ -20,7 +20,7 @@
         ],
         "domains": [
             "broadcast1",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -100,7 +100,7 @@
         ],
         "domains": [
             "broadcast1",
-            "semtraits"
+            "semcor"
         ]
     },
     "train_iterator": {

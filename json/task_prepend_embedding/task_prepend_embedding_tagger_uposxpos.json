@@ -19,8 +19,6 @@
             "xpos"
         ],
         "domains": [
-            "conll03",
-            "streusle",
             "uni"
         ]
     },
@@ -100,8 +98,6 @@
             ]
         ],
         "domains": [
-            "conll03",
-            "streusle",
             "uni"
         ]
     },

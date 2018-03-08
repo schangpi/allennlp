@@ -32,8 +32,7 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -129,8 +128,7 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
-            "semtraits"
+            "semcor"
         ]
     },
     "train_iterator": {

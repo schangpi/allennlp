@@ -31,8 +31,7 @@
             "upos"
         ],
         "domains": [
-            "semtraits",
-            "streusle",
+            "semcor",
             "uni"
         ]
     },
@@ -128,8 +127,7 @@
             ]
         ],
         "domains": [
-            "semtraits",
-            "streusle",
+            "semcor",
             "uni"
         ]
     },

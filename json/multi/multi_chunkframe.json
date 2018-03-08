@@ -20,7 +20,6 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
             "fnt"
         ]
     },
@@ -33,7 +32,6 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
             "fnt"
         ],
         "text_field_embedder": {

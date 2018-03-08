@@ -32,7 +32,6 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
             "hyp"
         ]
     },
@@ -129,7 +128,6 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
             "hyp"
         ]
     },

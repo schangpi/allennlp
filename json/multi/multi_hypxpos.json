@@ -19,9 +19,7 @@
             "xpos"
         ],
         "domains": [
-            "conll03",
             "hyp",
-            "streusle",
             "uni"
         ]
     },
@@ -33,9 +31,7 @@
             "xpos"
         ],
         "domains": [
-            "conll03",
             "hyp",
-            "streusle",
             "uni"
         ],
         "text_field_embedder": {

@@ -15,56 +15,54 @@
             }
         },
         "tasks": [
-            "upos",
-            "xpos",
             "chunk",
+            "com",
+            "frame",
+            "hyp",
             "mwe",
             "ner",
             "sem",
             "semtr",
             "supsense",
-            "com",
-            "frame",
-            "hyp"
+            "upos",
+            "xpos"
         ],
         "domains": [
-            "uni",
-            "conll03",
-            "conll02",
-            "streusle",
-            "semcor",
-            "semtraits",
             "broadcast1",
+            "conll02",
+            "conll03",
             "fnt",
-            "hyp"
+            "hyp",
+            "semcor",
+            "streusle",
+            "uni"
         ]
     },
     "evaluate_on_test": true,
     "model": {
         "type": "multi_tagger",
         "tasks": [
-            "upos",
-            "xpos",
             "chunk",
+            "com",
+            "frame",
+            "hyp",
             "mwe",
             "ner",
             "sem",
             "semtr",
             "supsense",
-            "com",
-            "frame",
-            "hyp"
+            "upos",
+            "xpos"
         ],
         "domains": [
-            "uni",
-            "conll03",
-            "conll02",
-            "streusle",
-            "semcor",
-            "semtraits",
             "broadcast1",
+            "conll02",
+            "conll03",
             "fnt",
-            "hyp"
+            "hyp",
+            "semcor",
+            "streusle",
+            "uni"
         ],
         "text_field_embedder": {
             "tokens": {
@@ -139,17 +137,17 @@
         "type": "multi",
         "batch_size": 32,
         "tasks": [
-            "upos",
-            "xpos",
             "chunk",
+            "com",
+            "frame",
+            "hyp",
             "mwe",
             "ner",
             "sem",
             "semtr",
             "supsense",
-            "com",
-            "frame",
-            "hyp"
+            "upos",
+            "xpos"
         ]
     },
     "val_iterator": {

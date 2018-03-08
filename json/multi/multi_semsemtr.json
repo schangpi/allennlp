@@ -19,8 +19,7 @@
             "semtr"
         ],
         "domains": [
-            "semcor",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -31,8 +30,7 @@
             "semtr"
         ],
         "domains": [
-            "semcor",
-            "semtraits"
+            "semcor"
         ],
         "text_field_embedder": {
             "tokens": {

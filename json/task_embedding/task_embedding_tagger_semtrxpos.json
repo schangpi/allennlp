@@ -31,9 +31,7 @@
             "xpos"
         ],
         "domains": [
-            "conll03",
-            "semtraits",
-            "streusle",
+            "semcor",
             "uni"
         ]
     },
@@ -129,9 +127,7 @@
             ]
         ],
         "domains": [
-            "conll03",
-            "semtraits",
-            "streusle",
+            "semcor",
             "uni"
         ]
     },

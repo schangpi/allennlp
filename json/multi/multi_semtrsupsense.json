@@ -19,7 +19,7 @@
             "supsense"
         ],
         "domains": [
-            "semtraits",
+            "semcor",
             "streusle"
         ]
     },
@@ -31,7 +31,7 @@
             "supsense"
         ],
         "domains": [
-            "semtraits",
+            "semcor",
             "streusle"
         ],
         "text_field_embedder": {

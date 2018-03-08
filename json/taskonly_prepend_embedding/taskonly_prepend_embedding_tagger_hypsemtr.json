@@ -20,7 +20,7 @@
         ],
         "domains": [
             "hyp",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -100,7 +100,7 @@
         ],
         "domains": [
             "hyp",
-            "semtraits"
+            "semcor"
         ]
     },
     "train_iterator": {

@@ -20,7 +20,7 @@
         ],
         "domains": [
             "hyp",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -32,7 +32,7 @@
         ],
         "domains": [
             "hyp",
-            "semtraits"
+            "semcor"
         ],
         "text_field_embedder": {
             "tokens": {

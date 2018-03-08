@@ -20,8 +20,6 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
-            "streusle",
             "uni"
         ]
     },
@@ -34,8 +32,6 @@
         ],
         "domains": [
             "conll02",
-            "conll03",
-            "streusle",
             "uni"
         ],
         "text_field_embedder": {

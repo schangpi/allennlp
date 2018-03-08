@@ -19,9 +19,7 @@
             "xpos"
         ],
         "domains": [
-            "conll03",
             "semcor",
-            "streusle",
             "uni"
         ]
     },
@@ -33,9 +31,7 @@
             "xpos"
         ],
         "domains": [
-            "conll03",
             "semcor",
-            "streusle",
             "uni"
         ],
         "text_field_embedder": {

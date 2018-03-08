@@ -15,22 +15,21 @@ def set_data(data, path, value):
     e[pathlist[-1]] = value
     return data
 
-# "upos": ["uni", "streusle"],
-# "xpos": ["uni", "streusle", "conll03"],
-# "chunk": ["conll02", "conll03"],
-
-# tskds = {"mwe": ["streusle"],
-#          "ner": ["conll03"],
-#          "sem": ["semcor"],
-#          "semtr": ["semtraits"],
-#          "supsense": ["streusle"],
-#          "com": ["broadcast1"]}
-tskds = {"sem": ["semcor"],
+tskds = {"upos": ["uni"],
+         "xpos": ["uni"],
+         "chunk": ["conll02"],
+         "mwe": ["streusle"],
+         "ner": ["conll03"],
+         "sem": ["semcor"],
+         "semtr": ["semcor"],
+         "supsense": ["streusle"],
+         "com": ["broadcast1"],
          "frame": ["fnt"],
          "hyp": ["hyp"]}
-
-domains = ["uni", "conll03", "conll02", "streusle", "semcor", "semtraits", "broadcast1", "broadcast2", "broadcast3",
-           "fnt", "hyp"]
+# tskds = {"sem": ["semcor"],
+#          "semtr": ["semcor"]}
+# domains = ["uni", "conll03", "conll02", "streusle", "semcor", "broadcast1", "broadcast2", "broadcast3", "fnt", "hyp"]
+domains = ["uni", "conll03", "conll02", "streusle", "semcor", "broadcast1", "fnt", "hyp"]
 dataset_tasks = "dataset_reader/tasks"
 dataset_domains = "dataset_reader/domains"
 model_tasks = "model/tasks"
@@ -40,7 +39,7 @@ with open('tagger_template.json', 'r') as f:
     data = json.load(f)
     for t1, ds1 in tskds.items():
         tasks = [t1]
-        domains = sorted(list(set(ds1)))
+        # domains = sorted(list(set(ds1)))
         # data = set_data(data, dataset_tasks, tasks)
         data = set_data(data, model_tasks, tasks)
         # data = set_data(data, dataset_domains, domains)
@@ -52,7 +51,7 @@ with open('tagger_crf_template.json', 'r') as f:
     data = json.load(f)
     for t1, ds1 in tskds.items():
         tasks = [t1]
-        domains = sorted(list(set(ds1)))
+        # domains = sorted(list(set(ds1)))
         # data = set_data(data, dataset_tasks, tasks)
         data = set_data(data, model_tasks, tasks)
         # data = set_data(data, dataset_domains, domains)

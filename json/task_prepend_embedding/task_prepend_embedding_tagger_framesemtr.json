@@ -20,7 +20,7 @@
         ],
         "domains": [
             "fnt",
-            "semtraits"
+            "semcor"
         ]
     },
     "evaluate_on_test": true,
@@ -100,7 +100,7 @@
         ],
         "domains": [
             "fnt",
-            "semtraits"
+            "semcor"
         ]
     },
     "train_iterator": {
