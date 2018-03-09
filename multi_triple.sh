@@ -41,4 +41,4 @@ python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
 --test "$DATADIR"/test \
  > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
  
-end
+done
