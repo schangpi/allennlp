@@ -34,7 +34,7 @@ model_domains = "model/domains"
 iter_tasks = "train_iterator/tasks"
 random_seed_key = "random_seed"
 numpy_seed_key = "numpy_seed"
-torch_seed_key = "torch_seed"
+torch_seed_key = "pytorch_seed"
 # random_seed: 13370
 # numpy_seed: 1337
 # torch_seed = 133

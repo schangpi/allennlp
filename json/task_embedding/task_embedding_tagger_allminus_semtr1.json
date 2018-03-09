@@ -197,5 +197,5 @@
     },
     "random_seed": 12270,
     "numpy_seed": 1227,
-    "torch_seed": 122
+    "pytorch_seed": 122
 }
