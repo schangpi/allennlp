@@ -49,7 +49,7 @@ with open('multi_all.json', 'r') as f:
             tasks = sorted(tskds.keys())
             tasks.remove(t1)
             domains = sorted(list(all_domains))
-            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+            if ds1[0] != 'semcor' and ds1[0] != 'uni' and ds1[0] != 'streusle':
                 domains.remove(ds1[0])
             data = set_data(data, dataset_tasks, tasks)
             data = set_data(data, model_tasks, tasks)
@@ -86,7 +86,7 @@ with open('task_embedding_tagger_all.json', 'r') as f:
             tasks = sorted(tskds.keys())
             tasks.remove(t1)
             domains = sorted(list(all_domains))
-            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+            if ds1[0] != 'semcor' and ds1[0] != 'uni' and ds1[0] != 'streusle':
                 domains.remove(ds1[0])
             data = set_data(data, dataset_tasks, tasks)
             data = set_data(data, model_tasks, tasks)
@@ -123,7 +123,7 @@ with open('task_prepend_embedding_tagger_all.json', 'r') as f:
             tasks = sorted(tskds.keys())
             tasks.remove(t1)
             domains = sorted(list(all_domains))
-            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+            if ds1[0] != 'semcor' and ds1[0] != 'uni' and ds1[0] != 'streusle':
                 domains.remove(ds1[0])
             data = set_data(data, dataset_tasks, tasks)
             data = set_data(data, model_tasks, tasks)
@@ -161,7 +161,7 @@ with open('taskonly_embedding_tagger_all.json', 'r') as f:
             tasks = sorted(tskds.keys())
             tasks.remove(t1)
             domains = sorted(list(all_domains))
-            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+            if ds1[0] != 'semcor' and ds1[0] != 'uni' and ds1[0] != 'streusle':
                 domains.remove(ds1[0])
             data = set_data(data, dataset_tasks, tasks)
             data = set_data(data, model_tasks, tasks)
