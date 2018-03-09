@@ -90,7 +90,7 @@ for iseed, seed in enumerate(seeds):
         tasks = sorted(tskds.keys())
         tasks.remove(t1)
         domains = sorted(list(all_domains))
-        if ds1[0] != 'semcor' and ds1[0] != 'uni':
+        if ds1[0] != 'semcor' and ds1[0] != 'uni' and ds1[0] != 'streusle':
             domains.remove(ds1[0])
         for templ, pth in zip(all_templates, all_paths):
             set_taskdomains(templ, pth + 'allminus_' + t1 + str(iseed) + '.json',

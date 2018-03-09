@@ -33,6 +33,7 @@
             "fnt",
             "hyp",
             "semcor",
+            "streusle",
             "uni"
         ]
     },
@@ -58,6 +59,7 @@
             "fnt",
             "hyp",
             "semcor",
+            "streusle",
             "uni"
         ],
         "text_field_embedder": {
