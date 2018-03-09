@@ -45,6 +45,19 @@ with open('multi_all.json', 'r') as f:
         data = set_data(data, model_domains, domains)
         json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
+        with open('multi/multi_allminus_' + t1 + '.json', 'w') as fw:
+            tasks = sorted(tskds.keys())
+            tasks.remove(t1)
+            domains = sorted(list(all_domains))
+            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+                domains.remove(ds1[0])
+            data = set_data(data, dataset_tasks, tasks)
+            data = set_data(data, model_tasks, tasks)
+            data = set_data(data, iter_tasks, tasks)
+            data = set_data(data, dataset_domains, domains)
+            data = set_data(data, model_domains, domains)
+            json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
                 tasks = sorted(list(set([t1, t2])))
@@ -69,6 +82,19 @@ with open('task_embedding_tagger_all.json', 'r') as f:
         data = set_data(data, model_domains, domains)
         json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
+        with open('task_embedding/task_embedding_tagger_allminus_' + t1 + '.json', 'w') as fw:
+            tasks = sorted(tskds.keys())
+            tasks.remove(t1)
+            domains = sorted(list(all_domains))
+            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+                domains.remove(ds1[0])
+            data = set_data(data, dataset_tasks, tasks)
+            data = set_data(data, model_tasks, tasks)
+            data = set_data(data, iter_tasks, tasks)
+            data = set_data(data, dataset_domains, domains)
+            data = set_data(data, model_domains, domains)
+            json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
                 tasks = sorted(list(set([t1, t2])))
@@ -92,6 +118,19 @@ with open('task_prepend_embedding_tagger_all.json', 'r') as f:
         data = set_data(data, dataset_domains, domains)
         data = set_data(data, model_domains, domains)
         json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
+        with open('task_prepend_embedding/task_prepend_embedding_tagger_allminus_' + t1 + '.json', 'w') as fw:
+            tasks = sorted(tskds.keys())
+            tasks.remove(t1)
+            domains = sorted(list(all_domains))
+            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+                domains.remove(ds1[0])
+            data = set_data(data, dataset_tasks, tasks)
+            data = set_data(data, model_tasks, tasks)
+            data = set_data(data, iter_tasks, tasks)
+            data = set_data(data, dataset_domains, domains)
+            data = set_data(data, model_domains, domains)
+            json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
@@ -118,6 +157,19 @@ with open('taskonly_embedding_tagger_all.json', 'r') as f:
         data = set_data(data, model_domains, domains)
         json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
+        with open('taskonly_embedding/taskonly_embedding_tagger_allminus_' + t1 + '.json', 'w') as fw:
+            tasks = sorted(tskds.keys())
+            tasks.remove(t1)
+            domains = sorted(list(all_domains))
+            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+                domains.remove(ds1[0])
+            data = set_data(data, dataset_tasks, tasks)
+            data = set_data(data, model_tasks, tasks)
+            data = set_data(data, iter_tasks, tasks)
+            data = set_data(data, dataset_domains, domains)
+            data = set_data(data, model_domains, domains)
+            json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
                 tasks = sorted(list(set([t1, t2])))
@@ -141,6 +193,19 @@ with open('taskonly_prepend_embedding_tagger_all.json', 'r') as f:
         data = set_data(data, dataset_domains, domains)
         data = set_data(data, model_domains, domains)
         json.dump(data, fw, indent=4)
+    for t1, ds1 in tskds.items():
+        with open('taskonly_prepend_embedding/taskonly_prepend_embedding_tagger_allminus_' + t1 + '.json', 'w') as fw:
+            tasks = sorted(tskds.keys())
+            tasks.remove(t1)
+            domains = sorted(list(all_domains))
+            if ds1[0] != 'semcor' and ds1[0] != 'uni':
+                domains.remove(ds1[0])
+            data = set_data(data, dataset_tasks, tasks)
+            data = set_data(data, model_tasks, tasks)
+            data = set_data(data, iter_tasks, tasks)
+            data = set_data(data, dataset_domains, domains)
+            data = set_data(data, model_domains, domains)
+            json.dump(data, fw, indent=4)
     for t1, ds1 in tskds.items():
         for t2, ds2 in tskds.items():
             if t1 != t2:
