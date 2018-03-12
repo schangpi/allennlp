@@ -100,6 +100,18 @@ all_good_dicts = {"upos": [] ,
 "hyp": ['chunk-upos-xpos', 'supsense-xpos', 'chunk-ner-upos-xpos', 'ner-upos-xpos', 'chunk-sem-supsense-xpos', 'chunk-sem-supsense-upos-xpos']
 }
 
+all_good_dicts = {"upos": [] ,
+"xpos": [] ,
+"chunk": ['sem-upos-xpos', 'upos-xpos', 'ner-upos-xpos'] ,
+"mwe": ['chunk-sem-supsense-upos-xpos', 'chunk-ner-sem-semtr-supsense-upos-xpos', 'chunk-sem-semtr-supsense-upos-xpos'] ,
+"ner": [] ,
+"sem": ['chunk-supsense-upos', 'chunk-upos-xpos'] ,
+"semtr": ['chunk-frame-mwe-sem-supsense-upos-xpos', 'chunk-sem-supsense-upos-xpos', 'chunk-mwe-ner-sem-supsense-upos-xpos', 'chunk-mwe-sem-supsense-upos-xpos', 'chunk-ner-sem-upos-xpos'] ,
+"supsense": ['sem-semtr-upos-xpos', 'ner-sem', 'sem-semtr', 'ner-sem-upos', 'upos-xpos', 'chunk-ner-sem-semtr-upos-xpos', 'ner-sem-upos-xpos'] ,
+"com": [] ,
+"frame": [] ,
+"hyp": ['chunk-sem-supsense-xpos', 'supsense-xpos', 'chunk-upos-xpos']}
+
 def get_domains_for_tasks(tsks):
     dmns = []
     for tsk in tsks:
@@ -134,4 +146,10 @@ for t1, helpful_list in all_good_dicts.items():
             # all_commands.append('-'.join(tasks) + '0')
             # all_commands.append('-'.join(tasks) + '1')
 
-print(list(set(all_commands)))
+exts = list(set(all_commands))
+for l in exts:
+    print('\"' + l + '\"')
+for l in exts:
+    print('\"' + l + '0\"')
+for l in exts:
+    print('\"' + l + '1\"')
