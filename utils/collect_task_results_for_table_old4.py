@@ -71,11 +71,11 @@ def f1s_to_stats(f1s):
 
 for current_tsk_domain in current_tsk_domains:
     current_tsk, all_domain_strs = current_tsk_domain.split('_')
-    top_table = '\\begin{table*}[t]\n\\centering\n\\footnotesize{\n\\begin{tabular}{c|c|c|c|c}\n'
-    top_table += '\multicolumn{2}{c}{Trained with} & \\multicolumn{3}{|c}{Tested on \\task{' + current_tsk + '}'
-    # top_table += ' on ' + all_domain_strs
-    top_table += '} \\\\ \\cline{3-5}\n'
-    top_table += ' \multicolumn{2}{c|}{} & \\textbf{Multi-Dec} & \\textbf{TE-Dec} & \\textbf{TE-Enc} \\\\ \\hline'
+    top_table = '\\begin{table*}[t]\n\\centering\n\\footnotesize{\n\\begin{tabular}{c|c|c|c}\n'
+    top_table += 'Trained with & \\multicolumn{3}{|c}{\\task{' + current_tsk + '}'
+    top_table += ' on ' + all_domain_strs
+    top_table += '} \\\\ \\cline{2-4}\n'
+    top_table += '& \\textbf{Multi-Dec} & \\textbf{TE-Dec} & \\textbf{TE-Enc} \\\\ \\hline'
     print(top_table)
     firstcols = []
     exts = []
@@ -123,7 +123,7 @@ for current_tsk_domain in current_tsk_domains:
     single_crf_f1_old = load_score_json(single_path_old + current_tsk_domain + task_crf_suffix + 'template',
                                         'test_f1-measure-overall')
     # print("Self only (CRF) & ", end=' ')
-    print("\multicolumn{2}{c}{ \\task{" + current_tsk + "} only } & ", end=' ')
+    print("Self only & ", end=' ')
     print('\\multicolumn{3}{|c}{', end='')
     print(f1s_to_txt(single_crf_f1), end='')
     print('}', end=' ')
@@ -139,17 +139,7 @@ for current_tsk_domain in current_tsk_domains:
     tpeonly_pairwise_f1s = []
 
     for i, mfilepath in enumerate(multi_filepaths):
-        if i == 0:
-            print('\\parbox[t]{1mm}{\\multirow{' + str(len(all_tasks)) + '}{*}{\\rotatebox[origin = c]{90}{Pairwise}}}',
-                  end = '')
-        elif i == len(all_tasks)-1:
-            print('\\parbox[t]{1mm}{\\multirow{' + str(len(all_tasks)-1) +
-                  '}{*}{\\rotatebox[origin = c]{90}{All but one}}}', end='')
-        if i < len(multi_filepaths) - 1:
-            print('&', end=' ')
-            print('\\task{' + firstcols[i] + '}', end=' ')
-        else:
-            print('\\multicolumn{2}{c|}{\\task{' + firstcols[i] + '}}', end=' ')
+        print('\\task{' + firstcols[i] + '}', end=' ')
         print('&', end=' ')
 
         multi_f1 = load_score_json(mfilepath, 'test_' + current_tsk + '-f1-measure-overall')
@@ -176,13 +166,11 @@ for current_tsk_domain in current_tsk_domains:
             multi_pairwise_f1s.append(f1s_to_stats(multi_f1)[0]/100)
             teonly_pairwise_f1s.append(f1s_to_stats(teonly_f1)[0]/100)
             tpeonly_pairwise_f1s.append(f1s_to_stats(tpeonly_f1)[0]/100)
-        if i == 2*len(all_tasks) - 3 or i == len(multi_filepaths) - 1:
+        if i == len(all_tasks) - 2 or i == 2*len(all_tasks) - 3:
             print(' \\hline ', end=' ')
-        elif i == len(all_tasks) - 2 :
-            print(' \\cline{2-5} ', end=' ')
         if i == len(all_tasks) - 2:
             print('')
-            print('& Average', end=' ')
+            print('Average (pairwise)', end=' ')
             print('&', end=' ')
             pairwise_mean, _ = f1s_to_stats(multi_pairwise_f1s)
             print(str(round(pairwise_mean, 2)), end=' ')
