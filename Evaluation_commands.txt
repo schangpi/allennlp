@@ -142,10 +142,10 @@ done
 
 
 
+in "ner_conll03" "mwe_streusle" "com_broadcast1" "com_broadcast2" "com_broadcast3" "semtr_semtraits" "supsense_streusle"
 
 
-
-for td in "ner_conll03" "mwe_streusle" "com_broadcast1" "com_broadcast2" "com_broadcast3" "sem_semcor" "semtr_semtraits" "supsense_streusle"
+for td in "sem_semcor" "hyp_hyp" "frame_fnt" 
 do
 for fol in "train" "dev" "test"
 do

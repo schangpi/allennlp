@@ -1,0 +1,407 @@
+laforge 39
+gpu=2
+mn=tagger_crf_sem0
+./tagger_clean.sh sem_semcor "$mn" "$gpu"
+mn=tagger_crf_semtr0
+./tagger_clean.sh semtr_semcor "$mn" "$gpu"
+mn=tagger_crf_upos0
+./tagger_clean.sh upos_uni "$mn" "$gpu"
+mn=tagger_crf_xpos0
+./tagger_clean.sh xpos_uni "$mn" "$gpu"
+mn=tagger_crf_chunk0
+./tagger_clean.sh chunk_conll02 "$mn" "$gpu"
+mn=tagger_crf_mwe0
+./tagger_clean.sh mwe_streusle "$mn" "$gpu"
+mn=tagger_crf_supsense0
+./tagger_clean.sh supsense_streusle "$mn" "$gpu"
+mn=tagger_crf_frame0
+./tagger_clean.sh frame_fnt "$mn" "$gpu"
+mn=tagger_crf_hyp0
+./tagger_clean.sh hyp_hyp "$mn" "$gpu"
+mn=tagger_crf_ner0
+./tagger_clean.sh ner_conll03 "$mn" "$gpu"
+mn=tagger_crf_com0
+./tagger_clean.sh com_broadcast1 "$mn" "$gpu"
+gpu=2
+mn=tagger_crf_sem1
+./tagger_clean.sh sem_semcor "$mn" "$gpu"
+mn=tagger_crf_semtr1
+./tagger_clean.sh semtr_semcor "$mn" "$gpu"
+mn=tagger_crf_upos1
+./tagger_clean.sh upos_uni "$mn" "$gpu"
+mn=tagger_crf_xpos1
+./tagger_clean.sh xpos_uni "$mn" "$gpu"
+mn=tagger_crf_chunk1
+./tagger_clean.sh chunk_conll02 "$mn" "$gpu"
+mn=tagger_crf_mwe1
+./tagger_clean.sh mwe_streusle "$mn" "$gpu"
+mn=tagger_crf_supsense1
+./tagger_clean.sh supsense_streusle "$mn" "$gpu"
+mn=tagger_crf_frame1
+./tagger_clean.sh frame_fnt "$mn" "$gpu"
+mn=tagger_crf_hyp1
+./tagger_clean.sh hyp_hyp "$mn" "$gpu"
+mn=tagger_crf_ner1
+./tagger_clean.sh ner_conll03 "$mn" "$gpu"
+mn=tagger_crf_com1
+./tagger_clean.sh com_broadcast1 "$mn" "$gpu"
+
+RUN "comupos0" "uposxpos0" "chunkupos0" "nerupos0" "mweupos0" "supsenseupos0" "semupos0" "semtrupos0"
+RUN "frameupos0" "hypupos0" "comxpos0" "chunkxpos0" "nerxpos0" "mwexpos0" "supsensexpos0" "semxpos0"
+RUN "semtrxpos0" "framexpos0" "hypxpos0" "chunkcom0" "chunkner0" "chunkmwe0" "chunksupsense0" "chunksem0"
+RUN "chunksemtr0" "chunkframe0" "chunkhyp0" "comsem0" "semner0" "mwesem0" "semsupsense0" "semsemtr0"
+RUN "framesem0" "hypsem0" "comsemtr0" "semtrner0" "mwesemtr0" "semtrsupsense0" "framesemtr0" "hypsemtr0"
+RUN "nersemtr0" "nersem0" "comframe0" 
+RUN "framemwe0" "framesupsense0" "framehyp0"
+RUN "framener0" "comhyp0" "hypmwe0"
+RUN "hypsupsense0" "hypner0" "nersupsense0" 
+RUN "comner0" "mwener0" "mwesupsense0" "commwe0" "comsupsense0"
+
+khan 14
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "nersemtr0" "nersem0" "comframe0" 
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 15
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "framemwe0" "framesupsense0" "framehyp0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 16
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "framener0" "comhyp0" "hypmwe0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 3
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "hypsupsense0" "hypner0" "nersupsense0" 
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 8
+tmpdir=/project/beer/tagger_clean
+gpu=0
+for ext in "comner0" "mwener0" "mwesupsense0" "commwe0" "comsupsense0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+
+chmod +x multi_triple.sh
+
+worf 255
+tmpdir=/data/beer/tagger_clean
+gpu=1
+for ext in "comupos0" "uposxpos0" "chunkupos0" "nerupos0" "mweupos0" "supsenseupos0" "semupos0" "semtrupos0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+worf 259
+tmpdir=/data/beer/tagger_clean
+gpu=1
+for ext in "frameupos0" "hypupos0" "comxpos0" "chunkxpos0" "nerxpos0" "mwexpos0" "supsensexpos0" "semxpos0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+worf 1
+tmpdir=/data/beer/tagger_clean
+gpu=1
+for ext in "semtrxpos0" "framexpos0" "hypxpos0" "chunkcom0" "chunkner0" "chunkmwe0" "chunksupsense0" "chunksem0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+worf 4
+tmpdir=/data/beer/tagger_clean
+gpu=1
+for ext in "chunksemtr0" "chunkframe0" "chunkhyp0" "comsem0" "semner0" "mwesem0" "semsupsense0" "semsemtr0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+worf 26
+tmpdir=/data/beer/tagger_clean
+gpu=0
+for ext in "framesem0" "hypsem0" "comsemtr0" "semtrner0" "mwesemtr0" "semtrsupsense0" "framesemtr0" "hypsemtr0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+RUN "comupos1" "uposxpos1" "chunkupos1" "nerupos1" "mweupos1" "supsenseupos1" "semupos1" "semtrupos1" "frameupos1" "hypupos1"
+RUN "comxpos1" "chunkxpos1" "nerxpos1" "mwexpos1" "supsensexpos1" "semxpos1" "semtrxpos1" "framexpos1" "hypxpos1"
+RUN "comframe1" "framemwe1" "framesupsense1" "framehyp1" "framener1" "comhyp1" "hypmwe1" "hypsupsense1" "hypner1"
+
+RUN "chunkcom1" "chunkner1" "chunkmwe1" "chunksupsense1" "chunksem1" "chunksemtr1" "chunkframe1" "chunkhyp1"
+RUN "comsem1" "nersem1" "mwesem1" "semsupsense1" "semsemtr1" "framesem1" "hypsem1"
+RUN "comsemtr1" "nersemtr1" "mwesemtr1" "semtrsupsense1" "framesemtr1" "hypsemtr1"
+RUN "nersupsense1" "comner1" "mwener1" "mwesupsense1" "commwe1" "comsupsense1"
+
+waldstein 11
+tmpdir=/data1/beer/tagger_clean
+gpu=2
+for ext in "comupos1" "uposxpos1" "chunkupos1" "nerupos1" "mweupos1" "supsenseupos1" "semupos1" "semtrupos1" "frameupos1" "hypupos1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+waldstein 12
+tmpdir=/data1/beer/tagger_clean
+gpu=2
+for ext in "comxpos1" "chunkxpos1" "nerxpos1" "mwexpos1" "supsensexpos1" "semxpos1" "semtrxpos1" "framexpos1" "hypxpos1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+waldstein 210
+tmpdir=/data1/beer/tagger_clean
+gpu=2
+for ext in "comframe1" "framemwe1" "framesupsense1" "framehyp1" "framener1" "comhyp1" "hypmwe1" "hypsupsense1" "hypner1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+waldstein 214
+tmpdir=/data1/beer/tagger_clean
+gpu=2
+for ext in "nersupsense1" "comner1" "mwener1" "mwesupsense1" "commwe1" "comsupsense1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 6
+tmpdir=/project/beer/tagger_clean
+gpu=0
+for ext in "chunkcom1" "chunkner1" "chunkmwe1" "chunksupsense1" "chunksem1" "chunksemtr1" "chunkframe1" "chunkhyp1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 9
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "comsem1" "nersem1" "mwesem1" "semsupsense1" "semsemtr1" "framesem1" "hypsem1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 11
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "comsemtr1" "nersemtr1" "mwesemtr1" "semtrsupsense1" "framesemtr1" "hypsemtr1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+#############
+
+gowron 90
+tmpdir=/data/beer/tagger_clean
+gpu=2
+for ext in "all0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+gowron 92
+tmpdir=/data/beer/tagger_clean
+gpu=2
+for ext in "all1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+##############
+
+RUN "allminus_com0" "allminus_frame0"
+RUN "allminus_mwe0" "allminus_upos0"
+RUN "allminus_semtr0"
+RUN "allminus_xpos0"
+RUN "allminus_chunk0" "allminus_hyp0"
+RUN "allminus_sem0"  "allminus_supsense0" 
+RUN "allminus_ner0"
+
+mccoy 7
+tmpdir=../tagger_clean
+gpu=1
+for ext in "allminus_com0" "allminus_frame0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+mccoy  8
+tmpdir=../tagger_clean
+gpu=1
+for ext in "allminus_mwe0" "allminus_upos0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+mccoy 2
+tmpdir=../tagger_clean
+gpu=0
+for ext in "allminus_semtr0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 3
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "allminus_xpos0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+
+gowron 92
+tmpdir=/data/beer/tagger_clean
+gpu=2
+for ext in "allminus_chunk0" "allminus_hyp0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+gowron 90
+tmpdir=/data/beer/tagger_clean
+gpu=2
+for ext in "allminus_sem0"  "allminus_supsense0" 
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+khan 6
+tmpdir=/project/beer/tagger_clean
+gpu=1
+for ext in "allminus_ner0"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+#####
+
+RUN "allminus_com1" "allminus_frame1"
+RUN "allminus_mwe1" "allminus_upos1"
+RUN "allminus_semtr1"
+RUN "allminus_xpos1"
+RUN "allminus_chunk1" "allminus_hyp1"
+RUN "allminus_sem1"  "allminus_supsense1"
+RUN "allminus_ner1"
+
+
+laforge 7
+tmpdir=/data/beer/tagger_clean
+gpu=2
+for ext in "allminus_com1" "allminus_frame1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+laforge 9
+tmpdir=/data/beer/tagger_clean
+gpu=2
+for ext in "allminus_mwe1" "allminus_upos1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+laforge 6
+tmpdir=/data/beer/tagger_clean
+gpu=1
+for ext in "allminus_semtr1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+worf 155
+tmpdir=/data/beer/tagger_clean
+gpu=1
+for ext in "allminus_xpos1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+wal 27
+tmpdir=/data1/beer/tagger_clean
+gpu=3
+for ext in "allminus_chunk1" "allminus_hyp1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+wal 28
+tmpdir=/data1/beer/tagger_clean
+gpu=3
+for ext in "allminus_sem1"  "allminus_supsense1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+wal 12
+tmpdir=/data1/beer/tagger_clean
+gpu=2
+for ext in "allminus_ner1"
+do
+./multi_triple.sh "$ext" "$tmpdir" "$gpu"
+done
+
+
+
+##################
+
+REFERENCES
+
+DATADIR=./dataset/multi_tagger_clean
+TMPDIR=/data/beer/tagger_clean
+JSONDIR=multi
+TASK_NAME=multitagger
+CUDA=1
+for ext in 
+do
+MODEL="$JSONDIR"_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+
+JSONDIR=taskonly_embedding
+TASK_NAME=taskembtagger
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+
+JSONDIR=taskonly_prepend_embedding
+TASK_NAME=taskembtagger
+MODEL="$JSONDIR"_tagger_"$ext"
+rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
+python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \
+--serialization-dir "$TMPDIR"/"$TASK_NAME"_"$MODEL" \
+--cuda-device "$CUDA" \
+--train "$DATADIR"/train \
+--dev "$DATADIR"/dev \
+--test "$DATADIR"/test \
+ > "$TMPDIR"/"$TASK_NAME"_"$MODEL"_log
+ 
+end
