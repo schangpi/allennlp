@@ -117,6 +117,7 @@ def find_oracle(current_tsk, k):
     upbnd = mean_single_crf + k*std_single_crf
 
     all_goods = []
+    all_goods_json = []
     goods = []
     for i, mfilepath in enumerate(multi_filepaths):
         multi_f1 = load_score_json(mfilepath, 'test_' + current_tsk + '-f1-measure-overall')
@@ -125,6 +126,11 @@ def find_oracle(current_tsk, k):
     print('Multi:', current_tsk, goods)
     if len(goods) > 1:
         all_goods.append('-'.join(sorted(goods)))
+        all_goods_json.append('-'.join(sorted(goods)))
+    elif len(goods) == 1:
+        all_goods_json.append(''.join(sorted(goods)))
+    else:
+        all_goods_json.append('')
 
     goods = []
     for i, teonlyfilepath in enumerate(teonly_filepaths):
@@ -134,6 +140,11 @@ def find_oracle(current_tsk, k):
     print('TE:', current_tsk, goods)
     if len(goods) > 1:
         all_goods.append('-'.join(sorted(goods)))
+        all_goods_json.append('-'.join(sorted(goods)))
+    elif len(goods) == 1:
+        all_goods_json.append(''.join(sorted(goods)))
+    else:
+        all_goods_json.append('')
 
     goods = []
     for i, tpeonlyfilepath in enumerate(tpeonly_filepaths):
@@ -143,8 +154,13 @@ def find_oracle(current_tsk, k):
     print('TPE:', current_tsk, goods)
     if len(goods) > 1:
         all_goods.append('-'.join(sorted(goods)))
+        all_goods_json.append('-'.join(sorted(goods)))
+    elif len(goods) == 1:
+        all_goods_json.append(''.join(sorted(goods)))
+    else:
+        all_goods_json.append('')
 
-    return list(set(all_goods))
+    return list(set(all_goods)), all_goods_json
 
 multi_json_template = 'multi_all.json'
 te_json_template = 'task_embedding_tagger_all.json'
@@ -171,10 +187,13 @@ all_json_paths = [json_multi_path,
 combined_all_good_dicts = {}
 for k in [1.5, 2, 2.5]:
     all_goods_dict = {}
+    all_goods_dict_json = {}
     for t1, ds1 in tskds.items():
-        all_goods = find_oracle(t1, k)
+        all_goods, all_goods_json = find_oracle(t1, k)
         all_goods_dict[t1] = all_goods
+        all_goods_dict_json[t1] = all_goods_json
     print(k, all_goods_dict)
+    print(k, all_goods_dict_json)
     for ky, val in all_goods_dict.items():
         current_val = combined_all_good_dicts.get(ky, [])
         combined_all_good_dicts[ky] = current_val + val

@@ -28,6 +28,18 @@ current_tsk_domains = ["upos_uni",
                        "hyp_hyp"
                        ]
 
+
+def combine_tasks(tsk1, tsk2):
+    tsk1_list = tsk1.split('-')
+    tsk2_list = tsk2.split('-')
+    if len(tsk1_list) == 1 and len(tsk2_list) == 1:
+        return ''.join(sorted(tsk1_list + tsk2_list))
+    else:
+        return '-'.join(sorted(tsk1_list + tsk2_list))
+
+oracles = {'upos': ['', 'chunk', ''], 'xpos': ['', 'chunk', ''], 'chunk': ['sem-upos-xpos', 'ner-upos-xpos', 'upos-xpos'], 'mwe': ['chunk-ner-sem-semtr-supsense-upos-xpos', 'chunk-ner-sem-semtr-supsense-upos-xpos', 'chunk-sem-semtr-supsense-upos-xpos'], 'ner': ['', '', ''], 'sem': ['chunk-upos-xpos', 'chunk-upos-xpos', 'chunk-supsense-upos'], 'semtr': ['chunk-mwe-ner-sem-supsense-upos-xpos', 'chunk-mwe-sem-supsense-upos-xpos', 'chunk-frame-mwe-sem-supsense-upos-xpos'], 'supsense': ['chunk-ner-sem-semtr-upos-xpos', 'sem-semtr-upos-xpos', 'ner-sem-upos-xpos'], 'com': ['', '', ''], 'frame': ['', '', ''], 'hyp': ['chunk-sem-supsense-xpos', 'chunk-upos-xpos', 'xpos']}
+
+
 seedsufs = ['', '0', '1']
 def load_score_json(filedir, att):
     f1s = []
@@ -52,14 +64,13 @@ def f1s_to_txt(f1s, lowbnd=None, upbnd=None, k=1.5):
     if lowbnd is not None and mean_f1s + k*std_f1s <= lowbnd:
         toreturn += '{\\color{red}'
     elif upbnd is not None and mean_f1s - k*std_f1s >= upbnd:
-            toreturn += '{\\color{green}'
+            toreturn += '{\\color{olive}'
     toreturn += str(round(mean_f1s, 2))
-    toreturn += ' $\\pm$ '
-    toreturn += str(round(std_f1s, 2))
+    toreturn += '\\scriptsize{ $\\pm$ ' + str(round(std_f1s, 2)) + '}'
     if lowbnd is not None and mean_f1s + k*std_f1s <= lowbnd:
-        toreturn += '$\\downarrow$ }'
+        toreturn += ' $\\downarrow$ }'
     elif upbnd is not None and mean_f1s - k*std_f1s >= upbnd:
-        toreturn += '$\\uparrow$ }'
+        toreturn += ' $\\uparrow$ }'
     return toreturn
 
 def f1s_to_stats(f1s):
@@ -194,6 +205,30 @@ for current_tsk_domain in current_tsk_domains:
             print(str(round(pairwise_mean, 2)), end=' ')
             print(' \\\\ \\hline ', end=' ')
         print('')
+
+    print("\multicolumn{2}{c|}{ Oracle } & ", end=' ')
+    current_oracles = oracles[current_tsk]
+    if current_oracles[0] != '':
+        f1_oracle = load_score_json(multi_path + combine_tasks(current_tsk, current_oracles[0]),
+                                    'test_' + current_tsk + '-f1-measure-overall')
+        print(f1s_to_txt(f1_oracle), end=' ')
+    else:
+        print(' None ', end=' ')
+    print('&', end=' ')
+    if current_oracles[1] != '':
+        f1_oracle = load_score_json(teonly_path + combine_tasks(current_tsk, current_oracles[1]),
+                                    'test_' + current_tsk + '-f1-measure-overall')
+        print(f1s_to_txt(f1_oracle), end=' ')
+    else:
+        print(' None ', end=' ')
+    print('&', end=' ')
+    if current_oracles[2] != '':
+        f1_oracle = load_score_json(tpeonly_path + combine_tasks(current_tsk, current_oracles[2]),
+                                    'test_' + current_tsk + '-f1-measure-overall')
+        print(f1s_to_txt(f1_oracle), end=' ')
+    else:
+        print(' None ', end=' ')
+    print(' \\\\ \\hline')
     # print(' \\hline ')
     caption = 'F1 score tested on the task \\task{' + current_tsk + '} in different training scenarios'
     bottom_table = '\\end{tabular}\n\\caption{\\small ' + caption + '}\\label{tMultiTask'
