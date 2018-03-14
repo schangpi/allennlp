@@ -3,10 +3,11 @@ TMPDIR=$2
 CUDA=$3
 
 DATADIR=./dataset/multi_tagger_clean
-JSONDIR=multi
-TASK_NAME=multitagger
+
 for ext in "$TASK_EXT"
 do
+JSONDIR=multi
+TASK_NAME=multitagger
 MODEL="$JSONDIR"_"$ext"
 rm -r "$TMPDIR"/"$TASK_NAME"_"$MODEL"
 python -m allennlp.run train json/"$JSONDIR"/"$MODEL".json \

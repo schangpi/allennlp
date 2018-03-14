@@ -20,7 +20,7 @@ archive = load_archive(archive_file)
 config = archive.config
 prepare_environment(config)
 model = archive.model
-embed()
+# embed()
 
 all_tasks = ['upos', 'xpos', 'chunk', 'ner', 'mwe', 'sem', 'semtr', 'supsense', 'com', 'frame', 'hyp']
 
@@ -45,3 +45,27 @@ with open(output_name + '_task_word_vectors.txt', 'w') as f:
         print(tsk, ' '.join([str(x) for x in task_vec]))
         f.write(tsk + ' ' + ' '.join([str(x) for x in task_vec]))
         f.write('\n')
+
+topk = 10000
+with open(output_name + '_topwords_vectors.tsv', 'w') as f:
+    for i in range(topk):
+        task_vec = model.text_field_embedder.token_embedder_tokens.weight[i].data.cpu().numpy().tolist()
+        print('\t'.join([str(x) for x in task_vec]))
+        f.write('\t'.join([str(x) for x in task_vec]))
+        f.write('\n')
+
+with open(output_name + '_topwords_metadata.tsv', 'w') as f:
+    for i in range(topk):
+        word = model.vocab.get_token_from_index(i)
+        print(word)
+        f.write(word)
+        f.write('\n')
+
+with open(output_name + '_topwords_vectors.txt', 'w') as f:
+    for i in range(topk):
+        word = model.vocab.get_token_from_index(i)
+        task_vec = model.text_field_embedder.token_embedder_tokens.weight[i].data.cpu().numpy().tolist()
+        print(word, ' '.join([str(x) for x in task_vec]))
+        f.write(word + ' ' + ' '.join([str(x) for x in task_vec]))
+        f.write('\n')
+

@@ -28,7 +28,6 @@ current_tsk_domains = ["upos_uni",
                        "hyp_hyp"
                        ]
 
-
 def combine_tasks(tsk1, tsk2):
     tsk1_list = tsk1.split('-')
     tsk2_list = tsk2.split('-')
@@ -53,6 +52,14 @@ def load_score_json(filedir, att):
             f1s.append(0.0)
     return f1s
 
+def load_score_json_get_commands(filedir):
+    commands = []
+    for seedsuf in seedsufs:
+        filepath = os.path.join(filedir + seedsuf, 'metrics.json')
+        if not os.path.exists(filepath):
+            commands.append(filepath)
+    return commands
+
 def f1s_to_txt(f1s, lowbnd=None, upbnd=None, k=1.5):
     npf1s = np.array(f1s)
     npf1s[npf1s == 0] = np.nan
@@ -66,7 +73,28 @@ def f1s_to_txt(f1s, lowbnd=None, upbnd=None, k=1.5):
     elif upbnd is not None and mean_f1s - k*std_f1s >= upbnd:
             toreturn += '{\\color{olive}'
     toreturn += str(round(mean_f1s, 2))
-    toreturn += '\\scriptsize{ $\\pm$ ' + str(round(std_f1s, 2)) + '}'
+    # toreturn += '\\scriptsize{ $\\pm$ ' + str(round(std_f1s, 2)) + '}'
+    toreturn += '\\tiny{ $\\pm$ ' + str(round(std_f1s, 2)) + '}'
+    if lowbnd is not None and mean_f1s + k*std_f1s <= lowbnd:
+        toreturn += ' $\\downarrow$ }'
+    elif upbnd is not None and mean_f1s - k*std_f1s >= upbnd:
+        toreturn += ' $\\uparrow$ }'
+    return toreturn
+
+def f1s_to_smalltxt(f1s, lowbnd=None, upbnd=None, k=1.5):
+    npf1s = np.array(f1s)
+    npf1s[npf1s == 0] = np.nan
+    mean_f1s = 100 * np.nanmean(npf1s)
+    std_f1s = 100 * np.nanstd(npf1s)
+    toreturn = ''
+    if sum(np.isnan(npf1s)) > 0:
+        toreturn +=  ' '.join([str(round(100 * f1, 2)) for f1 in f1s]) + ' = '
+    if lowbnd is not None and mean_f1s + k*std_f1s <= lowbnd:
+        toreturn += '{\\color{red}'
+    elif upbnd is not None and mean_f1s - k*std_f1s >= upbnd:
+            toreturn += '{\\color{olive}'
+    toreturn += '\\scriptsize{' + str(round(mean_f1s, 2)) + '}'
+    # toreturn +=  '\\footnotesize{ $\\pm$ ' + str(round(std_f1s, 2)) + '}'
     if lowbnd is not None and mean_f1s + k*std_f1s <= lowbnd:
         toreturn += ' $\\downarrow$ }'
     elif upbnd is not None and mean_f1s - k*std_f1s >= upbnd:
@@ -80,9 +108,27 @@ def f1s_to_stats(f1s):
     std_f1s = 100 * np.nanstd(npf1s)
     return mean_f1s, std_f1s
 
+all_commands = []
+
+num_tasks = len(all_tasks)
+tskid = {}
+for i, task in enumerate(all_tasks):
+    tskid[task] = i
+multi_meanpairwise_table = np.zeros((num_tasks, num_tasks))
+teonly_meanpairwise_table = np.zeros((num_tasks, num_tasks))
+tpeonly_meanpairwise_table = np.zeros((num_tasks, num_tasks))
+multi_stdpairwise_table = np.zeros((num_tasks, num_tasks))
+teonly_stdpairwise_table = np.zeros((num_tasks, num_tasks))
+tpeonly_stdpairwise_table = np.zeros((num_tasks, num_tasks))
+multi_pairwise_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+teonly_pairwise_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+tpeonly_pairwise_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+
 for current_tsk_domain in current_tsk_domains:
     current_tsk, all_domain_strs = current_tsk_domain.split('_')
-    top_table = '\\begin{table*}[t]\n\\centering\n\\footnotesize{\n\\begin{tabular}{c|c|c|c|c}\n'
+    current_tsk_id = tskid[current_tsk]
+    top_table = '\\begin{table*}[t]\n\\centering\n\\scriptsize{\n\\begin{tabular}{c|c|c|c|c}\n'
+    # top_table = '\\begin{table*}[t]\n\\centering\n\\footnotesize{\n\\begin{tabular}{c|c|c|c|c}\n'
     top_table += '\multicolumn{2}{c}{Trained with} & \\multicolumn{3}{|c}{Tested on \\task{' + current_tsk + '}'
     # top_table += ' on ' + all_domain_strs
     top_table += '} \\\\ \\cline{3-5}\n'
@@ -133,6 +179,17 @@ for current_tsk_domain in current_tsk_domains:
                                     'test_f1-measure-overall')
     single_crf_f1_old = load_score_json(single_path_old + current_tsk_domain + task_crf_suffix + 'template',
                                         'test_f1-measure-overall')
+
+    multi_meanpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[0]
+    teonly_meanpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[0]
+    tpeonly_meanpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[0]
+    multi_stdpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[1]
+    teonly_stdpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[1]
+    tpeonly_stdpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[1]
+    multi_pairwise_table[current_tsk_id][current_tsk_id] = f1s_to_smalltxt(single_crf_f1)
+    teonly_pairwise_table[current_tsk_id][current_tsk_id] = f1s_to_smalltxt(single_crf_f1)
+    tpeonly_pairwise_table[current_tsk_id][current_tsk_id] = f1s_to_smalltxt(single_crf_f1)
+
     # print("Self only (CRF) & ", end=' ')
     print("\multicolumn{2}{c}{ \\task{" + current_tsk + "} only } & ", end=' ')
     print('\\multicolumn{3}{|c}{', end='')
@@ -151,10 +208,10 @@ for current_tsk_domain in current_tsk_domains:
 
     for i, mfilepath in enumerate(multi_filepaths):
         if i == 0:
-            print('\\parbox[t]{1mm}{\\multirow{' + str(len(all_tasks)) + '}{*}{\\rotatebox[origin = c]{90}{Pairwise}}}',
+            print('\\parbox[t]{1mm}{\\multirow{' + str(num_tasks) + '}{*}{\\rotatebox[origin = c]{90}{Pairwise}}}',
                   end = '')
-        elif i == len(all_tasks)-1:
-            print('\\parbox[t]{1mm}{\\multirow{' + str(len(all_tasks)-1) +
+        elif i == num_tasks-1:
+            print('\\parbox[t]{1mm}{\\multirow{' + str(num_tasks-1) +
                   '}{*}{\\rotatebox[origin = c]{90}{All but one}}}', end='')
         if i < len(multi_filepaths) - 1:
             print('&', end=' ')
@@ -187,11 +244,22 @@ for current_tsk_domain in current_tsk_domains:
             multi_pairwise_f1s.append(f1s_to_stats(multi_f1)[0]/100)
             teonly_pairwise_f1s.append(f1s_to_stats(teonly_f1)[0]/100)
             tpeonly_pairwise_f1s.append(f1s_to_stats(tpeonly_f1)[0]/100)
-        if i == 2*len(all_tasks) - 3 or i == len(multi_filepaths) - 1:
+
+            another_task_id = tskid[firstcols[i][1:]]
+            multi_meanpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(multi_f1)[0]
+            teonly_meanpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(teonly_f1)[0]
+            tpeonly_meanpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(tpeonly_f1)[0]
+            multi_stdpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(multi_f1)[1]
+            teonly_stdpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(teonly_f1)[1]
+            tpeonly_stdpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(tpeonly_f1)[1]
+            multi_pairwise_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(multi_f1, lowbnd, upbnd)
+            teonly_pairwise_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(teonly_f1, lowbnd, upbnd)
+            tpeonly_pairwise_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(tpeonly_f1, lowbnd, upbnd)
+        if i == 2*num_tasks - 3 or i == len(multi_filepaths) - 1:
             print(' \\hline ', end=' ')
-        elif i == len(all_tasks) - 2 :
+        elif i == num_tasks - 2 :
             print(' \\cline{2-5} ', end=' ')
-        if i == len(all_tasks) - 2:
+        if i == num_tasks - 2:
             print('')
             print('& Average', end=' ')
             print('&', end=' ')
@@ -211,6 +279,7 @@ for current_tsk_domain in current_tsk_domains:
     if current_oracles[0] != '':
         f1_oracle = load_score_json(multi_path + combine_tasks(current_tsk, current_oracles[0]),
                                     'test_' + current_tsk + '-f1-measure-overall')
+        all_commands += load_score_json_get_commands(multi_path + combine_tasks(current_tsk, current_oracles[0]))
         print(f1s_to_txt(f1_oracle), end=' ')
     else:
         print(' None ', end=' ')
@@ -218,6 +287,7 @@ for current_tsk_domain in current_tsk_domains:
     if current_oracles[1] != '':
         f1_oracle = load_score_json(teonly_path + combine_tasks(current_tsk, current_oracles[1]),
                                     'test_' + current_tsk + '-f1-measure-overall')
+        all_commands += load_score_json_get_commands(teonly_path + combine_tasks(current_tsk, current_oracles[1]))
         print(f1s_to_txt(f1_oracle), end=' ')
     else:
         print(' None ', end=' ')
@@ -225,6 +295,7 @@ for current_tsk_domain in current_tsk_domains:
     if current_oracles[2] != '':
         f1_oracle = load_score_json(tpeonly_path + combine_tasks(current_tsk, current_oracles[2]),
                                     'test_' + current_tsk + '-f1-measure-overall')
+        all_commands += load_score_json_get_commands(tpeonly_path + combine_tasks(current_tsk, current_oracles[2]))
         print(f1s_to_txt(f1_oracle), end=' ')
     else:
         print(' None ', end=' ')
@@ -236,3 +307,108 @@ for current_tsk_domain in current_tsk_domains:
     bottom_table += '}}\n\\end{table*}'
     print(bottom_table)
     print('')
+
+for command in sorted(list(set(all_commands))):
+    print('%', command)
+
+def get_pairwise_str(table, method, cap, isstr=False):
+    pairwise_str = '\\begin{table*}[t]\n\\centering\n\\scriptsize{\n\\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}\n'
+    for j in range(num_tasks):
+        pairwise_str += ' & ' + '\\task{' + all_tasks[j] + '}'
+    pairwise_str += '\\\\ \\hline\n'
+    for i in range(num_tasks):
+        pairwise_str += '\\task{' + all_tasks[i] +'} '
+        for j in range(num_tasks):
+            if isstr:
+                if i == j:
+                    pairwise_str += '& ' + '{\\color{blue}' + table[i][j] + '}'
+                else:
+                    if 'color' in table[i][j]:
+                        pairwise_str += '& ' + table[i][j]
+                    elif 'scriptsize' in table[i][j]:
+                        pairwise_str += '& ' + table[i][j].replace('scriptsize', 'tiny')
+            else:
+                pairwise_str += '& '
+                if i == j:
+                    pairwise_str += '{\\color{blue}' + str(round(table[i,j], 2)) + '}'
+                else:
+                    if table[i,j] < -0.5:
+                        pairwise_str += '{\\color{red}' + str(round(table[i,j], 2)) + '}'
+                    elif table[i,j] > 0.5:
+                        pairwise_str += '{\\color{olive}' + str(round(table[i,j], 2)) + '}'
+                    else:
+                        pairwise_str += '{\\tiny{' + str(round(table[i, j], 2)) + '}}'
+        pairwise_str += '\\\\ \\hline\n'
+    pairwise_str += '\\end{tabular}\n'
+    pairwise_str += '\\caption{\small ' + cap + '}\\label{t' + method + '}}\n'
+    pairwise_str += '\\end{table*}'
+    return pairwise_str
+
+def get_toptask_commands(table):
+    command = []
+    all_good_dicts = {}
+    for i in range(num_tasks):
+        tsk_numbers = []
+        for j in range(num_tasks):
+            if i == j:
+                tsk_numbers.append(0.0)
+            else:
+                tsk_numbers.append(table[i,j])
+        indices = np.argsort(-np.array(tsk_numbers))
+        command.append('-'.join(sorted([all_tasks[i]] + [all_tasks[j] for j in indices[:2]])))
+        all_good_dicts[all_tasks[i]] = ['-'.join(sorted([all_tasks[j] for j in indices[:2]]))]
+    return list(set(command)), all_good_dicts
+
+def get_rel_table(table):
+    rel_table = np.zeros((num_tasks, num_tasks))
+    for i in range(num_tasks):
+        for j in range(num_tasks):
+            rel_table[i,j] = 100*(table[i,j] - table[i,i]) / table[i,i]
+    return rel_table
+
+caption_ending = ' For each number, we train on corresponding ``row" and ``column" tasks jointly and test on the column task.'
+
+print(get_pairwise_str(get_rel_table(multi_meanpairwise_table), 'RelMultiDec', 'Relative in \\% F1 scores for \\textbf{Multi-Dec}.' + caption_ending))
+print(get_pairwise_str(get_rel_table(teonly_meanpairwise_table), 'RelTEDec', 'Relative in \\% F1 scores for \\textbf{TE-Dec}.' + caption_ending))
+print(get_pairwise_str(get_rel_table(tpeonly_meanpairwise_table), 'RelTEEnc', 'Relative in \\% F1 scores for \\textbf{TE-Enc}.' + caption_ending))
+
+print(get_pairwise_str(multi_pairwise_table, 'PwMultiDec', 'Pairwise F1 scores for \\textbf{Multi-Dec}.' + caption_ending, isstr=True))
+print(get_pairwise_str(teonly_pairwise_table, 'PwTEDec', 'Pairwise F1 scores for \\textbf{TE-Dec}.' + caption_ending, isstr=True))
+print(get_pairwise_str(tpeonly_pairwise_table, 'PwTEEnc', 'Pairwise F1 scores for \\textbf{TE-Enc}.' + caption_ending, isstr=True))
+
+
+"""
+command, good_dicts = get_toptask_commands(multi_meanpairwise_table)
+for tt in command:
+    print('for ext in ', end='')
+    print('"' + tt + '"', '\"' + tt + '0"', '"' + tt + '1"')
+    print('do')
+    print('./multi_multi.sh "$ext" "$tmpdir" "$gpu"')
+    print('done')
+    print('')
+all_good_dicts = good_dicts
+
+command, good_dicts = get_toptask_commands(teonly_meanpairwise_table)
+for tt in command:
+    print('for ext in ', end='')
+    print('"' + tt + '"', '\"' + tt + '0"', '"' + tt + '1"')
+    print('do')
+    print('./multi_teonly.sh "$ext" "$tmpdir" "$gpu"')
+    print('done')
+    print('')
+for k, v in good_dicts.items():
+    all_good_dicts[k] = all_good_dicts[k] + v
+
+command, good_dicts = get_toptask_commands(tpeonly_meanpairwise_table)
+for tt in command:
+    print('for ext in ', end='')
+    print('"' + tt + '"', '\"' + tt + '0"', '"' + tt + '1"')
+    print('do')
+    print('./multi_tpeonly.sh "$ext" "$tmpdir" "$gpu"')
+    print('done')
+    print('')
+for k, v in good_dicts.items():
+    all_good_dicts[k] = list(set(all_good_dicts[k] + v))
+
+print(all_good_dicts)
+"""
