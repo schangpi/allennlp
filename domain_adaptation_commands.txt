@@ -1,0 +1,190 @@
+MODEL=taskembtagger_taskonly_embedding_tagger_"$ext"
+MODEL=multitagger_multi_"$ext"
+MODEL=taskembtagger_taskonly_prepend_embedding_tagger_"$ext"	
+
+"chunk_bc-cctv" "chunk_bc-msnbc" "chunk_bc-p2.5-c2e" "chunk_bc-cnn" "chunk_bc-p2.5-a2e" "chunk_bc-phoenix"                       
+"chunk_mz-sinorama"
+"chunk_nw-p2.5-a2e" "chunk_nw-wsj" "chunk_nw-xinhua" "chunk_nw-p2.5-c2e"
+"chunk_wb-a2e" "chunk_wb-eng" "chunk_wb-p2.5-c2e" "chunk_wb-c2e" "chunk_wb-p2.5-a2e" "chunk_wb-sel"
+          
+
+
+for ext in "all"
+do
+for dm in "chunk_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_chunking_evaluate/"$dm"
+done
+done
+
+for ext in "all"
+do
+for dm in "chunk_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_chunking_evaluate/"$dm"
+done
+done
+
+
+MODEL=chunk_conll02_tagger_crf_chunk
+for dm in "chunk_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_chunking_evaluate/"$dm"/chunk_conll02_test.txt
+done
+
+MODEL=chunk_conll02_tagger_crf_chunk
+for dm in "chunk_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/multi_tagger_clean/test/chunk_conll02_test.txt
+done
+
+##########################
+
+
+107
+MODEL=xpos_uni_tagger_crf_xpos
+for dm in "xpos_mz-sinorama" "xpos_bc-cctv" "xpos_bc-msnbc" "xpos_bc-p2.5-c2e" "xpos_bc-cnn" "xpos_bc-p2.5-a2e" "xpos_bc-phoenix" "xpos_nw-p2.5-a2e" "xpos_nw-wsj" "xpos_nw-xinhua" "xpos_nw-p2.5-c2e" "xpos_wb-a2e" "xpos_wb-eng" "xpos_wb-p2.5-c2e" "xpos_wb-c2e" "xpos_wb-p2.5-a2e" "xpos_wb-sel"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm"/xpos_uni_test.txt 2> results/da_"$MODEL"_"$dm"
+done
+
+MODEL=xpos_uni_tagger_crf_xpos0
+for dm in "xpos_mz-sinorama" "xpos_bc-cctv" "xpos_bc-msnbc" "xpos_bc-p2.5-c2e" "xpos_bc-cnn" "xpos_bc-p2.5-a2e" "xpos_bc-phoenix" "xpos_nw-p2.5-a2e" "xpos_nw-wsj" "xpos_nw-xinhua" "xpos_nw-p2.5-c2e" "xpos_wb-a2e" "xpos_wb-eng" "xpos_wb-p2.5-c2e" "xpos_wb-c2e" "xpos_wb-p2.5-a2e" "xpos_wb-sel"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm"/xpos_uni_test.txt 2> results/da_"$MODEL"_"$dm"
+done
+
+12 DONE
+MODEL=xpos_uni_tagger_crf_xpos1
+for dm in "xpos_mz-sinorama" "xpos_bc-cctv" "xpos_bc-msnbc" "xpos_bc-p2.5-c2e" "xpos_bc-cnn" "xpos_bc-p2.5-a2e" "xpos_bc-phoenix" "xpos_nw-p2.5-a2e" "xpos_nw-wsj" "xpos_nw-xinhua" "xpos_nw-p2.5-c2e" "xpos_wb-a2e" "xpos_wb-eng" "xpos_wb-p2.5-c2e" "xpos_wb-c2e" "xpos_wb-p2.5-a2e" "xpos_wb-sel"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm"/xpos_uni_test.txt 2> results/da_"$MODEL"_"$dm"
+done
+
+MODEL=xpos_uni_tagger_crf_xpos 
+for dm in "xpos_bn-p2.5-a2e" "xpos_bn-abc" "xpos_bn-p2.5-c2e" "xpos_bn-cnn" "xpos_bn-pri" "xpos_bn-mnb" "xpos_bn-voa" "xpos_bn-nbc"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm"/xpos_uni_test.txt 2> results/da_"$MODEL"_"$dm"
+done
+
+MODEL=xpos_uni_tagger_crf_xpos0
+for dm in "xpos_bn-p2.5-a2e" "xpos_bn-abc" "xpos_bn-p2.5-c2e" "xpos_bn-cnn" "xpos_bn-pri" "xpos_bn-mnb" "xpos_bn-voa" "xpos_bn-nbc"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm"/xpos_uni_test.txt 2> results/da_"$MODEL"_"$dm"
+done
+
+MODEL=xpos_uni_tagger_crf_xpos1
+for dm in "xpos_bn-p2.5-a2e" "xpos_bn-abc" "xpos_bn-p2.5-c2e" "xpos_bn-cnn" "xpos_bn-pri" "xpos_bn-mnb" "xpos_bn-voa" "xpos_bn-nbc"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm"/xpos_uni_test.txt 2> results/da_"$MODEL"_"$dm"
+done
+
+
+
+
+MODEL=taskembtagger_taskonly_embedding_tagger_"$ext"
+MODEL=multitagger_multi_"$ext"
+MODEL=taskembtagger_taskonly_prepend_embedding_tagger_"$ext"	
+
+88
+for ext in "all" "all0" "all1"
+do
+MODEL=multitagger_multi_"$ext"
+for dm in "xpos_mz-sinorama" "xpos_bc-cctv" "xpos_bc-msnbc" "xpos_bc-p2.5-c2e" "xpos_bc-cnn" "xpos_bc-p2.5-a2e" "xpos_bc-phoenix" "xpos_nw-p2.5-a2e" "xpos_nw-wsj" "xpos_nw-xinhua" "xpos_nw-p2.5-c2e" "xpos_wb-a2e" "xpos_wb-eng" "xpos_wb-p2.5-c2e" "xpos_wb-c2e" "xpos_wb-p2.5-a2e" "xpos_wb-sel"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+98
+for ext in "all" "all0" "all1"
+do
+MODEL=multitagger_multi_"$ext"
+for dm in "xpos_bn-p2.5-a2e" "xpos_bn-abc" "xpos_bn-p2.5-c2e" "xpos_bn-cnn" "xpos_bn-pri" "xpos_bn-mnb" "xpos_bn-voa" "xpos_bn-nbc"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+89
+for ext in "all" "all0" "all1"
+do
+MODEL=taskembtagger_taskonly_embedding_tagger_"$ext"
+for dm in "xpos_mz-sinorama" "xpos_bc-cctv" "xpos_bc-msnbc" "xpos_bc-p2.5-c2e" "xpos_bc-cnn" "xpos_bc-p2.5-a2e" "xpos_bc-phoenix" "xpos_nw-p2.5-a2e" "xpos_nw-wsj" "xpos_nw-xinhua" "xpos_nw-p2.5-c2e" "xpos_wb-a2e" "xpos_wb-eng" "xpos_wb-p2.5-c2e" "xpos_wb-c2e" "xpos_wb-p2.5-a2e" "xpos_wb-sel"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+96
+for ext in "all" "all0" "all1"
+do
+MODEL=taskembtagger_taskonly_embedding_tagger_"$ext"
+for dm in "xpos_bn-p2.5-a2e" "xpos_bn-abc" "xpos_bn-p2.5-c2e" "xpos_bn-cnn" "xpos_bn-pri" "xpos_bn-mnb" "xpos_bn-voa" "xpos_bn-nbc"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+17
+for ext in "all1"
+do
+MODEL=taskembtagger_taskonly_embedding_tagger_"$ext"
+for dm in "xpos_wb-sel" "xpos_wb-p2.5-a2e" "xpos_wb-c2e"  "xpos_wb-p2.5-c2e"  "xpos_wb-eng" "xpos_wb-a2e" "xpos_nw-p2.5-c2e" "xpos_nw-xinhua" "xpos_nw-wsj" "xpos_nw-p2.5-a2e" "xpos_bc-phoenix" "xpos_bc-p2.5-a2e" "xpos_bc-cnn" "xpos_bc-p2.5-c2e" "xpos_bc-msnbc" "xpos_bc-cctv" "xpos_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+for ext in "all0"
+do
+MODEL=taskembtagger_taskonly_embedding_tagger_"$ext"
+for dm in "xpos_wb-sel" "xpos_wb-p2.5-a2e" "xpos_wb-c2e"  "xpos_wb-p2.5-c2e"  "xpos_wb-eng" "xpos_wb-a2e" "xpos_nw-p2.5-c2e" "xpos_nw-xinhua" "xpos_nw-wsj" "xpos_nw-p2.5-a2e" "xpos_bc-phoenix" "xpos_bc-p2.5-a2e" "xpos_bc-cnn" "xpos_bc-p2.5-c2e" "xpos_bc-msnbc" "xpos_bc-cctv" "xpos_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+
+
+90
+for ext in "all" "all0" "all1"
+do
+MODEL=taskembtagger_taskonly_prepend_embedding_tagger_"$ext"
+for dm in "xpos_mz-sinorama" "xpos_bc-cctv" "xpos_bc-msnbc" "xpos_bc-p2.5-c2e" "xpos_bc-cnn" "xpos_bc-p2.5-a2e" "xpos_bc-phoenix" "xpos_nw-p2.5-a2e" "xpos_nw-wsj" "xpos_nw-xinhua" "xpos_nw-p2.5-c2e" "xpos_wb-a2e" "xpos_wb-eng" "xpos_wb-p2.5-c2e" "xpos_wb-c2e" "xpos_wb-p2.5-a2e" "xpos_wb-sel"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+94
+for ext in "all" "all0" "all1"
+do
+MODEL=taskembtagger_taskonly_prepend_embedding_tagger_"$ext"
+for dm in "xpos_bn-p2.5-a2e" "xpos_bn-abc" "xpos_bn-p2.5-c2e" "xpos_bn-cnn" "xpos_bn-pri" "xpos_bn-mnb" "xpos_bn-voa" "xpos_bn-nbc"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+12
+for ext in "all1"
+do
+MODEL=taskembtagger_taskonly_prepend_embedding_tagger_"$ext"
+for dm in "xpos_wb-sel" "xpos_wb-p2.5-a2e" "xpos_wb-c2e"  "xpos_wb-p2.5-c2e"  "xpos_wb-eng" "xpos_wb-a2e" "xpos_nw-p2.5-c2e" "xpos_nw-xinhua" "xpos_nw-wsj" "xpos_nw-p2.5-a2e" "xpos_bc-phoenix" "xpos_bc-p2.5-a2e" "xpos_bc-cnn" "xpos_bc-p2.5-c2e" "xpos_bc-msnbc" "xpos_bc-cctv" "xpos_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+for ext in "all0"
+do
+MODEL=taskembtagger_taskonly_prepend_embedding_tagger_"$ext"
+for dm in "xpos_wb-sel" "xpos_wb-p2.5-a2e" "xpos_wb-c2e"  "xpos_wb-p2.5-c2e"  "xpos_wb-eng" "xpos_wb-a2e" "xpos_nw-p2.5-c2e" "xpos_nw-xinhua" "xpos_nw-wsj" "xpos_nw-p2.5-a2e" "xpos_bc-phoenix" "xpos_bc-p2.5-a2e" "xpos_bc-cnn" "xpos_bc-p2.5-c2e" "xpos_bc-msnbc" "xpos_bc-cctv" "xpos_mz-sinorama"
+do
+python -m allennlp.run evaluate --archive-file /data/beer/tagger_clean/"$MODEL"/model.tar.gz --evaluation-data-file ./dataset/ontonotes_xpos_evaluate/"$dm" 2> results/da_"$MODEL"_"$dm"
+done
+done
+
+
+  

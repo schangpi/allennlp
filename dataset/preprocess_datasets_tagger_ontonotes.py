@@ -36,7 +36,7 @@ for fn in os.listdir(dataset_dir):
 dataset_dir = "./dataset/ontonotes_xpos"
 processed_dataset_dir = "./dataset/ontonotes_xpos_evaluate"
 for fn in os.listdir(dataset_dir):
-    load_func = dataset_utils.load_sentences_general
+    load_func = dataset_utils.load_sentences_xposonto
     sentences = {}
     testpath = os.path.join(dataset_dir, fn)
     sentences['test'] = load_func(testpath, zeros=False, lower=False)
