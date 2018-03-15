@@ -92,8 +92,8 @@ for i, embeddings_file in enumerate(embeddings_files_te):
     plt.scatter(Y[:, 0], Y[:, 1])
     for label, x, y in zip(vocabularys[embeddings_file], Y[:, 0], Y[:, 1]):
         plt.annotate(label, xy=(x, y), xytext=(0, 0), textcoords='offset points', fontsize=16)
-    fig.savefig('taskemb_tedec' + str(i) + '.eps')
-    fig.savefig('taskemb_tedec' + str(i) + '.png')
+    fig.savefig('task_embeddings/taskemb_tedec' + str(i) + '.eps')
+    fig.savefig('task_embeddings/taskemb_tedec' + str(i) + '.png')
 
 for i, embeddings_file in enumerate(embeddings_files_tpe):
     fig = plt.figure(4 + i)
@@ -105,8 +105,8 @@ for i, embeddings_file in enumerate(embeddings_files_tpe):
     plt.scatter(Y[:, 0], Y[:, 1])
     for label, x, y in zip(vocabularys[embeddings_file], Y[:, 0], Y[:, 1]):
         plt.annotate(label, xy=(x, y), xytext=(0, 0), textcoords='offset points', fontsize=16)
-    fig.savefig('taskemb_teenc' + str(i) + '.eps')
-    fig.savefig('taskemb_teenc' + str(i) + '.png')
+    fig.savefig('task_embeddings/taskemb_teenc' + str(i) + '.eps')
+    fig.savefig('task_embeddings/taskemb_teenc' + str(i) + '.png')
 
 for i, embeddings_file in enumerate(embeddings_words_files_tpe):
     wv, vocabulary = load_embeddings(embeddings_file, 5000)
@@ -134,8 +134,8 @@ for i, embeddings_file in enumerate(embeddings_words_files_tpe):
     Y, vocab = get_topk(Ys[embeddings_file], topk, vocabularys[embeddings_file])
     plt.scatter(Y[:, 0], Y[:, 1])
     for label, x, y in zip(vocab, Y[:, 0], Y[:, 1]):
-        plt.annotate(label, xy=(x, y), xytext=(0, 0), textcoords='offset points', fontsize=16)
-    fig.savefig('taskemb_teencw' + str(i) + '.eps')
-    fig.savefig('taskemb_teencw' + str(i) + '.png')
+        plt.annotate(label, xy=(x, y), xytext=(0, 0), textcoords='offset points', fontsize=10)
+    fig.savefig('task_embeddings/taskemb_teencw' + str(i) + '.eps')
+    fig.savefig('task_embeddings/taskemb_teencw' + str(i) + '.png')
 
 # plt.show()

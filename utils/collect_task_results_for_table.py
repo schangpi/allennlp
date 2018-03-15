@@ -108,12 +108,16 @@ def f1s_to_stats(f1s):
     std_f1s = 100 * np.nanstd(npf1s)
     return mean_f1s, std_f1s
 
+avg_dict = {}
+
 all_commands = []
 
 num_tasks = len(all_tasks)
 tskid = {}
 for i, task in enumerate(all_tasks):
     tskid[task] = i
+
+# pairwise information
 multi_meanpairwise_table = np.zeros((num_tasks, num_tasks))
 teonly_meanpairwise_table = np.zeros((num_tasks, num_tasks))
 tpeonly_meanpairwise_table = np.zeros((num_tasks, num_tasks))
@@ -124,6 +128,46 @@ multi_pairwise_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)
 teonly_pairwise_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
 tpeonly_pairwise_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
 
+# all minus information
+multi_meanallminus_table = np.zeros((num_tasks, num_tasks))
+teonly_meanallminus_table = np.zeros((num_tasks, num_tasks))
+tpeonly_meanallminus_table = np.zeros((num_tasks, num_tasks))
+multi_stdallminus_table = np.zeros((num_tasks, num_tasks))
+teonly_stdallminus_table = np.zeros((num_tasks, num_tasks))
+tpeonly_stdallminus_table = np.zeros((num_tasks, num_tasks))
+multi_allminus_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+teonly_allminus_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+tpeonly_allminus_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+multi_allminusvsall_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+teonly_allminusvsall_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+tpeonly_allminusvsall_table = [['' for _ in range(num_tasks)] for _ in range(num_tasks)]
+
+# all information
+multi_meanall_table = np.zeros((num_tasks,))
+teonly_meanall_table = np.zeros((num_tasks,))
+tpeonly_meanall_table = np.zeros((num_tasks,))
+multi_stdall_table = np.zeros((num_tasks,))
+teonly_stdall_table = np.zeros((num_tasks,))
+tpeonly_stdall_table = np.zeros((num_tasks,))
+multi_all_table = ['' for _ in range(num_tasks)]
+teonly_all_table = ['' for _ in range(num_tasks)]
+tpeonly_all_table = ['' for _ in range(num_tasks)]
+
+# oracle information
+multi_meanoracle_table = np.zeros((num_tasks, 1))
+teonly_meanoracle_table = np.zeros((num_tasks, 1))
+tpeonly_meanoracle_table = np.zeros((num_tasks, 1))
+multi_stdoracle_table = np.zeros((num_tasks, 1))
+teonly_stdoracle_table = np.zeros((num_tasks, 1))
+tpeonly_stdoracle_table = np.zeros((num_tasks, 1))
+multi_oracle_table = ['' for _ in range(num_tasks)]
+teonly_oracle_table = ['' for _ in range(num_tasks)]
+tpeonly_oracle_table = ['' for _ in range(num_tasks)]
+
+json_dict = {}
+
+full_str = ''
+
 for current_tsk_domain in current_tsk_domains:
     current_tsk, all_domain_strs = current_tsk_domain.split('_')
     current_tsk_id = tskid[current_tsk]
@@ -133,35 +177,28 @@ for current_tsk_domain in current_tsk_domains:
     # top_table += ' on ' + all_domain_strs
     top_table += '} \\\\ \\cline{3-5}\n'
     top_table += ' \multicolumn{2}{c|}{} & \\textbf{Multi-Dec} & \\textbf{TE-Dec} & \\textbf{TE-Enc} \\\\ \\hline'
-    print(top_table)
+    full_str += top_table + '\n'
     firstcols = []
     exts = []
-    # useolds = []
-    problematic = ["upos", "xpos", "chunk", "sem", "semtr", "frame", "hyp"]
+    testing_tsks = []
     for tsk in all_tasks:
         if tsk == current_tsk:
             continue
         exts.append(''.join(sorted([tsk, current_tsk])))
-        # if tsk not in problematic and current_tsk not in problematic:
-        #     useolds.append(True)
-        # else:
-        #     useolds.append(False)
         firstcols.append("+" + tsk)
+        testing_tsks.append(tsk)
     for tsk in all_tasks:
         if tsk == current_tsk:
             continue
         exts.append("allminus_" + tsk)
         firstcols.append("all - " + tsk)
+        testing_tsks.append(tsk)
     exts.append("all")
-    # useolds.append(False)
     firstcols.append("all")
 
     multi_filepaths = [multi_path + ext for ext in exts]
-    multi_filepaths_old = [multi_path_old + ext for ext in exts]
     teonly_filepaths = [teonly_path + ext for ext in exts]
     tpeonly_filepaths = [tpeonly_path + ext for ext in exts]
-    teonly_filepaths_old = [teonly_path_old + ext for ext in exts]
-    tpeonly_filepaths_old = [tpeonly_path_old + ext for ext in exts]
 
     """
     single_f1 = load_score_json(single_path + current_tsk_domain + task_suffix + current_tsk,
@@ -177,25 +214,24 @@ for current_tsk_domain in current_tsk_domains:
 
     single_crf_f1 = load_score_json(single_path + current_tsk_domain + task_crf_suffix + current_tsk,
                                     'test_f1-measure-overall')
-    single_crf_f1_old = load_score_json(single_path_old + current_tsk_domain + task_crf_suffix + 'template',
-                                        'test_f1-measure-overall')
+    mean_single_crf_f1, std_single_crf_f1 = f1s_to_stats(single_crf_f1)
+    txt_single_crf_f1 = f1s_to_smalltxt(single_crf_f1)
 
-    multi_meanpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[0]
-    teonly_meanpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[0]
-    tpeonly_meanpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[0]
-    multi_stdpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[1]
-    teonly_stdpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[1]
-    tpeonly_stdpairwise_table[current_tsk_id, current_tsk_id] = f1s_to_stats(single_crf_f1)[1]
-    multi_pairwise_table[current_tsk_id][current_tsk_id] = f1s_to_smalltxt(single_crf_f1)
-    teonly_pairwise_table[current_tsk_id][current_tsk_id] = f1s_to_smalltxt(single_crf_f1)
-    tpeonly_pairwise_table[current_tsk_id][current_tsk_id] = f1s_to_smalltxt(single_crf_f1)
+    multi_meanpairwise_table[current_tsk_id, current_tsk_id] = mean_single_crf_f1
+    teonly_meanpairwise_table[current_tsk_id, current_tsk_id] = mean_single_crf_f1
+    tpeonly_meanpairwise_table[current_tsk_id, current_tsk_id] = mean_single_crf_f1
+    multi_stdpairwise_table[current_tsk_id, current_tsk_id] = std_single_crf_f1
+    teonly_stdpairwise_table[current_tsk_id, current_tsk_id] = std_single_crf_f1
+    tpeonly_stdpairwise_table[current_tsk_id, current_tsk_id] = std_single_crf_f1
+    multi_pairwise_table[current_tsk_id][current_tsk_id] = txt_single_crf_f1
+    teonly_pairwise_table[current_tsk_id][current_tsk_id] = txt_single_crf_f1
+    tpeonly_pairwise_table[current_tsk_id][current_tsk_id] = txt_single_crf_f1
 
-    # print("Self only (CRF) & ", end=' ')
-    print("\multicolumn{2}{c}{ \\task{" + current_tsk + "} only } & ", end=' ')
-    print('\\multicolumn{3}{|c}{', end='')
-    print(f1s_to_txt(single_crf_f1), end='')
-    print('}', end=' ')
-    print(' \\\\ \\hline')
+    full_str += "\multicolumn{2}{c}{ \\task{" + current_tsk + "} only } & "
+    full_str += '\\multicolumn{3}{|c}{'
+    full_str += f1s_to_txt(single_crf_f1)
+    full_str += '}'
+    full_str += '\\\\ \\hline\n'
 
     mean_single_crf, std_single_crf = f1s_to_stats(single_crf_f1)
     k = 1.5
@@ -205,47 +241,43 @@ for current_tsk_domain in current_tsk_domains:
     multi_pairwise_f1s = []
     teonly_pairwise_f1s = []
     tpeonly_pairwise_f1s = []
-
+    multi_allminus_f1s = []
+    teonly_allminus_f1s = []
+    tpeonly_allminus_f1s = []
     for i, mfilepath in enumerate(multi_filepaths):
         if i == 0:
-            print('\\parbox[t]{1mm}{\\multirow{' + str(num_tasks) + '}{*}{\\rotatebox[origin = c]{90}{Pairwise}}}',
-                  end = '')
+            full_str += '\\parbox[t]{1mm}{\\multirow{' + str(num_tasks) + '}{*}{\\rotatebox[origin = c]{90}{Pairwise}}}'
         elif i == num_tasks-1:
-            print('\\parbox[t]{1mm}{\\multirow{' + str(num_tasks-1) +
-                  '}{*}{\\rotatebox[origin = c]{90}{All but one}}}', end='')
+            full_str +='\\parbox[t]{1mm}{\\multirow{' + str(num_tasks-1) +\
+                       '}{*}{\\rotatebox[origin = c]{90}{All but one}}}'
         if i < len(multi_filepaths) - 1:
-            print('&', end=' ')
-            print('\\task{' + firstcols[i] + '}', end=' ')
+            full_str += '&'
+            full_str += '\\task{' + firstcols[i] + '}'
         else:
-            print('\\multicolumn{2}{c|}{\\task{' + firstcols[i] + '}}', end=' ')
-        print('&', end=' ')
+            full_str += '\\multicolumn{2}{c|}{\\task{' + firstcols[i] + '}}'
+        full_str += '&'
 
         multi_f1 = load_score_json(mfilepath, 'test_' + current_tsk + '-f1-measure-overall')
-        multi_f1_old = load_score_json(multi_filepaths_old[i], 'test_' + current_tsk + '-f1-measure-overall')
-        # if useolds[i]:
-        #     multi_f1 = multi_f1_old
-        print(f1s_to_txt(multi_f1, lowbnd, upbnd), end=' ')
-        print('&', end=' ')
+        full_str += f1s_to_txt(multi_f1, lowbnd, upbnd)
+        full_str += '&'
+
+        json_dict['multi_' + current_tsk + exts[i]] = multi_f1
 
         teonly_f1 = load_score_json(teonly_filepaths[i], 'test_' + current_tsk + '-f1-measure-overall')
-        teonly_f1_old = load_score_json(teonly_filepaths_old[i], 'test_' + current_tsk + '-f1-measure-overall')
-        # if useolds[i]:
-        #     teonly_f1 = teonly_f1_old
-        print(f1s_to_txt(teonly_f1, lowbnd, upbnd), end=' ')
-        print('&', end=' ')
+        full_str += f1s_to_txt(teonly_f1, lowbnd, upbnd)
+        full_str += '&'
+
+        json_dict['teonly_' + current_tsk + exts[i]] = teonly_f1
 
         tpeonly_f1 = load_score_json(tpeonly_filepaths[i], 'test_' + current_tsk + '-f1-measure-overall')
-        tpeonly_f1_old = load_score_json(tpeonly_filepaths_old[i], 'test_' + current_tsk + '-f1-measure-overall')
-        # if useolds[i]:
-        #     tpeonly_f1 = tpeonly_f1_old
-        print(f1s_to_txt(tpeonly_f1, lowbnd, upbnd), end=' ')
-        print(' \\\\ ', end=' ')
-        if 'all' not in mfilepath:
-            multi_pairwise_f1s.append(f1s_to_stats(multi_f1)[0]/100)
-            teonly_pairwise_f1s.append(f1s_to_stats(teonly_f1)[0]/100)
-            tpeonly_pairwise_f1s.append(f1s_to_stats(tpeonly_f1)[0]/100)
+        full_str += f1s_to_txt(tpeonly_f1, lowbnd, upbnd)
+        full_str += ' \\\\ '
 
-            another_task_id = tskid[firstcols[i][1:]]
+        json_dict['tpeonly_' + current_tsk + exts[i]] = tpeonly_f1
+
+        # pairwise
+        if 'all' not in mfilepath:
+            another_task_id = tskid[testing_tsks[i]]
             multi_meanpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(multi_f1)[0]
             teonly_meanpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(teonly_f1)[0]
             tpeonly_meanpairwise_table[current_tsk_id, another_task_id] = f1s_to_stats(tpeonly_f1)[0]
@@ -255,94 +287,167 @@ for current_tsk_domain in current_tsk_domains:
             multi_pairwise_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(multi_f1, lowbnd, upbnd)
             teonly_pairwise_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(teonly_f1, lowbnd, upbnd)
             tpeonly_pairwise_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(tpeonly_f1, lowbnd, upbnd)
-        if i == 2*num_tasks - 3 or i == len(multi_filepaths) - 1:
-            print(' \\hline ', end=' ')
-        elif i == num_tasks - 2 :
-            print(' \\cline{2-5} ', end=' ')
-        if i == num_tasks - 2:
-            print('')
-            print('& Average', end=' ')
-            print('&', end=' ')
-            pairwise_mean, _ = f1s_to_stats(multi_pairwise_f1s)
-            print(str(round(pairwise_mean, 2)), end=' ')
-            print('&', end=' ')
-            pairwise_mean, _ = f1s_to_stats(teonly_pairwise_f1s)
-            print(str(round(pairwise_mean, 2)), end=' ')
-            print('&', end=' ')
-            pairwise_mean, _ = f1s_to_stats(tpeonly_pairwise_f1s)
-            print(str(round(pairwise_mean, 2)), end=' ')
-            print(' \\\\ \\hline ', end=' ')
-        print('')
+        elif 'allminus' in mfilepath:
+            another_task_id = tskid[testing_tsks[i]]
+            multi_meanallminus_table[current_tsk_id, another_task_id] = f1s_to_stats(multi_f1)[0]
+            teonly_meanallminus_table[current_tsk_id, another_task_id] = f1s_to_stats(teonly_f1)[0]
+            tpeonly_meanallminus_table[current_tsk_id, another_task_id] = f1s_to_stats(tpeonly_f1)[0]
+            multi_stdallminus_table[current_tsk_id, another_task_id] = f1s_to_stats(multi_f1)[1]
+            teonly_stdallminus_table[current_tsk_id, another_task_id] = f1s_to_stats(teonly_f1)[1]
+            tpeonly_stdallminus_table[current_tsk_id, another_task_id] = f1s_to_stats(tpeonly_f1)[1]
+            multi_allminus_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(multi_f1, lowbnd, upbnd)
+            teonly_allminus_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(teonly_f1, lowbnd, upbnd)
+            tpeonly_allminus_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(tpeonly_f1, lowbnd, upbnd)
+        elif 'all' in mfilepath:
+            mean_multi_f1, std_multi_f1 = f1s_to_stats(multi_f1)
+            mean_teonly_f1, std_teonly_f1 = f1s_to_stats(teonly_f1)
+            mean_tpeonly_f1, std_tpeonly_f1 = f1s_to_stats(tpeonly_f1)
 
-    print("\multicolumn{2}{c|}{ Oracle } & ", end=' ')
+            multi_meanall_table[current_tsk_id] = mean_multi_f1
+            teonly_meanall_table[current_tsk_id] = mean_teonly_f1
+            tpeonly_meanall_table[current_tsk_id] = mean_tpeonly_f1
+            multi_stdall_table[current_tsk_id] = std_multi_f1
+            teonly_stdall_table[current_tsk_id] = std_teonly_f1
+            tpeonly_stdall_table[current_tsk_id] = std_tpeonly_f1
+            multi_all_table[current_tsk_id] = f1s_to_smalltxt(multi_f1, lowbnd, upbnd)
+            teonly_all_table[current_tsk_id] = f1s_to_smalltxt(teonly_f1, lowbnd, upbnd)
+            tpeonly_all_table[current_tsk_id] = f1s_to_smalltxt(tpeonly_f1, lowbnd, upbnd)
+
+            k = 1.5
+            multi_alowbnd = mean_multi_f1 - k*std_multi_f1
+            multi_aupbnd = mean_multi_f1 + k*std_multi_f1
+            teonly_alowbnd = mean_teonly_f1 - k * std_teonly_f1
+            teonly_aupbnd = mean_teonly_f1 + k * std_teonly_f1
+            tpeonly_alowbnd = mean_tpeonly_f1 - k * std_tpeonly_f1
+            tpeonly_aupbnd = mean_tpeonly_f1 + k * std_tpeonly_f1
+            for another_task_id in range(num_tasks):
+                if another_task_id != current_tsk_id:
+                    multi_allminusvsall_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(
+                        json_dict['multi_' + current_tsk + 'allminus_' + all_tasks[another_task_id]],
+                        multi_alowbnd,
+                        multi_aupbnd)
+                    teonly_allminusvsall_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(
+                        json_dict['teonly_' + current_tsk + 'allminus_' + all_tasks[another_task_id]],
+                        teonly_alowbnd,
+                        teonly_aupbnd)
+                    tpeonly_allminusvsall_table[current_tsk_id][another_task_id] = f1s_to_smalltxt(
+                        json_dict['tpeonly_' + current_tsk + 'allminus_' + all_tasks[another_task_id]],
+                        tpeonly_alowbnd,
+                        tpeonly_aupbnd)
+
+        if i == 2*num_tasks - 3 or i == len(multi_filepaths) - 1:
+            full_str += ' \\hline '
+        elif i == num_tasks - 2 :
+            full_str += ' \\cline{2-5} '
+        # Compute average of pairwise performance
+        if i == num_tasks - 2:
+            full_str += '\n'
+            full_str += '& Average'
+            full_str += '&'
+            pairwise_mean = multi_meanpairwise_table[current_tsk_id].mean()
+            full_str += str(round(pairwise_mean, 2))
+            full_str += '&'
+            pairwise_mean = teonly_meanpairwise_table[current_tsk_id].mean()
+            full_str += str(round(pairwise_mean, 2))
+            full_str += '&'
+            pairwise_mean = tpeonly_meanpairwise_table[current_tsk_id].mean()
+            full_str += str(round(pairwise_mean, 2))
+            full_str += ' \\\\ \\hline '
+
+        full_str += '\n'
+
+    # Oracle
+    full_str += "\multicolumn{2}{c|}{ Oracle } & "
     current_oracles = oracles[current_tsk]
     if current_oracles[0] != '':
         f1_oracle = load_score_json(multi_path + combine_tasks(current_tsk, current_oracles[0]),
                                     'test_' + current_tsk + '-f1-measure-overall')
         all_commands += load_score_json_get_commands(multi_path + combine_tasks(current_tsk, current_oracles[0]))
-        print(f1s_to_txt(f1_oracle), end=' ')
+        full_str += f1s_to_txt(f1_oracle)
+
+        multi_meanoracle_table[current_tsk_id] = f1s_to_stats(f1_oracle)[0]
+        multi_stdoracle_table[current_tsk_id] = f1s_to_stats(f1_oracle)[1]
+        multi_oracle_table[current_tsk_id] = f1s_to_smalltxt(f1_oracle, lowbnd, upbnd)
     else:
-        print(' None ', end=' ')
-    print('&', end=' ')
+        full_str += ' None '
+
+        multi_meanoracle_table[current_tsk_id] = np.nan
+        multi_stdoracle_table[current_tsk_id] = np.nan
+        multi_oracle_table[current_tsk_id] = ' \\tiny{None} '
+
+    full_str += '&'
     if current_oracles[1] != '':
         f1_oracle = load_score_json(teonly_path + combine_tasks(current_tsk, current_oracles[1]),
                                     'test_' + current_tsk + '-f1-measure-overall')
         all_commands += load_score_json_get_commands(teonly_path + combine_tasks(current_tsk, current_oracles[1]))
-        print(f1s_to_txt(f1_oracle), end=' ')
+        full_str += f1s_to_txt(f1_oracle)
+
+        teonly_meanoracle_table[current_tsk_id] = f1s_to_stats(f1_oracle)[0]
+        teonly_stdoracle_table[current_tsk_id] = f1s_to_stats(f1_oracle)[1]
+        teonly_oracle_table[current_tsk_id] = f1s_to_smalltxt(f1_oracle, lowbnd, upbnd)
     else:
-        print(' None ', end=' ')
-    print('&', end=' ')
+        full_str += ' None '
+
+        teonly_meanoracle_table[current_tsk_id] = np.nan
+        teonly_stdoracle_table[current_tsk_id] = np.nan
+        teonly_oracle_table[current_tsk_id] = ' \\tiny{None} '
+    full_str += '&'
     if current_oracles[2] != '':
         f1_oracle = load_score_json(tpeonly_path + combine_tasks(current_tsk, current_oracles[2]),
                                     'test_' + current_tsk + '-f1-measure-overall')
         all_commands += load_score_json_get_commands(tpeonly_path + combine_tasks(current_tsk, current_oracles[2]))
-        print(f1s_to_txt(f1_oracle), end=' ')
+        full_str += f1s_to_txt(f1_oracle)
+
+        tpeonly_meanoracle_table[current_tsk_id] = f1s_to_stats(f1_oracle)[0]
+        tpeonly_stdoracle_table[current_tsk_id] = f1s_to_stats(f1_oracle)[1]
+        tpeonly_oracle_table[current_tsk_id] = f1s_to_smalltxt(f1_oracle, lowbnd, upbnd)
     else:
-        print(' None ', end=' ')
-    print(' \\\\ \\hline')
-    # print(' \\hline ')
+        full_str += ' None '
+
+        tpeonly_meanoracle_table[current_tsk_id] = np.nan
+        tpeonly_stdoracle_table[current_tsk_id] = np.nan
+        tpeonly_oracle_table[current_tsk_id] = ' \\tiny{None} '
+    full_str += ' \\\\ \\hline' + '\n'
+
     caption = 'F1 score tested on the task \\task{' + current_tsk + '} in different training scenarios'
     bottom_table = '\\end{tabular}\n\\caption{\\small ' + caption + '}\\label{tMultiTask'
     bottom_table += current_tsk + all_domain_strs
     bottom_table += '}}\n\\end{table*}'
-    print(bottom_table)
-    print('')
+    full_str += bottom_table + '\n'
+    full_str += '\n'
+
+# print(full_str)
 
 for command in sorted(list(set(all_commands))):
     print('%', command)
 
-def get_pairwise_str(table, method, cap, isstr=False):
-    pairwise_str = '\\begin{table*}[t]\n\\centering\n\\scriptsize{\n\\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}\n'
+def get_compare_mtl_str(table, methods, metrics):
+    compare_mtl_str = '\\begin{table*}[t]\n\\centering\n\\scriptsize{\n\\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c|c||c}\n'
+    compare_mtl_str += ' Settings & Method'
     for j in range(num_tasks):
-        pairwise_str += ' & ' + '\\task{' + all_tasks[j] + '}'
-    pairwise_str += '\\\\ \\hline\n'
-    for i in range(num_tasks):
-        pairwise_str += '\\task{' + all_tasks[i] +'} '
+        compare_mtl_str += ' & ' + '\\tinytask{' + all_tasks[j] + '}'
+    compare_mtl_str += ' & ' + '{\\scriptsize{Average}}'
+    compare_mtl_str += '\\\\ \\hline\n'
+    for i in range(len(table)):
+        if metrics[i] != methods[i]:
+            compare_mtl_str += metrics[i]
+            compare_mtl_str += '& ' + methods[i]
+        else:
+            compare_mtl_str += '\multicolumn{2}{c|}{' + metrics[i] + '}'
         for j in range(num_tasks):
-            if isstr:
-                if i == j:
-                    pairwise_str += '& ' + '{\\color{blue}' + table[i][j] + '}'
-                else:
-                    if 'color' in table[i][j]:
-                        pairwise_str += '& ' + table[i][j]
-                    elif 'scriptsize' in table[i][j]:
-                        pairwise_str += '& ' + table[i][j].replace('scriptsize', 'tiny')
-            else:
-                pairwise_str += '& '
-                if i == j:
-                    pairwise_str += '{\\color{blue}' + str(round(table[i,j], 2)) + '}'
-                else:
-                    if table[i,j] < -0.5:
-                        pairwise_str += '{\\color{red}' + str(round(table[i,j], 2)) + '}'
-                    elif table[i,j] > 0.5:
-                        pairwise_str += '{\\color{olive}' + str(round(table[i,j], 2)) + '}'
-                    else:
-                        pairwise_str += '{\\tiny{' + str(round(table[i, j], 2)) + '}}'
-        pairwise_str += '\\\\ \\hline\n'
-    pairwise_str += '\\end{tabular}\n'
-    pairwise_str += '\\caption{\small ' + cap + '}\\label{t' + method + '}}\n'
-    pairwise_str += '\\end{table*}'
-    return pairwise_str
+            compare_mtl_str += '& ' + '{\\tiny{' + str(round(table[i][j], 2)) + '}}'
+        compare_mtl_str += '& ' + '{\\tiny{' + str(round(table[i].mean(), 2)) + '}}'
+        # compare_mtl_str += ' $\pm$ ' + str(round(table[i].std(), 2)) + '}}'
+        if i % 3 != 0:
+            compare_mtl_str += '\\\\ \\cline{2-14}\n'
+        else:
+            compare_mtl_str += '\\\\ \\hline \\hline\n'
+    compare_mtl_str += '\\end{tabular}\n'
+    compare_mtl_str += '\\vspace{-7pt}\n'
+    compare_mtl_str += '\\caption{\small Comparison between MTL approaches}\\label{tCompareMtl}}\n'
+    compare_mtl_str += '\\vspace{-5pt}\n'
+    compare_mtl_str += '\\end{table*}'
+    return compare_mtl_str
 
 def get_toptask_commands(table):
     command = []
@@ -366,16 +471,273 @@ def get_rel_table(table):
             rel_table[i,j] = 100*(table[i,j] - table[i,i]) / table[i,i]
     return rel_table
 
-caption_ending = ' For each number, we train on corresponding ``row" and ``column" tasks jointly and test on the column task.'
+def get_pairwise_str(table, all_table, oracle_table, method, cap, isstr=False):
+    pairwise_str = '\\begin{table*}[t]\n\\centering\n\\scriptsize{\n\\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}\n'
+    for j in range(num_tasks):
+        pairwise_str += ' & ' + '\\tinytask{' + all_tasks[j] + '}'
 
-print(get_pairwise_str(get_rel_table(multi_meanpairwise_table), 'RelMultiDec', 'Relative in \\% F1 scores for \\textbf{Multi-Dec}.' + caption_ending))
-print(get_pairwise_str(get_rel_table(teonly_meanpairwise_table), 'RelTEDec', 'Relative in \\% F1 scores for \\textbf{TE-Dec}.' + caption_ending))
-print(get_pairwise_str(get_rel_table(tpeonly_meanpairwise_table), 'RelTEEnc', 'Relative in \\% F1 scores for \\textbf{TE-Enc}.' + caption_ending))
+    pairwise_str += '\\\\ \\hline\n'
+    for i in range(num_tasks):
+        pairwise_str += '+\\tinytask{' + all_tasks[i] + '} '
+        for j in range(num_tasks):
+            if isstr:
+                content = table[j][i]
+                if i == j:
+                    pairwise_str += '& ' + '{\\color{blue}' + content + '}'
+                else:
+                    if 'color' in content:
+                        pairwise_str += '& ' + content
+                    elif 'scriptsize' in content:
+                        pairwise_str += '& ' + content.replace('scriptsize', 'tiny')
+            else:
+                content = table[j,i]
+                pairwise_str += '& '
+                if i == j:
+                    pairwise_str += '{\\color{blue}' + str(round(content, 2)) + '}'
+                else:
+                    if content < -0.5:
+                        pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                    elif content > 0.5:
+                        pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                    else:
+                        pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        if i < num_tasks - 1:
+            pairwise_str += '\\\\ \\hline\n'
+        else:
+            pairwise_str += '\\\\ \\hline \\hline\n'
 
-print(get_pairwise_str(multi_pairwise_table, 'PwMultiDec', 'Pairwise F1 scores for \\textbf{Multi-Dec}.' + caption_ending, isstr=True))
-print(get_pairwise_str(teonly_pairwise_table, 'PwTEDec', 'Pairwise F1 scores for \\textbf{TE-Dec}.' + caption_ending, isstr=True))
-print(get_pairwise_str(tpeonly_pairwise_table, 'PwTEEnc', 'Pairwise F1 scores for \\textbf{TE-Enc}.' + caption_ending, isstr=True))
+    if all_table is not None:
+        pairwise_str += '\\task{all} '
+        for j in range(num_tasks):
+            content = all_table[j]
+            if isstr:
+                if 'color' in content:
+                    pairwise_str += '& ' + content
+                elif 'scriptsize' in content:
+                    pairwise_str += '& ' + content.replace('scriptsize', 'tiny')
+            else:
+                if content < -0.5:
+                    pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                elif content > 0.5:
+                    pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                else:
+                    pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        pairwise_str += '\\\\ \\hline \n'
 
+    if oracle_table is not None:
+        pairwise_str += 'Oracle'
+        for j in range(num_tasks):
+            content = oracle_table[j]
+            if isstr:
+                if 'color' or 'None' in content:
+                    pairwise_str += '& ' + content
+                elif 'scriptsize' in content:
+                    pairwise_str += '& ' + content.replace('scriptsize', 'tiny')
+            else:
+                if content < -0.5:
+                    pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                elif content > 0.5:
+                    pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                else:
+                    pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        pairwise_str += '\\\\ \\hline\n'
+
+    pairwise_str += '\\end{tabular}\n'
+    pairwise_str += '\\vspace{-7pt}\n'
+    pairwise_str += '\\caption{\small ' + cap + '}\\label{t' + method + '}}\n'
+    pairwise_str += '\\vspace{-5pt}\n'
+    pairwise_str += '\\end{table*}'
+    return pairwise_str
+
+def remove_color_and_arrows(txt):
+    txt = txt.replace('\\color{red}', '')
+    txt = txt.replace('\\color{olive}', '')
+    txt = txt.replace('$\\uparrow$', '')
+    txt = txt.replace('$\\downarrow$', '')
+    return txt
+
+def get_allminus_str(table, all_table, oracle_table, pw_table, method, cap, isstr=False):
+    pairwise_str = '\\begin{table*}[t]\n\\centering\n\\scriptsize{\n\\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}\n'
+    for j in range(num_tasks):
+        pairwise_str += ' & ' + '\\tinytask{' + all_tasks[j] + '}'
+    pairwise_str += '\\\\ \\hline\n'
+
+    """
+    if pw_table is not None:
+        pairwise_str += 'STL '
+        for j in range(num_tasks):
+            if isstr:
+                content = pw_table[j][j]
+                if 'color' in content:
+                    content = remove_color_and_arrows(content)
+                if 'tiny' in content:
+                    content = content.replace('tiny', 'scriptsize')
+                pairwise_str += '& ' + content
+            else:
+                content = pw_table[j,j]
+                if content < -0.5:
+                    pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                elif content > 0.5:
+                    pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                else:
+                    pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        pairwise_str += '\\\\ \\hline \n'
+
+    if oracle_table is not None:
+        pairwise_str += 'Oracle'
+        for j in range(num_tasks):
+            content = oracle_table[j]
+            if isstr:
+                if 'color' in content:
+                    content = remove_color_and_arrows(content)
+                if 'tiny' in content:
+                    content = content.replace('tiny', 'scriptsize')
+                pairwise_str += '& ' + content
+            else:
+                if content < -0.5:
+                    pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                elif content > 0.5:
+                    pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                else:
+                    pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        pairwise_str += '\\\\ \\hline\n'
+    """
+
+    if all_table is not None:
+        pairwise_str += '\\task{all} '
+        for j in range(num_tasks):
+            content = all_table[j]
+            if isstr:
+                if 'color' in content:
+                    content = remove_color_and_arrows(content)
+                if 'tiny' in content:
+                    content = content.replace('tiny', 'scriptsize')
+                pairwise_str += '& ' + content
+            else:
+                if content < -0.5:
+                    pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                elif content > 0.5:
+                    pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                else:
+                    pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        pairwise_str += '\\\\ \\hline \\hline \n'
+
+    for i in range(num_tasks):
+        pairwise_str += '\\tinytask{all - ' + all_tasks[i] + '} '
+        for j in range(num_tasks):
+            if j == i:
+                pairwise_str += '& '
+            else:
+                if isstr:
+                    content = table[j][i]
+                    if i == j:
+                        pairwise_str += '& ' + '{\\color{blue}' + content + '}'
+                    else:
+                        if 'color' in content:
+                            pairwise_str += '& ' + content
+                        elif 'scriptsize' in content:
+                            pairwise_str += '& ' + content.replace('scriptsize', 'tiny')
+                else:
+                    content = table[j,i]
+                    pairwise_str += '& '
+                    if i == j:
+                        pairwise_str += '{\\color{blue}' + str(round(content, 2)) + '}'
+                    else:
+                        if content < -0.5:
+                            pairwise_str += '{\\color{red}' + str(round(content, 2)) + '}'
+                        elif content > 0.5:
+                            pairwise_str += '{\\color{olive}' + str(round(content, 2)) + '}'
+                        else:
+                            pairwise_str += '{\\tiny{' + str(round(content, 2)) + '}}'
+        pairwise_str += '\\\\ \\hline\n'
+
+    pairwise_str += '\\end{tabular}\n'
+    pairwise_str += '\\vspace{-7pt}\n'
+    pairwise_str += '\\caption{\small ' + cap + '}\\label{t' + method + '}}\n'
+    pairwise_str += '\\vspace{-5pt}\n'
+    pairwise_str += '\\end{table*}'
+    return pairwise_str
+
+caption_ending = ' We compare STL setting (blue), with pairwise MTL (+$\\langle$task$\\rangle$), \\btask{all}, and Oracle.' +\
+                 ' We test on each task in the columns. Beneficial settings are in green. Harmful setting are in red.'
+
+# print(get_pairwise_str(get_rel_table(multi_meanpairwise_table),
+#                        None,
+#                        None,
+#                        'RelMultiDec', 'Relative in \\% F1 scores for \\textbf{Multi-Dec}.' + caption_ending))
+# print(get_pairwise_str(get_rel_table(teonly_meanpairwise_table),
+#                        None,
+#                        None,
+#                        'RelTEDec', 'Relative in \\% F1 scores for \\textbf{TE-Dec}.' + caption_ending))
+# print(get_pairwise_str(get_rel_table(tpeonly_meanpairwise_table),
+#                        None,
+#                        None,
+#                        'RelTEEnc', 'Relative in \\% F1 scores for \\textbf{TE-Enc}.' + caption_ending))
+print(get_pairwise_str(multi_pairwise_table,
+                       multi_all_table,
+                       multi_oracle_table,
+                       'PwMultiDec', 'F1 scores for \\textbf{Multi-Dec}.' + caption_ending, isstr=True))
+print(get_pairwise_str(teonly_pairwise_table,
+                       teonly_all_table,
+                       teonly_oracle_table,
+                       'PwTEDec', 'F1 scores for \\textbf{TE-Dec}.' + caption_ending, isstr=True))
+print(get_pairwise_str(tpeonly_pairwise_table,
+                       tpeonly_all_table,
+                       tpeonly_oracle_table,
+                       'PwTEEnc', 'F1 scores for \\textbf{TE-Enc}.' + caption_ending, isstr=True))
+
+caption_ending = ' We compare \\btask{all} with All-but-one settings (\\btask{all-$\\langle$task$\\rangle$}). ' +\
+                 ' We test on each task in the columns. Beneficial settings are in green. Harmful setting are in red.'
+print(get_allminus_str(multi_allminusvsall_table,
+                       multi_all_table,
+                       multi_oracle_table,
+                       multi_pairwise_table,
+                       'AllminusMultiDec', 'F1 scores for \\textbf{Multi-Dec}.' + caption_ending, isstr=True))
+print(get_allminus_str(teonly_allminusvsall_table,
+                       teonly_all_table,
+                       teonly_oracle_table,
+                       teonly_pairwise_table,
+                       'AllminusTEDec', 'F1 scores for \\textbf{TE-Dec}.' + caption_ending, isstr=True))
+print(get_allminus_str(tpeonly_allminusvsall_table,
+                       tpeonly_all_table,
+                       tpeonly_oracle_table,
+                       tpeonly_pairwise_table,
+                       'AllminusTEEnc', 'F1 scores for \\textbf{TE-Enc}.' + caption_ending, isstr=True))
+
+multi_meanallminus_table[multi_meanallminus_table == 0] = np.nan
+teonly_meanallminus_table[teonly_meanallminus_table == 0] = np.nan
+tpeonly_meanallminus_table[tpeonly_meanallminus_table == 0] = np.nan
+table = [multi_meanpairwise_table.diagonal(),
+         np.mean(multi_meanpairwise_table, axis=1),
+         np.mean(teonly_meanpairwise_table, axis=1),
+         np.mean(tpeonly_meanpairwise_table, axis=1),
+         multi_meanall_table,
+         teonly_meanall_table,
+         tpeonly_meanall_table,
+         np.nanmean(multi_meanallminus_table, axis=1),
+         np.nanmean(teonly_meanallminus_table, axis=1),
+         np.nanmean(tpeonly_meanallminus_table, axis=1)]
+methods = ['STL',
+           '\\textbf{Multi-Dec}',
+           '\\textbf{TE-Dec}',
+           '\\textbf{TE-Enc}',
+           '\\textbf{Multi-Dec}',
+           '\\textbf{TE-Dec}',
+           '\\textbf{TE-Enc}',
+           '\\textbf{Multi-Dec}',
+           '\\textbf{TE-Dec}',
+           '\\textbf{TE-Enc}']
+metrics = ['STL',
+           '(Average)',
+           'Pairwise',
+           '',
+           '',
+           'All',
+           '',
+           '(Average)',
+           'All-but-one',
+           '']
+print(get_compare_mtl_str(table, methods, metrics))
 
 """
 command, good_dicts = get_toptask_commands(multi_meanpairwise_table)
